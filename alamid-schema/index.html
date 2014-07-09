@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html id="slide">
+<head>
+    <title>alamid-schema</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body class="hljs-monokai_sublime">
+<textarea id="source">
+
+    name: cover
+
+    <img class="peerigon-logo" src="assets/img/peerigon-logo.png" />
+
+    # alamid-schema
+
+    Michael Jaser<br>
+    MNUG / July 9th, 2014
+
+    ---
+    layout: true
+    class: center, middle
+
+    .slide-header-left[
+    alamid-schema
+    ]
+    .slide-header-right[
+    MNUG / July 9th, 2014
+    ]
+
+    ---
+
+    # About me
+
+    My name is Michael Jaser
+
+    ---
+
+    <img src="assets/img/peerigon-logo-big.png" width="400" style="position: relative; left: -50px" />
+
+    ---
+
+    ## alamid-schema
+
+    ```javascript
+    var Schema = require("alamid-schema");
+
+    var Panda = new Schema("Panda", {
+        name: String,
+        age: {
+            type: Number,
+            required: true
+        },
+        mood: {
+            type: String,
+            enum: ["grumpy", "happy"]
+        },
+        birthday: Date
+    });
+    ```
+
+    ---
+
+    ## alamid-schema
+
+    >Extendable mongoose-like schemas for node.js and the browser
+
+    - highly influenced by mongoose-schema
+    - client & server compatible
+    - minimum feature-set
+    - extensible with plugins
+
+    ---
+
+    ## Use it on the server to...
+
+    - normalize and validate incoming requests
+    - strip private fields from the response
+    - use mongoose-like schemas without using mongoose
+    - create reusable schemas to be shared with the client
+
+    ---
+
+    ## Use it on the client to...
+
+    - validate forms
+    - define view models
+    - normalize data
+
+    ---
+
+    ## Define
+
+    ```javascript
+    var PandaSchema = new Schema({
+        name: "panda", //concrete Type
+        age: Number,   //abstract type
+        friends: {
+            type: []
+        }
+    });
+    ```
+
+    - supports abstract and concrete type definitions
+
+    ---
+
+    ## Extend
+
+    ```javascript
+    var PandaSchema = new Schema({
+        name: String,
+        age: Number,
+        friends: {
+            type: Array
+        }
+    });
+    ```
+
+    ```javascript
+    var SuperPanda = PandaSchema.extend("SuperPanda", {
+        xRay: true,
+        canFly: {
+            type: Boolean
+        }
+    });
+    ```
+    ---
+
+    ## Overwriting properties
+
+    ```javascript
+    var Animal = new Schema({
+        name: String,
+        age: String
+    });
+    ```
+
+
+    ```javascript
+    var Panda = Animal.extend("Panda", {
+        age: Number
+        color: String
+    });
+    ```
+
+    equals...
+
+    ```javascript
+    var Panda = new Schema("Panda", {
+        name: String,
+        age: Number,   //overwritten
+        color: String  //added
+    });
+    ```
+    ---
+
+    ## Subsets
+
+    ```javascript
+    var Panda = new Schema("Panda", {
+        name: String,
+        age: Number,
+        color: String
+    });
+    ```
+
+    ```javascript
+    var SubsetPanda = Panda.fields("name", "age");
+    ```
+
+    equals...
+
+    ```javascript
+    var Panda = new Schema("Panda", {
+        name: String,
+        age: Number
+    });
+    ```
+
+    ---
+
+    ## Plugins
+
+    ```javascript
+    var Schema = require("alamid-schema");
+
+    //activate validation plugon
+    Schema.use(require("alamid-schema/plugins/validation");
+    ```
+
+    - you can add functionality with plugins
+    - plugins shipping with _alamid-schema_
+      - validation
+      - readable / writeable fields (soon)
+      - defaults (soon)
+
+    ---
+
+    ## Plugin: Validation
+
+    ```javascript
+    var PandaSchema = new Schema({
+        name: {
+            type: String,
+            required: true //required
+        },
+        age: {
+            type: Number,
+            min: 9, //min (Number)
+            max: 99 //max (Number)
+        },
+        mood: {
+            type: String,
+            enum: ["happy", "sleepy"] //enum
+        },
+        birthday: Date
+    });
+    ```
+
+    ---
+
+    ## Plugin: Validation
+
+
+    ```javascript
+    var panda = {
+        name: "Hugo",
+        age: 3,
+        mood: "happy"
+    };
+
+    PandaSchema.validate(panda, function(validation) {
+        console.log(validation);
+    });
+    ```
+
+    outputs...
+
+    ```javascript
+    {
+        result: false,
+        failedFields: {
+            age: [ "min" ]
+        }
+    }
+    ```
+
+    ---
+
+    ## Custom Validators
+
+    ```javascript
+    var PandaSchema = new Schema({
+        age: {
+            type: Number,
+            validate: oldEnough,
+            max: 99
+        }
+    });
+    ```
+
+    - function with or without callback
+    - _Ok_: `return true;`
+    - _Not Ok_:  `return false;`
+    - with custom error message  <br> `return "bad-format";`
+
+    ---
+
+    ## Custom validator: sync
+
+    ```javascript
+    function oldEnough(age) {
+        return age > 18 || "too-young";
+    }
+    ```
+
+    ---
+
+    ## Custom Validator: async
+
+    ```javascript
+    function nameIsUnique(name, callback) {
+
+        fs.readFile(__dirname + "/names.json", function(err, names) {
+            if(err) {
+                throw err;
+            }
+
+            names = JSON.parse(names);
+
+            callback(names.indexOf(name) === -1 || "name-already-taken");
+            });
+    }
+    ```
+
+    ---
+
+    ## Validate middleware
+
+    ```javascript
+    function validatorMiddleware(schema) {
+
+        return function validate(req, res, next) {
+            schema = schema || req.schema;
+
+            schema.validate(req.body || {}, function(validation) {
+
+                if(!validation.result) {
+                    res.validation = validation;
+                    next(new Error("Validation failed"));
+                    return;
+                }
+
+                next();
+            });
+        };
+    }
+    ```
+
+    ---
+
+    ## Roadmap
+
+    - more plugins
+    - middleware
+    - embedded schemas
+    - nested structure
+    - setters/getters
+    - make JSON-Schema compatible?
+
+    ---
+
+    ## Thank you for listening
+
+    [https://github.com/peerigon/alamid-schema](https://github.com/peerigon/alamid-schema)
+
+    <br>
+    michael.jaser@peerigon.com<br>
+    @mmeaku
+</textarea>
+    <script src="bower_components/remark/out/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        ratio: '4:3'
+        //ratio: '16:9'
+      });
+    </script>
+  </body>
+</html>
