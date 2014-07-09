@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html id="slide">
+<head>
+    <title>alamid-api</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body class="hljs-monokai_sublime">
+<textarea id="source">
+
+    name: cover
+
+    <img class="peerigon-logo" src="assets/img/peerigon-logo.png" />
+
+    # alamid-api
+
+    Michael Jaser<br>
+    MNUG / July 9th, 2014
+
+    ---
+    layout: true
+    class: center, middle
+
+    .slide-header-left[
+    alamid-api
+    ]
+    .slide-header-right[
+    MNUG / July 9th, 2014
+    ]
+
+    ---
+
+    # About me
+
+    My name is Michael Jaser
+
+    ---
+
+    <img src="assets/img/peerigon-logo-big.png" width="400" style="position: relative; left: -50px" />
+
+    ---
+
+    ## alamid-api
+
+    >Abstracting different transports (http/websockets) and libraries to a unite them all.
+
+    ---
+
+    ## Use Cases
+
+    - define __hybrid-routes__ to be used by _http_ & _websockets_
+    - use existing http-middleware for websocket-requests
+    - leverage an existing websocket-connection for your REST API
+    - websockets for PUSH and REST-calls
+
+    ---
+
+    ## Example
+
+    ```javascript
+    var app = express(),  //express
+    server = http.createServer(app),
+    io = socketIo(server); //socket.io
+
+    //alamid-api plugins
+    //connect/express app
+    api.use(require("alamid-api/plugins/connect"), { app: app });
+
+    //socket.io
+    api.use(require("alamid-api/plugins/socket.io"), { io: io });
+
+    var hybridRouter = api.router();
+
+    //attach hybrid route to be used by http & ws
+    hybridRouter.get("/hello", function(req, res) {
+        res.end("/hello called with " + req.transport);
+    });
+
+    server.listen(9000);
+    ```
+
+    ---
+
+    ## Live Demo
+
+
+    __HTTP:__ <a href="http://localhost:9000/hello" target="_blank">http://localhost:9000/hello</a>
+
+    __WS:__ <a href="http://localhost:9000" target="_blank">http://localhost:9000</a>
+
+    ```javascript
+    socket.emit(
+        "request", //must be request
+        {
+            method: "GET",
+            url: "/hello",
+            body: {}
+        },
+        function(response) {
+            alert(response);
+        });
+    ```
+
+    ---
+
+    ## How it works
+
+    ```javascript
+    //client
+    socket.emit("request", { method: POST })
+    ```
+
+    ```javascript
+    //server: websocket adapter
+    var req = new http.IncomingMessage({});
+    //set "emitted" body on new request
+    req.method = request.method;
+
+    //overwrite res.end
+    res.end = function(response) {
+        //callback -> socket.emit callback
+        callback(response)
+    };
+    ```
+
+
+
+    ---
+
+    ## Usage: Router
+
+    - based on [middler](https://github.com/carlos8f/node-middler)
+    - similar to express
+    - compatible with union
+
+    ```javascript
+
+    //middleware for all routes like use
+    hybridRouter.add(checkPermissions);
+
+    hybridRouter.get("/hello/*", function() {});
+
+    hybridRouter.post("/hello/*", [myMiddleware, myHandler]);
+    ```
+    ---
+
+    ## Using middleware
+
+    ```javascript
+    //express body parser for HTTP
+    //IMPORTANT attach your http-only routes before connect plugin
+    app.use(bodyParser.json());
+
+    //no need for body parsing on WS routes
+
+    //alamid-api plugins
+    //with connect/express app
+    api.use(require("alamid-api/plugins/connect"), { app: app });
+
+    //with socket.io
+    api.use(require("alamid-api/plugins/socket.io"), { io: io });
+
+    var hybridRouter = api.router();
+
+    //customized morgan-logger for HTTP & WS
+    hybridRouter.add(logger());
+
+    //attach hybrid route
+    hybridRouter.post("/hello", function(req, res) {
+        res.end("[" + req.transport + "] > " + JSON.stringify(req.body));
+    });
+    ```
+
+    ---
+
+    ## Middleware
+
+    `[http] > {"hello":"MNUG"}`
+
+    ```javascript
+    POST /hello 200 0.284 ms [http]
+    query {}
+    body { hello: 'MNUG' }
+    ```
+
+    `[ws] > {"hello":"MNUG"}`
+
+    ```bash
+    POST /hello 200 0.281 ms [ws]
+    query {}
+    body { hello: 'MNUG' }
+    ```
+
+    ---
+
+    ## Session Support
+
+    ```javascript
+    var session = {
+        store: new expressSession.MemoryStore(),
+        secret: "secret",
+        key: "mykey.sid",
+        cookieParser: cookieParser("secret")
+    };
+
+    //register http session
+    app.use(expressSession(session));
+
+    //alamid-api plugins
+    //with connect/express app
+    api.use(require("alamid-api/plugins/connect"), { app: app });
+
+    //with socket.io
+    api.use(require("alamid-api/plugins/socket.io"), {
+        io: io,
+        session: session //register ws session support
+    });
+
+    ```
+    ---
+
+    ## Session Support
+
+    ```javascript
+    var hybridRouter = api.router();
+
+    //read session
+    hybridRouter.get("/hello", function(req, res) {
+        res.end("/hello " + req.transport + JSON.stringify(req.session.hello));
+    });
+
+    //write session
+    hybridRouter.post("/hello", function(req, res) {
+        req.session.hello = req.body;
+        res.end("/hello " + req.transport + JSON.stringify(req.session.hello));
+    });
+    ```
+
+    - session is at `req.session`
+    - can be used with _passport_
+
+    ---
+
+    ## Session Support
+
+    __POST with HTTP__
+
+    ```bash
+    POST /hello 200 0.281 ms [http]
+    query {}
+    body { hello: 'MNUG' }
+    ```
+
+    __GET with Websockets__
+
+    `/hello ws {"hello":"MNUG"}`
+    ---
+
+    ## Roadmap
+
+    - add documentation
+    - improve API
+    - make compatible with most middleware
+    - add more transports ZeroMQ?
+
+    ---
+
+    ## Thank you for listening
+
+    [https://github.com/peerigon/alamid-api](https://github.com/peerigon/alamid-api)
+
+    <br>
+    michael.jaser@peerigon.com<br>
+    @mmeaku
+</textarea>
+    <script src="bower_components/remark/out/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        ratio: '4:3'
+        //ratio: '16:9'
+      });
+    </script>
+  </body>
+</html>
