@@ -95,13 +95,14 @@ blockquote:after {
 
 code {
     text-align: left;
+    overflow: hidden;
 }
 
 ul, ol {
     text-align: left;
 }
 
-small {
+small, cite {
     font-size: 0.5rem;
 }
 
@@ -146,9 +147,15 @@ small {
 }
 
 .code {
-    max-height: 10rem;
     overflow: scroll;
+    width: 55vw;
+    height: 60vh;
+    margin-left: -5vw;
     background: #23241f;
+}
+
+.code code {
+    overflow: inherit;
 }
 
 .code pre {
