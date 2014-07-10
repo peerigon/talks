@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Yanone Kaffeesatz';
+    src: url(assets/fonts/yanonekaffeesatz-regular-webfont.woff) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hello-world h1 {
+    color: hotpink;
+}
