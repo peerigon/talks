@@ -5,7 +5,7 @@ presentations
 
 > Extendable mongoose-like schemas for node.js and the browser 
 
-* At the [__munich node.js user group, July 9th, 2014__](https://peerigon.github.io/presentations/2014-07-09-MNUG-alamid-schema)
+* At the __munich node.js user group, July 9th, 2014__ [Slides](https://peerigon.github.io/presentations/2014-07-09-MNUG-alamid-schema)  [Video](https://www.youtube.com/watch?v=U5goZCiuh5U)
 
 
 ## [alamid-api](https://github.com/peerigon/alamid-api)
