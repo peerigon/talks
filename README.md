@@ -12,7 +12,7 @@ presentations
 
 > Abstracting different transports (http/websockets) and libraries to a unite them all.
 
-* At the [__munich node.js user group, July 9th, 2014__](https://peerigon.github.io/presentations/2014-07-09-MNUG-alamid-api)
+* At the __munich node.js user group, July 9th, 2014__ [Slides](https://peerigon.github.io/presentations/2014-07-09-MNUG-alamid-api) [Video](https://www.youtube.com/watch?v=TeNRC0QYBdo)
 
 ## [webpack](https://webpack.github.io)
 
