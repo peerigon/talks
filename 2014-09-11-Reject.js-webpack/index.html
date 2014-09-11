@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html id="slide">
+  <head>
+    <title>Managing your front-end with webpack</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+  </head>
+  <body class="hljs-monokai_sublime">
+<textarea id="source">
+
+    name: cover
+
+    <img class="peerigon-logo" src="assets/img/peerigon-logo.png">
+
+    # require() everything
+
+    Johannes Ewald<br>
+    Reject.js / September 11th, 2014
+
+    ---
+    layout: true
+    class: center, middle
+
+    .slide-header-left[
+    require() everything
+    ]
+    .slide-header-right[
+    September 11th, 2014
+    ]
+
+    ---
+
+    <img src="assets/img/peerigon-logo-big.png" width="400" style="position: relative; left: -50px">
+
+    ---
+
+    <img src="assets/img/webpack-logo.png">
+    [webpack.github.io](http://webpack.github.io/)
+
+    ---
+
+    What is a module bundler?
+
+    ---
+
+    `a.js`
+
+    ```javascript
+    var b = require("./b.js");
+    console.log(b);
+    ```
+
+    `b.js`
+
+    ```javascript
+    module.exports = 42;
+    ```
+
+    ---
+
+    `bundle.js`
+
+    ```javascript
+    ({
+    "./a.js": function(module, exports, require) {
+        var b = require("./b.js");
+        console.log(b);
+    },
+    "./b.js": function(module, exports, require) {
+        module.exports = 42;
+    }})
+    ```
+
+    ---
+
+    `bundle.js` can now be executed at once in the browser.
+
+    ---
+
+    But what about different module styles?
+
+    ---
+
+    CommonJS
+
+    ```javascript
+    var someModule = require("./someModule.js");
+    module.exports = 42;
+    ```
+
+    AMD
+    ```javascript
+    define(["./someModule.js"] , function (someModule) {
+        return 42;
+    });
+    ```
+
+    ES6 modules
+    ```javascript
+    import someModule from "./someModule.js";
+    export default 42;
+    ```
+
+    ---
+
+    Webpack understands all of them.
+
+    ---
+
+    But websites are more than just JavaScript:
+
+    - HTML
+    - CSS
+    - Fonts
+    - Images
+
+    ---
+
+    Wouldn't it be nice if we could all just **require()™** them?
+
+    ---
+
+
+    `HelloWorld.js`
+    ```javascript
+    var HelloWorld = View.extend({
+        template: require("./HelloWorld.html"),
+        styles: require("./HelloWorld.css")
+    });
+    ```
+
+    ---
+
+    In fact, aren't html and css files just modules?
+
+    ---
+
+    CSS provides a syntax for referencing required files:
+
+    ```css
+    @font-face {
+    font-family: 'Yanone Kaffeesatz';
+    src: url(assets/fonts/yanonekaffeesatz-regular-webfont.woff) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    }
+    ```
+
+    ```css
+    @import "reset.css";
+    ```
+
+    ---
+
+    So does HTML:
+
+    ```html
+    <img src="assets/img/alamid-logo.svg">
+    ```
+
+    ---
+
+    That's were loaders come in...
+
+    ---
+
+    ## Loaders
+
+    > Loaders are transformations that are applied on files. They preprocess files. For instance they can transform CoffeeScript to JavaScript.
+    <cite>[webpack.github.io/docs/loaders.html](http://webpack.github.io/docs/loaders.html)</cite>
+
+    ---
+
+    ```bash
+    $ npm i html-loader css-loader --save
+    ```
+
+    ---
+
+    ```bash
+    ERROR in ./assets/img/alamid-logo.svg
+    Module parse failed: /home/jhnns/example/assets/img/alamid-logo.svg Line 1: Unexpected token <
+    You may need an appropriate loader to handle this file type.
+    ```
+
+    ---
+
+    How to handle assets that don't need to be interpreted further?
+
+    ---
+
+    ```bash
+    $ npm i file-loader --save
+    ```
+
+    ---
+
+    `webpack.config.js`
+
+    ```javascript
+    module.exports = {
+        // ...
+        module: {
+            loaders: [
+                { test: /\.html$/i, loader: "html" },
+                { test: /\.css$/i, loader: "css" },
+                { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+                    loader: "file" }
+            ]
+        }
+        // ...
+    };
+    ```
+
+    ---
+
+    The html file for example now looks like
+
+    ```javascript
+    module.exports = "<img src=\"" + __webpack_require__(6) + "\">";
+    ```
+
+    ---
+
+    ... and the svg
+
+    ```javascript
+    module.exports = __webpack_require__.p + "8f73676dc795be128a9bc94a2695e3be.svg"
+    ```
+
+    ---
+
+    But what if we wanted to use LESS instead of CSS?
+
+    --
+
+    ```bash
+    $ npm i less-loader --save
+    ```
+
+    --
+
+    ```javascript
+    { test: /\.less$/i, loader: "css!less" }
+    ```
+
+    ---
+
+    There's a loader for everything™
+
+    .code[
+    <img src="assets/img/loaders-list.png">
+    ]
+
+    ---
+
+    There are also plenty of other useful features and plugins:
+
+    - webpack-dev-server for development
+    - SourceMaps support
+    - AppCachePlugin for the HTML5 AppCache
+    - DedupePlugin for reducing duplicate modules
+    - ComponentPlugin for using component.io
+    - I18nPlugin
+    - HotModuleReplacementPlugin
+
+    ---
+
+    Who is using webpack?
+
+    - Instagram
+    - Süddeutsche Zeitung
+
+    ---
+
+    The docs on [webpack.github.io](http://webpack.github.io) are still work in progress ...
+
+    ---
+
+    ... but you can get fast support in webpack's gitter chat on [gitter.im/webpack/webpack](https://gitter.im/webpack/webpack)
+
+    ---
+
+    Thank you for listening.
+
+    ---
+
+    Contact me
+
+    on GitHub [github.com/jhnns](https://github.com/jhnns/)
+
+    on Twitter [@jhnnns](https://twitter.com/jhnnns)
+
+</textarea>
+    <script src="bower_components/remark/out/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        //ratio: '4:3'
+        ratio: '16:9'
+      });
+    </script>
+  </body>
+</html>
