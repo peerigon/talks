@@ -2,7 +2,7 @@ presentations
 =============
 
 
-## [Fighting Spaghetti-Code with Promises & Generators](https://peerigon.github.io/presentations/2015-07-21-webandwine-fighting-spaghetti-code-with-es2015/fighting-spaghetti-code-with-es2015.pdf
+## [Fighting Spaghetti-Code with Promises & Generators](https://peerigon.github.io/presentations/2015-07-21-webandwine-fighting-spaghetti-code-with-es2015/fighting-spaghetti-code-with-es2015.pdf)
 
 > How ES2015 makes your code more readable and maintainable using Promises and Generators
 
