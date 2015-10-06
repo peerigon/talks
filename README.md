@@ -1,6 +1,9 @@
 presentations
 =============
 
+## [JSConf.eu 2015 Recap](http://peerigon.github.io/talks/2015-10-06-webandwine-jsconfeu-recap)
+
+>Recap of JSConf.eu 2015 
 
 ## [Fighting Spaghetti-Code with Promises & Generators](https://peerigon.github.io/talks/2015-07-21-webandwine-fighting-spaghetti-code-with-es2015/fighting-spaghetti-code-with-es2015.pdf)
 
