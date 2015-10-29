@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html id="slide">
+<head>
+    <title>Native Apps are deprecated</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<textarea id="source">
+
+    name: cover
+
+    <img src="assets/img/peerigon.svg" style="width: 20vw; margin-top: 5vh;">
+
+    # Native Apps Are Deprecated
+
+    .slide-cover[
+    State of Mobile Web<br>
+    ]
+
+    .slide-author[
+    Michael Jaser<br>
+    michael.jaser@peerigon.com
+    ]
+
+    ---
+    layout: true
+    class: center, middle
+
+    .slide-header-left[
+    Native Apps Are Deprecated
+    ]
+    .slide-header-right[
+    Mobile Day
+    ]
+
+    ---
+
+    <img src="assets/img/peerigon.svg" width="500"/>
+
+    ---
+
+    <img src="assets/img/peerigon-devices.png" style="height: 30vh; margin-top: 1rem; margin-bottom: -1rem"/>
+
+    > Peerigon hilft dir und deinen Freunden, Freizeitprojekte gemeinsam auf die Beine zu stellen.
+
+    ---
+
+    - Mobile-App
+    - Pure JavaScript, HTML & CSS
+    - Backend mit Node.js
+    - Datenschutz!
+    - Werbefreiheit!
+
+    Mehr auf [peerigon.com](https://peerigon.com)
+
+    ---
+
+    # Agenda?
+
+    ---
+
+    # 1. Definition of Terms
+
+    ---
+
+    ## Mobile Web
+
+    >"The mobile Web refers to the use of browser-based Internet services from handheld mobile devices, such as smartphones or feature phones, through a mobile or other wireless network."
+
+    <small>https://en.wikipedia.org/wiki/Mobile_Web</small>
+
+    ---
+
+    ## Mobile Browser
+
+    >"A mobile browser is a web browser designed for use on a mobile device such as a mobile phone or PDA. Mobile browsers are optimized so as to display Web content most effectively for small screens on portable devices."
+
+    <small>https://en.wikipedia.org/wiki/Mobile_browser</small>
+
+    ---
+
+    ## Web-App
+
+    >"In computing, a web application or web app is a client-server software application in which the client (or user interface) runs in a web browser."
+
+    <small>https://en.wikipedia.org/wiki/Web_application</small>
+
+    ---
+
+    ## Mobile Web-App
+
+    the same as a Web-App but optimized for mobile devices
+
+    - touch
+    - small device screens
+    - "native" behaviour
+
+    ---
+
+    ## Web-App vs. Website
+
+
+    --
+
+    ## Single Page Application
+
+    ---
+
+    # 2. Mobile Web Recap
+
+    ---
+
+    ## 1994
+
+    <img src="assets/img/Apple_Newton_PocketWeb.jpg" style="height: 30vh; margin-top: 1rem; margin-bottom: 1rem"/><br>
+    <small>http://www.teco.edu/pocketweb/</small>
+
+    ---
+
+    <img src="assets/img/pocketWeb.gif" style="height: 30vh; margin-top: 1rem; margin-bottom: 1rem"/><br>
+    <small>http://www.teco.edu/pocketweb/</small>
+    ---
+
+    ... not much ...
+
+    ---
+
+    ## 2007
+
+    ---
+
+    ## iPhone
+
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/8Vq993Td6ys" frameborder="0" allowfullscreen></iframe>
+    <!--<video src="./assets/Safari%20-%20iPhone%20Development%20Platform-8Vq993Td6ys.mp4" />-->
+
+    <small>https://www.youtube.com/watch?v=8Vq993Td6ys</small>
+
+    ---
+
+    >“Developers and users alike are going to be very surprised and pleased at how great these applications look and work on iPhone,” said Steve Jobs, Apple’s CEO. “Our innovative approach, using Web 2.0-based standards, lets developers create amazing new applications while keeping the iPhone secure and reliable.”
+
+    <small>http://www.apple.com/pr/library/2007/06/11iPhone-to-Support-Third-Party-Web-2-0-Applications.html</small>
+
+    ---
+
+    ## 2008
+
+    ---
+
+    ## Android
+
+    <img src="assets/img/android-robot.svg">
+
+    ---
+
+    The first commercially available smartphone running Android was the HTC Dream, released on October 22, 2008.
+
+    <small>http://gizmodo.com/5053264/t-mobile-g1-full-details-of-the-htc-dream-android-phone</small>
+
+    ---
+
+    ## [And there are more...](https://en.wikipedia.org/wiki/Mobile_operating_system)
+
+    - Fire OS (Amazon)
+    - Windows Phone
+    - BlackBerry
+    - Sailfish OS
+    - Tizen
+    - Ubuntu Touch OS
+    - ...
+
+    ---
+
+    >"In 2014, more than a billion smartphones were sold and global market share was 80.7% for Android, 15.4% for iOS, 2.8% for Windows Phone and remaining 1.1% for all other platforms."
+
+    <small>http://www.gartner.com/newsroom/id/2996817</small>
+
+    ---
+
+    <img src="./assets/img/ios-logo.svg" style="height:15vh;"/><br>
+
+    <img src="./assets/img/android-robot.svg" style="height:20vh;" />
+
+    ---
+
+    ## What's the Browser like on Mobile?
+
+    ---
+
+    ## Android
+
+    __Android Browser__ <br>
+    <small>1.0 - 4.0 (2008 - 2012)</small>
+
+    <img src="./assets/img/android-browser.png" style="height:10vh;"/>
+
+    __Google Chrome__ <br>
+    <small>since 4.1 (June 2012)</small>
+
+    <img src="./assets/img/chrome-android.svg" style="height:10vh;"/>
+
+    ---
+
+    ## iOS
+
+    __Mobile Safari__ <br>
+    <img src="./assets/img/safari-ios.svg" style="height:10vh;" />
+
+    ---
+
+    ## What do they have in common?
+
+    ---
+
+    <img src="./assets/img/webkit-logo.png" />
+
+    Well... there is WebKit!
+
+    ---
+
+    ## Browser Architecture
+
+    <img src="./assets/img/browser-architecture.png" />
+
+    <small>http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/</small>
+
+    ---
+
+    ## Rendering Engine
+
+    >The responsibility of the rendering engine is well... Rendering, that is display of the requested contents on the browser screen.
+
+    - HTML
+    - CSS
+    - Images
+
+    <small>http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/</small>
+
+    ---
+
+    ## JavaScript Engine
+
+    - JavaScript interpreter
+    - parses and executes JavaScript code
+    - implement ECMA-Script (5, 2015, 2016...)
+
+    ---
+
+    ## [Web APIs](https://developer.mozilla.org/en-US/docs/WebAPI)
+
+    >"WebAPI is a term used to refer to a suite of device compatibility and access APIs that allow Web apps and content to access device hardware (such as battery status or the device vibration hardware), as well as access to data stored on the device (such as the calendar or contacts list)."
+
+    ---
+
+    ## [Web APIs](https://developer.mozilla.org/en-US/docs/WebAPI)
+
+    - accessible via JavaScript
+    - not implemented in JS Engine
+    - implemented by the Browser
+    - "Standard Library"
+    - Subset of HTML5?
+
+
+    ## What do we have in common?
+
+    __Safari__
+
+    -  WebKit
+    -  UI
+    -  JavaScriptCore
+
+    __Chrome__
+
+    - WebKit
+    - UI
+    - ~~JavaScriptCore~~ V8
+
+    ---
+
+    ## WebKit
+
+    >WebKit is an open source rendering engine which started as an engine for the Linux platform and was modified by Apple to support Mac and Windows. See webkit.org for more details.
+
+    ---
+
+    ## What does it mean?
+
+    - fairly similar rendering of HTML and CSS
+    - similar WebAPIs
+    - different JavaScript implementations
+
+    ---
+
+    ## 2013: WebKit vs. Blink
+
+    - [Google forked WebKit](http://arstechnica.com/information-technology/2013/04/google-going-its-own-way-forking-webkit-rendering-engine/) 2013
+    - the Project is called [Blink](http://www.chromium.org/blink)
+    - used by Chromium, Chrome, Opera, ...
+
+    ---
+
+    ## Safari & Chrome diverged
+
+    __Safari__
+
+    -  WebKit
+    -  UI
+    -  JavaScriptCore
+
+    __Chrome__
+
+    - ~~WebKit~~ Blink
+    - UI
+    - ~~JavaScriptCore~~ V8
+
+    ---
+
+    ## Comparison
+
+    __Chrome__: Blink
+
+    - [CSS](http://caniuse.com/#cats=CSS): 74%
+    - [HTML5](http://caniuse.com/#cats=HTML5): 77%
+
+    __Safari__: WebKit
+
+    - [CSS](http://caniuse.com/#cats=CSS): 68%
+    - [HTML5](http://caniuse.com/#cats=HTML5): 66%
+
+    <small>http://caniuse.com/</small>
+
+    ---
+
+    ## ES2015 Coverage
+
+    __Chrome__: V8
+
+    - 29%
+
+    __Safari__: JavaScript Core (aka Nitro)
+
+    - 54%
+
+    <small>https://kangax.github.io/compat-table/es6/</small>
+
+    ---
+
+    ## How fast is JavaScript?
+
+    - _Very_ [FAST](http://stackoverflow.com/questions/17036059/javascript-is-4-times-faster-than-c)
+    - it doesn't matter, because JS is not the bottleneck
+
+    ---
+
+    ## Web APIs
+
+    __Chrome__
+
+    - [78%](http://caniuse.com/#cats=JS%20API)
+
+    __Firefox__
+
+    - [83%](http://caniuse.com/#cats=JS%20API)
+
+    __Safari__
+
+    - [50%](http://caniuse.com/#cats=JS%20API)
+
+    <small>http://caniuse.com/#cats=JS%20API</small>
+
+    ---
+
+    ## Summary
+
+    - we came a long way...
+    - platforms are diverse
+    - the browser wars made the web fast
+    - JavaScript is not the problem
+
+    ---
+
+    - Safari was the best web platform in the mobile web
+    - Safari is the new IE after since Google stopped contributing to WebKit
+    - we need faster implementations of WebAPIs in WebKit
+
+    ---
+
+    # Definition of Terms
+
+    - WebApp
+    - HybridApp
+
+    ---
+
+    <img src="./assets/img/google-webapps.png"/>
+
+    <small>>http://developer.android.com/guide/webapps/index.html</small>
+
+    ---
+
+    ## Hosted Web-App
+
+    >A hosted app is an Open Web App that has all of its resources (HTML, CSS, JavaScript, app manifest and so on) stored on a Web server.
+    This article provides an introduction to hosted apps and links to everything you need to know about hosted apps from a developer standpoint.
+
+    <small>https://develochrome-android.svgper.mozilla.org/en-US/Marketplace/Options/Hosted_apps</small>
+
+    ---
+
+    ## Packaged Web-App
+
+    >A packaged app is an Open Web App that has all of its resources (HTML, CSS, JavaScript, app manifest, and so on) contained in a zip file, instead of having its resources on a Web server.
+
+    <small>https://developer.mozilla.org/en-US/Marketplace/Options/Packaged_apps</small>
+
+    ---
+
+    ## Hybrid Packaged Web-App
+
+    ---
+
+    # What should you do?
+
+    - Web is the future
+    - not ready yet but getting better every day
+    - suitable for most apps
+    - make it hybrid if you need it
+
+    ---
+
+    >"Maybe I’m an idealist, but I think we should be able to build most apps with web tech. The platform has come a long way"
+    Henrik Joreteg (@HenrikJoreteg)
+
+    ---
+
+    # Questions?
+
+    ---
+
+</textarea>
+<script src="bower_components/remark/out/remark.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+    var slideshow = remark.create({
+        highlightStyle: "ir_black"
+        //,ratio: '16:9'
+    });
+</script>
+</body>
+</html>
