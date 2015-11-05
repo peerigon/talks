@@ -90,11 +90,8 @@
 
     ## Mobile Web-App
 
-    the same as a Web-App but optimized for mobile devices
-
-    - touch
-    - small device screens
-    - "native" behaviour
+    - Touch
+    - Small screens
 
     ---
 
@@ -112,16 +109,20 @@
 
     ## 1994
 
-    <img src="assets/img/Apple_Newton_PocketWeb.jpg" style="height: 30vh; margin-top: 1rem; margin-bottom: 1rem"/><br>
+    <img src="assets/img/Apple_Newton_PocketWeb.jpg" style="height: 60vh; margin-top: 1rem; margin-bottom: 1rem"/><br>
     <small>http://www.teco.edu/pocketweb/</small>
 
     ---
 
-    <img src="assets/img/pocketWeb.gif" style="height: 30vh; margin-top: 1rem; margin-bottom: 1rem"/><br>
+    <img src="assets/img/pocketWeb.gif" style="height: 60vh; margin-top: 1rem; margin-bottom: 1rem"/><br>
     <small>http://www.teco.edu/pocketweb/</small>
     ---
 
-    ... not much ...
+    ## Not much...
+
+    <img src="./assets/img/boring.gif" />
+
+    <small>http://giphy.com/gifs/the-simpsons-school-bart-XuDlhFtiWXZEk</small>
 
     ---
 
@@ -178,44 +179,44 @@
 
     ---
 
-    <img src="./assets/img/ios-logo.svg" style="height:15vh;"/><br>
+    <img src="./assets/img/ios-logo.svg" style="height:35vh;"/><br>
 
-    <img src="./assets/img/android-robot.svg" style="height:20vh;" />
+    <img src="./assets/img/android-robot.svg" style="height:45vh;" />
 
     ---
 
-    ## What's the Browser like on Mobile?
+    ## What's the Browsers like on Mobile?
 
     ---
 
     ## Android
 
-    __Android Browser__ <br>
-    <small>1.0 - 4.0 (2008 - 2012)</small>
+    ---
 
-    <img src="./assets/img/android-browser.png" style="height:10vh;"/>
+    <img src="./assets/img/android-browser.png" style="height:20vh;"/>
+
+     __Android Browser__ [RIP](http://www.unwiredview.com/2013/11/21/android-4-4-kitkat-ships-without-browser-app-oems-have-to-license-chrome-or-build-their-own/)<br>
+    <small>1.0 - 4.3 (2008 - 2013)</small>
+
+
+    <img src="./assets/img/chrome-android.svg" style="height:20vh;"/>
 
     __Google Chrome__ <br>
     <small>since 4.1 (June 2012)</small>
-
-    <img src="./assets/img/chrome-android.svg" style="height:10vh;"/>
 
     ---
 
     ## iOS
 
-    __Mobile Safari__ <br>
-    <img src="./assets/img/safari-ios.svg" style="height:10vh;" />
+    ---
+
+    <img src="./assets/img/safari-ios.svg" style="height:30vh;" />
+
+    __Mobile Safari__
 
     ---
 
-    ## What do they have in common?
-
-    ---
-
-    <img src="./assets/img/webkit-logo.png" />
-
-    Well... there is WebKit!
+    ## Wait! What is a browser?
 
     ---
 
@@ -255,27 +256,25 @@
 
     ## [Web APIs](https://developer.mozilla.org/en-US/docs/WebAPI)
 
-    - accessible via JavaScript
-    - not implemented in JS Engine
-    - implemented by the Browser
     - "Standard Library"
-    - Subset of HTML5?
+    - Bridge to the Operation System
+    - accessible via JavaScript
+    - implemented by the Browser
+    - i.e. `AJAX`, `window`, `console.log`
 
     ---
 
-    ## What do we have in common?
+    Browser = pretty complex but powerful platform
 
-    __Safari__
+    ---
 
-    -  WebKit
-    -  UI
-    -  JavaScriptCore
+    ## What do they have in common?
 
-    __Chrome__
+    ---
 
-    - WebKit
-    - UI
-    - ~~JavaScriptCore~~ V8
+    <img src="./assets/img/webkit-logo.png" />
+
+    Well... there is WebKit!
 
     ---
 
@@ -285,9 +284,23 @@
 
     ---
 
+    ## What do we have in common?
+
+    __Safari__
+
+    -  WebKit
+    -  JS-Engine: JavaScriptCore
+
+    __Chrome__
+
+    - WebKit
+    - JS-Engine: ~~JavaScriptCore~~ V8
+
+    ---
+
     ## What does it mean?
 
-    - fairly similar rendering of HTML and CSS
+    - similar rendering of HTML and CSS
     - similar WebAPIs
     - different JavaScript implementations
 
@@ -306,13 +319,11 @@
     __Safari__
 
     -  WebKit
-    -  UI
     -  JavaScriptCore
 
     __Chrome__
 
     - ~~WebKit~~ Blink
-    - UI
     - ~~JavaScriptCore~~ V8
 
     ---
@@ -323,73 +334,427 @@
 
     - [CSS](http://caniuse.com/#cats=CSS): 74%
     - [HTML5](http://caniuse.com/#cats=HTML5): 77%
+    - [JS: ES2015](https://kangax.github.io/compat-table/es6/) 29%
 
     __Safari__: WebKit
 
     - [CSS](http://caniuse.com/#cats=CSS): 68%
     - [HTML5](http://caniuse.com/#cats=HTML5): 66%
-
-    <small>http://caniuse.com/</small>
-
-    ---
-
-    ## ES2015 Coverage
-
-    __Chrome__: V8
-
-    - 29%
-
-    __Safari__: JavaScript Core (aka Nitro)
-
-    - 54%
-
-    <small>https://kangax.github.io/compat-table/es6/</small>
-
-    ---
-
-    ## How fast is JavaScript?
-
-    - _Very_ [FAST](http://stackoverflow.com/questions/17036059/javascript-is-4-times-faster-than-c)
-    - it doesn't matter, because JS is not the bottleneck
+    - [JS: ES2015](https://kangax.github.io/compat-table/es6/) 54%
 
     ---
 
     ## Web APIs
 
-    __Chrome__
+    __Chrome__: [78%](http://caniuse.com/#cats=JS%20API)
 
-    - [78%](http://caniuse.com/#cats=JS%20API)
+    __Safari__: [50%](http://caniuse.com/#cats=JS%20API)
 
-    __Firefox__
+    __Firefox__: [83%](http://caniuse.com/#cats=JS%20API)
 
-    - [83%](http://caniuse.com/#cats=JS%20API)
-
-    __Safari__
-
-    - [50%](http://caniuse.com/#cats=JS%20API)
 
     <small>http://caniuse.com/#cats=JS%20API</small>
 
     ---
 
+    <img src="./assets/img/mobile-web-stats.png" />
+
+    ---
+
+    ## Fragmentation
+
+    <img src="./assets/img/ios-android-comparison.png" style="width: 100vw;" />
+
+    <small>http://thenextweb.com/insider/2015/08/05/this-is-what-android-fragmentation-looks-like-in-2015/</small>
+
+    ---
+
     ## Summary
 
-    - we came a long way...
-    - platforms are diverse
-    - the browser wars made the web fast
-    - JavaScript is not the problem
+    - Focus on Mobile Chrome and Mobile Safari
+    - Legacy support is painful
+    - Android Fragmentation is a problem
+    - [Safari is the new IE since Google dropped WebKit](http://nolanlawson.com/2015/06/30/safari-is-the-new-ie/)
 
     ---
 
-    - Safari was the best web platform in the mobile web
-    - Safari is the new IE since Google dropped WebKit
-    - can someone please contribute to WebKit?
-    - Android is a pretty awesome Mobile Web-Platform nowadays
+    <blockquote class="twitter-tweet" lang="de"><p lang="en" dir="ltr">If Apple are throttling back on web platform work in Safari, I wish they&#39;d allow other browsers on iOS so someone else can have a go</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/612992537238896641">22. Juni 2015</a></blockquote>
+
 
     ---
 
-    # 3. Definition of Terms II
+    # 4. A biased view on the Web
 
+    <img src="./assets/img/netscape.gif" />
+
+    ---
+
+    ## The Web is slow
+
+    ---
+
+    ## JavaScript is Slow
+
+    ---
+
+    ## How fast is JavaScript?
+
+    TL;DR: _Very_ fast
+
+    ...it doesn't matter, because JS is not the bottleneck
+
+    ---
+
+    ## ASM.js
+
+    - efficient subset of JavaScript
+    - suitable for ahead of time optimizing compilation
+
+    ---
+
+    ## Emscripten
+
+    - LLVM to JavaScript compiler (to ASM.js)
+    - compile C++ into JS and use it on the web
+    - see http://www.quakejs.com/
+
+    ---
+
+    ## WebApps are slow
+
+    ---
+
+    ## "Fast" depends heavily on your Architecture
+
+    ---
+
+    ## Use Web Workers
+
+    - runs scripts in background thread
+    - doesn't block the main thread execution (UI)
+
+    ---
+
+    ## Reduce Load Time
+
+    - Reduce, optimize and compress your resources
+    - add lazy loading
+
+    ---
+
+    ## UI Responsiveness
+
+    ---
+
+    ## 300 ms Click Delay
+
+    <iframe width="760" height="428" src="https://www.youtube.com/embed/AjUpiwvIa5A" frameborder="0" allowfullscreen></iframe>
+
+    ---
+
+    ## 300 ms Click Delay
+
+    - recognize tap vs. double-tap
+    - added 300 ms delay
+    - removed in "App Mode" on Mobile Chrome
+    - Libraries like fastclick can be used to solve the problem
+
+    ---
+
+    ## Rendering is slow
+
+    ---
+
+    - DOM access is slow
+    - Images are slow and use precious RAM
+
+    ---
+
+    ## Rendering is slow
+
+    - optimize Images
+    - take care of your CSS
+    - use accelerated Animations
+
+    ---
+
+    ## The UI is not "native"
+
+    - there are Frameworks for "native" styling
+    - Consistency within of the App is more important than of the Platform
+    - Take care of platform specific features
+    - i.e Context Menu on Android
+
+    ---
+
+    ## Poor Developer Experience
+
+    ---
+
+    ## Great IDEs
+
+    ---
+
+    ## Atom
+
+    <img src="./assets/img/atom.png" style="width: 90vw;"/>
+
+    ---
+
+    ## WebStorm
+
+     <img src="./assets/img/webstorm.png" style="height: 70vw;"/>
+
+    ---
+
+    ## Debugging is painful
+
+    ---
+
+    ## Not anymore
+
+    - Web Inspector
+    - Universal Inspector (Firefox)
+
+    ---
+
+    <img src="./assets/img/inspector-1.png" style="height: 120vh;" />
+
+    ---
+
+
+    <img src="./assets/img/inspector-2.png" style="height: 120vh;" />
+
+
+    ---
+
+    <img src="./assets/img/inspector-3.png" style="height: 120vh;" />
+
+    ---
+
+    <img src="./assets/img/inspector-remote.png" style="height: 120vh;" />
+
+    ---
+
+    ## Everything is inline...
+
+    ---
+
+    ## Modular
+
+    ```javascript
+    import "../shared/styles/main.less";
+
+    import React from "react";
+    import Router from "react-router";
+    import { cookie } from "browser-cookie-lite";
+
+    import { isDev, isStage } from "../shared/lib/env"
+    import routes from "../shared/routes";
+    import PiwikHelper from "../shared/lib/PiwikHelper";
+    import ContextProvider from "../shared/components/ContextProvider";
+    import determineLocale from "../client/lib/determineLocale";
+    ```
+
+    ---
+
+    ## ES 2015
+
+    ```javascript
+    const context = {
+        lang: determineLocale(),
+        page: () => resolvePageFromPath(document.location.pathname)
+    };
+
+    const Client = (
+        <ContextProvider {...context}>
+            {() => <Router history={createBrowserHistory()} routes={routes} />}
+        </ContextProvider>
+    );
+
+
+    PiwikHelper.init(cookie, cookie);
+    if (!PiwikHelper.isDeclined()) {
+        Piwik
+            .init(PiwikHelper.instanceUrl, PiwikHelper.getSiteId())
+            .loadScript()
+            .catch((err) => () => {
+                if (isDev || isStage) {
+                    throw err;
+                }
+            });
+    }
+
+    React.render(Client, document.body);
+    ```
+
+    ---
+
+    ## Web-Apps can't be used offline
+
+    - Application Manifest
+    - ServiceWorker
+    - LocalStorage / SessionStorage
+    - IndexedDB
+
+    ---
+
+    ## ServiceWorker
+
+    - proxy server that sits between app and the browser
+    - intercept network requests and customize responses
+    - easy way to handle caching
+    - granular control over actions
+
+    ---
+
+    ## I can't access the ....
+
+    ---
+
+    ## ... camera
+
+    ---
+
+    ## [Mediacapture Stream](http://www.w3.org/TR/mediacapture-streams/)
+
+    <img src="assets/img/video.png" />
+
+    ---
+
+    ## ... geolocation
+
+    <img src="assets/img/geolocation-permission.png" />
+
+    ---
+
+    <img src="assets/img/geolocation-map.png" />
+
+    ---
+
+    ## geolocation works on...
+
+    - Android Browser
+    - Firefox
+    - Mobile Safari
+    - Mobile Chrome
+
+    ---
+
+    ## I can't use crypto..
+
+    ---
+
+    ## WebCrypto
+
+    - Android Browser
+    - Mobile Chrome
+    - Mobile Safari
+
+    <small>http://caniuse.com/#search=crypto</small>
+
+    ---
+
+    ## ...
+
+    ---
+
+    ## Permissions?
+
+    - permissions asked by the browsers
+    - and the manifest for hosted apps
+
+    ---
+
+    ## I can't send notifications
+
+    ---
+
+    ## Yes, you can!
+
+    [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
+
+    <img src="assets/img/notification-bubble.png" />
+
+    - [Spec](http://www.w3.org/TR/2015/REC-notifications-20151022/)
+
+    ---
+
+    - Android Webview
+    - Firefox OS
+    - Mobile Chrome
+
+    ---
+
+
+    ## I can't access the AppStore/PlayStore
+
+    see next Slides...
+
+    ---
+
+    # 5. Marketplaces vs. OpenWeb
+
+    <img src="assets/img/walled-garden.gif" />
+
+    <small>http://fuckyeahreactiongifs.tumblr.com/post/9041021691</small>
+
+    ---
+
+    ## Do you really like the Marketplaces?
+
+    ---
+
+    ## Censoring
+
+    >“The Chaos Computer Club in Frankfurt developed a tvOS application to bring talks from its media.ccc.de portal to Apple TV.
+    Apple refused to release the app and took offense at the content.”
+
+    <small>https://unthoughted.wordpress.com/2015/10/31/apple-verbietet-inhalte-vom-chaos-computer-club-auf-ihrer-plattform/</small>
+
+    ---
+
+    ## "Angels Share"
+
+    - You get 70% of sales revenue.
+    - This means: Apple get's 30 %
+
+    <small>https://developer.apple.com/programs/whats-included/</small>
+
+    ---
+
+    ## Review Process / Painful Updates
+
+    <img src="assets/img/boring-2.gif" />
+
+    - takes up to a week
+    - on every update
+
+    <small>http://www.reddit.com/r/AskReddit/comments/r98mk/reddit_what_is_your_favorite_reaction_gif/</small>
+
+    ---
+
+    ## How should they find your App?
+
+
+    ---
+
+    ## + Simple Monetization
+
+
+    ---
+
+    ## + "Security" by Reviews
+
+    ---
+
+    # Hybrid Apps
+
+    <img src="./assets/img/hybrid-car.gif" />
+
+    ---
+
+    ## Definition of Terms II
     ---
 
     <img src="./assets/img/google-webapps.png"/>
@@ -401,9 +766,8 @@
     ## Hosted Web-App
 
     >A hosted app is an Open Web App that has all of its resources (HTML, CSS, JavaScript, app manifest and so on) stored on a Web server.
-    This article provides an introduction to hosted apps and links to everything you need to know about hosted apps from a developer standpoint.
 
-    <small>https://develochrome-android.svgper.mozilla.org/en-US/Marketplace/Options/Hosted_apps</small>
+    <small>https://developer.mozilla.org/en-US/Marketplace/Options/Hosted_apps</small>
 
     ---
 
@@ -416,102 +780,6 @@
     ---
 
     ## Hybrid Packaged Web-App
-
-    ---
-
-
-    # 4. A biased view on the Web
-
-
-    ---
-
-    ## The Web is slow
-
-    ---
-
-    ## The UI is not "native"
-
-    ---
-
-    ## Everything is inline...
-
-    ---
-
-    ## With JavaScript? Really?
-
-    ---
-
-    ## There is no tool support
-
-    ---
-
-    ## Debugging is painful
-
-    ---
-
-    ## Web-Apps can't be used offline
-
-    ---
-
-    ## I can't access the ....
-
-    ---
-
-    ## ... camera
-
-    ---
-
-    ## ... geolocation
-
-    ---
-
-    ## ... ...
-
-    ---
-
-    ## Everyone can see the apps sources
-
-    ---
-
-    ## I can't access the AppStore/PlayStore
-
-    see next Slides...
-
-    ---
-
-    ---
-
-    # 5. Marketplaces vs. OpenWeb
-
-    ---
-
-    ## Do you really like the Maketplaces?
-
-    ---
-
-    ## Censoring
-
-    ---
-
-    ## "Angels Share"
-
-    ---
-
-    ## Review Process / Painful Updates
-
-    ---
-
-    ## How should they find your App?
-
-    ---
-
-    ## Simple Monetization
-
-
-    ---
-
-    ## "Security" by Reviews
-
 
     ---
 
@@ -555,5 +823,6 @@
         //,ratio: '16:9'
     });
 </script>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
