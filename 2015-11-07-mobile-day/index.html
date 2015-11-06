@@ -49,13 +49,13 @@
 
     ---
 
-    - Mobile-App
+    - Mobile App
     - Pure JavaScript, HTML & CSS
-    - Backend mit Node.js
-    - Datenschutz!
-    - Werbefreiheit!
+    - Node.js Backend
+    - Privacy!
+    - No Ads!
 
-    Mehr auf [peerigon.com](https://peerigon.com)
+    See [peerigon.com](https://peerigon.com)
 
     ---
 
@@ -65,11 +65,11 @@
     - Web / Mobile Web / Hybrid / Backends
     - JavaScript / Node.js / all kinds of Databases
     - Traninings
-    - Software-Development
+    - Software Development
 
     ---
 
-    # Agenda?
+    # Agenda
 
     - Mobile Web Recap
     - Biased view on the Web
@@ -100,7 +100,7 @@
 
     ---
 
-    ## Web-App
+    ## Web App
 
     >"In computing, a web application or web app is a client-server software application in which the client (or user interface) runs in a web browser."
 
@@ -108,18 +108,17 @@
 
     ---
 
-    ## Mobile Web-App
+    ## Mobile Web App
 
     - Touch
-    - Small screens
+    - Small Screens
 
     ---
 
-    ## Web-App vs. Website
+    ## Web App vs. Website
 
-    - Web-Apps are dynamic applications based on Web Technologies
-    - Web-Apps are mostly Single Page Applications
-    - Websites are mostly static sites or rendered on the serverside
+    - Web Apps are dynamic applications with heavy interaction
+    - Websites are mostly static sites rendered on the Server
 
     ---
 
@@ -128,7 +127,7 @@
     - Single HTML File
     - UI handled via JavaScript
     - decoupled from Backend
-    - loads data from Backend via AJAX/WebSockets
+    - loading data from Backend via AJAX/WebSockets
 
     ---
 
@@ -184,19 +183,12 @@
 
     ---
 
-    The first commercially available smartphone running Android was the HTC Dream, released on October 22, 2008.
-
-    <small>http://gizmodo.com/5053264/t-mobile-g1-full-details-of-the-htc-dream-android-phone</small>
-
-    ---
-
     ## [And there are more...](https://en.wikipedia.org/wiki/Mobile_operating_system)
 
     - Fire OS (Amazon)
     - Windows Phone
-    - BlackBerry
     - Sailfish OS
-    - Tizen
+    - Firefox OS
     - Ubuntu Touch OS
     - ...
 
@@ -214,38 +206,11 @@
 
     ---
 
-    ## What's the Browsers like on Mobile?
+    # Mobile Browsers
 
     ---
 
-    ## Android
-
-    ---
-
-    <img src="./assets/img/android-browser.png" style="height:20vh;"/>
-
-     __Android Browser__ [RIP](http://www.unwiredview.com/2013/11/21/android-4-4-kitkat-ships-without-browser-app-oems-have-to-license-chrome-or-build-their-own/)<br>
-    <small>1.0 - 4.3 (2008 - 2013)</small>
-
-
-    <img src="./assets/img/chrome-android.svg" style="height:20vh;"/>
-
-    __Google Chrome__ <br>
-    <small>since 4.1 (June 2012)</small>
-
-    ---
-
-    ## iOS
-
-    ---
-
-    <img src="./assets/img/safari-ios.svg" style="height:30vh;" />
-
-    __Mobile Safari__
-
-    ---
-
-    ## Wait! What is a browser?
+    ## What is a browser?
 
     ---
 
@@ -281,6 +246,7 @@
 
     >"WebAPI is a term used to refer to a suite of device compatibility and access APIs that allow Web apps and content to access device hardware (such as battery status or the device vibration hardware), as well as access to data stored on the device (such as the calendar or contacts list)."
 
+    <small>Formerly known as HTML5</small>
     ---
 
     ## [Web APIs](https://developer.mozilla.org/en-US/docs/WebAPI)
@@ -297,13 +263,44 @@
 
     ---
 
+    ## Which Mobile Browsers do we have?
+
+    ---
+
+    ## Android
+
+    ---
+
+    <img src="./assets/img/android-browser.png" style="height:20vh;"/>
+
+     __Android Browser__ [RIP](http://www.unwiredview.com/2013/11/21/android-4-4-kitkat-ships-without-browser-app-oems-have-to-license-chrome-or-build-their-own/)<br>
+    <small>1.0 - 4.3 (2008 - 2013)</small>
+
+
+    <img src="./assets/img/chrome-android.svg" style="height:20vh;"/>
+
+    __Google Chrome__ <br>
+    <small>since 4.1 (June 2012)</small>
+
+    ---
+
+    ## iOS
+
+    ---
+
+    <img src="./assets/img/safari-ios.svg" style="height:30vh;" />
+
+    __Mobile Safari__
+
+    ---
+
     ## What do they have in common?
 
     ---
 
     <img src="./assets/img/webkit-logo.png" />
 
-    Well... there is WebKit!
+    Well... there __was__ WebKit!
 
     ---
 
@@ -313,7 +310,7 @@
 
     ---
 
-    ## What do we have in common?
+    ## Till 2013
 
     __Safari__
 
@@ -327,15 +324,10 @@
 
     ---
 
-    ## What does it mean?
-
-    - similar rendering of HTML and CSS
-    - similar WebAPIs
-    - different JavaScript implementations
-
-    ---
-
     ## 2013: WebKit vs. Blink
+
+    <img src="assets/img/thunderstorm.gif" />
+    <small>http://www.gifbay.com/gif/thunderstorm-60115/</small>
 
     - [Google forked WebKit](http://arstechnica.com/information-technology/2013/04/google-going-its-own-way-forking-webkit-rendering-engine/) 2013
     - the Project is called [Blink](http://www.chromium.org/blink)
@@ -363,7 +355,7 @@
 
     - [CSS](http://caniuse.com/#cats=CSS): 74%
     - [HTML5](http://caniuse.com/#cats=HTML5): 77%
-    - [JS: ES2015](https://kangax.github.io/compat-table/es6/) 29%
+    - [JS: ES2015](https://kangax.github.io/compat-table/es6/) 63%
 
     __Safari__: WebKit
 
@@ -408,7 +400,6 @@
     ---
 
     <blockquote class="twitter-tweet" lang="de"><p lang="en" dir="ltr">If Apple are throttling back on web platform work in Safari, I wish they&#39;d allow other browsers on iOS so someone else can have a go</p>&mdash; Jake Archibald (@jaffathecake) <a href="https://twitter.com/jaffathecake/status/612992537238896641">22. Juni 2015</a></blockquote>
-
 
     ---
 
@@ -473,6 +464,8 @@
 
     ## Rendering is slow
 
+    ---
+
     - DOM access is slow
     - Images are slow and use precious RAM
 
@@ -487,6 +480,8 @@
     ---
 
     ## The UI is not "native"
+
+    ---
 
     - there are Frameworks for "native" styling
     - Consistency within of the App is more important than of the Platform
@@ -512,16 +507,19 @@
 
     ## Reduce Load Time
 
-    - Reduce, optimize and compress your resources
-    - add lazy loading
+    - add Caching
+    - add Compression
+    - add Lazy Loading
 
     ---
 
-    ## Choose the right Framework
+    ## Choose the right Tools
 
-    - React?
-    - Angular?
-    - Ember?
+    - keep it simple
+    - avoid bloated Frameworks (i.e. bootstrap)
+    - use only what you really need
+    - i.e. DOM Features instead of jQuery
+    - Polyfill on Demand
 
     ---
 
@@ -529,7 +527,7 @@
 
     ---
 
-    ## There are great IDEs
+    ## Not anymore! There are great IDEs
 
     ---
 
@@ -549,7 +547,7 @@
 
     ---
 
-    ## Not anymore
+    ## Nope.
 
     - Web Inspector
     - Universal Inspector (Firefox)
@@ -577,7 +575,7 @@
 
     ---
 
-    ## Modular
+    ## You can make it _Modular_
 
     ```javascript
     import "../shared/styles/main.less";
@@ -595,7 +593,7 @@
 
     ---
 
-    ## ES 2015
+    ## and use _ES 2015_
 
     ```javascript
     const context = {
@@ -629,6 +627,10 @@
 
     ## Web-Apps can't be used offline
 
+    ---
+
+    ## Yes we can!
+
     - Application Manifest
     - ServiceWorker
     - LocalStorage / SessionStorage
@@ -640,7 +642,7 @@
 
     ---
 
-    ## ServiceWorker
+    ## And there is ServiceWorker
 
     - proxy server that sits between app and the browser
     - intercept network requests and customize responses
@@ -691,11 +693,11 @@
 
     ---
 
-    ## I can't access the ....
+    ## I can't access ....
 
     ---
 
-    ## ... Camera
+    ## Camera
 
     ---
 
@@ -705,7 +707,7 @@
 
     ---
 
-    ## ... Geolocation
+    ## Geolocation
 
     <img src="assets/img/geolocation-permission.png" />
 
@@ -715,7 +717,7 @@
 
     ---
 
-    ## I can't use crypto..
+    ## Crypto
 
     ---
 
@@ -741,13 +743,53 @@
 
     ---
 
-    ## I can't send notifications
+    ## Notifications
 
     ---
 
     ## [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
 
     <video src="assets/notifications.mp4" controls="true" style="height: 120vh;" />
+
+    ---
+
+    ## But i can't send Push Notifications
+
+    ---
+
+    ## Not yet, but hopefully soon
+
+    - Proposed as a feature of ServiceWorkers
+    - there are working Demos for Firefox & Chrome
+
+    ---
+
+    ```javascript
+    self.addEventListener('push', function(event) {
+      console.log('Received a push message', event);
+
+      var title = 'Yay a message.';
+      var body = 'We have received a push message.';
+      var icon = '/images/icon-192x192.png';
+      var tag = 'simple-push-demo-notification-tag';
+
+      event.waitUntil(
+        self.registration.showNotification(title, {
+          body: body,
+          icon: icon,
+          tag: tag
+        })
+      );
+    });
+    ```
+
+    ---
+
+    ## I can't do stuff in the background while the app is closed
+
+    ---
+
+    ## Not yet, but hopefully soon
 
     ---
 
@@ -761,7 +803,7 @@
 
     ## I can't access the AppStore/PlayStore
 
-    see next Slides...
+    well...
 
     ---
 
@@ -808,15 +850,48 @@
 
     ## How should they find your App?
 
+    ---
+
+    <img src="assets/img/app-count.png" style="width:90vw;" />
 
     ---
 
-    ## + Simple Monetization
+    ## Google?
 
+    <img src="assets/img/itunes-search-google.jpg" style="width:60vw;"/>
 
     ---
 
-    ## + "Security" by Reviews
+    ## But i can make money!
+
+    <img src="assets/img/money.gif" />
+
+    <small>http://film-instant.tumblr.com/post/4533877893/robin-hood-1973</small>
+
+    ---
+
+    ## The truth...
+
+    - Marketplaces are a convenient way for selling Apps
+
+    ---
+
+    ## But...
+
+    - many Apps are for free
+    - Subscription are usually sold differently
+    - i.e. Netflix, Spotify
+    - do you really want to share your revenue?
+
+    ---
+
+    ## "Security" by Reviews
+
+    __True__, but it comes with the burden of...
+
+    - censorship
+    - shipping delays
+    - critical issues due to pending reviews
 
     ---
 
@@ -826,12 +901,29 @@
 
     ---
 
+    ## Or..
+
+    I trust in the Web, but have some nice things that the web can't offer me yet across all devices.
+
+    ---
+
     ## Definition of Terms II
     ---
 
     <img src="./assets/img/google-webapps.png"/>
 
     <small>>http://developer.android.com/guide/webapps/index.html</small>
+
+    ---
+
+    ## Hybrid App
+
+    - Native App with a WebView
+    - WebView contains your Web App
+
+    ---
+
+    <img src="assets/img/hybrid-architecture.png" style="width: 80vw;" />
 
     ---
 
@@ -851,11 +943,180 @@
 
     ---
 
-    ## Hybrid Packaged Web-App
+    ```javascript
+    document.addEventListener("deviceready", function () {
+        if (!window.plugins || !window.plugins.pushNotification) {
+            pushReady.reject(new Error("Missing PhoneGap Plugin: PushNotification"));
+        } else {
+            pushReady.resolve();
+        }
+
+        //handle app open via intents (cold start and reactivate from background)
+        handleAndroidOpen();
+
+        document.addEventListener("pause", require("./pause"));
+        document.addEventListener("resume", require("./resume"));
+        backButton.enable();
+
+    }, true);
+    ```
 
     ---
 
+    <img src="assets/img/hybrid-push.png" style="height: 120vh;"/>
+
+    ---
+
+    ## Pros
+
+    - Access to Marketplaces
+    - Access to native device capabilities
+    - Consistent WebView
+
+    ---
+
+    ## Cons
+
+    You also get the __bad__ Parts of the Platform
+
+    - Reviews
+    - Censoring
+    - Angels Share
+    - more complicated distribution
+
+    ---
+
+    ## Different WebViews?
+
+    You depend on the default WebView of the OS.
+
+    - Android Stock Browser till Android 4.4
+    - Slow
+    - Outdated
+    - Fragmented
+
+    ---
+
+    ## Enter Crosswalk
+
+    - WebView based on Chromium
+    - aligned with Chrome for Android
+    - up to date
+    - full featured WebView
+    - can be used easily as of Cordova 4.x
+
+    ---
+
+    ## Install Crosswalk
+
+    ```shell
+    npm install -g cordova
+
+    cordova create hello com.example.hello HelloWorld
+
+    cd hello
+
+    cordova platform add android
+
+    cordova plugin add cordova-plugin-crosswalk-webview
+
+    cordova build android
+    ```
+
+    ---
+
+    ## And iOS?
+
+    - Crosswalk is extending WKWebView
+    - just some more features but still the same WebView
+    - WKWebView is faster and can be extended
+
+    ---
+
+    ## But there is a downside
+
+    <img src="assets/img/boxed-browser.gif" />
+
+    - you bundle a Browser with your App
+    - big App size!
+
+    <small>http://funnycutegifs.com/post/35623105723/moar-gifs-here</small>
+    ---
+
     # 6. The Future of Apps
+
+    <video src="assets/fxos.mp4" controls="true" style="width: 80vw;"/>
+
+    ---
+
+    ## Break the Walls!
+
+    - No more Marketplaces
+    - Install Apps straight from the Web
+
+    ---
+
+    ## [Web App Manifest](http://www.w3.org/TR/appmanifest/)
+
+    ```json
+    {
+        "name": "peerigon",
+        "description": "be together",
+        "launch_path": "/",
+        "developer": {
+            "name": "peerigon",
+            "url": "https://peerigon.com"
+        },
+        "icons": {
+          "128": "icon.png"
+        }
+    }
+    ```
+
+    ---
+
+    ## No more proprietary APIs
+
+    - use WebAPIs for everything
+    - write your Apps only once
+
+    ---
+
+    ## Multi Device Support out of the Box
+
+    - Smartphone
+    - Tablet
+    - TV
+    - Watch
+    - your Fridge...
+    - and whatever comes next
+
+    ---
+
+    ## Instant Updates
+
+    - no more censoring
+    - no more delays
+    - instant updates for everyone
+
+    ---
+
+    # What's missing?
+
+    ---
+
+    ## Mobile Web Payment Provider
+
+    - WebApi to access OS Payment Gateway?
+    - FxPay, MozPay
+    - PayPal?
+
+    ---
+
+    ## Faster WebAPI Adoption
+
+    - please contribute to WebKit
+    - more frequent Browser Updates
 
     ---
 
@@ -863,25 +1124,91 @@
 
     ---
 
+    ## What should you do?
 
-    # What should you do?
+    <img src="assets/img/confusion.gif" />
 
-    - Web is the future
-    - improving constantly
-    - suitable for most apps
-    - target all devices, even the onces you don't know about yet
-    - make it hybrid if you need to
+    <small>http://southpark.cc.com/</small>
+
+    ---
+
+    ## Web first!
+
+    - the Web is ready for most Apps
+    - have an App before you even know the platform
+    - Open Web FTW!
+
+    ---
+
+    ## Go Hybrid if needed
+
+    - access Marketplaces
+    - access OS capabilities like Push Notifications
+    - consistent WebView (Crosswalk)
+
+    _till the Web catches up..._
 
     ---
 
     >"Maybe I’m an idealist, but I think we should be able to build most apps with web tech. The platform has come a long way"
+
     Henrik Joreteg (@HenrikJoreteg)
 
     ---
 
-    # Questions?
+    ## One more thing...
+
+    <img src="assets/img/onemorething.gif" />
 
     ---
+
+    ## What do you prefer?
+
+    - 3 Java Developers
+    - 3 Objective-C / Swift Developers
+
+    or
+
+    - 6 Web Developers for every Platform
+
+    ---
+
+    ## Time to learn JavaScript!
+
+    ---
+
+    ## Nodeschool
+
+    <img src="assets/img/augsburg-nodeschool.svg" style="height: 50vh;" />
+
+    <img src="assets/img/munich-nodeschool.svg" style="height: 50vh;" />
+
+    ---
+
+    <img src="assets/img/hsa-logo.svg" style="height: 50vh;"  />
+
+    <br>
+
+    - [JavaScript](https://www.hs-augsburg.de/fakultaet/informatik/studium/wahlpflichtveranstaltung/javascript/index.html)
+    - [Node.js](https://www.hs-augsburg.de/fakultaet/informatik/studium/wahlpflichtveranstaltung/web_entwicklung_node_js/index.html)
+
+    ---
+
+    <img src="assets/img/peerigon.svg" style="height:40vh;" />
+
+
+    - Starter Kits
+    - Consulting
+    - Development
+
+    ---
+
+    # Thank you
+
+    michael.jaser@peerigon.com <br>
+    <br>
+    @mmeaku <br>
+    @peerigon
 
 </textarea>
 <script src="bower_components/remark/out/remark.js" type="text/javascript">
