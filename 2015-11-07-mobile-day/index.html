@@ -36,11 +36,14 @@
 
     ---
 
-    <img src="assets/img/peerigon.svg" width="500"/>
+    # Michael Jaser
 
+    - Bachelorarbeit über "Cross Mobile Apps" bei IBM
+    - danach Gründung der Peerigon GmbH
+    - Dozent für Node.js an der Hochschule Augsburg
     ---
 
-    <img src="assets/img/peerigon-devices.png" style="height: 30vh; margin-top: 1rem; margin-bottom: -1rem"/>
+    <img src="assets/img/peerigon-devices.png" style="height: 80vh; margin-top: 1rem; margin-bottom: -1rem"/>
 
     > Peerigon hilft dir und deinen Freunden, Freizeitprojekte gemeinsam auf die Beine zu stellen.
 
@@ -56,7 +59,24 @@
 
     ---
 
+    <img src="assets/img/peerigon.svg" style="height:40vh;" />
+
+    - Web Consulting Company
+    - Web / Mobile Web / Hybrid / Backends
+    - JavaScript / Node.js / all kinds of Databases
+    - Traninings
+    - Software-Development
+
+    ---
+
     # Agenda?
+
+    - Mobile Web Recap
+    - Biased view on the Web
+    - Marketplaces vs. Open Web
+    - Hybrid Apps
+    - Future of Apps
+    - Conclusion
 
     ---
 
@@ -97,9 +117,18 @@
 
     ## Web-App vs. Website
 
+    - Web-Apps are dynamic applications based on Web Technologies
+    - Web-Apps are mostly Single Page Applications
+    - Websites are mostly static sites or rendered on the serverside
+
     ---
 
     ## Single Page Application
+
+    - Single HTML File
+    - UI handled via JavaScript
+    - decoupled from Backend
+    - loads data from Backend via AJAX/WebSockets
 
     ---
 
@@ -242,7 +271,7 @@
 
     ## JavaScript Engine
 
-    - JavaScript interpreter
+    - JavaScript Interpreter
     - parses and executes JavaScript code
     - implement ECMA-Script (5, 2015, 2016...)
 
@@ -383,17 +412,13 @@
 
     ---
 
-    # 4. A biased view on the Web
+    # 3. A biased view on the Web
 
     <img src="./assets/img/netscape.gif" />
 
     ---
 
     ## The Web is slow
-
-    ---
-
-    ## JavaScript is Slow
 
     ---
 
@@ -420,29 +445,14 @@
 
     ---
 
-    ## WebApps are slow
+    <img src="assets/img/bananabread.jpg" style="height: 90vh"/>
 
+    <small>https://developer.mozilla.org/demos/detail/bananabread</small>
+
+    <small>https://github.com/kripken/emscripten/wiki/Porting-Examples-and-Demos</small>
     ---
 
-    ## "Fast" depends heavily on your Architecture
-
-    ---
-
-    ## Use Web Workers
-
-    - runs scripts in background thread
-    - doesn't block the main thread execution (UI)
-
-    ---
-
-    ## Reduce Load Time
-
-    - Reduce, optimize and compress your resources
-    - add lazy loading
-
-    ---
-
-    ## UI Responsiveness
+    ## The UI is slow
 
     ---
 
@@ -463,14 +473,12 @@
 
     ## Rendering is slow
 
-    ---
-
     - DOM access is slow
     - Images are slow and use precious RAM
 
     ---
 
-    ## Rendering is slow
+    ## Take care of your rendering
 
     - optimize Images
     - take care of your CSS
@@ -487,11 +495,41 @@
 
     ---
 
-    ## Poor Developer Experience
+    ## "Fast" depends heavily on your Architecture
+
+    <img src="assets/img/architecture.gif" />
+
+    <small>http://sploid.gizmodo.com/drone-captures-demolition-of-an-old-building-1718372270</small>
 
     ---
 
-    ## Great IDEs
+    ## Use Web Workers
+
+    - runs scripts in background thread
+    - doesn't block the main thread execution (UI)
+
+    ---
+
+    ## Reduce Load Time
+
+    - Reduce, optimize and compress your resources
+    - add lazy loading
+
+    ---
+
+    ## Choose the right Framework
+
+    - React?
+    - Angular?
+    - Ember?
+
+    ---
+
+    ## Developing for the Web in pain!
+
+    ---
+
+    ## There are great IDEs
 
     ---
 
@@ -521,7 +559,6 @@
     <img src="./assets/img/inspector-1.png" style="height: 120vh;" />
 
     ---
-
 
     <img src="./assets/img/inspector-2.png" style="height: 120vh;" />
 
@@ -599,6 +636,10 @@
 
     ---
 
+    <video src="assets/service-worker.mp4" style="height:150vh" controls="true" />
+
+    ---
+
     ## ServiceWorker
 
     - proxy server that sits between app and the browser
@@ -608,21 +649,63 @@
 
     ---
 
+    ```javascript
+    this.addEventListener('install', function(event) {
+      event.waitUntil(
+        caches.open('v1').then(function(cache) {
+          return cache.addAll([
+            '/sw-test/',
+            '/sw-test/index.html',
+            '/sw-test/style.css',
+            '/sw-test/app.js',
+            '/sw-test/image-list.js',
+            '/sw-test/star-wars-logo.jpg',
+            '/sw-test/gallery/',
+            '/sw-test/gallery/bountyHunters.jpg',
+            '/sw-test/gallery/myLittleVader.jpg',
+            '/sw-test/gallery/snowTroopers.jpg'
+          ]);
+        })
+      );
+    });
+    ```
+
+    ---
+
+    ```javascript
+    this.addEventListener('fetch', function(event) {
+      var response;
+      event.respondWith(caches.match(event.request).catch(function() {
+        return fetch(event.request);
+      }).then(function(r) {
+        response = r;
+        caches.open('v1').then(function(cache) {
+          cache.put(event.request, response);
+        });
+        return response.clone();
+      }).catch(function() {
+        return caches.match('/sw-test/gallery/myLittleVader.jpg');
+      }));
+    });
+    ```
+
+    ---
+
     ## I can't access the ....
 
     ---
 
-    ## ... camera
+    ## ... Camera
 
     ---
 
     ## [Mediacapture Stream](http://www.w3.org/TR/mediacapture-streams/)
 
-    <img src="assets/img/video.png" />
+    <img src="assets/img/video.png" style="height:100vh;"/>
 
     ---
 
-    ## ... geolocation
+    ## ... Geolocation
 
     <img src="assets/img/geolocation-permission.png" />
 
@@ -632,37 +715,29 @@
 
     ---
 
-    ## geolocation works on...
-
-    - Android Browser
-    - Firefox
-    - Mobile Safari
-    - Mobile Chrome
-
-    ---
-
     ## I can't use crypto..
 
     ---
 
     ## WebCrypto
 
-    - Android Browser
-    - Mobile Chrome
-    - Mobile Safari
-
-    <small>http://caniuse.com/#search=crypto</small>
-
-    ---
-
-    ## ...
-
-    ---
-
-    ## Permissions?
-
-    - permissions asked by the browsers
-    - and the manifest for hosted apps
+    ```javascript
+    window.crypto.subtle.generateKey(
+    {
+        name: "AES-CMAC",
+        length: 256, //can be  128, 192, or 256
+    },
+    false, //whether the key is extractable (i.e. can be used in exportKey)
+    ["sign", "verify"] //can be any combination of "sign" and "verify"
+    )
+    .then(function(key){
+        //returns a key object
+        console.log(key);
+    })
+    .catch(function(err){
+        console.error(err);
+    });
+    ```
 
     ---
 
@@ -670,22 +745,19 @@
 
     ---
 
-    ## Yes, you can!
+    ## [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
 
-    [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
-
-    <img src="assets/img/notification-bubble.png" />
-
-    - [Spec](http://www.w3.org/TR/2015/REC-notifications-20151022/)
+    <video src="assets/notifications.mp4" controls="true" style="height: 120vh;" />
 
     ---
 
-    - Android Webview
-    - Firefox OS
-    - Mobile Chrome
+    ## Permissions?
+
+    - your Browser asks you when on first access!
+
+     <img src="assets/img/notification-bubble.png" />
 
     ---
-
 
     ## I can't access the AppStore/PlayStore
 
@@ -693,7 +765,7 @@
 
     ---
 
-    # 5. Marketplaces vs. OpenWeb
+    # 4. Marketplaces vs. Open Web
 
     <img src="assets/img/walled-garden.gif" />
 
@@ -748,7 +820,7 @@
 
     ---
 
-    # Hybrid Apps
+    # 5. Hybrid Apps
 
     <img src="./assets/img/hybrid-car.gif" />
 
@@ -784,9 +856,6 @@
     ---
 
     # 6. The Future of Apps
-
-    ---
-
 
     ---
 
