@@ -1,5 +1,11 @@
-presentations
+Talks
 =============
+
+## [Native Apps Are Deprecated](http://peerigon.github.io/talks/2015-11-07-mobile-day)
+
+> State of Mobile Web, Hybrid Apps and what the future will (hopefully) look like 
+
+* At [Xitaso Mobile Day](http://xitaso.com/mobileday), November 7th, 2015
 
 ## [JSConf.eu 2015 Recap](http://peerigon.github.io/talks/2015-10-06-webandwine-jsconfeu-recap)
 
