@@ -1,8 +1,0 @@
-{
-  "name": "example-3",
-  "dependencies": {
-    "css-loader": "^0.7.0",
-    "file-loader": "^0.5.1",
-    "html-loader": "^0.2.2"
-  }
-}
