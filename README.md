@@ -5,7 +5,7 @@ Talks
 
 Detailed overview of the state of frontend management tools and recent updates to underlying technologies like HTTP2 and ES2015 modules.
 
-* At [Web&Wine Augsburg](http://www.meetup.com/de/web-and-wine/events/226911260/?eventId=226911260&read=1&_af=event&_af_eid=226911260), December 15th, 2015 – [Slides](http://peerigon.github.io/talks/2015-11-07-mobile-day)
+* At [Web&Wine Augsburg](http://www.meetup.com/de/web-and-wine/events/226911260/?eventId=226911260&read=1&_af=event&_af_eid=226911260), December 15th, 2015 – [Slides](http://peerigon.github.io/talks/2015-12-15-webandwine-frontend-management)
 
 ## Native Apps Are Deprecated
 
