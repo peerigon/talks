@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html id="slide">
+<head>
+    <title>The Future of JavaScript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<textarea id="source">
+
+    name: cover
+
+    <img src="assets/img/peerigon.svg" style="width: 30%; margin-top: 7%; margin-bottom: -7%;">
+
+    # The Future of JavaScript
+
+    ## ECMAScript 2015 (ES6)
+
+    .slide-author[
+    Michael Jaser<br>
+    .small[@mmeaku / michael.jaser@peerigon.com]<br>
+    ]
+
+    ---
+    layout: true
+    class: center, middle
+
+    .slide-header-left[
+    The Future of JavaScript
+    ]
+    .slide-header-right[
+    Web & Speck
+    ]
+
+    ---
+
+    ## Michael Jaser
+
+    - Co-Founder Peerigon GmbH
+    - Open Source developer
+    - Teaching JavaScript at the University of Applied Sciences Augsburg
+
+    ---
+
+    <img src="assets/img/peerigon.svg" style="width: 50%; margin-bottom: 5%;"/>
+
+    - Web Consulting Company
+    - Web / Mobile Web / Hybrid / Backends
+    - JavaScript / Node.js
+    - Trainings
+    - Software Development
+
+    ---
+
+    ## Definition of Terms
+
+    ---
+
+    ### ECMAScript
+
+    specified as ECMA-262
+
+    is a Scripting Language specified by [Technical Committee 39](http://www.ecma-international.org/memento/TC39.htm) of
+    [Ecma International](http://en.wikipedia.org/wiki/Ecma_International).
+
+    ---
+
+    ### JavaScript
+
+    Implementation of EMCAScript:
+
+    - SpiderMonkey <small>Firefox > `1.x`</small>
+    - V8 <small>Chrome, Node.js</small>
+    - Nitro / JavaScriptCore <small>WebKit / Safari</small>
+    - Chakra <small>Microsoft Edge</small>
+
+    ---
+
+    ### JScript <small>9.0</small>
+
+    Implementation of ECMAScript: 
+
+    - Trident <small>Internet Explorer</small>
+
+    >JScript is the Microsoft dialect of the ECMAScript scripting language specification.
+
+    ---
+
+    ## ECMAScript Versionen
+
+    ---
+
+    ### ECMAScript 3
+
+    December 1999
+
+    specifies the JavaScript supported by most common engines right now.
+
+    ---
+
+    ### ECMAScript 4
+
+    discontinued July 2008
+
+    contained racial changes, which were not supported by some members of the comitee.
+
+    ---
+
+    After the discussions regarding ES4, TC39 made the following decision:
+
+    - Small improvements in ES5
+    - Extending syntax in ES6
+
+    With ES6 containing less radical changes as proposed in ES4, it's also known as [Harmony](https://mail.mozilla.org/pipermail/es-discuss/2008-August/003400.html)
+
+    ---
+
+    ### ECMAScript 5
+
+    December 2009
+
+    contains extensions of the standard library (for instance `Array.prototype.map` and a
+    [Strict-Mode](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Strict_mode) with some minor improvements and changes of the syntax.
+
+    ---
+
+    ### ECMAScript 2015 (ES6)
+
+    June 2015
+
+    contains extensions of the sytanx and the stand library. This version marks the biggest change since 1999.
+
+    ---
+
+    ### ECMAScript 2016 (ES7)
+
+    With the feature set of ES2015 being frozen, all further changes will be proposed for ES2016.
+
+    ---
+
+    News and discussions can be found in the ECMAScript Mailinglist [esdiscuss.org](https://esdiscuss.org/)
+
+    ---
+
+    ## Can is start using ES 2015 right away?
+
+    ---
+
+    ### Node.js?
+
+    <img src="assets/img/happy-turtle.gif" style="max-width: 60%;  ">
+
+   [Node.js 4.x](https://nodejs.org/en/docs/es6/) implements many features ([kangex: 63%](https://kangax.github.io/compat-table/es6/#node4))
+
+    ---
+
+    ### Browser?
+
+
+    <img src="assets/img/climbing-turtle.gif" style="max-height: 30%; margin-top: 1rem; margin-bottom: -1rem">
+
+    ---
+
+    <img src="assets/img/browser-kangex.png" style="max-width: 60%;  ">
+
+    - fast adoption for Chrome, Firefox and Edge
+    - older browsers still rely on ES5
+    - Solution: __Transpiling__: ES2015 (16) -> ES5__
+
+    ---
+
+    ### Transpiler: [Babel.js](https://babeljs.io)
+
+    >By default, Babel ships with a set of ES2015 syntax transformers. These allow you to use new syntax, right now without waiting for browser support.
+
+    ---
+
+    ### How it works
+
+    ```javascript
+    let first = "Jane";
+    let last = "Doe";
+    let obj = { first, last }; // shorthand
+    ```
+
+    ...becomes ES5
+
+    ```javascript
+    "use strict";
+
+    var first = "Jane";
+    var last = "Doe";
+
+    var obj = { first: first, last: last }; // shorthand
+    ```
+
+    ---
+
+    ![](assets/img/vinyl-turtle.gif)
+
+    ---
+
+    ## New features of ECMAScript 2015
+
+    ---
+
+    ### Extended Syntax
+
+    ---
+
+    #### [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+
+    Like `var` without Hoisting and Blockscope
+
+    ```javascript
+    for (let i = 0; i < 10; i++) {
+        console.log(i); // 0, 1, 2, 3, 4 ... 9
+    }
+
+    console.log(i); // i is not defined
+    ```
+
+    ---
+
+    Example using `if()`
+
+    ```javascript
+    let x = 31;
+
+    if (true) {
+        let x = 71;  // different variable
+        console.log(x);  // 71
+    }
+
+    console.log(x);  // 31
+    ```
+
+    ---
+
+    Compared to `var`
+
+    ```javascript
+    var x = 31;
+
+    if (true) {
+        var x = 71;  // same variable!
+        console.log(x);  // 71
+    }
+
+    console.log(x);  // 71
+    ```
+
+    ---
+
+    `let` is slowly replacing `var` as it behaves more as expected and prevents common errors (hoisting).
+
+    ---
+
+    #### [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+
+    Similar to `let` but _immutable_
+
+    ```javascript
+    const a = 1;
+
+    a = 2;
+    console.log(a); // 1
+    ```
+
+    ---
+
+    You have to initialize constants...
+
+    ```javascript
+    const a; // SyntaxError
+    ```
+
+    ...and you can't reassign them
+
+    ```javascript
+    const a = 1;
+    const a = 2; // throws an error
+    ```
+
+    ---
+
+    #### [Property Value Shorthands](http://www.2ality.com/2014/06/es6-multiple-return-values.html)
+
+    Variable name as property name.
+
+    ```javascript
+    let first = "Jane";
+    let last = "Doe";
+
+    let obj = { first, last }; // shorthand
+
+    // same as
+    let obj = { first: first, last: last };
+    ```
+
+    ---
+
+    #### [Destructuring](http://www.2ality.com/2014/06/es6-multiple-return-values.html)
+
+    "Destructs" an object in multiple variables.
+
+    ```javascript
+    let obj = { first: "Jane", last: "Doe" };
+
+    ...
+
+    let { first: f, last: l } = obj;
+
+    console.log(f); // "Jane"
+    console.log(l); // "Doe"
+    ```
+
+    ---
+
+    Works with Arrays too.
+
+    ```javascript
+    let [x, y] = ["a", "b"];
+
+    console.log(x); // "a"
+    console.log(y); // "b"
+    ```
+    ---
+
+    Convenient when dealing with regular expressions:
+
+    ```javascript
+    let matchDate = /^(\d\d\d\d)-(\d\d)-(\d\d)$/;
+    let date = "2999-12-31";
+    let [all, year, month, day] = matchData.exec(date);
+
+    console.log(all); // "2999-12-31"
+    console.log(year); // "2999"
+    console.log(month); // "12"
+    ```
+
+    ---
+
+    Combined with **Property Value Shorthands** we can defined functions which return multiple values.
+
+    ---
+
+    ```javascript
+    function findElement() {
+        let index = -1;
+        let element;
+
+        ...
+
+        return { index, element };
+    }
+    ```
+
+    ```javascript
+    let { element, index } = findElement();
+    ```
+
+    ---
+
+    #### [Method Definitions](http://www.2ality.com/2013/08/es6-callables.html)
+
+    ```javascript
+    // ES5
+    var obj = {
+        myMethod: function (arg0, arg1) { ... }
+    };
+    ```
+
+    ```javascript
+    // ES6
+    let obj = {
+        myMethod(arg0, arg1) { ... }
+    };
+    ```
+
+    ---
+
+    #### [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+    ```javascript
+    // ES5
+    var squares = [ 1, 2, 3 ]
+        .map(function (x) { return x * x });
+    ```
+
+    ```javascript
+    // ES6
+    let squares = [ 1, 2, 3 ]
+        .map(x => x * x);
+    ```
+
+    Also known as "Fat Arrow Function".
+
+    ---
+
+    ##### Syntax
+
+    No arguments, no function body:
+
+    ```javascript
+    () => true
+    ```
+
+    ...same as...
+
+    ```javascript
+    function () { return true; }
+    ```
+
+    ---
+
+    A single arguments, no function body:
+
+    ```javascript
+    (x) => Math.pow(x, 2);
+    // oder
+    x => Math.pow(x, 2);
+    ```
+
+    ...same as...
+
+    ```javascript
+    function (x) { return Math.pow(x, 2); }
+    ```
+
+    ---
+
+    Multiple arguments with function body:
+
+    ```javascript
+    (x, y) => {
+        var diff = x - y;
+
+        if (diff > 0) {
+            return "x is greater than y";
+        } else if (diff < 0) {
+            return "y is greater than x";
+        } else {
+            return "x and y are equal";
+        }
+    }
+    ```
+
+    ---
+
+    ##### Feature 1
+
+    Arrow Functions inherit `this` and `arguments` of the parent scope.
+
+    ```javascript
+    let obj = {
+        i: 0,
+        addClickListener() {
+            node.addEventListener("click", () => {
+                this.i++;
+            });
+        }
+    };
+    ```
+
+    ---
+
+    In ES5 we had to use the helper variable `self` to store a reference to `this`.
+
+    ```javascript
+    var obj = {
+        i: 0,
+        addClickListener: function () {
+            var self = this;
+
+            node.addEventListener("click", function () {
+                self.i++;
+            });
+        }
+    };
+    ```
+
+    ---
+
+    This feature makes them a perfect fit when passing functions as expressions:
+
+    - Event-Listener
+    - Callbacks
+    - [Array comprehensions](http://en.wikipedia.org/wiki/List_comprehension#JavaScript_1.7)
+
+    ---
+
+    ```javascript
+    let jane = {
+        name: "Jane",
+        callBack() {
+            setTimeout(() => {
+                console.log(
+                    this.name + " calls back"
+                );
+            }, 500);
+        }
+    };
+    ```
+
+    ---
+
+    ```javascript
+    let jane = {
+        name: "Jane",
+        greet(friends) {
+            friends.forEach(friend => {
+                console.log(
+                    this.name + " greets " + friend
+                );
+            });
+        }
+    }
+    ```
+
+    ---
+
+    ##### Feature 2
+
+    Arrow Functions are always anonymous.
+
+    ```javascript
+    someMethod(x) => x; // throws SyntaxError
+    ```
+
+    ---
+
+    They can be assigned to a variable as normal functions.
+
+    ```javascript
+    let someMethod = x => x + 1;
+
+    someMethod(1); // 2
+    ```
+
+    ---
+
+    ##### Feature 3
+
+    Arrow functions can't be used as constructors.
+
+    ```javascript
+    let Person = () => {};
+
+    new Person(); // throws a TypeError
+    ```
+
+    ---
+
+    That means they don't have a `prototype`.
+
+    ```javascript
+    console.log(Person.prototype); // undefined
+    ```
+
+    ---
+
+    Except those special features, they behave the same as regular functions.
+
+    ```javascript
+    let func = () => {};
+
+    console.log(typeof func); // "function"
+    console.log(func instanceof Function); // true
+    ```
+
+    ---
+
+    #### [Classes](http://www.2ality.com/2012/07/esnext-classes.html)
+
+    ES6-Classes are a simplified syntax for constructor functions and prototypical inheritance.
+    ---
+
+    ```javascript
+    // ES6
+    class Monster {
+        constructor(name) {
+            this.name = name;
+        }
+
+        attack(target) {
+            console.log(
+                this.name + " attacks " + target.name
+            );
+        }
+
+        static create() {
+            return new Monster();
+        }
+    }
+    ```
+
+    ---
+
+    ```javascript
+    // ES5
+    function Monster(name) {
+        this.name = name;
+    }
+
+    Monster.prototype.attack = function (target) {
+        console.log(
+            this.name + " attacks " + target.name
+        );
+    };
+
+    Monster.create = function () {
+        return new Monster();
+    };
+    ```
+
+    ---
+
+    ```javascript
+    // ES6
+    class Godzilla extends Monster {
+        constructor() {
+            super("Godzilla");
+        }
+
+        attack() {
+            // Godzilla can attack two times
+            super.attack();
+            super.attack();
+        }
+    }
+    ```
+
+    ---
+
+    ```javascript
+    // ES5
+    function Godzilla() {
+        Monster.call(this, "Godzilla");
+    }
+
+    Godzilla.prototype = Object.create(Monster.prototype);
+
+    Godzilla.prototype.attack = function () {
+        Monster.prototype.attack.call(this);
+        Monster.prototype.attack.call(this);
+    };
+    ```
+
+    ---
+
+    Will there be private properties?
+
+    ---
+
+    They were planned initially, but...
+
+    ...the concept of private and public properties doesn't fit a dynamic and prototype based scripting language
+    like JavaScript.
+
+    ---
+
+    **Example**
+
+    Permissions to access properties are usually checked during compilation.
+
+    ```java
+    // In Java
+    public class Person() {
+        private String name;
+    }
+    ```
+
+    ```java
+    // doesn't compile as name is private
+    Person person = new Person();
+    person.name = "Fritz";
+    ```
+
+    ---
+
+    JavaScript doesn't know about properties during (JIT-)compilation. Checks must be implemented on **every** call.
+
+        &rarr; Performance problem
+
+    ---
+
+    **BUT...**
+
+    ES2015 has a so called [`Symbol`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol)s .
+
+    ---
+
+    `Symbol`s are unique, non-string based identifiers for properties.
+
+    ```javascript
+    let sym = Symbol();
+    let obj = {};
+
+    obj[sym] = "some property";
+    ```
+
+    The string `"some property"` can only be accessed by `sym`.
+
+    ---
+
+    We can implement (virtual-)private properties this way.
+
+    ```javascript
+    let health = Symbol();
+
+    class Monster {
+        constructor(name) {
+            this.name = name;
+            this[health] = 100;
+        }
+
+        hit(damage) {
+            this[health] -= damage;
+        }
+    }
+    ```
+
+    ---
+
+    **But...**
+
+    `Symbol`s are not really private, as you can access them with `Object.getOwnPropertySymbols()`
+
+    ---
+
+    #### [Modules](http://www.2ality.com/2014/09/es6-modules-final.html)
+
+
+    Properties marked with the `export` keyword can be imported by another module.
+
+
+    ```javascript
+    // math.js
+
+    let somePrivateValue = 1;
+
+    export const sqrt = Math.sqrt;
+    export function square(x) {
+        return x * x;
+    }
+    export function diag(x, y) {
+        return sqrt(square(x) + square(y));
+    }
+    ```
+
+    ---
+
+    ```javascript
+    import sqrt from "./math.js";
+    import square from "./math.js";
+
+    // oder als Einzeiler
+    import { sqrt, square } from "./math.js";
+
+    square(2); // 4
+    ```
+
+    ---
+
+    They can be imported with a different name.
+
+    ```javascript
+    export { square as SQUARE, diag as DIAG };
+    ```
+
+    ```javascript
+    import { SQUARE as square, DIAG as diag }
+        from "./math.js";
+    ```
+
+    ---
+
+    Wildcard imports are possible within a namespace.
+
+    ```javascript
+    import * as math from "./math.js";
+
+    math.square(2); // 4
+    ```
+
+    ---
+
+    Modules can export a value using `default export`.
+
+    ```javascript
+    class Person() {}
+
+    default export Person;
+    ```
+
+    ---
+
+    This means: No matter of the name you give it during import, it will export `Person`.
+
+    ```javascript
+    import Person from "./Person.js";
+    import NicePerson from "./Person.js";
+
+    console.log(Person === NicePerson); // true
+    ```
+
+    ---
+
+    Thus you can use named `exports` and `default export` within the same module.
+
+    ```javascript
+    class Person() {}
+    class NicePerson() {}
+
+    export NicePerson;
+    default export Person;
+    ```
+
+    ```javascript
+    import Person from "./Person.js";
+    import NicePerson from "./Person.js";
+
+    console.log(Person === NicePerson); // false
+    ```
+
+    ---
+
+    #### [Spread-Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+
+    "Spreads" the content of an array to be used by functions or another array.
+
+    ```javascript
+    let parts = ["shoulder", "knees"];
+    let lyrics = ["head", ...parts, "and", "toes"];
+
+    lyrics.join(" "); // "head shoulder knees and toes"
+    ```
+
+    ---
+
+    ```javascript
+    let numbers = [-1, 7, 2];
+    let moreNumbers = [1, 2, 3];
+
+    numbers.push(...moreNumbers);
+
+    let highest = Math.max(...numbers); // 7
+    ```
+
+    ---
+
+    #### [Default Parameters](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/default_parameters)
+
+    ```javascript
+    function initCoordinates(x = 0, y = 0) {
+        return {x, y};
+    }
+    ```
+
+    ```javascript
+    let {x, y} = initCoordinates();
+    console.log(x, y); // 0 0
+
+    {x, y} = initCoordinates(1);
+    console.log(x, y); // 1 0
+
+    {x, y} = initCoordinates(undefined, null);
+    console.log(x, y); // 0 null
+    ```
+
+    ---
+
+    #### [Rest Parameters](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+
+    Stores all function arguments not being accessed in an array.
+
+    ```javascript
+    function returnOtherItems(first, ...otherItems) {
+        return otherItems;
+    }
+
+    returnOtherItems(1, 2, 3, 4); // [2, 3, 4]
+    ```
+
+    ---
+
+    #### [for...of-Loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+
+    Iterates objects implementing the so called `Iterable`-Interface](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/iterable)
+    i.e. `Array`, `Object`, `NodeList`, etc.
+
+    ```javascript
+    let arr = ["a", "b", "c"];
+
+    for (let item of arr) {
+        console.log(item); // logs "a", "b", "c"
+    }
+    ```
+
+    ---
+
+    ```javascript
+    var divs = document.querySelectorAll("div");
+
+    for (let div of divs) {
+        div.classList.remove("hidden");
+    }
+    ```
+
+    ---
+
+    #### [Generators](http://www.2ality.com/2013/06/iterators-generators.html)
+
+    Generators are functions which can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances.
+    They return an object implementing the [`Iterable`-Interface](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/iterable)
+
+    ---
+
+    ```javascript
+    function* idMaker() {
+        let index = 0;
+        while (true) {
+            yield index++;
+        }
+    }
+    ```
+
+    ```javascript
+    var gen = idMaker();
+
+    gen.next().value; // 0
+    gen.next().value; // 1
+    gen.next().value; // 2
+    ```
+
+    ---
+
+    `yield` returns the value, but doesn't end the function. When calling `next()` the function
+    will be resumed with access to the last context.
+
+    ---
+
+    .alert[
+    ##### Warning
+    ]
+
+    Generators are special functions and must be marked with an asterisk (`*`)
+
+    ```javascript
+    function* idMaker() {
+
+    }
+    ```
+
+    ---
+
+    ##### Furthermore...
+
+    `next()` accepts an arguments, which gets passed "to the function".
+
+    ---
+
+    ```javascript
+    function* myGenerator(arg) {  // <---
+        console.log(arg);
+        arg = yield 1;
+        console.log(arg);
+        arg = yield 2;
+        console.log(arg);
+        return 3;
+    }
+
+    let gen = myGenerator();
+    ```
+
+    ---
+
+    ```javascript
+    function* myGenerator(arg) {
+        console.log(arg);
+        arg = yield 1;            // <---
+        console.log(arg);
+        arg = yield 2;
+        console.log(arg);
+        return 3;
+    }
+
+    let gen = myGenerator();
+
+    gen.next("a"); // logs "a"
+                   // returns { value: 1, done: false }
+    ```
+
+    ---
+
+    ```javascript
+    function* myGenerator(arg) {
+        console.log(arg);
+        arg = yield 1;
+        console.log(arg);
+        arg = yield 2;            // <---
+        console.log(arg);
+        return 3;
+    }
+
+    let gen = myGenerator();
+
+    gen.next("a"); // logs "a"
+                   // returns { value: 1, done: false }
+    gen.next("b"); // logs "b"
+                   // returns { value: 2, done: false }
+    ```
+
+    ---
+
+    ```javascript
+    function* myGenerator(arg) {
+        console.log(arg);
+        arg = yield 1;
+        console.log(arg);
+        arg = yield 2;
+        console.log(arg);
+        return 3;                 // <---
+    }
+
+    let gen = myGenerator();
+
+    gen.next("a"); // logs "a"
+                   // returns { value: 1, done: false }
+    gen.next("b"); // logs "b"
+                   // returns { value: 2, done: false }
+    gen.next("c"); // logs "c"
+                   // returns { value: 3, done: true }
+    ```
+
+    ---
+
+    ##### Wait?...
+
+    ...what are Generators good for anyway?
+
+    ---
+
+
+    Pausierbare Funktionen ermöglichen es uns, asynchronen Code synchron zu schreiben!
+
+    ---
+
+    <small>Wir benötigen aber nach wie vor Promises...</small>
+
+    ---
+
+    Beispiel
+
+    ```javascript
+    function getRecordsFromDb() {
+        ...
+        return new Promise();
+    }
+
+    function doHttpRequest()  {
+        ...
+        return new Promise();
+    }
+
+    function saveRecordsToDb()  {
+        ...
+        return new Promise();
+    }
+    ```
+
+    ---
+
+    ```javascript
+    function* processData() {
+        let records = yield getRecordsFromDb();
+        ...
+        let response = yield doHttpRequest();
+        ...
+        yield saveRecordsToDb();
+    }
+    ```
+
+    `processData` könnte jetzt irgendeiner Library übergeben werden, die immer
+    `next()` aufruft, sobald das Promise resolved wird.
+
+    ---
+
+    ```javascript
+    spawn(function*() {
+        var data = yield $.ajax(url);
+        $('#result').html(data);
+        var status = $('#status').html('Download complete.');
+        yield status.fadeIn().promise();
+        yield sleep(2000);
+        status.fadeOut();
+    });
+    ```
+
+    [task.js](http://taskjs.org/)
+
+    ---
+
+    ### Erweiterungen der Standardbibliothek
+
+    - [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+    - [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+    - [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+
+    ---
+
+    Des Weiteren neue
+
+    - `Object`-
+    - `Array`-
+    - `String`-Funktionen.
+
+    ---
+
+    ## Quellen
+
+    http://www.2ality.com/2014/08/es6-today.html
+    http://www.2ality.com/2014/09/es6-modules-final.html
+    http://www.2ality.com/2011/06/ecmascript.html
+    https://github.com/lukehoban/es6features
+
+    ---
+
+    ## Thank you
+
+    Michael Jaser<br>
+    @mmeaku<br>
+    michael.jaser@peerigon.com<br>
+
+</textarea>
+<script src="bower_components/remark/out/remark.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+    var slideshow = remark.create({
+        highlightStyle: "ir_black"
+        //,ratio: '16:9'
+    });
+</script>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>
