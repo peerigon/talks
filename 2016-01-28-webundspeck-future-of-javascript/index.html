@@ -18,10 +18,11 @@
 
     .slide-author[
     Michael Jaser<br>
-    .small[@mmeaku / michael.jaser@peerigon.com]<br>
+    .small[@mmeaku / michael.jaser@peerigon.com]
     ]
 
     ---
+
     layout: true
     class: center, middle
 
@@ -29,7 +30,7 @@
     The Future of JavaScript
     ]
     .slide-header-right[
-    Web & Speck
+    Web&Speck
     ]
 
     ---
@@ -86,7 +87,7 @@
 
     ---
 
-    ## ECMAScript Versionen
+    ## ECMAScript Versions
 
     ---
 
@@ -128,7 +129,7 @@
 
     June 2015
 
-    contains extensions of the sytanx and the stand library. This version marks the biggest change since 1999.
+    contains extensions of the sytanx and the standard library. This version marks the biggest change since 1999.
 
     ---
 
@@ -146,26 +147,84 @@
 
     ---
 
-    ### Node.js?
-
-    <img src="assets/img/happy-turtle.gif" style="max-width: 60%;  ">
-
-   [Node.js 4.x](https://nodejs.org/en/docs/es6/) implements many features ([kangex: 63%](https://kangax.github.io/compat-table/es6/#node4))
+    The following stats are based on kangax es6 compatibility table.
+    https://kangax.github.io/compat-table/es6
 
     ---
 
-    ### Browser?
+    ## Desktop
 
+    --
 
-    <img src="assets/img/climbing-turtle.gif" style="max-height: 30%; margin-top: 1rem; margin-bottom: -1rem">
+    ### Stable
+
+    - Firefox 44: 74%
+    - Chrome 48: 81%
+    - Safari 9: 54%
+    - Edge 13: 83%
+    - IE 11: 6%
 
     ---
 
-    <img src="assets/img/browser-kangex.png" style="max-width: 60%;  ">
+    ## Microsoft
 
-    - fast adoption for Chrome, Firefox and Edge
-    - older browsers still rely on ES5
-    - Solution: __Transpiling__: ES2015 (16) -> ES5__
+    - IE 11: 6%
+    - Edge 12: 63%
+    - Edge 13: 83%
+
+    ---
+
+    ## Firefox
+
+    - FF 44: 74%
+    - FF 45 (Developer Edition): 85%
+
+    ---
+
+    ## Chrome
+
+    - Chrome 48: 81%
+    - Chrome 50 (Canary): 92%
+
+    ---
+
+    ## Safari
+
+    - Safari 9: 54 %
+
+    ---
+
+    ## Mobile
+
+    ---
+
+    ## iOS
+
+    - iOS 7: 11%
+    - iOS 8: 22%
+    - iOS 9: 54%
+
+    ---
+
+    ## Android
+
+    - Android 4.4: 12%
+    - Android 5.0: 17%
+    - Android 5.1: 28%
+    - Android 6: 64%
+
+    ---
+
+    ## Conclusion
+
+    - Chrome 92%, Firefox 85%, Edge 83% are adopting ES2015 fast
+    - Apple / WebKit lags behind
+    - legacy browsers still rely on ES5 (IE 11)
+    - Mobile lags behind (iOS 54%, Android 64%)
+
+    ---
+
+    ## How to use ES2015 on legacy Browsers?
 
     ---
 
@@ -681,13 +740,13 @@
 
     JavaScript doesn't know about properties during (JIT-)compilation. Checks must be implemented on **every** call.
 
-        &rarr; Performance problem
+    &rarr; Performance problem
 
     ---
 
     **BUT...**
 
-    ES2015 has a so called [`Symbol`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol)s .
+    ES2015 has so called [`Symbol`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol)s .
 
     ---
 
@@ -731,6 +790,11 @@
 
     #### [Modules](http://www.2ality.com/2014/09/es6-modules-final.html)
 
+    - split functionality in separate modules
+    - can be "loaded" by another module
+    - stop polluting the global scope!
+
+    ---
 
     Properties marked with the `export` keyword can be imported by another module.
 
@@ -786,12 +850,12 @@
 
     ---
 
-    Modules can export a value using `default export`.
+    Modules can export a value using `export default`.
 
     ```javascript
     class Person() {}
 
-    default export Person;
+    export default Person;
     ```
 
     ---
@@ -807,14 +871,14 @@
 
     ---
 
-    Thus you can use named `exports` and `default export` within the same module.
+    Thus you can use named `exports` and `export default` within the same module.
 
     ```javascript
     class Person() {}
     class NicePerson() {}
 
     export NicePerson;
-    default export Person;
+    export default Person;
     ```
 
     ```javascript
@@ -907,6 +971,135 @@
         div.classList.remove("hidden");
     }
     ```
+
+    ---
+
+    ### [Promises](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+    ---
+
+    ## Defining a Promise function
+
+    ```javascript
+    function readFile(filePath) {
+        //return Promise instance directly
+        return new Promise(function(resolve, reject) {
+            //the async call
+            fs.readFile(filePath, function(err, content) {
+                if(err) {
+                    return reject(err);
+                }
+                resolve(content);
+            });
+        }}
+    }
+    ```
+
+    ---
+
+    ## Calling a Promise function (1)
+
+    ```javascript
+    readFile("nodejs.md")
+    .then(function(content) {
+        //success
+    })
+    .catch(function(err) {
+        //error case
+    });
+    ```
+
+    ---
+
+    ## Calling a Promise function (2)
+
+    ```javascript
+    readFile("nodejs.md")
+    .then(
+        //1st calback
+        function success(content) {
+            //success
+        },
+        //2nd callback
+        function onError(err) {
+            //error
+        }
+    );
+    ```
+
+    ---
+
+    ## Promise.resolve, Promise.reject
+
+    ```javascript
+    function readFile(filePath) {
+        if(cached[filePath]) {
+            return Promise.resolve(cache[filePath]);
+        }
+        if(blacklist[filePath]) {
+            return Promise.reject(new Error("Blacklisted!");
+        }
+        return new Promise(function(reject, resolve) {
+            //...
+        });
+    }
+    ```
+
+    ---
+
+    ## Promise.all
+
+    ```javascript
+    Promise.all([
+        doSomeAsyncStuff(),
+        doSomeAsyncStuff(),
+        doSomeAsyncStuff()
+    ]).then(function (results) {
+        // results = [result1, result2, result3]
+    });
+    ```
+
+    ---
+
+    ## Why use Promises?
+
+    ---
+
+    ```javascript
+    function readFiles(files, callback) {
+        var contents = [];
+        var pending = files.length;
+        files.forEach(function (file) {
+            fs.readFile(file, function (err, content) {
+                if (err) {
+                    callback(err);
+                    return;
+                }
+                contents.push(content);
+                done();
+            });
+        });
+        function done() {
+            pending--;
+            if (pending === 0) {
+                callback(null, contents);
+            }
+        }
+    }
+    ```
+
+    ---
+
+    ```javascript
+    function readFiles(files) {
+        return Promise.all(files.map(readFile));
+    }
+    ```
+
+    - better error handling
+    - prevents "callback hell"
+    - convenient chaining of promises
+    - solves most headaches caused by asynchronous functions
 
     ---
 
@@ -1036,73 +1229,18 @@
 
     ---
 
-    ##### Wait?...
+    ### Wait?...
 
     ...what are Generators good for anyway?
 
     ---
 
-
-    Pausierbare Funktionen ermöglichen es uns, asynchronen Code synchron zu schreiben!
-
-    ---
-
-    <small>Wir benötigen aber nach wie vor Promises...</small>
+    - lazy generated lists
+    - calling asynchronous functions in a synchronous style
 
     ---
 
-    Beispiel
-
-    ```javascript
-    function getRecordsFromDb() {
-        ...
-        return new Promise();
-    }
-
-    function doHttpRequest()  {
-        ...
-        return new Promise();
-    }
-
-    function saveRecordsToDb()  {
-        ...
-        return new Promise();
-    }
-    ```
-
-    ---
-
-    ```javascript
-    function* processData() {
-        let records = yield getRecordsFromDb();
-        ...
-        let response = yield doHttpRequest();
-        ...
-        yield saveRecordsToDb();
-    }
-    ```
-
-    `processData` könnte jetzt irgendeiner Library übergeben werden, die immer
-    `next()` aufruft, sobald das Promise resolved wird.
-
-    ---
-
-    ```javascript
-    spawn(function*() {
-        var data = yield $.ajax(url);
-        $('#result').html(data);
-        var status = $('#status').html('Download complete.');
-        yield status.fadeIn().promise();
-        yield sleep(2000);
-        status.fadeOut();
-    });
-    ```
-
-    [task.js](http://taskjs.org/)
-
-    ---
-
-    ### Erweiterungen der Standardbibliothek
+    ### Extension of the standard library
 
     - [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
     - [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
@@ -1110,15 +1248,15 @@
 
     ---
 
-    Des Weiteren neue
+    And more...
 
     - `Object`-
     - `Array`-
-    - `String`-Funktionen.
+    - `String`-Functions.
 
     ---
 
-    ## Quellen
+    ## Sources
 
     http://www.2ality.com/2014/08/es6-today.html
     http://www.2ality.com/2014/09/es6-modules-final.html
