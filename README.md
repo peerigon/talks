@@ -1,6 +1,12 @@
 Talks
 =============
 
+## The Future of JavaScript
+
+ES2015 (ES6) landed the browsers near you and you should start using it right now. This talk is about why and how to use ES2015 and what the future of JavaScript will look like.
+
+* At [Web&Speck Innsbruck, Austria](), January 28th, 2016 – [Slides](http://peerigon.github.io/talks/2016-01-28-webundspeck-future-of-javascript)
+
 ## Frontend management – yesterday, today and tomorrow?
 
 Detailed overview of the state of frontend management tools and recent updates to underlying technologies like HTTP2 and ES2015 modules.
