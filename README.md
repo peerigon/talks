@@ -1,6 +1,13 @@
 Talks
 =============
 
+## App Strategie - Der Weg zur Nummer Eins
+
+Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie erreiche ich ein hohes Engagement der Nutzer? Wie schaffe ich das nötige Wachstum?
+
+* At [Unternehmensdialog Schwaben, Augsburg](http://www.aitiraum.de/unternehmensdialog-schwaben), Juny 14th, 2016 – [Slides](http://peerigon.github.io/talks/2016-06-14-unternehmer-dialog-schwaben-app-strategie/)
+
+
 ## The Future of JavaScript
 
 ES2015 (ES6) landed the browsers near you and you should start using it right now. This talk is about why and how to use ES2015 and what the future of JavaScript will look like.
