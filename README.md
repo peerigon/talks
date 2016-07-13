@@ -1,36 +1,41 @@
 Talks
 =============
 
+## Dr. Flexbox or how I learned to stop worrying and vertically align the box.
+
+What every frontend developer should know about `display: flex`.
+
+* At [Web&Wine Augsburg](http://www.meetup.com/de-DE/web-and-wine/events/231858488), June 28th, 2016 – [Slides](https://peerigon.github.io/talks/2016-06-28-webandwine-dr-flexbox)
+
 ## App Strategie - Der Weg zur Nummer Eins
 
 Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie erreiche ich ein hohes Engagement der Nutzer? Wie schaffe ich das nötige Wachstum?
 
-* At [Unternehmensdialog Schwaben, Augsburg](http://www.aitiraum.de/unternehmensdialog-schwaben), Juny 14th, 2016 – [Slides](http://peerigon.github.io/talks/2016-06-14-unternehmer-dialog-schwaben-app-strategie/)
-
+* At [Unternehmensdialog Schwaben, Augsburg](http://www.aitiraum.de/unternehmensdialog-schwaben), Juny 14th, 2016 – [Slides](https://peerigon.github.io/talks/2016-06-14-unternehmer-dialog-schwaben-app-strategie/)
 
 ## The Future of JavaScript
 
 ES2015 (ES6) landed the browsers near you and you should start using it right now. This talk is about why and how to use ES2015 and what the future of JavaScript will look like.
 
-* At [Web&Speck Innsbruck, Austria](http://www.meetup.com/de-DE/webundspeck/events/227668357), January 28th, 2016 – [Slides](http://peerigon.github.io/talks/2016-01-28-webundspeck-future-of-javascript)
+* At [Web&Speck Innsbruck, Austria](http://www.meetup.com/de-DE/webundspeck/events/227668357), January 28th, 2016 – [Slides](https://peerigon.github.io/talks/2016-01-28-webundspeck-future-of-javascript)
 
 ## Frontend management – yesterday, today and tomorrow?
 
 Detailed overview of the state of frontend management tools and recent updates to underlying technologies like HTTP2 and ES2015 modules.
 
-* At [Web&Wine Augsburg](http://www.meetup.com/de/web-and-wine/events/226911260/?eventId=226911260&read=1&_af=event&_af_eid=226911260), December 15th, 2015 – [Slides](http://peerigon.github.io/talks/2015-12-15-webandwine-frontend-management)
+* At [Web&Wine Augsburg](http://www.meetup.com/de/web-and-wine/events/226911260), December 15th, 2015 – [Slides](https://peerigon.github.io/talks/2015-12-15-webandwine-frontend-management)
 
 ## Native Apps Are Deprecated
 
 State of Mobile Web, Hybrid Apps and what the future will (hopefully) look like.
 
-* At [Xitaso Mobile Day](http://xitaso.com/mobileday), November 7th, 2015 – [Slides](http://peerigon.github.io/talks/2015-11-07-mobile-day)
+* At [Xitaso Mobile Day](http://xitaso.com/mobileday), November 7th, 2015 – [Slides](https://peerigon.github.io/talks/2015-11-07-mobile-day)
 
 ## JSConf.eu 2015 Recap
 
 Recap of JSConf.eu 2015.
 
-* At [Web&Wine Augsburg](http://www.meetup.com/de/web-and-wine/events/225587768/), October 6th, 2015 – [Slides](http://peerigon.github.io/talks/2015-10-06-webandwine-jsconfeu-recap)
+* At [Web&Wine Augsburg](http://www.meetup.com/de/web-and-wine/events/225587768/), October 6th, 2015 – [Slides](https://peerigon.github.io/talks/2015-10-06-webandwine-jsconfeu-recap)
 
 ## Fighting Spaghetti-Code with Promises & Generators
 
