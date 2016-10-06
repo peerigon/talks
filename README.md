@@ -5,7 +5,7 @@ Talks
 
 Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
 
-* At [Tag der Regionen, Petersberg](https://www.der-petersberg.de/Tag-der-Regionen-2016/), October 3th, 2016 – [Slides](https://peerigon.github.io/talks/2016-10-03-Unternehmenskultur-Peerigon/)
+* At [Tag der Regionen, Petersberg](https://www.der-petersberg.de/Tag-der-Regionen-2016), October 3th, 2016 – [Slides](https://peerigon.github.io/talks/2016-10-03-Unternehmenskultur-Peerigon/)
 
 ## The future of frontend tooling.
 
