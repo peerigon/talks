@@ -1,6 +1,12 @@
 Talks
 =============
 
+## Arbeit ganzheitlich denken
+
+Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
+
+* At [Tag der Regionen, Petersberg](https://www.der-petersberg.de/Tag-der-Regionen-2016/), October 3th, 2016 – [Slides](https://peerigon.github.io/talks/2016-10-03-Unternehmenskultur-Peerigon/)
+
 ## The future of frontend tooling.
 
 Our frontend toolstack has become quite complex over the past few years. In order to overcome typical problems when building large websites, we've built a variety of tools with shiny names like Grunt, Gulp or Webpack. However, things are about to change. With new technologies like HTTP2, ES2015 and Web Components around the corner, we need to ask ourselves: are the best practices from today still valid in the future? What kind of tools will we be using in the next few years? Will we need them at all? In my talk, I am going to show you how these new technologies will change the way we work.
