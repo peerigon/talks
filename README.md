@@ -1,6 +1,12 @@
 Talks
 =============
 
+## Introduction to Docker
+
+What is Docker and why we need it - VM vs. Docker - Docker tools - Creating a container - Ecosystem - Alternatives.
+
+* At [Web&Wine Augsburg](http://www.meetup.com/de-DE/web-and-wine/events/234637393/), October 18th, 2016 – [Slides](https://peerigon.github.io/talks/2016-10-18-webandwine-introduction-to-docker)
+
 ## Arbeit ganzheitlich denken
 
 Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.

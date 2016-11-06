@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>basics</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./Demo.html_files/styles.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+    </head>
+    <body>
+        <article>
+            <h5 id="basics">basics</h5>
+<p><code>docker images</code></p>
+<p><code>docker ps</code></p>
+<p><code>docker search alpine</code></p>
+<p><code>docker pull alpine</code></p>
+<p><code>docker pull alpine:3.1</code></p>
+<p><code>docker run --name alpine -it alpine</code></p>
+<p><code>docker run --name alpine -it alpine sh</code></p>
+<p><code>cat /etc/issue</code></p>
+<p><code>ls /</code></p>
+<p><code>apk add redis --no-cache</code></p>
+<p><code>docker diff ID</code></p>
+<p><code>docker commit bee9a7b8c837 my-alpine-with-redis</code></p>
+<p><code>docker run -it -p 6379:6379 my-alpine-with-redis sh</code></p>
+<p><code>redis-server</code> and <code>redis-cli</code></p>
+<p><code>docker run --rm --name alpine -it alpine echo Hello Web and Wine</code></p>
+<p><code>docker run --rm --name helloworld -p 8080:80 tutum/hello-world</code></p>
+<p><code>docker run -d --name helloworld -p 8080:80 tutum/hello-world</code></p>
+<p><code>docker ps</code></p>
+<p><code>docker logs -f helloworld</code></p>
+<hr>
+<h5 id="express-app">express app</h5>
+<p><code>docker build -t mynodeapp .</code></p>
+<p><code>docker run --rm -it -p 3000:3000 --name mynodeapp mynodeapp</code></p>
+<p><code>docker run --rm -it -p 3000:3000 --name mynodeapp mynodeapp npm run dev</code></p>
+<p><code>docker run --rm -it -p 3000:3000 --name mynodeapp -v $(pwd):/code mynodeapp npm run dev</code></p>
+<p><code>docker-compose up</code></p>
+<hr>
+<h5 id="wordpress">wordpress</h5>
+<p><code>docker-compose up</code></p>
+
+        </article>
+    </body>
+    <!-- MathJax (from CDN) -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- highlight.js (from CDN) -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</html>
