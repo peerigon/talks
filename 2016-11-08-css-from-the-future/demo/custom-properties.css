@@ -5,3 +5,9 @@ html {
 body:after {
     content: "Your current device type is "var(--device-type);
 }
+
+/*
+inheritance
+media queries
+calc()
+*/

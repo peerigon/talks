@@ -265,7 +265,7 @@
     ```
 
     - The auto-placement algorithm kicks in as soon as grid items are not explicitly placed on the grid
-    - `grid-auto-flow` defines where new grid cells are created and whether wholes are allowed to be filled up
+    - `grid-auto-flow` defines where new grid cells are created and whether holes are allowed to be filled up
 
     ---
 
@@ -298,6 +298,40 @@
     ---
 
     <img src="assets/ciu-grid.jpg" width="900">
+
+    ---
+
+    ### Why another layout mode?
+
+    Was Flexbox not good enough?
+
+    ---
+
+    Flexbox is not suited for page layout:
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/vPryjyFP5FM" frameborder="0" allowfullscreen></iframe>
+
+    ---
+
+    .slides-columns[
+    .col[
+    #### Flexbox
+
+    - Content dictates layout
+    - Use it for smaller components<br>like navs, toolbars, etc.
+    ]
+    .col[
+    #### Grid
+
+    - Grid dictates layout <sup>*</sup>
+    - Use it for page layouts, forms, etc.
+    ]
+    ]
+
+    <small>
+        <span>*</span> with notable exceptions<br>
+        [jakearchibald.com/2014/dont-use-flexbox-for-page-layout](https://jakearchibald.com/2014/dont-use-flexbox-for-page-layout/)
+    </small>
 
     ---
     class: slides-chapter, theme-whiskey
@@ -358,6 +392,61 @@
 
     - Allows to define typed CSS properties with custom syntax and inheritance behavior
     - Like CSS custom properties, but more low-level
+
+    ---
+
+    ### [Worklets](https://drafts.css-houdini.org/worklets/)
+
+    - A worklet is like a light-weight web worker
+    - Provides an API to extent the rendering engine
+    - Is thread-agnostic: it may or may not run on the main thread
+    - Has a minimal API on the JavaScript environment
+
+    ---
+
+    .slides-columns[
+    .col[
+    #### Paint worklet
+
+    [Demo](http://googlechrome.github.io/houdini-samples/paint-worklet/ripple/)
+    ]
+    .col[
+    #### Animation worklet
+
+    [Demo](http://googlechrome.github.io/houdini-samples/animation-worklet/parallax-scrolling/?noworklet&nojank)
+    ]
+    .col[
+    #### Layout worklet
+
+    No demo yet
+    ]
+    ]
+
+    ---
+
+    Check out all the other specs:
+
+    <img src="assets/houdini-specs.jpg" width="500" />
+
+    ---
+
+    .slides-label.slides-danger[Caveat]
+
+    These specs are in a very early stage and the API is very likely to change.<br>
+    They are far from production-ready.
+
+    ---
+    class: slides-chapter, theme-whiskey
+
+    ## Other new features
+
+    ---
+
+    - [Scrolled-linked effects](https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects)
+    - [Intrinsic & Extrinsic Sizing](https://www.w3.org/TR/css-sizing-3/) ([Demo](https://googlechrome.github.io/samples/css-intrinsic-sizing/))
+    - [Will Change](https://drafts.csswg.org/css-will-change/)
+    - [Containment](https://drafts.csswg.org/css-containment/)
+
 </textarea>
   <script type="text/javascript">
       var slideshow = remark.create({
