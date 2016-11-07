@@ -1,0 +1,61 @@
+:root {
+    --grid-template-columns:
+        0px
+        [header-left nav-left content-left aside-left]
+        1fr
+        [header-right nav-right content-right aside-right]
+        0px;
+}
+
+@media (min-width: 600px) {
+    :root {
+        --grid-template-columns:
+            0px
+            [header-left nav-left aside-left]
+            repeat(2, 1fr)
+            [nav-right content-left]
+            repeat(4, 1fr)
+            [content-right header-right aside-right]
+            0px;
+    }
+}
+
+@media (min-width: 1000px) {
+    :root {
+        --grid-col-width: minmax(min-content, 80px);
+        --grid-template-columns:
+            0px
+            [header-left nav-left]
+            repeat(3, var(--grid-col-width))
+            [nav-right content-left]
+            repeat(6, var(--grid-col-width))
+            [content-right aside-left]
+            repeat(3, var(--grid-col-width))
+            [header-right aside-right]
+            0px;
+    }
+}
+
+body {
+    display: grid;
+
+    justify-content: center;
+    grid-template-columns: var(--grid-template-columns);
+    grid-gap: 12px;
+}
+
+#header {
+    grid-column: header-left / header-right;
+}
+
+#nav {
+    grid-column: nav-left / nav-right;
+}
+
+#content {
+    grid-column: content-left / content-right;
+}
+
+#aside {
+    grid-column: aside-left / aside-right;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <link href="grid.css" rel="stylesheet" type="text/css">
+    <title>Grid Demo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            color: white;
+        }
+        div {
+            min-height: 100px;
+            padding: 1em;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const baseHue = rnd(0, 360);
+        const baseSat = 60;
+        let hue = baseHue;
+        let id = 0;
+
+        function rnd(min, max) {
+            return Math.floor(Math.random() * (max + min)) + min;
+        }
+
+        function createDiv(color) {
+            const i = id++;
+            const div = document.createElement("div");
+            div.id = "box-" + i;
+            div.style.backgroundColor = color;
+            div.textContent = i;
+            document.body.appendChild(div);
+        }
+
+        function hsl(hue, saturation, lightness) {
+            return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+        }
+
+        createDiv(hsl(baseHue, baseSat, 50));
+        for (let i = 0; i < 100; i++) {
+            createDiv(hsl(hue, baseSat, 50 - rnd(0, 20)));
+            hue += rnd(10, 30);
+            hue %= 360;
+        }
+    </script>
+</body>
+</html>

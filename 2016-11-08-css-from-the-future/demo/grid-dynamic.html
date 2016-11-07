@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+    <link href="grid-dynamic.css" rel="stylesheet" type="text/css">
+    <title>Dynamic Grid Demo</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: 2rem;
+            margin: 0 auto;
+            color: white;
+            min-height: 100vh;
+        }
+
+        div::after {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            content: "#"attr(id);
+        }
+
+        #header {
+            background-color: #e6be00;
+        }
+
+        #nav {
+            background-color: #12c182;
+        }
+
+        #content {
+            background-color: #9AB4B6;
+            min-height: 60vh;
+        }
+
+        #aside {
+            background-color: indianred;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="nav"></div>
+    <div id="content"></div>
+    <div id="aside"></div>
+</body>
+</html>

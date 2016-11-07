@@ -1,0 +1,10 @@
+body {
+    display: grid;
+}
+
+/*
+grid-template-columns / 1fr / repeat / grid-gap / grid-template-rows
+grid-column: 1 / 3 2 / 4 / named columns
+Auto rows, auto columns, grid-auto-flow: dense;
+justify-items, justify-content
+*/
