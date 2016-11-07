@@ -1,0 +1,7 @@
+html {
+    --device-type: "mobile";
+}
+
+body:after {
+    content: "Your current device type is "var(--device-type);
+}

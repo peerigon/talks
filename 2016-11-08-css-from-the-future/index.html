@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html id="slides" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS from the future</title>
+    <link href="https://assets.peerigon.com/peerigon/fonts/fonts.css" type="text/css" rel="stylesheet">
+    <link href="./styles/main.css" type="text/css" rel="stylesheet">
+  </head>
+  <body class="slides">
+    <script src="./js/remark/remark.js" type="text/javascript"></script>
+<textarea id="source">
+    layout: true
+    class: theme-whiskey, slides-left
+    ---
+    name: cover
+
+    # CSS from the future
+
+    Johannes Ewald<br>
+    Peerigon GmbH<br>
+    [@jhnnns](https://twitter.com/jhnnns)
+
+    <img id="slide-cover-img" src="./assets/peerigon-logo.png" width="400">
+
+    ---
+    layout: true
+    class: theme-whiskey, slides-centered
+    ---
+    class: slides-chapter
+
+    ## There is no CSS4
+
+    <img src="./assets/der-schrei.jpg" height="300">
+
+    ---
+
+    Starting with CSS3, specification work is separated into different modules.
+
+    .slides-columns[
+    .col[
+    <img src="assets/css3-spec.jpg" width="400">
+    ]
+    .col[
+    <img src="assets/css3-modules.jpg" width="600" style="margin-left: -100px;">
+    ]
+    ]
+
+    ---
+
+    .slides-columns[
+    .col[
+    A list of all current [specifications](https://www.w3.org/Style/CSS/current-work.en.html).
+    ]
+    .col[
+    <img src="assets/css-specs.jpg" height="600" style="margin-top: -50px">
+    ]
+    ]
+
+    ---
+    class: slides-chapter, theme-whiskey
+
+    ## CSS Custom Properties
+
+    ---
+
+    [Demo](demo/custom-properties.html)
+
+    ---
+
+    ```css
+    :root {
+        --grid: 4px;
+    }
+    ```
+
+    - Custom properties are defined like regular properties starting with a `--`
+    - They are usually defined on the `:root` selector (but they don't have to)
+
+    ---
+
+    ```css
+    div:after {
+        content: "Current grid is "var(--grid, "unknown");
+    }
+    ```
+
+    - Custom properties can be included via the `var()` method
+    - Property values are treated as "strings" by default
+    - The `var()` method allows to define a default value as second argument
+
+    ---
+
+    ```css
+    div {
+        margin-top: calc(var(--grid) * 3);
+    }
+    ```
+
+    - Calculations must be wrapped with `calc()`
+
+    ---
+
+    ```css
+    html {
+        --bg-color: rebeccapurple;
+    }
+
+    body {
+        --bg-color: hotpink;
+    }
+
+    div {
+        background-color: var(--bg-color); /* hotpink */
+    }
+    ```
+
+    - Custom properties cascade just like regular properties
+
+    ---
+
+    ```javascript
+    const root = document.documentElement;
+
+    root.style.setProperty("--bg-color", "aliceblue")
+    root.style.getPropertyValue("--bg-color");
+    ```
+
+    - Custom properties can be read and modified via JavaScript
+
+    ---
+
+    <img src="assets/ciu-custom-properties.jpg" width="900">
+
+    ---
+
+    .slides-label[Side note]
+
+    CSS2 already provided a special variable:
+
+    ```css
+    div {
+        border: 1px solid currentColor;
+    }
+    ```
+
+    You should use it!
+
+    ---
+    class: slides-chapter, theme-whiskey
+
+    ## Mixins
+
+    ---
+
+    Mixins = a set of properties provided by a single custom property
+
+    ```css
+    :root {
+        --toolbar-theme: {
+            background-color: hsl(120, 70%, 95%);
+            border-radius: 4px;
+            border: 1px solid var(--theme-color, hotpink);
+        };
+    }
+
+    .toolbar {
+        @apply --toolbar-theme;
+    }
+    ```
+
+    ---
+
+    .slides-label.slides-danger[Caveat]
+
+    - No [official draft yet](https://tabatkins.github.io/specs/css-apply-rule/)
+    - Example implementation only in Chrome/Opera behind flag
+
+    ---
+    class: slides-chapter, theme-whiskey
+
+    ## Nesting
+
+    ---
+
+    ```css
+    table.colortable {
+      & td {
+        text-align: center;
+        &.c {
+            text-transform: uppercase;
+        }
+        &:first-child, &:first-child + td {
+            border: 1px solid black;
+        }
+      }
+      & th {
+        text-align: center;
+        background: black;
+        color :white;
+      }
+    }
+    ```
+
+    ---
+
+    .slides-label.slides-danger[Caveat]
+
+    - No [official draft yet](https://tabatkins.github.io/specs/css-nesting/)
+    - Even no example implementation yet
+
+    ---
+    class: slides-chapter, theme-whiskey
+
+    ## Grid
+
+    ---
+
+    [Demo](demo/grid.html)
+
+    ---
+
+    ```css
+    #page {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-gap: 12px;
+    }
+    ```
+
+    - `display: grid` switches the formatting context to grid
+    - `grid-template-{columns,rows}` defines a grid template
+    - `grid-gap` defines the gap between columns and rows
+
+    ---
+
+    ```css
+    #page {
+        display: grid;
+        grid-template-columns:
+            [sidebar-left]
+            200px
+            [sidebar-right content-left]
+            1fr
+            [content-right];
+    }
+
+    #sidebar {
+        grid-column: sidebar-left / sidebar-right;
+    }
+
+    #content {
+        grid-column: content-left / content-right;
+    }
+    ```
+
+    - It is also possible to name grid lines
+
+    ---
+
+    ```css
+    #page {
+        display: grid;
+        grid-auto-flow: row dense;
+    }
+    ```
+
+    - The auto-placement algorithm kicks in as soon as grid items are not explicitly placed on the grid
+    - `grid-auto-flow` defines where new grid cells are created and whether wholes are allowed to be filled up
+
+    ---
+
+    ```css
+    #page {
+        display: grid;
+        justify-content: center;
+        justify-items: end;
+        align-content: center;
+        align-items: end;
+    }
+    ```
+
+    - `{justify,align}-content` aligns all grid cells inside the container along the x/y axis
+    - `{justify,align}-items` aligns the contents of each grid item
+
+    ---
+
+    .slides-label[Note]
+
+    This is just a small excerpt.<br>
+    Check out the full syntax [here](https://css-tricks.com/snippets/css/complete-guide-grid).
+
+    ---
+
+    ### CSS Custom Properties + Grid Layout = 💕
+
+    [Example](demo/grid-dynamic.html)
+
+    ---
+
+    <img src="assets/ciu-grid.jpg" width="900">
+
+    ---
+    class: slides-chapter, theme-whiskey
+
+    ## Houdini Drafts
+
+    ---
+
+    <img src="assets/houdini-wiki.jpg" width="700" />
+
+    ---
+
+    <img src="assets/extensible-web-manifesto.jpg" width="500" />
+
+    [extensiblewebmanifesto.org](https://extensiblewebmanifesto.org/)
+
+    ---
+
+    <img src="assets/inspect-video-element.jpg" width="700" />
+
+    ---
+
+    ### [CSS Typed Object Model](https://drafts.css-houdini.org/css-typed-om/)
+
+    ```javascript
+    myElement.styleMap.set("opacity", new CSSNumberValue(3));
+    myElement.styleMap.set("margin-left", new CSSSimpleLength(20, "px"));
+
+    myElement.styleMap.get("margin-left").value; // 20
+    myElement.styleMap.get("margin-left").type; // "px"
+    ```
+
+    - Better performance because values don't need to be parsed/casted
+    - Easier style manipulation via JavaScript
+
+    ---
+
+    ### [CSS Properties and Values](https://drafts.css-houdini.org/css-properties-values-api/)
+
+    .slides-columns[
+    ```javascript
+    CSS.registerProperty({
+        name: "--stop-color",
+        syntax: "<color>",
+        inherits: false,
+        initialValue: "rgba(0,0,0,0)"
+    });
+    ```
+    ```css
+    .button {
+        --stop-color: red;
+        background:
+            linear-gradient(var(--stop-color), black);
+        transition: --stop-color 1s;
+    }
+    ```
+    ]
+
+    - Allows to define typed CSS properties with custom syntax and inheritance behavior
+    - Like CSS custom properties, but more low-level
+</textarea>
+  <script type="text/javascript">
+      var slideshow = remark.create({
+        highlightStyle: "ir_black"
+        ,ratio: '16:9'
+      });
+    </script>
+  </body>
+</html>
+
