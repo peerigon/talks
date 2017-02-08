@@ -1,6 +1,12 @@
 Talks
 =============
 
+## JavaScript on Hardware
+
+There is not need to learn low level languages to interact with hardware anymore. This talk -- which is actually more like a live coding session -- demos hardware interaction on the [espruino Pico](http://www.espruino.com/) and on a [Raspberry Pi](https://www.raspberrypi.org/).
+
+* At [Web&Wine Augsburg](https://www.meetup.com/de-DE/web-and-wine/events/237309786/), February 7th, 2017 - [Slides](https://peerigon.github.io/talks/2017-02-07-web-and-wine-js-on-hardware)
+
 ## CSS from the future
 
 New upcoming CSS features that will blow your mind. Get a sneak preview of CSS custom properties, the CSS grid layout and the mysterious Houdini drafts.
