@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1552" height="873" viewBox="0 0 1552 873">
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(559)">
+      <circle cx="120.5" cy="120.5" r="120.5" fill="#DB7093"/>
+      <text fill="#FFFFFF" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+        <tspan x="71" y="152">JS</tspan>
+      </text>
+      <g transform="translate(193)">
+        <circle cx="120.5" cy="120.5" r="120.5" fill="#FFEFD5"/>
+        <text fill="#000000" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+          <tspan x="46.25" y="152">CSS</tspan>
+        </text>
+      </g>
+    </g>
+    <g transform="translate(280 316)">
+      <g transform="translate(559)">
+        <circle cx="120.5" cy="120.5" r="120.5" fill="#DB7093"/>
+        <text fill="#FFFFFF" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+          <tspan x="71" y="152">JS</tspan>
+        </text>
+        <g transform="translate(193)">
+          <circle cx="120.5" cy="120.5" r="120.5" fill="#FFEFD5"/>
+          <text fill="#000000" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+            <tspan x="46.25" y="152">CSS</tspan>
+          </text>
+        </g>
+      </g>
+      <circle cx="120.5" cy="120.5" r="120.5" fill="#DB7093"/>
+      <text fill="#FFFFFF" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+        <tspan x="71" y="152">JS</tspan>
+      </text>
+      <g transform="translate(193)">
+        <circle cx="120.5" cy="120.5" r="120.5" fill="#FFEFD5"/>
+        <text fill="#000000" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+          <tspan x="46.25" y="152">CSS</tspan>
+        </text>
+      </g>
+    </g>
+    <g transform="translate(0 632)">
+      <g transform="translate(559)">
+        <circle cx="120.5" cy="120.5" r="120.5" fill="#DB7093"/>
+        <text fill="#FFFFFF" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+          <tspan x="71" y="152">JS</tspan>
+        </text>
+        <g transform="translate(193)">
+          <circle cx="120.5" cy="120.5" r="120.5" fill="#FFEFD5"/>
+          <text fill="#000000" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+            <tspan x="46.25" y="152">CSS</tspan>
+          </text>
+        </g>
+      </g>
+      <circle cx="120.5" cy="120.5" r="120.5" fill="#DB7093"/>
+      <text fill="#FFFFFF" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+        <tspan x="71" y="152">JS</tspan>
+      </text>
+      <g transform="translate(193)">
+        <circle cx="120.5" cy="120.5" r="120.5" fill="#FFEFD5"/>
+        <text fill="#000000" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+          <tspan x="46.25" y="152">CSS</tspan>
+        </text>
+      </g>
+    </g>
+    <g transform="translate(1118 632)">
+      <circle cx="120.5" cy="120.5" r="120.5" fill="#DB7093"/>
+      <text fill="#FFFFFF" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+        <tspan x="71" y="152">JS</tspan>
+      </text>
+      <g transform="translate(193)">
+        <circle cx="120.5" cy="120.5" r="120.5" fill="#FFEFD5"/>
+        <text fill="#000000" font-family="OperatorMono-Bold, Operator Mono" font-size="90" font-weight="bold">
+          <tspan x="46.25" y="152">CSS</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
