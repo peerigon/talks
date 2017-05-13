@@ -1,6 +1,14 @@
 Talks
 =============
 
+## HTTPS with Let's Encrypt
+
+Since Let's Encrypt launched in 2016, the project has gone through the roof: 20 million issued certificates, almost 25 million fully qualified domains active. Many webhosters are supporting the deployment of Let's Encrypt certificates automatically via their webinterfaces. However, deploying HTTPS professionally brings along higher requirements like [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) in combination with [HPKP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning), which needs more background knowledge and configuration. I will give you a short insight into how Let's Encrypt works and other TLS/HTTPS security best practices.
+
+* By Carsten Meier
+* At [Web&Wine Augsburg](https://www.meetup.com/web-and-wine/events/239843661/), May 16th, 2017
+* [Slides](https://peerigon.github.io/talks/2017-05-16-web-and-wine-https-lets-encrypt)
+
 ## JavaScript on Hardware
 
 There is not need to learn low level languages to interact with hardware anymore. This talk -- which is actually more like a live coding session -- demos hardware interaction on the [espruino Pico](http://www.espruino.com/) and on a [Raspberry Pi](https://www.raspberrypi.org/).
@@ -92,4 +100,3 @@ Abstracting different transports (http/websockets) and libraries to a unite them
 Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jade, coffee, css, less, ... and your custom stuff.
 
 * At the [munich node.js user group](http://www.mnug.de/archive.html#2014_07_09), July 9th, 2014 – [Slides](https://peerigon.github.io/talks/2014-07-09-MNUG-webpack/) / [Video](https://www.youtube.com/watch?v=EBlUng3IU4E)
-
