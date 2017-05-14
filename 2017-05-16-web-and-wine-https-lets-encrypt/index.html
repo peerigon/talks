@@ -71,15 +71,15 @@
     ---
 
     <ul class="strikethrough">
-        <li><span>SSLv3</span></li>
-        <li><span>TLSv1.0</span></li>
+        <li><span>SSLv3</span> <a href="https://arstechnica.com/security/2014/10/ssl-broken-again-in-poodle-attack/">(POODLE)</a></li>
+        <li><span>TLSv1.0</span> <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security#BEAST_attack">(BEAST)</a></li>
         <p>&nbsp;</p>
-        <li><span>RC4</span></li>
-        <li><span>DSA</span></li>
-        <li><span>SHA-1</span></li>
+        <li><span>RC4</span> <a href="https://en.wikipedia.org/wiki/RC4#Security">(NOMORE and others)</a></li>
+        <li><span>DSA &amp; ECDSA</span> <a href="https://en.wikipedia.org/wiki/Digital_Signature_Algorithm#Sensitivity">(see fail0verflow PS3 hack)</a></li>
+        <li><span>SHA-1</span> <a href="https://en.wikipedia.org/wiki/SHA-1#Attacks">(SHAttered)</a></li>
         <p>&nbsp;</p>
-        <li><span>DNS</span></li>
-        <li><span>BGP</span></li>
+        <li><span>DNS</span> (Fix: <a href="https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions">DNSSEC</a>)</li>
+        <li><span>BGP</span> <a href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol#Security_issues">(hijacking)</a></li>
     </ul>
 
     ---
@@ -125,6 +125,15 @@
 
     ---
 
+    ## List of failures
+    - trusting bad CAs
+    - bad standards in software security
+    - no audits for essential open source software
+    - no money for essential open source projects
+    - deployment of new standards slow as hell
+
+    ---
+
     <img src="assets/encrypt-all-the-things.jpg" style="width: 100%;" />
     <p>(thanks Mozilla &amp; Google for forcing us with HTTP/2 👍)</p>
 
@@ -133,10 +142,18 @@
     ### What do we need?
     <p>easy!</p>
     <ul>
-        <li>X.509 certificate from a browser-trusted CA</li>
+        <li>X.509 certificate from a browser-trusted certificate authority (CA)</li>
         <li>HTTPS-capable webserver</li>
         <li>some configuration magic</li>
     </ul>
+
+    ---
+
+    ### Certificates? CA?
+
+    The web public key infrastructure (PKI) is a *federated system*. Everybody can start a CA, but browsers (now) have [strict rules](https://wiki.mozilla.org/CA:Recommended_Practices) for the CAs they set as a trusted CA.
+
+    Only a certificate issued by a *trusted CA* will work for HTTPS without a browser warning.
 
     ---
 
@@ -183,7 +200,7 @@
 
     #### Transparency
 
-    all certificates issued or revoked are publicly recorded, [available for anyone](https://www.certificate-transparency.org/known-logs)
+    All certificates issued or revoked are publicly recorded, [available for anyone](https://www.certificate-transparency.org/known-logs).
 
     #### Protocols
 
@@ -409,7 +426,7 @@
 
     ## always use a reporting infrastructure!
 
-    ## always use more than two backup keys!
+    ## always use more than two keys!
 
     Take a look at https://report-uri.io/
 
@@ -440,7 +457,13 @@
 
     Pin your CAs at the root and intermediate level like [GitHub does](https://report-uri.io/home/pkp_analyse/https%3A%2F%2Fgithub.com).
 
-    You still need a backup CA and reporting infrastructure!
+    ---
+
+    ## HPKP the easy way
+
+    Keep in mind that Let's Encrypt in only an intermediate CA right now, you therefore need to pin the [IdenTrust root and the ISRG root](https://letsencrypt.org/certificates/).
+
+    Dont' forget: you still need a backup CA and reporting infrastructure!
 
     ---
 
@@ -487,6 +510,20 @@
     Please be carefull with this stuff!
 
     **Take your time.** This isn't something to be done on the go.
+
+    ---
+
+    class: slides-chapter
+
+    ## [Fun stats!](https://letsencrypt.org/stats/)
+
+    ---
+
+    ## And even better...
+
+    We now have infrastructure funds ([SOS](https://www.mozilla.org/en-US/moss/secure-open-source/) by Mozilla, [CII](https://www.coreinfrastructure.org/) by Linux Foundation) that audit and help improve open source software security.
+
+    🤗
 
     ---
 
