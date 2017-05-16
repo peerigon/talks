@@ -1,0 +1,559 @@
+// out: ./main.css, sourcemap: true, compress: true
+
+@color-mint: #46e1c8;
+@color-spinach: #127373;
+@color-whiskey: #e6be00;
+@color-silver: #e6e1de;
+@color-lightsilver: #f5f6f7;
+@color-black: #282828;
+@color-mint-light: lighten(@color-mint, 35%);
+@color-spinach-light: lighten(@color-spinach, 30%);
+@color-whiskey-light: lighten(@color-whiskey, 40%);
+@color-silver-dark: darken(@color-silver, 20%);
+@color-danger: #ec1d4a;
+@color-success: #12c182;
+
+@font-size-small: 15px;
+@font-size-regular: 24px;
+@font-size-big: 55px;
+
+@slides-padding: 100px;
+@slides-aside-padding: 0.4 * @slides-padding;
+
+@char-quote-left: "\203A";
+@char-quote-right: "\2039";
+
+@ul-offset: 1.6em;
+
+#slides {
+    * {
+        // Deactivate default margins and re-add them just for margin-bottom for specific tags
+        margin: 0;
+    }
+
+    p,
+    div,
+    ul,
+    ol,
+    blockquote,
+    pre,
+    img {
+        margin-bottom: 1em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    img {
+        display: block;
+    }
+
+    code {
+        text-align: left;
+        font-family: "Ubunto Mono", monospace;
+
+        div {
+            margin-bottom: 0;
+        }
+    }
+
+    small {
+        font-size: @font-size-small;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 1em;
+        margin-bottom: 1em;
+
+        color: black;
+        font-family: "Nexa", sans-serif;
+        font-weight: 900;
+    }
+
+    ul {
+        margin-left: -1 * @ul-offset;
+        list-style: none;
+
+        > li {
+            &::before {
+                margin-right: 0.5em;
+                margin-left: -1em;
+
+                content: "–";
+            }
+        }
+
+        &.strikethrough {
+            > li > span {
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    blockquote {
+        margin: 1em;
+        padding: 0 1em;
+
+        color: black;
+        font-family: "Nexa", sans-serif;
+        font-weight: 900;
+
+        p {
+            &::before {
+                margin-right: 0.2em;
+                margin-left: -0.5em;
+
+                content: @char-quote-left;
+            }
+
+            &::after {
+                margin-right: -0.5em;
+                margin-left: 0.2em;
+
+                content: @char-quote-right;
+            }
+        }
+    }
+
+    a {
+        padding-bottom: 0.1em;
+
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 1px solid @color-black;
+    }
+
+    table {
+        tr {
+            td {
+                padding-right: 2rem;
+            }
+        }
+    }
+
+    .remark-slide {
+        display: block;
+        height: 100%;
+    }
+
+    .remark-slide-content {
+        display: block;
+        box-sizing: border-box;
+        height: 100%;
+        padding: @slides-padding;
+
+        color: lighten(@color-black, 5%);
+        background-color: white;
+        background-image: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+        background-position: 50% !important; // important is necessary in order to override element styles
+        background-size: cover !important; // important is necessary in order to override element styles
+        font-family: "Lato", sans-serif;
+        font-size: @font-size-regular;
+        font-weight: 400;
+        line-height: 1.4;
+    }
+
+    .remark-slide-number {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        padding: @slides-aside-padding;
+
+        text-align: center;
+        opacity: 1;
+        color: @color-silver-dark;
+        font-size: @font-size-small;
+        line-height: 1;
+    }
+
+    .slides {
+        &-header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            padding: @slides-padding * 0.4;
+
+            text-align: left;
+            color: @color-silver-dark;
+            font-size: @font-size-small;
+            line-height: 1;
+        }
+
+        &-chapter {
+            display: flex;
+            flex-direction: column;
+
+            text-align: center;
+            color: white;
+
+            justify-content: center;
+            align-items: center;
+
+            h2, h3, h4, h5 {
+                color: inherit;
+                font-size: @font-size-big;
+            }
+
+            .remark-slide-number,
+            .slides-header {
+                display: none; // don't show the header on the very first slide
+            }
+
+            &.theme-mint {
+                background-color: @color-mint;
+            }
+
+            &.theme-whiskey {
+                background-color: @color-whiskey;
+            }
+
+            &.theme-spinach {
+                background-color: @color-spinach;
+            }
+
+            &.theme-danger {
+                background-color: @color-danger;
+            }
+
+            &.theme-success {
+                background-color: @color-success;
+            }
+        }
+
+        &-fullscreen-image {
+            img {
+                position: fixed;
+                z-index: 100;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                background: white;
+
+                object-fit: contain;
+            }
+        }
+
+        &-centered {
+            display: flex;
+            flex-direction: column;
+
+            text-align: center;
+
+            justify-content: center;
+            align-items: center;
+
+            ol,
+            ul {
+                width: -moz-max-content;
+                width: -webkit-max-content;
+                width: max-content;
+                max-width: 100%;
+                margin-right: auto;
+                margin-left: auto;
+
+                text-align: left;
+            }
+
+            blockquote {
+                display: flex;
+
+                text-align: center;
+
+                align-items: center;
+
+                &::before {
+                    display: block;
+                    margin-right: 0.75em;
+
+                    content: @char-quote-left;
+                    text-align: right;
+
+                    flex: 1;
+                }
+
+                &::after {
+                    display: block;
+                    margin-left: 0.75em;
+
+                    content: @char-quote-right;
+                    text-align: left;
+
+                    flex: 1;
+                }
+
+                p {
+                    margin-top: 0.2rem;
+
+                    flex: 0 20em;
+
+                    &::before,
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &-content {
+            min-height: 50%;
+
+            > *:first-child {
+                margin-top: 0;
+            }
+        }
+
+        &-columns {
+            display: flex;
+            flex-direction: row;
+
+            text-align: left;
+
+            ul {
+                margin-right: @ul-offset / 2;
+                margin-left: -@ul-offset / 2 + 0.1em;
+            }
+
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            > * {
+                margin-bottom: 0;
+
+                &:not(:last-child) {
+                    margin-right: @ul-offset;
+                }
+            }
+        }
+
+        &-flex-1 {
+            flex: 1;
+        }
+
+        &-text-left {
+            display: block;
+
+            text-align: left;
+        }
+
+        &-text-centered {
+            display: block;
+
+            text-align: center;
+        }
+
+        &-text-right {
+            display: block;
+
+            text-align: right;
+        }
+
+        &-footnote {
+            position: fixed;
+            right: @slides-padding;
+            bottom: @slides-aside-padding;
+            left: @slides-padding;
+
+            color: @color-silver-dark;
+            font-size: @font-size-small;
+
+            ol {
+                margin-bottom: 0;
+
+                li {
+                    padding-left: 0.5em;
+                }
+            }
+
+            a {
+                border-bottom-color: @color-silver-dark;
+            }
+
+            &-mark {
+                vertical-align: text-top;
+                font-size: 0.5em;
+            }
+        }
+
+        &-quote-ref {
+            display: block;
+            margin-top: 0.5em;
+            // negative margin so that the arrow to the left and to the right are vertically centered around the quote
+            margin-bottom: -2em;
+
+            color: @color-silver-dark;
+            font-family: "Lato", sans-serif;
+            font-size: @font-size-small;
+            font-weight: 400;
+
+            a {
+                color: inherit;
+                border-bottom-color: @color-silver-dark;
+            }
+        }
+
+        &-label {
+            position: relative;
+            top: -0.1em;
+            margin-right: 0.2em;
+            padding: 0.25em;
+
+            text-transform: uppercase;
+            color: white;
+            background-color: @color-black;
+            font-size: 0.7em;
+            line-height: 0;
+        }
+
+        &-danger {
+            color: white;
+            background-color: @color-danger;
+
+            .remark-code {
+                border: 5px solid @color-danger;
+            }
+        }
+
+        &-success {
+            color: white;
+            background-color: @color-success;
+
+            .remark-code {
+                border: 5px solid @color-success;
+            }
+        }
+
+        &-code {
+            &-good {
+                > pre {
+                    margin: 0;
+
+                    > code {
+                        border: 5px solid @color-success;
+                    }
+                }
+            }
+
+            &-bad {
+                > pre {
+                    margin: 0;
+
+                    > code {
+                        border: 5px solid @color-danger;
+                    }
+                }
+            }
+        }
+
+        &-vr {
+            display: block;
+
+            border-left: 2px solid @color-silver-dark;
+        }
+
+        &-small {
+            font-size: @font-size-small;
+        }
+
+        .theme-mint {
+            a {
+                &:hover {
+                    color: @color-mint;
+                    border-bottom-color: @color-mint;
+                }
+            }
+
+            blockquote,
+            blockquote p {
+                &::before,
+                &::after {
+                    color: @color-mint;
+                }
+            }
+        }
+
+        .theme-whiskey {
+            a {
+                &:hover {
+                    color: @color-whiskey;
+                    border-bottom-color: @color-whiskey;
+                }
+            }
+
+            blockquote,
+            blockquote p {
+                &::before,
+                &::after {
+                    color: @color-whiskey;
+                }
+            }
+        }
+
+        .theme-spinach {
+            a {
+                &:hover {
+                    color: @color-spinach;
+                    border-bottom-color: @color-spinach;
+                }
+            }
+
+            blockquote,
+            blockquote p {
+                &::before,
+                &::after {
+                    color: @color-spinach;
+                }
+            }
+        }
+    }
+
+    #slide-cover {
+        .remark-slide-number,
+        .slides-header {
+            display: none; // don't show the header on the very first slide
+        }
+
+        &-img {
+            position: fixed;
+            right: @slides-padding;
+            bottom: @slides-padding;
+            width: 200px;
+        }
+    }
+
+    pre {
+        width: 90%;
+        padding: 1.5em;
+        text-align: left;
+        margin: 0 auto;
+        background-color: hsl(0, 0%, 89%);
+        font-size: 20px;
+        margin-bottom: 1em;
+        font-family: "Fira Code";
+    }
+}
