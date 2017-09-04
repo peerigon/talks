@@ -1,6 +1,13 @@
 Talks
 =============
 
+## HTTP/2 for data networking
+
+Everyone is talking about the impact of HTTP/2 (H2) on static assets like HTML, CSS or images. But what does it mean for data? How does it change REST and do we still need WebSockets? This talk highlights some basics of H2 and aims to answer common questions by API developers with benchmarks performed using H1 and H2 repectively.
+
+* By Michael Jaser
+* At [jscraftcamp2017](http://jscraftcamp.org/) July 22nd, 2017 – [Slides](https://peerigon.github.io/talks/2017-07-22-http2-for-data/)
+
 ## HTTPS with Let's Encrypt
 
 Since Let's Encrypt launched in 2016, the project has gone through the roof: 20 million issued certificates, almost 25 million fully qualified domains active. Many webhosters are supporting the deployment of Let's Encrypt certificates automatically via their webinterfaces. However, deploying HTTPS professionally brings along higher requirements like [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) in combination with [HPKP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning), which needs more background knowledge and configuration. I will give you a short insight into how Let's Encrypt works and other TLS/HTTPS security best practices.
@@ -13,6 +20,7 @@ Since Let's Encrypt launched in 2016, the project has gone through the roof: 20 
 
 There is not need to learn low level languages to interact with hardware anymore. This talk -- which is actually more like a live coding session -- demos hardware interaction on the [espruino Pico](http://www.espruino.com/) and on a [Raspberry Pi](https://www.raspberrypi.org/).
 
+* By Michael Jaser
 * At [Web&Wine Augsburg](https://www.meetup.com/de-DE/web-and-wine/events/237309786/), February 7th, 2017 - [Slides](https://peerigon.github.io/talks/2017-02-07-web-and-wine-js-on-hardware)
 
 ## CSS from the future
