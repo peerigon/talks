@@ -6,7 +6,7 @@ Talks
 Everyone is talking about the impact of HTTP/2 (H2) on static assets like HTML, CSS or images. But what does it mean for data? How does it change REST and do we still need WebSockets? This talk highlights some basics of H2 and aims to answer common questions by API developers with benchmarks performed using H1 and H2 repectively.
 
 * By Michael Jaser
-* At [jscraftcamp2017](http://jscraftcamp.org/) July 22nd, 2017 – [Slides](https://peerigon.github.io/talks/2017-07-22-http2-for-data/)
+* At [jscraftcamp2017](http://jscraftcamp.org/) July 22nd, 2017 – [Slides](https://peerigon.github.io/talks/2017-07-22-jscraftcamp-http2-for-data)
 
 ## HTTPS with Let's Encrypt
 
