@@ -18,7 +18,7 @@
 
     # JavaScript RoadTrip
 
-    Michael Jaser<br>
+    Jannik Keye / Michael Jaser<br>
     Peerigon GmbH<br>
     [@mmeaku](https://twitter.com/mmeaku)
 
@@ -132,24 +132,14 @@
 
     - controls breSono (LEDs)
     - provides navigation (GPS)
-    - constrols the car (CAN)
+    - controls the car (CAN)
       - open/close battery lid
       - lock/unlock car
     - computes cockpit information (CAN)
     - hosts a Hotspot (Wifi)
     - shares mobile data connection (LTE)
 
-    ---
-
-    class: slides-chapter
-
-    ## UX Development / Design
-
-    ---
-
-    Jannik
-
-    ---
+   ---
 
     class: slides-chapter
 
@@ -158,15 +148,74 @@
     ---
     class: slides-chapter
 
+    ## UX Development / Design
+
+    --- Jannik ---
+
+    ---
+    class: slides-chapter
+
     ## Hardware
 
     ---
+    class: slides-chapter ## Hardware
 
     ## Sonobox
+
+    ---
+
+    - bridge between car and web app
+    - runs a Node.js server
+    - calculates estimates and triggers commands
+    - sends data to the cockpit
+
+    ---
+
+    ## RaspberryPi Zero W
 
     <img src="./assets/pi-zero-w.jpg" style="width: 40vw" />
 
     <small>https://www.raspberrypi.org/products/raspberry-pi-zero-w/</small>
+
+    - 1GHz, single-core CPU
+    - 512MB RAM
+    - 802.11 b/g/n wireless LAN
+    - 1x MicroUSB
+
+    ---
+
+    ## Addons
+
+    - CANShield
+    - USB Ethernet Dongle
+    - GPS
+    - LED
+
+    ---
+    class: slides-chapter ## Hardware ## Sonobox
+
+    ## Dashboard
+
+    ---
+
+    ## Requirements
+
+    - we need a device which runs the web app smoothly
+    - Android would be sweet (mobile platform, touch)
+    - energy efficient
+
+
+    ---
+
+    ## Odroid XU4
+
+    <img src="./assets/odroid-xu-4.jpg" style="width: 20vw" />
+
+    - CPU: [Samsung Exynos5422 Octo Core (2.2 GHz)](http://www.samsung.com/semiconductor/minisite/Exynos/Solution/MobileProcessor/Exynos_5_Octa_5422.html)
+    - GPU: Mali T628 OpenGL ES 3.1/2.0/1.1 and OpenCL 1.2
+    - RAM: 2Gbyte LPDDR3
+    - same as Samsung Galaxy S5 (2014)
+    - runs Android 7
 
     ---
 
