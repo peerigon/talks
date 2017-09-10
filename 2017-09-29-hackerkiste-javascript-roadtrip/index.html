@@ -36,7 +36,7 @@
 
     >"We need an infotainment for the car we're building. It's not too complicated, just a few controls..."
 
-    Max, Sono Motors
+    Sono Motors
 
     ---
 
@@ -93,7 +93,7 @@
 
     ---
 
-    ## Sounds easy, but...
+    ## 🙈 Sounds easy, but...
 
     - it's only an upscaled version
     - poor usability / pixelated
@@ -111,24 +111,68 @@
 
     ---
 
-    ## 💡 Responsive PWA
-
-    - works on Dashboard (10") and Smartphones (Android, iOS)
-    - two "modes"
-    - same functionality
-    - a single codebase
-    - synchronized on application level
+    <img src="./assets/sonotainment-versions.png" style="height: 60vh;" />
 
     ---
 
-    ## Downside
+    ## 💡 Responsive PWA
+
+    - a single codebase
+    - platform agnostic (flexibilty++)
+    - works on Dashboard (10") and Smartphones (Android, iOS)
+    - almost identical functionality
+    - synchronized on application level
+    - OTA updates
+
+    ---
+
+    ## 😓 Downside
 
     - by ditching Android, the app grew more complex
     - Music and Navigation as part of the app, not the OS
+    - tight deadline
 
     ---
 
+    class: slides-chapter
+
     ## Planned Features
+
+    ---
+
+    ## BreSono (illuminated moss)
+
+    <img src="./assets/bresono-green.jpg" style="height: 40vh;" />
+
+    - control color & brightness via app
+
+    ---
+
+    ## Controls for the car
+
+    <img src="./assets/feature-car-control.png" style="height: 40vh;" />
+
+    - open/close car & battery-lid
+
+    ---
+
+    ## Information pane
+
+    <img src="./assets/feature-informational-pane.png" style="height: 40vh;" />
+
+    ---
+
+    ## Help videos
+
+    <img src="./assets/feature-help-videos.png" style="height: 40vh;" />
+
+    ---
+
+    ## Bonus: Compute cockpit data
+
+    <img src="./assets/sion_cockpit.jpg" style="height: 50vh;" />
+
+    ---
 
     - controls breSono (LEDs)
     - provides navigation (GPS)
@@ -139,7 +183,7 @@
     - hosts a Hotspot (Wifi)
     - shares mobile data connection (LTE)
 
-   ---
+    ---
 
     class: slides-chapter
 
@@ -150,7 +194,9 @@
 
     ## UX Development / Design
 
-    --- Jannik ---
+    ---
+
+    Jannik
 
     ---
     class: slides-chapter
@@ -158,7 +204,7 @@
     ## Hardware
 
     ---
-    class: slides-chapter ## Hardware
+    class: slides-chapter
 
     ## Sonobox
 
@@ -173,7 +219,7 @@
 
     ## RaspberryPi Zero W
 
-    <img src="./assets/pi-zero-w.jpg" style="width: 40vw" />
+    <img src="./assets/pi-zero-w.png" style="width: 40vw" />
 
     <small>https://www.raspberrypi.org/products/raspberry-pi-zero-w/</small>
 
@@ -192,8 +238,30 @@
     - LED
 
     ---
-    class: slides-chapter ## Hardware ## Sonobox
 
+    ## CAN-Bus
+
+    - Controller Area Network
+    - developed by Bosch since 1983
+    - message-based protocol
+    - goal: reduce amount of cables
+    - used by OBD-II
+
+    ---
+
+    <img src="./assets/can.gif" style="width: 35vw" />
+
+    ---
+
+    <img src="./assets/can-translated.gif" style="width: 40vw" />
+
+    ---
+
+    ## Demo
+
+    <video src="./assets/BiSono.mp4" controls="controls" style="height: 50vh" />
+    ---
+    class: slides-chapter
     ## Dashboard
 
     ---
@@ -201,9 +269,8 @@
     ## Requirements
 
     - we need a device which runs the web app smoothly
-    - Android would be sweet (mobile platform, touch)
+    - Android would be sweet (touch support, most recent Chrome, PWA support)
     - energy efficient
-
 
     ---
 
@@ -219,24 +286,70 @@
 
     ---
 
-    ## CAN
-
-    <img src="./assets/can.gif" style="width: 40vw"/>
-
-    ---
-
-    ## Demo
-
-    <video src="./assets/BiSono.mp4" controls="controls" style="height: 50vh"/>
-
-    ---
     class: slides-chapter
 
     ## ⚡ Challenges
 
     ---
 
+    ## 🎛️ Protoyping
+
+    - new technolgies for everyone
+    - the most agile agile you'd ever see
+    - changes on a daily basis
+    - estimates almost impossible
+    - thinking in fallbacks
+
+    ---
+
+    <img src="./assets/sonobox-early.jpg" style="height: 60vh;" />
+
+    ---
+
+    ## 🕛 DDD (Deadline driven development)
+
+    - release dates were immutable
+    - long hours and night shifts
+    - JIT all the things (i.e. SION arrived 4 hours before release)
+    - not enough time to ensure stability
+
+    ---
+
+    <img src="./assets/sion-roding-late.jpg" style="height: 60vh;" />
+
+    ---
+
+    ## 🤖 Hardware !== Software
+
+    - it takes time to deliver
+    - Same Day Delivery is our friend
+    - you can't just try endless devices / sensors, etc.
+    - hardware is not always portable
+    - testing is more challenging
+
+    ---
+
+    <img src="./assets/local-development-1.jpg" style="height: 60vh;" />
+
+    ---
+
+    <img src="./assets/local-development-2.jpg" style="height: 60vh;" />
+
+    ---
+
+    ## 🎯 Testing
+
+    - no _identical_ local testing setup possible (i.e. CAN)
+    - Quality time with the SION was scarce (avg. 5 people working at the same time)
+    - the API is able to fake everything for testing
+    - BUT: You still need to test the _actual_ device
+    - Try to be as flexible as possible (=> Remote development)
+
+    ---
+
     ## Thank you
+
+    ---
 
 
 </textarea>
