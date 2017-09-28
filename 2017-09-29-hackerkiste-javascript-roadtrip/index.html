@@ -42,7 +42,7 @@
 
     ## First draft
 
-    <img src="./assets/first-app-draft.png" style="width: 70vh"/>
+    <img src="./assets/first-app-draft.png" height="500" />
 
     ---
 
@@ -88,8 +88,8 @@
 
     - connect Android phone with Dashboard
     - open Sono App on phone
-    - controllable both ways
-    - Android provides Maps / Music / etc.
+    - App is displayed and controllable from Dashboard
+    - Android provides Navigation / Music / etc.
 
     ---
 
@@ -107,11 +107,11 @@
 
     class: slides-chapter
 
-    ## Betting on the web
+    ## Going all web...
 
     ---
 
-    <img src="./assets/sonotainment-versions.png" style="height: 60vh;" />
+    <img src="./assets/sonotainment-versions.png" height="600" />
 
     ---
 
@@ -130,7 +130,8 @@
 
     - by ditching Android, the app grew more complex
     - Music and Navigation as part of the app, not the OS
-    - tight deadline
+    - UI/UX was hard for so many features
+    - using an app in a car is totally different
 
     ---
     class: slides-chapter
@@ -141,7 +142,7 @@
 
     ## BreSono (illuminated moss)
 
-    <img src="./assets/bresono-green.jpg" style="height: 40vh;" />
+    <img src="./assets/bresono-green.jpg" height="400" />
 
     - control color & brightness via app
 
@@ -177,20 +178,20 @@
 
     ## Music
 
-    - web radio integration
+    - Web radio integration
     - AirPlay
 
     ---
 
     ## Navigation
 
-    <img src="./assets/feature-navigation.png" style="height: 40vh;" />
+    <img src="./assets/feature-navigation.png" height="400" />
 
     ---
 
     ## Bonus: Compute cockpit data
 
-    <img src="./assets/sion_cockpit.jpg" style="height: 50vh;" />
+    <img src="./assets/sion_cockpit.jpg" height="500" />
 
     ---
 
@@ -199,12 +200,12 @@
     - host a Hotspot (Wifi)
     - share mobile data connection (LTE)
     - remote debugging capabilities
-    - analytics
+    - Analytics
 
     ---
 
     class: slides-chapter
-    
+
     ## UX / UI
 
     ---
@@ -236,31 +237,31 @@
 
     ---
 
-    <img src="./assets/iphones.png" style="width: 45vw" />
-    
-    ---
-    
-    <img src="./assets/tablet_music_airplay.png" style="width: 45vw" />
+    <img src="./assets/iphones.png" height="600" />
 
     ---
 
-    <img src="./assets/tablet_information.png" style="width: 45vw" />
-    
-    ---
-    
-    <img src="./assets/tablet_chargin_detail.png" style="width: 45vw" />
-
-    ---
-    
-    <img src="./assets/tablet_controls.png" style="width: 45vw" />
-
-    ---
-    
-    <img src="./assets/tablet_help.png" style="width: 45vw" />
+    <img src="./assets/tablet_music_airplay.png" height="540" />
 
     ---
 
-    <img src="./assets/cockpit-bresono-dashboard.jpg" style="width: 45vw" />
+    <img src="./assets/tablet_information.png" height="540" />
+
+    ---
+
+    <img src="./assets/tablet_chargin_detail.png" height="540" />
+
+    ---
+
+    <img src="./assets/tablet_controls.png" height="540" />
+
+    ---
+
+    <img src="./assets/tablet_help.png" height="540" />
+
+    ---
+
+    <img src="./assets/cockpit-bresono-dashboard.jpg" height="540" />
 
     ---
 
@@ -269,9 +270,16 @@
     ## Architecture
 
     ---
-    class: slides-chapter
 
-    ## Hardware
+    <img src="./assets/sono-overview-1.png" height="540"/>
+
+    ---
+
+    <img src="./assets/sono-overview-2.png" height="540" />
+
+    ---
+
+    <img src="./assets/sono-overview-3.png" height="600"/>
 
     ---
     class: slides-chapter
@@ -280,16 +288,21 @@
 
     ---
 
-    - bridge between car and web app
-    - runs a Node.js server
+    <img src="./assets/sonobox-arch.png" height="540" />
+
+    ---
+
+    - acts as bridge between car and web app
+    - host a REST API
     - calculates estimates and triggers commands
     - sends data to the cockpit
+    - highly event driven
 
     ---
 
     ## RaspberryPi Zero W
 
-    <img src="./assets/pi-zero-w.png" style="width: 40vw" />
+    <img src="./assets/pi-zero-w.png" height="260" />
 
     <small>https://www.raspberrypi.org/products/raspberry-pi-zero-w/</small>
 
@@ -302,14 +315,42 @@
 
     ## Addons
 
-    - CANShield
-    - USB Ethernet Dongle
-    - GPS
-    - LED
+    ---
+
+    ## LEDS
+
+    - 1-Wire, WS281
+    - 134 indivudually addressable LEDs
+    - illumates the interoir, BreSono
 
     ---
 
-    ## CAN-Bus
+    ## GPS
+
+    - keep track of the current location
+    - accessible via API for navigation
+    - communicates with UART (GPIO)
+
+    ---
+
+    ## WLAN (onboard)
+
+    - uses onboard WLAN (broadcom)
+    - creates a Hotspot (SION)
+    - hosts WebApp `sonobox.local`
+    - shares internet connection (LTE)
+
+    ---
+
+    ## LTE Dongle
+
+    - connects via data network
+    - recognized as ethernet device (linux)
+    - shares internet connection via LAN / WLAN
+
+    ---
+
+    ## CAN
 
     - Controller Area Network
     - developed by Bosch since 1983
@@ -319,40 +360,63 @@
 
     ---
 
-    <img src="./assets/can.gif" style="width: 35vw" />
+    <img src="./assets/can.gif" height="600" />
 
     ---
 
-    <img src="./assets/can-translated.gif" style="width: 40vw" />
+    ## Let's translate it...
 
     ---
 
-    ## Demo
+    <img src="./assets/can-translated.gif" height="600" />
 
-    <video src="./assets/BiSono.mp4" controls="controls" style="height: 50vh" />
+    ---
+
+    <video src="./assets/BiSono.mp4" controls="controls" height="500" />
+
     ---
     class: slides-chapter
-    ## Dashboard
+
+    ## Sonotainment (Dashboard)
 
     ---
 
     ## Requirements
 
     - we need a device which runs the web app smoothly
-    - Android would be sweet (touch support, most recent Chrome, PWA support)
-    - energy efficient
+    - should be energy efficient (battery drains quickly)
+    - the OS should be touch capable
 
     ---
 
-    ## Odroid XU4
+    ## Raspberry PI 3?
 
-    <img src="./assets/odroid-xu-4.jpg" style="width: 20vw" />
+    - we tried the Raspberry Pi 3 first
+    - the GPU is not very powerful
+    - (GPU) drivers are still a problem
+    - _Result_: Laggy WebApp on old Chrome
+    - No _real_ touch / mobile OS available
+
+    ---
+
+    ## Alternative: Odroid XU4
+
+    <img src="./assets/odroid-xu-4.jpg" height="300" />
 
     - CPU: [Samsung Exynos5422 Octo Core (2.2 GHz)](http://www.samsung.com/semiconductor/minisite/Exynos/Solution/MobileProcessor/Exynos_5_Octa_5422.html)
     - GPU: Mali T628 OpenGL ES 3.1/2.0/1.1 and OpenCL 1.2
     - RAM: 2Gbyte LPDDR3
     - same as Samsung Galaxy S5 (2014)
     - runs Android 7
+
+    ---
+
+    ## WebApp (PWA)
+
+    - Sonotainment runs on most recent Chrome
+    - PWA is based on React / Redux
+    - great Runtime for PWAs
+    - loads PWA and data from _sonobox_ (Ethernet)
 
     ---
 
@@ -372,7 +436,7 @@
 
     ---
 
-    <img src="./assets/sonobox-early.jpg" style="height: 60vh;" />
+    <img src="./assets/sonobox-early.jpg" height="540" />
 
     ---
 
@@ -385,7 +449,7 @@
 
     ---
 
-    <img src="./assets/sion-roding-late.jpg" style="height: 60vh;" />
+    <img src="./assets/sion-roding-late.jpg" height="540" />
 
     ---
 
@@ -399,11 +463,11 @@
 
     ---
 
-    <img src="./assets/local-development-1.jpg" style="height: 60vh;" />
+    <img src="./assets/local-development-1.jpg" height="540" />
 
     ---
 
-    <img src="./assets/local-development-2.jpg" style="height: 60vh;" />
+    <img src="./assets/local-development-2.jpg" height="540" />
 
     ---
 
@@ -421,6 +485,7 @@
 
     ---
 
+    # Questions?
 
 </textarea>
   <script type="text/javascript">
