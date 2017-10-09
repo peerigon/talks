@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html id="slides" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript RoadTrip</title>
+  <link href="https://assets.peerigon.com/peerigon/fonts/fonts.css" type="text/css" rel="stylesheet">
+  <link href="./styles/main.css" type="text/css" rel="stylesheet">
+</head>
+
+<body class="slides">
+  <script src="./js/remark/remark.js" type="text/javascript"></script>
+  <textarea id="source">
+    layout: true
+    class: theme-whiskey, slides-left
+    ---
+    name: cover
+
+    # JavaScript RoadTrip
+
+    Jannik Keye / Michael Jaser<br>
+    Peerigon GmbH<br>
+    [@mmeaku](https://twitter.com/mmeaku)
+
+    <img id="slide-cover-img" src="./assets/peerigon-logo.png" width="400">
+
+    ---
+    layout: true
+    class: theme-whiskey, slides-centered
+    ---
+
+    class: slides-chapter
+    ## ☎️ The call
+
+    ---
+
+    >"We need an infotainment for the car we're building. It's not too complicated, just a few controls..."
+
+    Sono Motors
+
+    ---
+
+    ## First draft
+
+    <img src="./assets/first-app-draft.png" height="500" />
+
+    ---
+
+    >"That looks alright. If the car provides the required interfaces and the runtime (a Browser), we can build it." Me
+
+    ---
+    class: slides-chapter
+
+    ## Wait! Sono Motors?
+
+    ---
+
+    ## Sono Motors
+
+    <img src="./assets/sono-team.jpg" />
+
+    - aims to build an affordable solar powered electric car
+    - founded in 2016
+    - based in Munich
+
+    ---
+
+    <img src="./assets/sion.jpg" />
+
+    ---
+
+    ## Sion
+
+    >We developed the Sion, a electric car with a range of 250 km and a price of 16.000 €. Its integrated solar cells generate
+    further energy to cover up to 30 km per day. Our vision is simple: Providing a mobility concept for a future without
+    mineral oil and emissions.
+
+    <small>https://www.sonomotors.com/about.html#st-timeline</small>
+
+    ---
+    class: slides-chapter
+
+    ## 🚀 Let's build it!
+
+    ---
+
+    ## 💡 First idea: Mirroring
+
+    - connect Android phone with Dashboard
+    - open Sono App on phone
+    - App is displayed and controllable from Dashboard
+    - Android provides Navigation / Music / etc.
+
+    ---
+
+    ## 🙈 Sounds easy, but...
+
+    - it's only an upscaled version
+    - poor usability / pixelated
+    - not designed to be controlled while driving
+
+    ---
+
+    ## 📐 Back to the drawing board...
+
+    ---
+
+    class: slides-chapter
+
+    ## Going all web...
+
+    ---
+
+    <img src="./assets/sonotainment-versions.png" height="600" />
+
+    ---
+
+    ## 💡 Responsive PWA
+
+    - a single codebase
+    - platform agnostic (flexibilty++)
+    - works on Dashboard (10") and Smartphones (Android, iOS)
+    - almost identical functionality
+    - synchronized on application level
+    - OTA updates
+
+    ---
+
+    ## 😓 Downside
+
+    - by ditching Android, the app grew more complex
+    - Music and Navigation as part of the app, not the OS
+    - UI/UX was hard for so many features
+    - using an app in a car is totally different
+
+    ---
+    class: slides-chapter
+
+    ## Planned Features
+
+    ---
+
+    ## BreSono (illuminated moss)
+
+    <img src="./assets/bresono-green.jpg" height="400" />
+
+    - control color & brightness via app
+
+    ---
+
+    ## Controls for the car
+
+    - open/close car & battery-lid
+    - adjust seat heating
+    - preheat battery
+    - adjust interior temperature
+    - lock/unlock car
+
+    ---
+
+    ## Information pane
+
+    - current battery charge
+    - charging rate
+    - solar yield
+    - distance driven
+    - location
+
+    ---
+
+    ## Help videos
+
+    - charging
+    - carsharing
+    - ridesharing
+
+    ---
+
+    ## Music
+
+    - Web radio integration
+    - AirPlay
+
+    ---
+
+    ## Navigation
+
+    <img src="./assets/feature-navigation.png" height="400" />
+
+    ---
+
+    ## Bonus: Compute cockpit data
+
+    <img src="./assets/sion_cockpit.jpg" height="500" />
+
+    ---
+
+    ## And more...
+
+    - host a Hotspot (Wifi)
+    - share mobile data connection (LTE)
+    - remote debugging capabilities
+    - Analytics
+
+    ---
+
+    class: slides-chapter
+
+    ## UX / UI
+
+    ---
+
+    ## Worauf ist zu achten?
+
+    ## Was machen denn die anderen?
+
+    ---
+    ## Android Auto
+
+      <img src="./assets/android_auto.png" style="width: 30vw;" />
+      <p>Android Auto Design Guidelines</p>
+      <small>https://designguidelines.withgoogle.com/android-auto/android-auto/introduction.html#</small>
+
+    ---
+    ## Apple CarPlay
+
+    <img src="./assets/apple_carplay.jpg" style="width: 30vw" />
+    <small>https://www.apple.com/de/ios/carplay/</small>
+
+    ---
+
+    - Orientierung an Material Design Guidelines / Material UI
+    - einfache Bedienbarkeit
+    - möglichst wenig Ablenkung
+    - hohe Lesbarkeit
+    - Skalierung von Elementen für Tablet-Version
+
+    ---
+
+    <img src="./assets/iphones.png" height="600" />
+
+    ---
+
+    <img src="./assets/tablet_music_airplay.png" height="540" />
+
+    ---
+
+    <img src="./assets/tablet_information.png" height="540" />
+
+    ---
+
+    <img src="./assets/tablet_chargin_detail.png" height="540" />
+
+    ---
+
+    <img src="./assets/tablet_controls.png" height="540" />
+
+    ---
+
+    <img src="./assets/tablet_help.png" height="540" />
+
+    ---
+
+    <img src="./assets/cockpit-bresono-dashboard.jpg" height="540" />
+
+    ---
+
+    class: slides-chapter
+
+    ## Architecture
+
+    ---
+
+    <img src="./assets/sono-overview-1.png" height="540"/>
+
+    ---
+
+    <img src="./assets/sono-overview-2.png" height="540" />
+
+    ---
+
+    <img src="./assets/sono-overview-3.png" height="600"/>
+
+    ---
+    class: slides-chapter
+
+    ## Sonobox
+
+    ---
+
+    <img src="./assets/sonobox-arch.png" height="540" />
+
+    ---
+
+    - acts as bridge between car and web app
+    - host a REST API
+    - calculates estimates and triggers commands
+    - sends data to the cockpit
+    - highly event driven
+
+    ---
+
+    ## RaspberryPi Zero W
+
+    <img src="./assets/pi-zero-w.png" height="260" />
+
+    <small>https://www.raspberrypi.org/products/raspberry-pi-zero-w/</small>
+
+    - 1GHz, single-core CPU
+    - 512MB RAM
+    - 802.11 b/g/n wireless LAN
+    - 1x MicroUSB
+
+    ---
+
+    ## Addons
+
+    ---
+
+    ## LEDS
+
+    - 1-Wire, WS281
+    - 134 indivudually addressable LEDs
+    - illumates the interoir, BreSono
+
+    ---
+
+    ## GPS
+
+    - keep track of the current location
+    - accessible via API for navigation
+    - communicates with UART (GPIO)
+
+    ---
+
+    ## WLAN (onboard)
+
+    - uses onboard WLAN (broadcom)
+    - creates a Hotspot (SION)
+    - hosts WebApp `sonobox.local`
+    - shares internet connection (LTE)
+
+    ---
+
+    ## LTE Dongle
+
+    - connects via data network
+    - recognized as ethernet device (linux)
+    - shares internet connection via LAN / WLAN
+
+    ---
+
+    ## CAN
+
+    - Controller Area Network
+    - developed by Bosch since 1983
+    - message-based protocol
+    - goal: reduce amount of cables
+    - used by OBD-II
+
+    ---
+
+    <img src="./assets/can.gif" height="600" />
+
+    ---
+
+    ## Let's translate it...
+
+    ---
+
+    <img src="./assets/can-translated.gif" height="600" />
+
+    ---
+
+    <video src="./assets/BiSono.mp4" controls="controls" height="500" />
+
+    ---
+    class: slides-chapter
+
+    ## Sonotainment (Dashboard)
+
+    ---
+
+    ## Requirements
+
+    - we need a device which runs the web app smoothly
+    - should be energy efficient (battery drains quickly)
+    - the OS should be touch capable
+
+    ---
+
+    ## Raspberry PI 3?
+
+    - we tried the Raspberry Pi 3 first
+    - the GPU is not very powerful
+    - (GPU) drivers are still a problem
+    - _Result_: Laggy WebApp on old Chrome
+    - No _real_ touch / mobile OS available
+
+    ---
+
+    ## Alternative: Odroid XU4
+
+    <img src="./assets/odroid-xu-4.jpg" height="300" />
+
+    - CPU: [Samsung Exynos5422 Octo Core (2.2 GHz)](http://www.samsung.com/semiconductor/minisite/Exynos/Solution/MobileProcessor/Exynos_5_Octa_5422.html)
+    - GPU: Mali T628 OpenGL ES 3.1/2.0/1.1 and OpenCL 1.2
+    - RAM: 2Gbyte LPDDR3
+    - same as Samsung Galaxy S5 (2014)
+    - runs Android 7
+
+    ---
+
+    ## WebApp (PWA)
+
+    - Sonotainment runs on most recent Chrome
+    - PWA is based on React / Redux
+    - great Runtime for PWAs
+    - loads PWA and data from _sonobox_ (Ethernet)
+
+    ---
+
+    class: slides-chapter
+
+    ## ⚡ Challenges
+
+    ---
+
+    ## 🎛️ Protoyping
+
+    - new technolgies for everyone
+    - the most agile agile you'd ever see
+    - changes on a daily basis
+    - estimates almost impossible
+    - thinking in fallbacks
+
+    ---
+
+    <img src="./assets/sonobox-early.jpg" height="540" />
+
+    ---
+
+    ## 🕛 DDD (Deadline driven development)
+
+    - release dates were immutable
+    - long hours and night shifts
+    - JIT all the things (i.e. SION arrived 4 hours before release)
+    - not enough time to ensure stability
+
+    ---
+
+    <img src="./assets/sion-roding-late.jpg" height="540" />
+
+    ---
+
+    ## 🤖 Hardware !== Software
+
+    - it takes time to deliver
+    - Same Day Delivery is our friend
+    - you can't just try endless devices / sensors, etc.
+    - hardware is not always portable
+    - testing is more challenging
+
+    ---
+
+    <img src="./assets/local-development-1.jpg" height="540" />
+
+    ---
+
+    <img src="./assets/local-development-2.jpg" height="540" />
+
+    ---
+
+    ## 🎯 Testing
+
+    - no _identical_ local testing setup possible (i.e. CAN)
+    - Quality time with the SION was scarce (avg. 5 people working at the same time)
+    - the API is able to fake everything for testing
+    - BUT: You still need to test the _actual_ device
+    - Try to be as flexible as possible (=> Remote development)
+
+    ---
+
+    ## Thank you
+
+    ---
+
+    # Questions?
+
+</textarea>
+  <script type="text/javascript">
+    var slideshow = remark.create({
+      highlightStyle: "ir_black",
+      ratio: '16:9'
+    });
+  </script>
+</body>
+
+</html>
