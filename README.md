@@ -1,6 +1,14 @@
 Talks
 =============
 
+
+## JavaScript RoadTrip 
+
+Ob Smartphone, Tablet oder Desktop: Jeder nutzt tagtäglich Webanwendung wie Spotify, Slack oder Facebook. Warum also nicht ein Infotainment System auf Basis offener Webtechnologien entwickeln? Wir wollen unsere Erfahrung während der Entwicklung des Sono Motors Infotainments mit euch teilen: Was gibt es zu beachten bei der Bedienung im Auto? Wie lässt sich ein Interface auf Smartphone & Dashboard realisieren? Wie kann man ein Auto per JavaScript überhaupt ansteuern und somit auch fernsteuern? Nach diesem Talk ist der Traum vom eigenen Infotainment System in greifbarer Nähe!
+
+* Michael Jaser (@meaku) & Jannik Keye (@jannikkeye)
+* At [Hackerkiste 2017](https://2017.hackerkiste.de/) September 29th, 2017 – [Slides](https://peerigon.github.io/talks/2017-09-29-hackerkiste-javascript-roadtrip)
+
 ## HTTP/2 for data networking
 
 Everyone is talking about the impact of HTTP/2 (H2) on static assets like HTML, CSS or images. But what does it mean for data? How does it change REST and do we still need WebSockets? This talk highlights some basics of H2 and aims to answer common questions by API developers with benchmarks performed using H1 and H2 repectively.
