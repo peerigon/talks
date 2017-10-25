@@ -8,4 +8,4 @@ This talk shares a few elements with a Talk from [Gregor Martynus](https://twitt
 
 To create the slides I used the awesome [bespoke.js](https://github.com/bespokejs/bespoke) library from [Mark Dalgleish](https://twitter.com/markdalgleish).
 
-If you have any questions you can find me on Twitter [@_flootr](https://twitter.com/flootr).
+If you have any questions you can find me on Twitter [@_flootr](https://twitter.com/_flootr).
