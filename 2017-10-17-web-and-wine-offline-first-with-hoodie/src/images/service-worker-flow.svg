@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="471" viewBox="0 0 680 471">
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(206 169)">
+      <rect width="236" height="87" x="5" y="5" stroke="#4A90E2" stroke-width="10" rx="20"/>
+      <text fill="#000000" font-family="Lato-Regular, Lato" font-size="40">
+        <tspan x="74.74" y="61">SW.js</tspan>
+      </text>
+    </g>
+    <g transform="translate(195 374)">
+      <rect width="258" height="87" x="5" y="5" stroke="#4A90E2" stroke-width="10" rx="20"/>
+      <text fill="#000000" font-family="Lato-Regular, Lato" font-size="40">
+        <tspan x="40.08" y="61">Page / App</tspan>
+      </text>
+    </g>
+    <g transform="translate(434)">
+      <rect width="236" height="87" x="5" y="5" stroke="#4A90E2" stroke-width="10" rx="20"/>
+      <text fill="#000000" font-family="Lato-Regular, Lato" font-size="40">
+        <tspan x="44.46" y="61">Network</tspan>
+      </text>
+    </g>
+    <rect width="236" height="87" x="5" y="5" stroke="#4A90E2" stroke-width="10" rx="20"/>
+    <text fill="#000000" font-family="Lato-Regular, Lato" font-size="40">
+      <tspan x="67.72" y="61">Cache</tspan>
+    </text>
+    <path stroke="#000000" stroke-width="10" d="M329.5 288.5L329.5 358.5M329.5 288.5L332.5 299.3 326.5 299.3 329.5 288.5zM329.5 358.5L332.5 347.7 326.5 347.7 329.5 358.5zM434 110L409.5 151.5M434 110L431.092898 120.825376 425.9261 117.775097 434 110zM409.5 151.5L417.5739 143.724903 412.407102 140.674624 409.5 151.5zM207 113L231 152M207 113L215.215227 120.625618 210.105277 123.770202 207 113zM231 152L227.894723 141.229798 222.784773 144.374382 231 152z" stroke-linecap="square"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+{
+  "name": "presentation-hands-on-offline-first-with-hoodie",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "bespoke": "^1.1.0",
+    "bespoke-bullets": "^1.1.0",
+    "bespoke-classes": "^1.0.0",
+    "bespoke-extern": "^1.0.0",
+    "bespoke-hash": "^1.0.2",
+    "bespoke-nav": "^1.0.2",
+    "bespoke-prism": "^1.0.1",
+    "bespoke-scale": "^1.0.1",
+    "browserify": "^14.4.0",
+    "del": "^3.0.0",
+    "gh-pages": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-csso": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "normalizecss": "^3.0.0",
+    "through": "^2.3.8",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "dependencies": {
+    "bespoke-progress": "^1.0.0"
+  }
+}

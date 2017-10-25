@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Hands on Offline First! with Hoodie</title>
+  <link rel="stylesheet" type="text/css" href="build/build.css">
+</head>
+
+<body>
+  <article class="deck">
+
+    <section>
+      <h1 class="cover-title">Hands-on Offline First! with Hoodie</h1>
+      <h2>🙌</h2>
+    </section>
+
+    <section>
+      <h2>Markus Dobmann</h2>
+      <ul>
+        <li>works at
+          <a href="https://javascripts.company" class="link-with-icon">Peerigon
+            <img src="./images/peerigon.svg" alt="Peerigon Logo" width="16px">
+          </a>
+        </li>
+        <li>tweets at
+          <a href="https://twitter.com/_flootr" class="link-with-icon">@_flootr
+            <img src="./images/twitter.svg" alt="Twitter Icon" width="16px">
+          </a>
+        </li>
+        <li>codes as
+          <a href="https://github.com/flootr" class="link-with-icon">flootr
+            <img src="./images/github.svg" alt="GitHub Icon" width="16px" />
+          </a>
+
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What actually is
+        <em>offline</em>?</h2>
+    </section>
+
+    <section>
+      <h3>1. Offline as in
+        <em>"offline"</em>
+      </h3>
+      <img src="images/offline-chrome-dino.png" alt="screenshot of the chrome offline dino" width="40%" />
+    </section>
+
+    <section>
+      <h3>2. Offline as in
+        <em>"only very very slow connection"</em>
+      </h3>
+      <div class="spinner-container">
+        <div class="sk-circle">
+          <div class="sk-circle1 sk-child"></div>
+          <div class="sk-circle2 sk-child"></div>
+          <div class="sk-circle3 sk-child"></div>
+          <div class="sk-circle4 sk-child"></div>
+          <div class="sk-circle5 sk-child"></div>
+          <div class="sk-circle6 sk-child"></div>
+          <div class="sk-circle7 sk-child"></div>
+          <div class="sk-circle8 sk-child"></div>
+          <div class="sk-circle9 sk-child"></div>
+          <div class="sk-circle10 sk-child"></div>
+          <div class="sk-circle11 sk-child"></div>
+          <div class="sk-circle12 sk-child"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>3. Offline as in
+        <em>"no stable connection"</em>
+      </h3>
+      <p>🚂🚃offline🚃online🚃offline🚃online</p>
+    </section>
+
+    <section>
+      <h3>4. Offline as in
+        <em>"pretend there would be a connection (but there isn't)"</em>
+      </h3>
+      <img src="images/blank.png" alt="device showing a blank screen" width="40%">
+    </section>
+
+    <section>
+      <h2>A note about
+        <em>Progressive Enhancement</em>
+      </h2>
+    </section>
+
+    <section>
+      <blockquote class="quote">"To get our minds in an Offline First state, we need to assume that a user will not have connectivity, and design the
+        experience around that. Then, if we detect that a user connects to the internet, we can add features that take advantage
+        of that and prepare us for the next time we go offline."
+        <cite>-
+          <a href="https://medium.com/offline-camp/using-react-and-preact-to-build-my-first-offline-first-apps-8df4a1e5471b">Nick Kasten</a>
+        </cite>
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>How to prevent this
+        <em>"offline"</em>?
+        <h2>
+    </section>
+
+    <section>
+      <h2>We have the technologies to do so.</h2>
+      <ul class="build build-items">
+        <li>
+          <strong>ServiceWorker</strong> to cache our application files</li>
+        <li>
+          <strong>PouchDB</strong> to store data offline</li>
+      </ul>
+    </section>
+
+    <section class="demo-time">
+      <h2>Service Worker</h2>
+    </section>
+
+    <section>
+      <h2>What's in a ServiceWorker?</h2>
+      <img src="./images/service-worker-flow.svg" alt="How do ServiceWorkers interact with our application?" width="50%">
+    </section>
+
+    <section>
+      <h2>Browser Support lookin' good</h2>
+      <img src='./images/service-workers.png' width="80%">
+    </section>
+
+    <section>
+      <h2>Feels like cheating</h2>
+      <pre><code class="language-javascript">
+        $ npm i -g create-react-app
+        $ create-react-app awesome-application
+      </code></pre>
+      <div>Cache all our application files by default</div>
+    </section>
+
+    <section>
+      <h3 class="image-title">
+        <img src="images/hoodie.svg" alt="hoodie.js logo" width="60%">
+      </h3>
+      <ul class="build build-items">
+        <li>Uses
+          <strong>PouchDB</strong> to store data</li>
+        <li>Provides convenient API to do so</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>How to store data with Hoodie?</h3>
+      <pre>
+        <code class="language-javascript">
+          const hoodie = new Hoodie({ /* ... */ })
+
+          const apple = { type: 'apple', image: '...' }
+          const banana = { type: 'banana', image: '...' }
+
+          hoodie.store.add([apple, banana]) // => Promise
+          hoodie.store.remove(apple) // => Promise
+
+          // add, update or remove events
+          hoodie.store.on('change', renderItems)
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h3>Ok, but.. how does Hoodie actually work?</h3>
+      <img src="images/how-hoodie-works-1.svg" alt="How does Hoodie actually work - part one: Frontend" width="30%">
+    </section>
+
+    <section class="demo-time">
+      <p>Demo 👨🏻‍💻</p>
+      <h3>Store data offline with Hoodie</h3>
+    </section>
+
+    <section>
+      <h2>Synchronisation</h2>
+    </section>
+
+    <section>
+      <h2>How does Hoodie do sync?</h2>
+      <img src="./images/how-hoodie-works-2.svg" alt="How does Hoodie work - part 2: Sync" width="70%">
+    </section>
+
+    <!-- @TODO explain who hoodie syncs data -->
+
+    <section class="demo-time">
+      <p>Demo 👨🏻‍💻</p>
+      <h3>Sync</h3>
+    </section>
+
+    <section>
+      <h2>Things to consider</h2>
+      <ul class="build build-items">
+        <li>Security 🔐</li>
+        <li>Share data between users 🤝</li>
+        <li>User interaction 🤷🏽‍♀️</li>
+      </ul>
+      <p class="build">There's still loads of work to do...</p>
+    </section>
+
+    <section>
+      <h2>Community</h2>
+      <p>There is a huge
+        <em>Offline First!</em> community. Join us!</p>
+      <ul>
+        <li>Twitter:
+          <a href="https://twitter.com/OfflineCamp">@OfflineCamp</a>
+        </li>
+        <li>Slack:
+          <a href="http://offlinefirst.org/chat">offlinefirst.org/chat</a>
+        </li>
+        <li>Camp:
+          <a href="http://offlinefirst.org/camp">offlinefirst.org/camp</a>
+        </li>
+        <li>Medium:
+          <a href="https://medium.com/offline-camp">medium.com/offline-camp</a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Offline Camp Berlin 2017</h2>
+      <img src="images/offlinecampberlin.jpg" alt="" width="100%">
+    </section>
+
+    <section>
+      <h2>Questions?</h2>
+    </section>
+
+    <section>
+      <h2>Thank you for having me!</h2>
+      <p class="highlight">👋</p>
+    </section>
+
+  </article>
+
+  <script src="build/build.js"></script>
+
+</body>
+
+</html>
