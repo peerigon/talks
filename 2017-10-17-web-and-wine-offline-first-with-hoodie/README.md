@@ -1,5 +1,7 @@
 # Hands on Offline First! with Hoodie
 
+Watch the slides here: http://peerigon.github.io/talks/2017-10-17-web-and-wine-offline-first-with-hoodie/dist/.
+
 These are the slides from my talk I gave at the [Web'n'Wine Meetup](http://webandwine.org) in Augsburg (Germany) which took place on 17th of October 2017 at [NFQ](http://www.nfq.de). Unfortunately the talk didn't get recorded so some slides might be hard to understand.
 
 If you want to dig deeper I recommend you check out the [Offline First Medium publication](https://medium.com/offline-camp) which has a lot of valuable content ready for you. Also go to [offlinefirst.org](http://offlinefirst.org) where you can reach more resources and connect with the community.
