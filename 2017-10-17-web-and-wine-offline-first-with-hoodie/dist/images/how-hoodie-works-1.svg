@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="393" height="409" viewBox="0 0 393 409">
+  <g fill="none" fill-rule="evenodd">
+    <rect width="383" height="113" x="5" y="5" stroke="#4A90E2" stroke-width="10" rx="20"/>
+    <text fill="#181818" font-family="Lato-Regular, Lato" font-size="36" letter-spacing="-.432">
+      <tspan x="109.178" y="71">Application</tspan>
+    </text>
+    <g transform="translate(0 143)">
+      <rect width="383" height="113" x="5" y="5" stroke="#4A90E2" stroke-width="10" rx="20"/>
+      <text fill="#181818" font-family="Lato-Regular, Lato" font-size="36" letter-spacing="-.432">
+        <tspan x="124.518" y="71">Hoodie.js</tspan>
+      </text>
+    </g>
+    <g transform="translate(0 286)">
+      <rect width="383" height="113" x="5" y="5" stroke="#4A90E2" stroke-width="10" rx="20"/>
+      <text fill="#181818" font-family="Lato-Regular, Lato" font-size="36" letter-spacing="-.432">
+        <tspan x="85.692" y="71">Browser Store</tspan>
+      </text>
+    </g>
+    <path stroke="#181818" stroke-width="8" d="M48.5 94.5L48.5 176M45.5 105.3L48.5 94.5 51.5 105.3M48.5 176L51.5 165.2 45.5 165.2 48.5 176zM48.5 235.5L48.5 317M45.5 246.3L48.5 235.5 51.5 246.3M48.5 317L51.5 306.2 45.5 306.2 48.5 317z" stroke-linecap="square"/>
+  </g>
+</svg>
