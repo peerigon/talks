@@ -3,6 +3,14 @@ Talks
 
 <a></a>
 
+## App Strategie - Der Weg zur Nummer Eins
+
+Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie erreiche ich ein hohes Engagement der Nutzer? Wie schaffe ich das nötige Wachstum?
+
+* At [Forum Digitales Marketing, Nördlingen](http://tcw-donau-ries.de/wp-content/uploads/2018/01/Forum_Digitales-Marketing.pdf), March 6th, 2018 – [Slides](https://peerigon.github.io/talks/2018-03-06-app-strategie-der-weg-zur-nummer-eins/)
+
+<a></a>
+
 ## JavaScript RoadTrip
 
 Smartphone, Tablet, Desktop: Everybody uses Web applications like Spotify, Slack or Facebook every day. So why not develop an infotainment system based on open web technology? We want to share our experience gained in the developing of the Sono Motors infotainment system: What do you have to keep in mind for using it in a car? How can you implement an interface on Smartphone and Dashboard? How is it even possible to control and pilot a car with JavaScript? After this talk your dream of your own infotainment system is closer then ever!
@@ -102,7 +110,7 @@ What every frontend developer should know about `display: flex`.
 
 Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie erreiche ich ein hohes Engagement der Nutzer? Wie schaffe ich das nötige Wachstum?
 
-* At [Unternehmensdialog Schwaben, Augsburg](http://www.aitiraum.de/unternehmensdialog-schwaben), Juny 14th, 2016 – [Slides](https://peerigon.github.io/talks/2016-06-14-unternehmer-dialog-schwaben-app-strategie/)
+* At [Unternehmensdialog Schwaben, Augsburg](http://www.aitiraum.de/unternehmensdialog-schwaben), Juny 14th, 2016 – [Slides](https://peerigon.github.io/talks/2018-03-06-app-strategie-der-weg-zur-nummer-eins/)
 
 <a></a>
 
