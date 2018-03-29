@@ -1,6 +1,8 @@
 Talks
 =============
 
+---
+
 <a lang="de"></a>
 
 ## App Strategie - Der Weg zur Nummer Eins
