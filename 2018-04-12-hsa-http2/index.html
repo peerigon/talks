@@ -127,6 +127,8 @@
 
     <img src="./assets/website-size.png"  style="width:60vw" />
 
+    - see https://httparchive.org/reports/page-weight
+
 
     ---
 
@@ -219,9 +221,19 @@
 
     ---
 
-    ## Binary transport
+    class: slides-chapter
+
+    ## Binary Transport
+
+    ---
 
     <img src="assets/binary_framing_layer01.png" style="width: 40vw"/>
+
+    <small>Source: https://developers.google.com/web/fundamentals/performance/http2/</small>
+
+    ---
+
+    <img src="assets/frames-messages-streams.png" style="width: 30vw"/>
 
     <small>Source: https://developers.google.com/web/fundamentals/performance/http2/</small>
 
@@ -236,23 +248,47 @@
 
     ---
 
+    class: slides-chapter
+
+    ## Header Compression
+
+    ---
+
+    <img src="./assets/headers-example.png" style="width: 25vw;" />
+
+    - we use many headers
+    - headers are import for things like cache control, security, ...
+    - _But_ headers are part of _every_ request/response
+
+    ---
+
+    ## Example: Average Header Size
+
+    - Request: 0.58 kB
+    - Response: 0.41 kB  
+    - = 0,99 kB / Roundtrip
+    - = 1kB * 80 requests (avg) 
+    - = __~80,0 kB__ of header data / website
+  
+    <small>Source: HTTP Archive, March 2016 </small>
+
+    ---
+
     ## Header Compression
 
     <img src="assets/header_compression.png" style="width: 30vw" />
+
     <small>Source: https://developers.google.com/web/fundamentals/performance/http2/</small>
 
     ---
 
-    ## Header Compression
+    class: slides-chapter
 
-    - we use many headers
-    - headers are sent with every request
-    - we already compress the body...
-    - let's just compress headers too!
+    ## Connection Multiplexing
 
     ---
 
-    ## HTTP 1.x problem: Head of line blocking (HOL)
+    ## Problem 1: Head of line blocking (HOL)
 
     <img src="./assets/http-max-connections.png" style="width: 30vw" />
 
@@ -262,7 +298,16 @@
 
     ---
 
-    ## TCP slow start
+    ## Problem 2: TCP slow start
+
+    <img src="./assets/tcp-slow-start.png" style="width: 30vw" />
+
+    - needed to avoid congestion
+    - start slow and grow until package loss
+    - every TCP connection goes through slow start
+    - despite available bandwidth! 
+
+    <small>Source: https://hpbn.co/building-blocks-of-tcp/#slow-start</small>
 
     ---
 
@@ -285,10 +330,23 @@
 
     <img src="./assets/newhttp2.png" style="width: 40vw" />
 
+    ---
+
+    class: slides-chapter
+
+    ## Stream Prioritization
 
     ---
 
     ## Stream Prioritization
+
+    <img src="assets/h2-prio.png" style="width: 40vw" />
+
+    ---
+
+    class: slides-chapter
+
+    ## Server Push
 
     ---
 
@@ -298,6 +356,32 @@
 
     <small>Source: https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/</small>
 
+    ---
+
+    layout: true
+    class: theme-whiskey
+
+    ---
+    
+      ```javascript
+      const http2 = require('http2')
+      const server = http2.createSecureServer(
+        { cert, key },
+        onRequest
+      )
+
+      function onRequest (req, res) {
+        // Push files with index.html
+        if (reqPath === '/index.html') {
+          push(res.stream, 'bundle1.js') //<---------- 
+          push(res.stream, 'bundle2.js') //<----------
+        }
+      }```
+    ---
+
+    layout: true
+    class: theme-whiskey slides-centered
+    
     ---
 
     ## Server Push
@@ -310,18 +394,40 @@
 
     ---
 
+    class: slides-chapter
+
+    ## Bonus: Encryption by default
+
+    ---
+
     ## Encryption by default
 
     - not officially in the spec
     - implemented as SSL-only by all Browsers
+    - _encrypt all the things!_
+
+    ---
+
+    class: slides-chapter
+
+    ## Summary 
+
+    ---
+
+    ## Browser Support
+
+    <img src="./assets/h2-support.png" style="width: 60vw" />
+
+    - 85% supported 
 
     ---
 
     ## HTTP/2 vs. HTTP 1.x?
 
+    - HTTP/2 is ready to use!
     - HTTP/1 optimizations are antipatterns when upgrading to HTTP/2
     - sending multiple requests is not a big deal anymore (i.e. polling, REST)
-    - the best way to optimize HTTP 1.x is upgrading to HTTP/2
+    - the best way to optimize HTTP 1.x is upgrading to HTTP/2!
 
     ---
 
@@ -335,28 +441,36 @@
 
     ---
 
-    ## Comparison: Fetching data
 
-    <img src="./assets/load-time-batch-multiple.png" style="width: 80vw" />
+    class: slides-chapter
 
-    ---
-
-    ## Node.js Example
-
-    - [Compatibility API](https://nodejs.org/api/http2.html#http2_compatibility_api)
+    ## How to upgrade? 
 
     ---
 
-    ## Browser Support
+    ## Enable HTTP/2 for your webserver
 
-    <img src="./assets/h2-support.png" style="width: 60vw" />
+    - Apache [mod_http2](https://httpd.apache.org/docs/2.4/mod/mod_http2.html)
+    - nginx [blog] (https://www.nginx.com/blog/nginx-1-9-5/)
+    
+    ---
 
-    - 85% supported 
+    ## Enable it with your provider:
+
+    - [uberspace (v7)](ttps://uberspace.de/)
+    - [zeit now](https://zeit.co/now) 
+    - [aws](https://aws.amazon.com/de/about-aws/whats-new/2016/09/amazon-cloudfront-now-supports-http2/)
+
+    ---
+
+    ## Further ressources
+
+    - [High Performance Browser Networking Book](https://hpbn.co/)
+    - https://developers.google.com/web/fundamentals/performance/why-performance-matters/
 
     ---
 
     ## Thank you
-
 
 
 </textarea>
