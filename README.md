@@ -5,7 +5,7 @@ Talks
 
 ## HTTP/2
 
-HTTP/2 is not the new kid on the block anymore, but it's still not as broadly adopted as one might think. This talk is about the history of HTTP, reasons why HTTP 1.x does not work that well anymore and of course about architecture and features of HTTP/2. 
+HTTP/2 is not the new kid on the block anymore, but it's still not as widely adopted as one might think. This talk is about the history of HTTP, reasons why HTTP 1.x does not work as well anymore and of course about the architecture and features of HTTP/2. 
 
 ## Datenübertragung mit HTTP/2
 
