@@ -3,6 +3,21 @@ Talks
 
 <a></a>
 
+## HTTP/2
+
+HTTP/2 is not the new kid on the block anymore, but it's still not as broadly adopted as one might think. This talk is about the history of HTTP, reasons why HTTP 1.x does not work that well anymore and of course about architecture and features of HTTP/2. 
+
+## Datenübertragung mit HTTP/2
+
+HTTP/2 gibt's nun schon ein paar Jahre und die Unterstützung durch Server & Browser ist besser denn je. Aber es gibt aber immer noch zu viele Entwickler die noch gar nichts von HTTP/2 gehört haben. Neben Features & Architektur von HTTP/2 geht es in diesem Talk auch um die Geschichte von HTTP, Gründen für miese Performance trotz gut ausgebauten Netzen und Performance Tipps. 
+
+* Michael Jaser
+* [Hochschule Augsburg, Gastvorlesung Web-Technologien](http://hs-augsburg.de)
+* April 12th, 2018
+* [Slides](https://peerigon.github.io/talks/2018-04-12-hsa-http2)
+
+<a></a>
+
 ## App Strategie - Der Weg zur Nummer Eins
 
 Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie erreiche ich ein hohes Engagement der Nutzer? Wie schaffe ich das nötige Wachstum?
