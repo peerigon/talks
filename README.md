@@ -1,4 +1,4 @@
-## 🇬🇧 HTTP/2
+## HTTP/2
 
 HTTP/2 is not the new kid on the block anymore, but it's still not as widely adopted as one might think. This talk is about the history of HTTP, reasons why HTTP 1.x does not work as well anymore and of course about the architecture and features of HTTP/2. 
 
@@ -7,7 +7,7 @@ HTTP/2 is not the new kid on the block anymore, but it's still not as widely ado
 * April 12th, 2018
 * [Slides](https://peerigon.github.io/talks/2018-04-12-hsa-http2/)
 
-## 🇩🇪 App Strategie - Der Weg zur Nummer Eins
+## App Strategie - Der Weg zur Nummer Eins (DE)
 
 Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie erreiche ich ein hohes Engagement der Nutzer? Wie schaffe ich das nötige Wachstum?
 
@@ -16,7 +16,7 @@ Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie err
 * March 6th, 2018
 * [Slides](https://peerigon.github.io/talks/2018-03-06-app-strategie-der-weg-zur-nummer-eins/)
 
-## 🇬🇧 JavaScript RoadTrip
+## JavaScript RoadTrip
 
 Smartphone, Tablet, Desktop: Everybody uses Web applications like Spotify, Slack or Facebook every day. So why not develop an infotainment system based on open web technology? We want to share our experience gained in the developing of the Sono Motors infotainment system: What do you have to keep in mind for using it in a car? How can you implement an interface on Smartphone and Dashboard? How is it even possible to control and pilot a car with JavaScript? After this talk your dream of your own infotainment system is closer then ever!
 
@@ -25,7 +25,7 @@ Smartphone, Tablet, Desktop: Everybody uses Web applications like Spotify, Slack
 * September 29th, 2017
 * [Slides](https://peerigon.github.io/talks/2017-09-29-hackerkiste-javascript-roadtrip)
 
-## 🇬🇧 HTTP/2 for data networking
+## HTTP/2 for data networking
 
 Everyone is talking about the impact of HTTP/2 (H2) on static assets like HTML, CSS or images. But what does it mean for data? How does it change REST and do we still need WebSockets? This talk highlights some basics of H2 and aims to answer common questions by API developers with benchmarks performed using H1 and H2 repectively.
 
@@ -34,7 +34,7 @@ Everyone is talking about the impact of HTTP/2 (H2) on static assets like HTML, 
 * July 22nd, 2017
 * [Slides](https://peerigon.github.io/talks/2017-07-22-jscraftcamp-http2-for-data)
 
-## 🇬🇧 HTTPS with Let's Encrypt
+## HTTPS with Let's Encrypt
 
 Since Let's Encrypt launched in 2016, the project has gone through the roof: 20 million issued certificates, almost 25 million fully qualified domains active. Many webhosters are supporting the deployment of Let's Encrypt certificates automatically via their webinterfaces. However, deploying HTTPS professionally brings along higher requirements like [HSTS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security) in combination with [HPKP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Public_Key_Pinning), which needs more background knowledge and configuration. I will give you a short insight into how Let's Encrypt works and other TLS/HTTPS security best practices.
 
@@ -43,7 +43,7 @@ Since Let's Encrypt launched in 2016, the project has gone through the roof: 20 
 * May 16th, 2017
 * [Slides](https://peerigon.github.io/talks/2017-05-16-web-and-wine-https-lets-encrypt)
 
-## 🇬🇧 JavaScript on Hardware
+## JavaScript on Hardware
 
 There is not need to learn low level languages to interact with hardware anymore. This talk -- which is actually more like a live coding session -- demos hardware interaction on the [espruino Pico](http://www.espruino.com/) and on a [Raspberry Pi](https://www.raspberrypi.org/).
 
@@ -52,7 +52,7 @@ There is not need to learn low level languages to interact with hardware anymore
 * February 7th, 2017
 * [Slides](https://peerigon.github.io/talks/2017-02-07-web-and-wine-js-on-hardware)
 
-## 🇬🇧 The future of frontend tooling
+## The future of frontend tooling
 
 Our frontend toolstack has become quite complex over the past few years. In order to overcome typical problems when building large websites, we've built a variety of tools with shiny names like Grunt, Gulp or Webpack. However, things are about to change. With new technologies like HTTP2, ES2015 and Web Components around the corner, we need to ask ourselves: are the best practices from today still valid in the future? What kind of tools will we be using in the next few years? Will we need them at all? In my talk, I am going to show you how these new technologies will change the way we work.
 
@@ -61,7 +61,7 @@ Our frontend toolstack has become quite complex over the past few years. In orde
 * January 18th, 2017
 * [Slides](https://peerigon.github.io/talks/2017-01-18-react-vienna-future-frontend-tooling)
 
-## 🇬🇧 CSS from the future
+## CSS from the future
 
 New upcoming CSS features that will blow your mind. Get a sneak preview of CSS custom properties, the CSS grid layout and the mysterious Houdini drafts.
 
@@ -70,7 +70,7 @@ New upcoming CSS features that will blow your mind. Get a sneak preview of CSS c
 * November 8th, 2016
 * [Slides](https://peerigon.github.io/talks/2016-11-08-css-from-the-future/)
 
-## 🇬🇧 Introduction to Docker
+## Introduction to Docker
 
 What is Docker and why we need it - VM vs. Docker - Docker tools - Creating a container - Ecosystem - Alternatives.
 
@@ -79,7 +79,7 @@ What is Docker and why we need it - VM vs. Docker - Docker tools - Creating a co
 * October 18th, 2016
 * [Slides](https://peerigon.github.io/talks/2016-10-18-webandwine-introduction-to-docker/)
 
-## 🇩🇪 Arbeit ganzheitlich denken
+## Arbeit ganzheitlich denken (DE)
 
 Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
 
@@ -88,7 +88,7 @@ Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
 * October 3th, 2016
 * [Slides](https://peerigon.github.io/talks/2016-10-03-Unternehmenskultur-Peerigon/)
 
-## 🇬🇧 The future of frontend tooling
+## The future of frontend tooling
 
 Our frontend toolstack has become quite complex over the past few years. In order to overcome typical problems when building large websites, we've built a variety of tools with shiny names like Grunt, Gulp or Webpack. However, things are about to change. With new technologies like HTTP2, ES2015 and Web Components around the corner, we need to ask ourselves: are the best practices from today still valid in the future? What kind of tools will we be using in the next few years? Will we need them at all? In my talk, I am going to show you how these new technologies will change the way we work.
 
@@ -98,7 +98,7 @@ Our frontend toolstack has become quite complex over the past few years. In orde
 * [Slides](https://peerigon.github.io/talks/2016-08-26-jsconf-is-future-frontend-tooling/)
 * [Video](https://www.youtube.com/watch?v=VYjBp4z4XjY)
 
-## 🇬🇧 Dr. Flexbox or how I learned to stop worrying and vertically align the box
+## Dr. Flexbox or how I learned to stop worrying and vertically align the box
 
 What every frontend developer should know about `display: flex`.
 
@@ -107,7 +107,7 @@ What every frontend developer should know about `display: flex`.
 * June 28th, 2016
 * [Slides](https://peerigon.github.io/talks/2016-06-28-webandwine-dr-flexbox/)
 
-## 🇩🇪 App Strategie - Der Weg zur Nummer Eins
+## App Strategie - Der Weg zur Nummer Eins (DE)
 
 Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie erreiche ich ein hohes Engagement der Nutzer? Wie schaffe ich das nötige Wachstum?
 
@@ -116,7 +116,7 @@ Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie err
 * Juny 14th, 2016
 * [Slides](https://peerigon.github.io/talks/2018-03-06-app-strategie-der-weg-zur-nummer-eins/)
 
-## 🇬🇧 The Future of JavaScript
+## The Future of JavaScript
 
 ES2015 (ES6) landed the browsers near you and you should start using it right now. This talk is about why and how to use ES2015 and what the future of JavaScript will look like.
 
@@ -125,7 +125,7 @@ ES2015 (ES6) landed the browsers near you and you should start using it right no
 * January 28th, 2016
 * [Slides](https://peerigon.github.io/talks/2016-01-28-webundspeck-future-of-javascript/)
 
-## 🇬🇧 Frontend management – yesterday, today and tomorrow?
+## Frontend management – yesterday, today and tomorrow?
 
 Detailed overview of the state of frontend management tools and recent updates to underlying technologies like HTTP2 and ES2015 modules.
 
@@ -134,7 +134,7 @@ Detailed overview of the state of frontend management tools and recent updates t
 * December 15th, 2015
 * [Slides](https://peerigon.github.io/talks/2015-12-15-webandwine-frontend-management/)
 
-## 🇬🇧 Native Apps Are Deprecated
+## Native Apps Are Deprecated
 
 State of Mobile Web, Hybrid Apps and what the future will (hopefully) look like.
 
@@ -143,7 +143,7 @@ State of Mobile Web, Hybrid Apps and what the future will (hopefully) look like.
 * November 7th, 2015
 * [Slides](https://peerigon.github.io/talks/2015-11-07-mobile-day/)
 
-## 🇬🇧 JSConf.eu 2015 Recap
+## JSConf.eu 2015 Recap
 
 Recap of JSConf.eu 2015.
 
@@ -152,7 +152,7 @@ Recap of JSConf.eu 2015.
 * October 6th, 2015
 * [Slides](https://peerigon.github.io/talks/2015-10-06-webandwine-jsconfeu-recap/)
 
-## 🇬🇧 Fighting Spaghetti-Code with Promises & Generators
+## Fighting Spaghetti-Code with Promises & Generators
 
 How ES2015 makes your code more readable and maintainable using Promises and Generators.
 
@@ -161,7 +161,7 @@ How ES2015 makes your code more readable and maintainable using Promises and Gen
 * July 21th, 2015
 * [Slides](https://peerigon.github.io/talks/2015-07-21-webandwine-fighting-spaghetti-code-with-es2015/fighting-spaghetti-code-with-es2015.pdf)
 
-## 🇬🇧 alamid-schema
+## alamid-schema
 
 [alamid-schema](https://github.com/peerigon/alamid-schema): Extendable mongoose-like schemas for node.js and the browser.
 
@@ -171,7 +171,7 @@ How ES2015 makes your code more readable and maintainable using Promises and Gen
 * [Slides](https://peerigon.github.io/talks/2014-07-09-MNUG-alamid-schema/)
 * [Video](https://www.youtube.com/watch?v=U5goZCiuh5U)
 
-## 🇬🇧 alamid-api
+## alamid-api
 
 [alamid-api](https://github.com/peerigon/alamid-api): Abstracting different transports (http/websockets) and libraries to a unite them all.
 
@@ -181,7 +181,7 @@ How ES2015 makes your code more readable and maintainable using Promises and Gen
 * [Slides](https://peerigon.github.io/talks/2014-07-09-MNUG-alamid-api/)
 * [Video](https://www.youtube.com/watch?v=TeNRC0QYBdo)
 
-## 🇬🇧 webpack
+## webpack
 
 [webpack](https://webpack.github.io): Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jade, coffee, css, less, ... and your custom stuff.
 
