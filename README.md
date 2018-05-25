@@ -1,3 +1,14 @@
+## The bumpy road to Universal JavaScript
+
+Since the mid 90s, developers have struggled to build web applications that can be executed both on the client and the server. And still today, even with Node.js and virtual DOM libraries like React, this can be quite challenging.
+
+In this talk, we'll look at common obstacles and problems that developers face when building this type of web application, including typical performance and security issues. You'll leave the presentation knowing how to build a fast and secure web application that can be rendered on the client and the server.
+
+* Johannes Ewald
+* [You Gotta Love Frontend Conference, Kyiv, Ukraine](http://yglf.com.ua/)
+* May 25th, 2018
+* [Slides](https://peerigon.github.io/talks/2018-05-25-you-gotta-love-frontend-bumpy-road-universal-javascript/)
+
 ## HTTP/2
 
 HTTP/2 is not the new kid on the block anymore, but it's still not as widely adopted as one might think. This talk is about the history of HTTP, reasons why HTTP 1.x does not work as well anymore and of course about the architecture and features of HTTP/2. 
