@@ -34,7 +34,7 @@ Smartphone, Tablet, Desktop: Everybody uses Web applications like Spotify, Slack
 * Michael Jaser & Jannik Keye
 * [Hackerkiste 2017](https://2017.hackerkiste.de/)
 * September 29th, 2017
-* [Slides](https://peerigon.github.io/talks/2017-09-29-hackerkiste-javascript-roadtrip)
+* [Slides](https://peerigon.com/de/kontakt)
 
 ## HTTP/2 for data networking
 
