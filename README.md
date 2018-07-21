@@ -5,9 +5,9 @@ Since the mid 90s, developers have struggled to build web applications that can 
 In this talk, we'll look at common obstacles and problems that developers face when building this type of web application, including typical performance and security issues. You'll leave the presentation knowing how to build a fast and secure web application that can be rendered on the client and the server.
 
 * Johannes Ewald
-* [You Gotta Love Frontend Conference, Kyiv, Ukraine](http://yglf.com.ua/)
-* May 25th, 2018
-* [Slides](https://peerigon.github.io/talks/2018-05-25-you-gotta-love-frontend-bumpy-road-universal-javascript/)
+* [You Gotta Love Frontend Conference, Kyiv](http://yglf.com.ua/) / [JSCamp, Barcelona](https://jscamp.tech/)
+* May 25th, 2018 / July 20th, 2018
+* [Slides (YGLF)](https://peerigon.github.io/talks/2018-05-25-you-gotta-love-frontend-bumpy-road-universal-javascript/) / [Slides (JSCamp)](https://peerigon.github.io/talks/2018-07-20-js-camp-barcelona-bumpy-road-universal-javascript/)
 
 ## HTTP/2
 
