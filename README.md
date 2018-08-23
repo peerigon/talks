@@ -8,6 +8,7 @@ In this talk, we'll look at common obstacles and problems that developers face w
 * [You Gotta Love Frontend Conference, Kyiv](http://yglf.com.ua/) / [JSCamp, Barcelona](https://jscamp.tech/)
 * May 25th, 2018 / July 20th, 2018
 * [Slides (YGLF)](https://peerigon.github.io/talks/2018-05-25-you-gotta-love-frontend-bumpy-road-universal-javascript/) / [Slides (JSCamp)](https://peerigon.github.io/talks/2018-07-20-js-camp-barcelona-bumpy-road-universal-javascript/)
+* [Video (YGLF)](https://www.youtube.com/watch?v=mUdbfkOcKIA&t=0s&list=PLII-CO3Ff0qaXCf7RgN7bulEmwZB_ngZG&index=15) / [Video (JSCamp)](https://www.youtube.com/watch?v=r69Z3r4z-Hw)
 
 ## HTTP/2
 
