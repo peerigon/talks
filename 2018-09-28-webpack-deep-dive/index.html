@@ -1120,7 +1120,7 @@
     - Represents a single build process
     - Owns the dependency and the chunk graph
     - Provides module factories that know how to build and parse modules
-    - Each file change creates a new compilation in `watch` mode
+    - Each change creates a new compilation in `watch` mode
 
     ---
 
@@ -1139,7 +1139,8 @@
     ### `Module`
 
     - Represents a node in the dependency graph
-    - Has a `parser`
+    - Has a `parser` to parse the source code
+    - Has a `generator` to generate source code
     - Holds all the relevant information for a module<br>like the source code, source map, imports and exports
 
     ---
@@ -1150,7 +1151,7 @@
 
     ```
     "./src/main.js"
-    "../.../other.js"
+    "../../other.js"
     "react"
     ```
     ]
@@ -1194,10 +1195,10 @@
     .slides-content[
     But for compatibility reasons, it should also look for:
 
-    - `bower_components` folders
-    - `bower.json`
     - a `browser` entry in `package.json`
     - a `module` entry in `package.json`
+    - `bower_components` folders (not activated by default anymore)
+    - `bower.json` (not activated by default anymore)
     - ...
     ]
 
@@ -1394,6 +1395,7 @@
     The result of the loader pipeline should either be:
     
     - a JavaScript module, preferably ESM
+    - JSON source
     - a WebAssembly module
     ]
 
@@ -1662,7 +1664,7 @@
 
     ---
 
-    Calculating the optimal chunk graph is a tradeoff between code duplication...
+    Calculating the optimal chunk graph is a trade-off between code duplication...
 
     <img src="assets/chunk-tree-2-1.png" width="600" />
 
@@ -1724,8 +1726,8 @@
     .slides-content[
     ### Templates
 
-    - Render a given chunk to source code
-    - Include the **module runtime**
+    - Renders a `module`, `chunk`, ... to source code
+    - May include the **module runtime**
     - Ensure that source maps are working properly
     ]
 
@@ -1740,7 +1742,7 @@
       // module function wrappers
       function () {
         // source code of module 1
-      }
+      },
       function () {
         // source code of module 2, 3, 4
       }
@@ -1752,8 +1754,7 @@
     ### The remaining boring steps
 
     - **Step 18:** Minimize JavaScript using [UglifyJS](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
-    - **Step 19:** Calculate asset content hashes
-    - **Step 20:** Write assets into output directory (emit)
+    - **Step 19:** Write assets into output directory (emit)
 
     ---
     class: theme-whiskey, slides-chapter
@@ -1769,6 +1770,8 @@
     ### 1.
 
     Write ECMAScript modules.
+
+    Write idiomatic JavaScript code (listen to Benedikt &amp; Sigurd).
     ]
 
     ---
@@ -1783,7 +1786,9 @@
     // .babelrc.js
     {
       presets: [
-        ["@babel/env", {
+        // babel 7 does that by default
+        // babel 6
+        ["env", {
           // don't transpile modules
           modules: false
         }],
@@ -1896,6 +1901,8 @@
       }
     }
     ```
+
+    (or use the [cache-loader](https://github.com/webpack-contrib/cache-loader))
     ]
 
     ---
