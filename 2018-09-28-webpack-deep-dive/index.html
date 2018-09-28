@@ -1756,37 +1756,208 @@
     - **Step 20:** Write assets into output directory (emit)
 
     ---
+    class: theme-whiskey, slides-chapter
 
+    ## How do you get the most out of it?
 
-    How do you get the most out of it
+    ---
+    layout: true
+    class: slides-centered
+    ---
 
     .slides-content[
-    .slides-label[Take away]
+    ### 1.
 
-    Modules allow us to structure the
-    application code in a meaningful way
-    by separating things that should stay separate.
-    
-    **It's a good idea to separate *definition* from *execution*.**
+    Write ECMAScript modules.
     ]
 
     ---
 
-    TODO: Good module patterns (no import *, no side-effects)
+    .slides-content[
+    ### 2.
 
-    - ESM
-    - no import *
-    - no side side-effects on import
-    - sideEffect: false https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free
-    - import() where possible
-    - prefetch chunk
-    - Restrict loaders by using include
-    - Activate persistent caching (babel-loader typescript-loader)
-    - Loader output should be ESM (babel-preset-env, typescript)
-    - entry sass, less
-    - Bundle analyzer
-    - SurviveJS
-    - https://www.youtube.com/watch?v=UNMkLHzofQI
+    Make sure that your babel- or typescript-loader generate ESMs:
+
+    .slides-columns[
+    ```
+    // .babelrc.js
+    {
+      presets: [
+        ["@babel/env", {
+          // don't transpile modules
+          modules: false
+        }],
+      ],
+    }
+    ```
+    ```
+    // tsconfig.json
+    {
+      "compilerOptions": {
+          "module": "esnext",
+      },
+    }
+    ```
+    ]
+    ]
+
+    ---
+
+    .slides-content[
+    ### 3.
+
+    Don't do side-effects in the top-level module scope...
+
+    ```
+    import {loginUser} from "./loginUser.js";
+
+    loginUser() // please don't do that
+      .then(() => {
+        console.log("User logged in");
+      })
+    ```
+
+    ...unless it's the entry module.
+    ]
+
+    ---
+
+    .slides-content[
+    ### 4.
+
+    Tell webpack about your good intentions by setting [`sideEffects: false`](https://webpack.js.org/guides/tree-shaking/#mark-the-file-as-side-effect-free) in your `package.json`
+
+    ```
+    {
+      "sideEffects": false
+    }
+    ```
+    ]
+
+    ---
+
+    .slides-content[
+    ### 5.
+
+    Use the [`module` field](https://github.com/dherman/defense-of-dot-js/blob/master/proposal.md) in your `package.json` to point webpack to ESM code instead of an unoptimizable `dist.js`.
+
+    ```
+    {
+      "main": "./dist.js"
+      "module" "./esm.js"
+    }
+    ```
+
+    `esm.js` should still be transpiled down to ES5, except imports and exports.
+    ]
+
+    ---
+
+    .slides-content[
+    ### 6.
+
+    Use `import()` where possible to defer less important code.
+
+    ```
+    async function openModal() {
+      const modal = await import("./modal.js");
+
+      modal.open();
+    }
+    ```
+    ]
+
+    ---
+
+    .slides-content[
+    ### 7.
+
+    Use the magic webpack comment [`webpackPrefetch: true`](https://medium.com/webpack/link-rel-prefetch-preload-in-webpack-51a52358f84c).
+
+    ```
+    import(/* webpackPrefetch: true */"./modal.js");
+    ```
+
+    Webpack will use `&lt;link rel="prefetch">` to prefetch chunks in browser idle times.
+    ]
+
+    ---
+
+    .slides-content[
+    ### 8.
+
+    Enable persistent loader caches if supported to reduce the build time.
+
+    ```
+    {
+      loader: "babel-loader",
+      options: {
+        cacheDirectory: true
+      }
+    }
+    ```
+    ]
+
+    ---
+
+    .slides-content[
+    ### 9.
+
+    Restrict the scope of your loader pipelines to your `src` folder.
+
+    ```
+    {
+      test: /\.jsx?$/,
+      include: [resolve(projectRoot, "src")],
+      use: [
+        "babel-loader"
+      ]
+    },
+    ```
+    ]
+
+    ---
+
+    .slides-content[
+    ### 10.
+
+    Remember that each `import` of a `.scss` or `.less` file is a separate Sass or Less compilation.
+
+    ```
+    import "./modal.less";  // <---- may contain duplicate css
+    import "./map.less";    // <---- may contain duplicate css
+    ```
+    ]
+
+    ---
+
+    .slides-content[
+    ### 11.
+
+    Check the [`webpack-bundle-analyzer`](https://www.npmjs.com/package/webpack-bundle-analyzer) from time to time.
+
+    <img src="./assets/webpack-bundle-analyzer.gif" height="300" />
+    ]
+
+    ---
+
+    .slides-content[
+    ### 12.
+
+    Listen to webpack's performance hints:
+
+    <img src="./assets/webpack-performance-hint.jpg" height="300" />
+    ]
+
+    ---
+
+    ## Happy webpacking 🖖
+
+    ---
+
+    ## Thank you
+
+    (P.S: [we're hiring](https://peerigon.com/en/jobs) :))
 
 </textarea>
   <script src="./js/remark/remark.js" type="text/javascript"></script>
