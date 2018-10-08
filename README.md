@@ -1,3 +1,12 @@
+## Big-IoT-Learning - Die Zukunft beginnt heute! (DE)
+
+Warum sollte ich auf Big-Data, Internet of Things oder Deap Learning setzen? Woher kommen die Daten? Datenschutz und -sicherheit? Was gibt es für Möglichkeiten? Was sind die ersten Schritte?
+
+* Stephan Batteiger
+* [Embedded4You e.V., Würzburg](http://www.embedded4you.com/)
+* October 8th, 2018
+* [Slides](https://peerigon.github.io/talks/2018-10-09-big-iot-learning/)
+
 ## The bumpy road to Universal JavaScript
 
 Since the mid 90s, developers have struggled to build web applications that can be executed both on the client and the server. And still today, even with Node.js and virtual DOM libraries like React, this can be quite challenging.
