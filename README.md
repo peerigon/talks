@@ -1,3 +1,21 @@
+## Big-IoT-Learning - Die Zukunft beginnt heute! (DE)
+
+Warum sollte ich auf Big-Data, Internet of Things oder Deap Learning setzen? Woher kommen die Daten? Datenschutz und -sicherheit? Was gibt es für Möglichkeiten? Was sind die ersten Schritte?
+
+* Stephan Batteiger
+* [Embedded4You e.V., Würzburg](http://www.embedded4you.com/)
+* October 8th, 2018
+* [Slides](https://peerigon.github.io/talks/2018-10-09-big-iot-learning/)
+
+## Webpack deep dive
+
+You are scared of your webpack config and you have no clue what's going on under the hood? Perfect! This talk is for you. You will learn what webpack is, how it works and how to get the most out of it.
+
+* Johannes Ewald
+* [Hackerkiste, Augsburg](https://2018.hackerkiste.de/)
+* September 28th, 2018
+* [Slides](https://peerigon.github.io/talks/2018-09-28-hackerkiste-webpack-deep-dive)
+
 ## The bumpy road to Universal JavaScript
 
 Since the mid 90s, developers have struggled to build web applications that can be executed both on the client and the server. And still today, even with Node.js and virtual DOM libraries like React, this can be quite challenging.
@@ -8,6 +26,7 @@ In this talk, we'll look at common obstacles and problems that developers face w
 * [You Gotta Love Frontend Conference, Kyiv](http://yglf.com.ua/) / [JSCamp, Barcelona](https://jscamp.tech/)
 * May 25th, 2018 / July 20th, 2018
 * [Slides (YGLF)](https://peerigon.github.io/talks/2018-05-25-you-gotta-love-frontend-bumpy-road-universal-javascript/) / [Slides (JSCamp)](https://peerigon.github.io/talks/2018-07-20-js-camp-barcelona-bumpy-road-universal-javascript/)
+* [Video (YGLF)](https://www.youtube.com/watch?v=mUdbfkOcKIA&t=0s&list=PLII-CO3Ff0qaXCf7RgN7bulEmwZB_ngZG&index=15) / [Video (JSCamp)](https://www.youtube.com/watch?v=r69Z3r4z-Hw)
 
 ## HTTP/2
 
