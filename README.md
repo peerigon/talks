@@ -7,6 +7,15 @@ Warum sollte ich auf Big-Data, Internet of Things oder Deap Learning setzen? Woh
 * October 8th, 2018
 * [Slides](https://peerigon.github.io/talks/2018-10-09-big-iot-learning/)
 
+## Webpack deep dive
+
+You are scared of your webpack config and you have no clue what's going on under the hood? Perfect! This talk is for you. You will learn what webpack is, how it works and how to get the most out of it.
+
+* Johannes Ewald
+* [Hackerkiste, Augsburg](https://2018.hackerkiste.de/)
+* September 28th, 2018
+* [Slides](https://peerigon.github.io/talks/2018-09-28-hackerkiste-webpack-deep-dive)
+
 ## The bumpy road to Universal JavaScript
 
 Since the mid 90s, developers have struggled to build web applications that can be executed both on the client and the server. And still today, even with Node.js and virtual DOM libraries like React, this can be quite challenging.
