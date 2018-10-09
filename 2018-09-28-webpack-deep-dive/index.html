@@ -207,14 +207,16 @@
 
     ---
 
+    .slides-content[
     Module bundlers...
 
     ...try to do as much as possible **on build time**...<br>
     ...so that there's less to do **on runtime**.
+    ]
 
     ---
 
-    ### Comparison
+    ### Comparison of JavaScript module systems
 
     .slides-content[
     &nbsp; | AMD | CommonJS | ESM
@@ -444,7 +446,7 @@
     <img src="assets/webpack-step-5.jpg" width="700" />
 
     .slides-caption[
-    **Step 5**: Now the `Compiler` calls the `make` hook which the compilation to add the first module or modules to the dependency graph. These are called entry dependencies.
+    **Step 5**: Now the `Compiler` calls the `make` hook which tells the compilation to add the first module or modules to the dependency graph. These are called entry dependencies.
     ]
     ]
 
