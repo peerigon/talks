@@ -1,3 +1,12 @@
+## Arbeit ganzheitlich denken (DE)
+
+Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
+
+* Stephan Batteiger
+* [Paul und Paula, Dachau](https://paulundpaula.co/austausch/)
+* October 22th, 2018
+* [Slides](https://peerigon.github.io/talks/2016-10-03-Unternehmenskultur-Peerigon/)
+
 ## Big-IoT-Learning - Die Zukunft beginnt heute! (DE)
 
 Warum sollte ich auf Big-Data, Internet of Things oder Deap Learning setzen? Woher kommen die Daten? Datenschutz und -sicherheit? Was gibt es für Möglichkeiten? Was sind die ersten Schritte?
