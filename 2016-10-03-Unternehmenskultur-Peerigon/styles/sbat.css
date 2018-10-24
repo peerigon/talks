@@ -4,11 +4,11 @@
     bottom: 0;
     height: 100%;
     position: absolute;
-    -webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 75% 100%);
+    -webkit-clip-path: polygon(40% 0, 100% 0, 100% 100%, 65% 100%);
 }
 
 .introImage {
-    -webkit-clip-path: polygon(45% 0, 100% 0, 100% 100%, 60% 100%);
+    -webkit-clip-path: polygon(30% 0, 100% 0, 100% 100%, 45% 100%);
 }
 
 #slides .aspects  {
