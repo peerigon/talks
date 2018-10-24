@@ -7,6 +7,10 @@
     -webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 75% 100%);
 }
 
+.introImage {
+    -webkit-clip-path: polygon(45% 0, 100% 0, 100% 100%, 60% 100%);
+}
+
 #slides .remark-slide-content {
     padding-right: 25%;
 }
