@@ -4,7 +4,7 @@ Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
 
 - Stephan Batteiger
 - [Paul und Paula, Dachau](https://paulundpaula.co/austausch/)
-- October 22th, 2018
+- October 22nd, 2018
 - [Slides](https://peerigon.github.io/talks/2016-10-03-Unternehmenskultur-Peerigon/)
 
 ## Big-IoT-Learning - Die Zukunft beginnt heute! (DE)
@@ -21,9 +21,9 @@ Warum sollte ich auf Big-Data, Internet of Things oder Deap Learning setzen? Woh
 You are scared of your webpack config and you have no clue what's going on under the hood? Perfect! This talk is for you. You will learn what webpack is, how it works and how to get the most out of it.
 
 - Johannes Ewald
-- [Hackerkiste, Augsburg](https://2018.hackerkiste.de/)
-- September 28th, 2018
-- [Slides](https://peerigon.github.io/talks/2018-09-28-hackerkiste-webpack-deep-dive) / [Slides](https://peerigon.github.io/talks/2018-11-03-dev-xchange-webpack-deep-dive)
+- [Hackerkiste, Augsburg](https://2018.hackerkiste.de/) / [DEV XCHANGE, Augsburg](https://xitaso.com/das-war-der-dev-xchange-2018/)
+- September 28th, 2018 / November 3rd, 2018
+- [Slides (Hackerkiste)](https://peerigon.github.io/talks/2018-09-28-hackerkiste-webpack-deep-dive) / [Slides (DEV XCHANGE)](https://peerigon.github.io/talks/2018-11-03-dev-xchange-webpack-deep-dive)
 
 ## The bumpy road to Universal JavaScript
 
