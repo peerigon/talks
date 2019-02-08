@@ -32,38 +32,150 @@
                     </section>
                     <section>
                         <div style="text-align: center">
-                            <img src="../asset/me/me.svg" style="width: 100%;">
+                            <img src="../asset/me/me.svg" style="width: 100%;" alt="Image of Johannes Ewald">
                         </div>
                     </section>
                     <section>
                         <div style="text-align: center">
-                            <img src="../asset/peerigon/peerigon-logo-flat-whiskey.svg" width="600">
+                            <img src="../asset/peerigon/peerigon-logo-flat-whiskey.svg" width="600" alt="Peerigon logo">
                         </div>
                     </section>
                     <section>
                         <div style="text-align: center">
-                            <img src="../asset/me/webpack-logo.svg" width="700">
+                            <img src="../asset/me/webpack-logo.svg" width="700" alt="Webpack logo">
                         </div>
                     </section>
                 </section>
                 <section>
                     <section data-background-color="var(--color-whiskey-bg)">
-                        <h2>Section headline.</h2>
+                        <h2>Do we even need JavaScript bundlers?</h2>
+                    </section>
+                    <section>
+                        <div class="kicker">Problems with JavaScript bundlers</div>
+                        <h3>There is a build step.</h3>
+                        <ul>
+                            <li class="fragment">Might be slow</li>
+                            <li class="fragment">Adds additional complexity</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <div class="kicker">Problems with JavaScript bundlers</div>
+                        <h3>You have to configure it.</h3>
+                        <ul>
+                            <li class="fragment">For special dialects like JSX or CSS modules</li>
+                            <li class="fragment">#0CJS is a good start...</li>
+                            <li class="fragment">...but every reasonable-sized app will eventually require custom configuration</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <div class="kicker">Problems with JavaScript bundlers</div>
+                        <h3>Additional indirection.</h3>
+                        <ul>
+                            <li class="fragment">The code you write is not the code that is executed</li>
+                            <li class="fragment">Configuring source maps can be error prone</li>
+                            <li class="fragment">Source maps are slow to generate</li>
+                        </ul>
                     </section>
                     <section>
                         <p>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            You suddenly have to deal with problems you didn't have before.
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Native ES modules support in browsers</h3>
+                        <p>
+                            <!-- TODO: Add caniuse -->
                         </p>
                     </section>
                     <section>
                         <p>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            Why isn't everyone just using ES modules?
                         </p>
-                        <p class="fragment">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                    </section>
+                    <section>
+                        <div style="text-align: center">
+                            <img src="../asset/bare-specifier-error.jpg" alt="Image of a resolve module error" width="900">
+                        </div>
+                    </section>
+                    <section>
+                        <h3>No bare module specifiers.</h3>
+                        <pre data-src="../example/bareModuleSpecifier.js"></pre>
+                    </section>
+                    <section>
+                        <h3>No optional extensions.</h3>
+                        <pre data-src="../example/optionalExtension.js"></pre>
+                    </section>
+                    <section>
+                        <h3>No package.json resolving.</h3>
+                        <pre data-src="../example/packageJsonResolving.json"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            But will we need JavaScript bundlers in the future?
                         </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>The purpose of JavaScript bundlers.</h2>
+                    </section>
+                    <section>
+                        <div class="kicker">Developer experience</div>
+                        <h3>They gave us JavaScript modules in all browsers.</h3>
+                        <!--TODO: Hooray emojii? -->
+                    </section>
+                    <section>
+                        <div class="kicker">Developer experience</div>
+                        <h3>They enable other module types.</h3>
                         <p class="fragment">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+                            Like CSS modules.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Developer experience</div>
+                        <h3>They allow us to use DSLs via loaders or transforms.</h3>
+                        <ul>
+                            <li class="fragment">JSX</li>
+                            <li class="fragment">Vue Single-File Components</li>
+                            <li class="fragment">TypeScript</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <div class="kicker">Developer experience</div>
+                        <h3>Hot module replacement.</h3>
+                        <!--TODO: Hooray emojii? -->
+                    </section>
+                    <section>
+                        <div class="kicker">Compatibility</div>
+                        <h3>They unify module systems.</h3>
+                        <p class="fragment">
+                            Like ESM, CJS, even WASM and mabe even still AMD.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            They take care of...
+                        </p>
+                        <ul>
+                            <li class="fragment">...wiring all imports and exports together</li>
+                            <li class="fragment">...initializing the module graph</li>
+                        </ul>
+                        <p class="fragment">
+                            You don't need to worry about what module system your dependencies are using.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Compatibility</div>
+                        <h3>They unify the underlying platform.</h3>
+                        <p class="fragment">
+                            Historically, we tried to simulate a CJS environment with Node.js core modules.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Compatibility</div>
+                        <h3>They compile down new language features.</h3>
+                        <p class="fragment">
+                            Via build tools like Babel and PostCSS.
                         </p>
                     </section>
                 </section>
