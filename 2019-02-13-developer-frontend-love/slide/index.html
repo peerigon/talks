@@ -157,12 +157,15 @@
                     </section>
                     <section>
                         <p>
-                            Since URL lookups are expensive, the browser can't just try out a bunch of possibilities like Node.js does.
+                            Since URL lookups are expensive, the browser can't
+                            just try out a bunch of possibilities like Node.js
+                            does.
                         </p>
                     </section>
                     <section>
                         <p>
-                            Will we still need JavaScript bundlers in the future?
+                            Will we still need JavaScript bundlers in the
+                            future?
                         </p>
                     </section>
                 </section>
@@ -181,7 +184,7 @@
                     <section>
                         <div class="kicker">Dev experience</div>
                         <h3>
-                            They gave us JavaScript modules in all browsers.
+                            They enable JavaScript modules in all browsers.
                         </h3>
                         <!-- TODO: Fix headline line-height -->
                         <!--TODO: Hooray emojii? -->
@@ -336,34 +339,52 @@
                             JS modules.
                         </h3>
                         <p class="fragment">
-                            We don't need JS bundlers for that, it's already possible with ESM.
+                            We don't need JS bundlers for that, it's already
+                            possible with ESM.
                         </p>
                         <p class="fragment">
-                            <strong>But:</strong> our current problem is resolving.
+                            <strong>But:</strong> our current problem is
+                            resolving.
                         </p>
                     </section>
                     <section>
                         <p>
-                            Things we can do: <span class="fragment">not rely on <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank">"cute" (Ryan Dahl)</a> resolving features.</span>
+                            Things we can do:
+                            <span class="fragment"
+                                >not rely on
+                                <a
+                                    href="https://www.youtube.com/watch?v=M3BM9TB-8yA"
+                                    target="_blank"
+                                    >"cute" (Ryan Dahl)</a
+                                >
+                                resolving features.</span
+                            >
                         </p>
                     </section>
                     <section>
-                            <ul>
-                                    <li>
-                                        Use file extensions
-                                    </li>
-                                    <li class="fragment">
-                                        Avoid <code>index.js</code>
-                                    </li>
-                                    <li class="fragment">
-                                        Avoid nesting <code>node_modules</code> (unless you're NPM)
-                                    </li>
-                                    <li class="fragment">
-                                        Avoid module aliases just for ergonomic reasons
-                                    </li>
-                                </ul>
+                        <ul>
+                            <li>
+                                Use file extensions
+                            </li>
+                            <li class="fragment">
+                                Use the <code>.mjs</code> extension for
+                                JavaScript modules once ESMs land in Node.js
+                            </li>
+                            <li class="fragment">
+                                Avoid <code>index.js</code>
+                            </li>
+                            <li class="fragment">
+                                Avoid module aliases just for ergonomic reasons
+                            </li>
+                        </ul>
                     </section>
-                    <section id="real-path" data-background-video="../asset/mind-blown.mp4" data-background-video-loop data-background-opacity="0.3" data-background-color="black">
+                    <section
+                        id="real-path"
+                        data-background-video="../asset/mind-blown.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.3"
+                        data-background-color="black"
+                    >
                         <style>
                             #real-path h3 {
                                 color: white;
@@ -372,34 +393,151 @@
                         <strong>
                             Just use the real path.
                         </strong>
-                        <small>
-
-                        </small>
-                    </section>
-                    <section data-background-color="black">
-                        <p>
-                            <strong>Side note:</strong>
-                        </p>
-                        <p class="fragment">
-                            We should use the <code>.mjs</code> extension for JavaScript modules.
-                        </p>
                     </section>
                     <section>
                         <h3>
-                            But do we really have to give up bare module specifiers (BMS)?
+                            But do we really have to give up bare module
+                            specifiers (BMS)?
                         </h3>
                     </section>
                     <section>
-
+                        <p>
+                            Advantages of BMS:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Shorter imports for common packages
+                            </li>
+                            <li class="fragment">
+                                Indirection at package-level which allows the
+                                main/browser switch.
+                                <small
+                                    >This is important for isomorphic modules
+                                    like <code>isomorphic-fetch</code>.</small
+                                >
+                            </li>
+                            <li class="fragment">
+                                Hides the actual file layout of third-party
+                                modules
+                            </li>
+                        </ul>
                     </section>
-                    - Advantage of BMS: shorter imports, indirection at package-level which allows the main/browser switch and independent file layout
-- Resolving in the browser can only be solved with a strict standard or an external resolving config ([https://github.com/WICG/import-maps](https://github.com/WICG/import-maps))
-- The import maps would probably be generated by the package manager?
+                    <section>
+                        <p>
+                            There are two ways we could get BMS into the
+                            browser:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                A strict and universal standard how to look up
+                                BMS (and all packages would need to adhere to
+                                it)
+                            </li>
+                            <li class="fragment">
+                                An external resolving config (out-of-band
+                                configuration)
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-background-image="../asset/import-maps.jpg"></section>
+                    <section>
+                        <pre data-src="../example/importMapsSimple.html"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            You can also define fallbacks:
+                        </p>
+                        <pre
+                            data-src="../example/importMapsFallback.html"
+                        ></pre>
+                    </section>
+                    <section>
+                        <p>
+                            There are also scopes that allow to map a BMS to
+                            different locations depending on the importing
+                            module:
+                        </p>
+                        <pre data-src="../example/importMapsScope.html"></pre>
+                    </section>
+                    <section>
+                        <h3>
+                            But do we have to groom these import maps by hand?
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>No.</strong> It will probably be generated
+                            by package managers.
+                        </p>
+                        <p class="fragment">
+                            But we will need to tweak it once in a while.
+                        </p>
+                    </section>
+                    <section>
+                        <feature-table>
+                            <check-mark class="fragment" slot="js-modules" ok />
+                        </feature-table>
+                    </section>
+                    <section data-background-image="../asset/html-modules.jpg"></section>
+                    <section>
+                        <p>
+                            As a replacement for <a href="https://w3c.github.io/webcomponents/spec/imports/" target="_blank">HTML imports</a>:
+                        </p>
+                        <pre data-src="../example/htmlModuleSimple.html"></pre>
+                        <pre data-src="../example/htmlModuleSimple.js"></pre>
+                    </section>
+                    <section class="fullscreen-code">
+                        <pre data-src="../example/htmlModuleAdvanced.html"></pre>
+                    </section>
+                    <section>
+                        <pre data-src="../example/htmlModuleAdvanced.js"></pre>
+                    </section>
                 </section>
             </div>
         </div>
-        <!-- TODO: Allow check marks as slots? -->
+        <style>
+        #peerigon .reveal .fullscreen-code pre {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: 0;
+        }
+
+        #peerigon .reveal .fullscreen-code code {
+            max-height: none;
+        }
+        </style>
         <template id="feature-table">
+            <style>
+                table {
+                    margin: auto;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                }
+
+                table th {
+                    font-weight: bold;
+                    font-size: 2rem;
+                }
+
+                table th,
+                table td {
+                    text-align: left;
+                    padding: 0.2em 0.5em 0.2em 0.5em;
+                    border-bottom: 1px solid;
+                }
+
+                table tbody tr:last-child th,
+                table tbody tr:last-child td {
+                    border-bottom: none;
+                }
+                td > div {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            </style>
             <table>
                 <thead>
                     <tr>
@@ -410,24 +548,79 @@
                 </thead>
                 <tbody style="font-size: 2rem">
                     <tr>
-                        <td>JS modules</td>
-                        <td>Unified module systems</td>
-                        <td>Efficient chunks</td>
+                        <td>
+                            <div>
+                                <span>JS modules</span>
+                                <span><slot name="js-modules">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Unified module systems</span>
+                                <span><slot name="unified-module-system">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Efficient chunks</span>
+                                <span><slot name="efficient-chunks">&nbsp;</slot></span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td>HTML, CSS & WASM modules</td>
-                        <td>Unified platform</td>
-                        <td>Long-term caching</td>
+                        <td>
+                            <div>
+                                <span>HTML, CSS & WASM modules</span>
+                                <span><slot name="html-css-wasm-modules">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Unified platform</span>
+                                <span><slot name="unified-platform">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Long-term caching</span>
+                                <span><slot name="long-term-caching">&nbsp;</slot></span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Custom languages</td>
-                        <td>New language features</td>
-                        <td>Resource hints</td>
+                        <td>
+                            <div>
+                                <span>Custom languages</span>
+                                <span><slot name="custom-languages">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>New language features</span>
+                                <span><slot name="new-language-features">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Resource hints</span>
+                                <span><slot name="resource-hints">&nbsp;</slot></span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
-                        <td>Short feedback loop</td>
+                        <td>
+                            <div>
+                                <span>Short feedback loop</span>
+                                <span><slot name="short-feedback-loop">&nbsp;</slot></span>
+                            </div>
+                        </td>
                         <td></td>
-                        <td>Smaller file sizes</td>
+                        <td>
+                            <div>
+                                <span>Smaller file sizes</span>
+                                <span><slot name="smaller-file-sizes">&nbsp;</slot></span>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -438,11 +631,32 @@
                     super();
                     const template = document.getElementById("feature-table");
 
-                    this.appendChild(document.importNode(template.content, true));
+                    this.attachShadow({ mode: "open" }).appendChild(
+                        template.content.cloneNode(true)
+                    );
                 }
             }
 
             window.customElements.define("feature-table", FeatureTable);
+        </script>
+        <template id="checkmark">
+            <span style="color: #0b8649">✔</span>
+        </template>
+        <script>
+            class Checkmark extends HTMLElement {
+                constructor() {
+                    const ok = 0;
+                    const maybe = 1;
+                    const problem = 2;
+
+                    super();
+                    const template = document.getElementById("checkmark");
+
+                    this.appendChild(template.content.children[ok].cloneNode(true));
+                }
+            }
+
+            window.customElements.define("check-mark", Checkmark);
         </script>
         <script src="../asset/vendor/prism-1.15.0/prism.js"></script>
         <script src="../asset/vendor/reveal-alt-arrows/alt-arrows.js"></script>
