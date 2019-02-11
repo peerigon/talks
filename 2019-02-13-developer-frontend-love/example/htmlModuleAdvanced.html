@@ -3,14 +3,13 @@
     <slot name="content"></slot>
 </article>
 <script>
-    const article = import.meta.document.querySelector("article");
+    const articleTemplate = import.meta.document
+        .querySelector("article");
 
     export default class Article extends HTMLElement {
         constructor() {
-            super();
-            this.attachShadow({ mode: "open" }).appendChild(
-                article.cloneNode(true)
-            );
+            const article = articleTemplate.cloneNode(true);
+            /* ... */
         }
     }
 </script>
