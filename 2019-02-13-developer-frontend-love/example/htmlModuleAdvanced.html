@@ -3,13 +3,5 @@
     <slot name="content"></slot>
 </article>
 <script>
-    const articleTemplate = import.meta.document
-        .querySelector("article");
-
-    export default class Article extends HTMLElement {
-        constructor() {
-            const article = articleTemplate.cloneNode(true);
-            /* ... */
-        }
-    }
+    export const otherValue = 42;
 </script>

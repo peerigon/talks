@@ -1,3 +1,3 @@
-import Article from "./article.html";
+import importedDoc, {otherValue} from "./article.html";
 
-window.customElements.define("x-article", Article);
+const template = importedDoc.querySelector("template");
