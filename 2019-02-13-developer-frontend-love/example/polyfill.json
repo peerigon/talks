@@ -1,0 +1,7 @@
+{
+    "requiresPolyfill": [
+        "es.object.entries",
+        "es.array.from",
+        "es.array.of"
+    ]
+}

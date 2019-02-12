@@ -7,6 +7,10 @@
         <link rel="stylesheet" href="../asset/vendor/prism-1.15.0/prism.css" />
         <link rel="stylesheet" href="../asset/peerigon/theme-peerigon.css" />
     </head>
+    <!-- TODO: Add h3 for each feature group -->
+    <!-- TODO: Check for full stop at the end of h3 -->
+    <!-- TODO: Change check-mark: Bundler not required, bundler maybe required, bundler required -->
+    <!-- TODO: Lato bold -->
     <body id="peerigon">
         <div class="reveal">
             <div class="slides">
@@ -272,14 +276,17 @@
                     </section>
                     <section>
                         <div class="kicker">Optimization</div>
-                        <h3>They create efficient chunks.</h3>
+                        <h3>They optimize resource loading.</h3>
                         <ul>
                             <li class="fragment">
-                                By resolving module ids on build time
+                                By resolving module ids on build time.
                             </li>
                             <li class="fragment">
                                 By merging modules that depend on each other
-                                into a single file.
+                                into a single chunk.
+                            </li>
+                            <li class="fragment">
+                                They add resource hints for the browser.
                             </li>
                         </ul>
                     </section>
@@ -292,10 +299,6 @@
                             By calculating asset hashes and automatically
                             updating all URLs.
                         </p>
-                    </section>
-                    <section>
-                        <div class="kicker">Optimization</div>
-                        <h3>They add resource hints for the browser.</h3>
                     </section>
                     <section>
                         <div class="kicker">Optimization</div>
@@ -379,17 +382,11 @@
                         </ul>
                     </section>
                     <section
-                        id="real-path"
                         data-background-video="../asset/mind-blown.mp4"
                         data-background-video-loop
                         data-background-opacity="0.3"
                         data-background-color="black"
                     >
-                        <style>
-                            #real-path h3 {
-                                color: white;
-                            }
-                        </style>
                         <strong>
                             Just use the real path.
                         </strong>
@@ -775,6 +772,17 @@
                         </p>
                     </section>
                     <section>
+                        <p>
+                            Idea: Automatic polyfills.
+                        </p>
+                        <div class="fragment">
+                            <p>
+                                What if library authors would annotate what polyfills they need?
+                            </p>
+                            <pre data-src="../example/polyfill.json"></pre>
+                        </div>
+                    </section>
+                    <section>
                         <feature-table>
                             <check-mark slot="js-modules" value="ok"></check-mark>
                             <check-mark slot="html-css-wasm-modules" value="maybe"></check-mark>
@@ -785,50 +793,246 @@
                             <check-mark class="fragment" slot="new-language-features" value="ok"></check-mark>
                         </feature-table>
                     </section>
+                    <section>
+                        <h3>
+                            Optimized resource loading.
+                        </h3>
+                    </section>
+                    <section>
+                        <h3>
+                            Should we even create chunks with ESMs and H2 push?
+                        </h3>
+                        <p class="fragment">
+                            <a href="https://www.smashingmagazine.com/2017/04/guide-http2-server-push/" target="_blank">Push is a new HTTP feature that allows the server to push resources pro-actively to the client.</a>
+                        </p>
+                    </section>
+                    <section>
+                        <strong>There is no clear answer (yet)</strong>
+                        <span class="fragment">
+                            and many factors need to be considered.
+                        </span>
+                    </section>
+                    <section>
+                        <p>
+                            Current problems with ESM and H2 push:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Browsers haven't optimized native module initialization yet.
+                            </li>
+                            <li class="fragment">
+                                <a href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/" target="_blank">Inconsistent H2 push implementations.</a>
+                            </li>
+                            <li class="fragment">
+                                Pushing resources that the client has already cached is worse than without push.
+                            </li>
+                            <li class="fragment">
+                                Text compression algorithms (like gzip) are more effective on bigger files.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>H2 push is still hard.</strong>
+                        </p>
+                        <p class="fragment">
+                            <a href="https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit" target="_blank">Rules of thumb for H2 push.</a>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            As implementations mature, we need to re-evaluate the question whether we should create chunks or not.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Let's assume that we really, really wanted to use H2 push.
+                        </p>
+                        <p class="fragment">
+                            <strong>How would it work?</strong>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            There are two possible solutions:
+                        </p>
+                        <li class="fragment">
+                            Use an empiric approach like <a href="https://github.com/google/node-h2-auto-push" target="_blank">node-h2-auto-push</a> which tries to learn "what to push" by observing client requests or...
+                        </li>
+                        <li class="fragment">
+                            ...use a bundler which generates a dependency graph on build time
+                            and pass the result to the H2 server.
+                        </li>
+                    </section>
+                    <section>
+                        <p>
+                            H2 push is not the only performance optimization a bundler can do.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>But the problem is:</strong> <span class="fragment">Getting the best performance requires a lot of configuration.</span>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>The solution:</strong> <span class="fragment">Give more data to the bundler so that it can perform automated decisions.</span>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Data source #1</div>
+                        <h3>
+                            Static analysis.
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            Example: <code>webpackPrefetch: true</code>
+                        </p>
+                        <pre data-src="../example/webpackPrefetch.js"></pre>
+                        <small>
+                            Since webpack 4.6.0.
+                        </small>
+                    </section>
+                    <section>
+                        <p>
+                            Another idea: <code>webpackPreload: true</code> for render critical fonts.
+                        </p>
+                        <pre data-src="../example/webpackPreload.css"></pre>
+                        <small>
+                            Does not work for render critical fonts yet.
+                        </small>
+                    </section>
+                    <section>
+                        <p>
+                            It could also add resource hints automatically, like
+                            <code>preconnect</code> for all hosts found
+                            in the source code.
+                        </p>
+                        <pre data-src="../example/preconnect.html"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            But this requires a lot manual configuration...
+                        </p>
+                        <p class="fragment">
+                            ...which can get outdated over time.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Data source #2</div>
+                        <h3>
+                            Automated critical render path tests.
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            The idea:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                There is an automated test that navigates to popular routes.
+                            </li>
+                            <li class="fragment">
+                                The bundler captures relevant performance data.
+                            </li>
+                            <li class="fragment">
+                                The bundler decides which resources to optimize and to prioritize.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            Example: Create optimized subsets of fonts based on the actual usage of glyphs.
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                <a href="https://www.npmjs.com/package/subfont"><code>subfont</code></a>
+                            </li>
+                            <li class="fragment">
+                                <a href="https://www.npmjs.com/package/glyphhanger"><code>glyphhanger</code></a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            Another example: Inline render critical CSS.
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                This is already a popular feature of CSS-in-JS libraries.
+                            </li>
+                            <li class="fragment">
+                                <a href="https://www.npmjs.com/package/critical"><code>critical</code></a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            Running automated critical render path tests plays especially well with the <a href="https://jamstack.org/" target="_blank">JAMstack</a>.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            But these tests are also error prone because we have to select popular routes.
+                        </p>
+                        <p class="fragment">
+                            Instead of artifical usage data, what if we used...
+                        </p>
+                    </section>
+                    <section
+                        data-background-video="../asset/mind-blown.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.3"
+                        data-background-color="black"
+                    >
+                        <strong>
+                            ...REAL USAGE DATA.
+                        </strong>
+                    </section>
+                    <section>
+                        <div class="kicker">Data source #3</div>
+                        <h3>
+                            Analytics.
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Data-driven user experiences:</strong>
+                            <span class="fragment">When real usage data decides how to optimize the app.</span>
+                        </p>
+                        <p class="fragment">
+                            And this is already possible today...
+                        </p>
+                    </section>
+                    <section data-background-image="../asset/guess-js.jpg" data-background-size="contain"></section>
+                    <section>
+                        <p>Guess.js...</p>
+                        <ul>
+                            <li class="fragment">
+                                ...uses real usage data to decide which chunk to <code>prefetch</code> next.
+                            </li>
+                            <li class="fragment">
+                                ...uses probabilities combined with <code>navigator.connection.effectiveType</code>
+                                to avoid over-fetching and thus wasting expensive data on mobile.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <feature-table>
+                            <check-mark slot="js-modules" value="ok"></check-mark>
+                            <check-mark slot="html-css-wasm-modules" value="maybe"></check-mark>
+                            <check-mark slot="custom-languages" value="maybe"></check-mark>
+                            <check-mark slot="short-feedback-loop" value="maybe"></check-mark>
+                            <check-mark slot="unified-module-systems" value="ok"></check-mark>
+                            <check-mark slot="unified-platform" value="maybe"></check-mark>
+                            <check-mark slot="new-language-features" value="ok"></check-mark>
+                            <check-mark class="fragment" slot="optimized-resource-loading" value="problem"></check-mark>
+                        </feature-table>
+                    </section>
                 </section>
                 <!--
-    - Module resolution
-        - One of the reasons why bundling will stay relevant in the near future
-        - Can currently only be solved with two solutions:
-            - Bundling
-                - Does not use native ES modules anymore
-                - JS engines are not optimized yet to handle a lot of modules
-            - H2 Server Push
-                - Can also be solved with two different solutions
-                    - Dependency graphs generated on build time
-                    - Empiric approaches like [https://github.com/google/node-h2-auto-push](https://github.com/google/node-h2-auto-push) (requires sharing sessions, might be hard with load balancers)
-                - H2 Push is still hard
-                    - [https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit](https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit) (only push critical resources, preload may be easier)
-                    - [https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/](https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/) (inconsistent implementations)
-        - Interesting field and requires constant re-evaluation
-    - Chunking and resource hints
-        - Problem: Webpack is already very powerful, but getting the best performance requires a lot of manual tweaks and hints
-        - Solution: Give more data to the bundler so that it can perform automated decisions
-            - Automated resource hints via better static analysis
-                - Like preconnect to known hosts
-                - Or preload of render critical fonts
-                - Also: Priority hints ([https://github.com/WICG/priority-hints](https://github.com/WICG/priority-hints))
-                - Problem: What is a render critical font? How to determine the priority
-                - Immediate solution: annotate (`/* webpackPrefetch: true */`) [https://medium.com/webpack/link-rel-prefetch-preload-in-webpack-51a52358f84c](https://medium.com/webpack/link-rel-prefetch-preload-in-webpack-51a52358f84c)
-            - Automated critical render path tests
-                - We feed data back into the bundler
-                - Might be able to infer resource hints
-                - Create optimized subsets of fonts ([https://www.npmjs.com/package/subfont](https://www.npmjs.com/package/subfont) or [https://www.npmjs.com/package/glyphhanger](https://www.npmjs.com/package/glyphhanger))
-                - Inline critical CSS ([https://www.npmjs.com/package/critical](https://www.npmjs.com/package/critical))
-                - Plays well with the JAMstack
-            - Real usage data via analytics
-                - When data decides how to deal with it: Data-driven user experiences
-                - Already possible today: Minko Gechev [https://blog.mgechev.com/2018/03/18/machine-learning-data-driven-bundling-webpack-javascript-markov-chain-angular-react/](https://blog.mgechev.com/2018/03/18/machine-learning-data-driven-bundling-webpack-javascript-markov-chain-angular-react/)
-                - Guess ([https://github.com/guess-js/guess](https://github.com/guess-js/guess))
-                - Uses probabilities combined with `navigator.connection.effectiveType` to avoid over-fetching and wasting potential expensive data
-        - All proposed solutions require deeper knowledge of the application
-        - Component-based code splitting will get more important
-        - Vue.js is doing a good job, React needs to improve
-        - A lot of these solutions are already possible today, but might require a lot of configuration plumbing
-    - Automated audits over time
-        - Code coverage
-        - Performance regressions
-        - Not necessarily a task for a bundler but these tools will get more important
+    - Long-term caching
     - Tree-shaking, minification, compression
         - The reason why you will always have a build step for high-performance websites
         - Tree-shaking will get better the more hints we can give the bundler
@@ -856,7 +1060,7 @@
     - Because bundlers can do stuff on build time that would otherwise need to be done on run time
     - In order to make that happen we should standardize things that are statically analyzable
     - People can write idiomatic code (Meurer) and the bundler will be able to optimize it
-    - We need to give bundlers more insights about our application
+    - We need to give bundlers more insights into our application
         - Via manual hints
         - Via automated critical render path tests
         - Via real usage data
@@ -917,8 +1121,8 @@
                         </td>
                         <td>
                             <div>
-                                <span>Efficient chunks</span>
-                                <span><slot name="efficient-chunks">&nbsp;</slot></span>
+                                <span>Optimized resource loading</span>
+                                <span><slot name="optimized-resource-loading">&nbsp;</slot></span>
                             </div>
                         </td>
                     </tr>
@@ -957,8 +1161,8 @@
                         </td>
                         <td>
                             <div>
-                                <span>Resource hints</span>
-                                <span><slot name="resource-hints">&nbsp;</slot></span>
+                                <span>Smaller file sizes</span>
+                                <span><slot name="smaller-file-sizes">&nbsp;</slot></span>
                             </div>
                         </td>
                     </tr>
@@ -970,12 +1174,7 @@
                             </div>
                         </td>
                         <td></td>
-                        <td>
-                            <div>
-                                <span>Smaller file sizes</span>
-                                <span><slot name="smaller-file-sizes">&nbsp;</slot></span>
-                            </div>
-                        </td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
@@ -997,7 +1196,7 @@
         <template id="checkmark">
             <span style="display: block; width: 1em; text-align: center; color: #0b8649;">✔</span>
             <span style="display: block; width: 1em; text-align: center; color: #b98404; font-weight: bolder; font-size: 1.3em;">?</span>
-            <span style="display: block; width: 1em; text-align: center; color: #0b8649;">✗</span>
+            <span style="display: block; width: 1em; text-align: center; color: #dc2d01;">✗</span>
         </template>
         <script>
             class Checkmark extends HTMLElement {
