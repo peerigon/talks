@@ -131,7 +131,7 @@
                     </section>
                     <section>
                         <p>
-                            Will we still need JavaScript bundlers in the
+                            So, will we still need JavaScript bundlers in the
                             future?
                         </p>
                     </section>
@@ -142,7 +142,7 @@
                     </section>
                     <section>
                         <h3>
-                            What's the purpose of JavaScript today?
+                            What's the purpose of JavaScript bundlers today?
                         </h3>
                     </section>
                     <section data-transition="fade-out">
@@ -192,17 +192,17 @@
                     <section>
                         <ul>
                             <li>
-                                Use file extensions
+                                Use file extensions.
                             </li>
                             <li class="fragment">
                                 Use the <code>.mjs</code> extension for
-                                JavaScript modules once ESMs land in Node.js
+                                JavaScript modules once ESMs land in Node.js.
                             </li>
                             <li class="fragment">
-                                Avoid <code>index.js</code>
+                                Avoid <code>index.js</code>.
                             </li>
                             <li class="fragment">
-                                Avoid module aliases just for ergonomic reasons
+                                Avoid module aliases just for ergonomic reasons.
                             </li>
                         </ul>
                     </section>
@@ -228,7 +228,7 @@
                         </p>
                         <ul>
                             <li class="fragment">
-                                Shorter imports for common packages
+                                Shorter imports for common packages.
                             </li>
                             <li class="fragment">
                                 Indirection at package-level which allows the
@@ -240,7 +240,7 @@
                             </li>
                             <li class="fragment">
                                 Hides the actual file layout of third-party
-                                modules
+                                modules.
                             </li>
                         </ul>
                     </section>
@@ -267,7 +267,12 @@
                         <pre data-src="../example/htmlModuleAdvanced.html"></pre>
                         <pre data-src="../example/htmlModuleAdvanced.js"></pre>
                     </section>
-                    <section>
+                    <section
+                        data-background-video="../asset/excited.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.6"
+                        data-background-color="black"
+                    >
                         <p>
                             There is an <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/ewfRSdqcOd8/w_Fr6rJ3DQAJ" target="_blank">intent to implement from the MS Edge team</a>.
                         </p>
@@ -395,7 +400,6 @@
                     </section>
                     <section>
                         <pre data-src="../example/babelMacroPreval.js"></pre>
-                        Also the <code>import</code> is removed.
                     </section>
                     <section>
                         <pre data-src="../example/babelMacroMs.js"></pre>
@@ -416,7 +420,7 @@
                     </section>
                     <section>
                         <p>
-                            How would that work without Babel?
+                            But how would that work without Babel?
                         </p>
                     </section>
                     <section>
@@ -461,9 +465,9 @@
                             Authors will slowly adopt the common denominator:
                         </p>
                         <ul>
-                            <li class="fragment">ESM</li>
-                            <li class="fragment">Imports with explicit file extensions</li>
-                            <li class="fragment">Using the <code>.mjs</code> file extension for ESMs</li>
+                            <li class="fragment">ESM.</li>
+                            <li class="fragment">Imports with explicit file extensions.</li>
+                            <li class="fragment">Using the <code>.mjs</code> file extension for ESMs.</li>
                         </ul>
                     </section>
                     <section
@@ -502,7 +506,11 @@
                             New language features.
                         </h3>
                         <p class="fragment">
-                            Will be less relevant with evergreen browsers and incremental language updates.
+                            Will be less relevant with evergreen browsers and incremental language updates,
+                            <span class="fragment">but probably still necessary for production builds.</span>
+                        </p>
+                        <p class="fragment">
+                            Also polyfills still require a lot of manual configuration.
                         </p>
                     </section>
                     <section>
@@ -552,7 +560,7 @@
                         </p>
                         <ul>
                             <li class="fragment">
-                                Browsers haven't optimized native module initialization yet.
+                                Browsers haven't optimized native modules yet.
                             </li>
                             <li class="fragment">
                                 <a href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/" target="_blank">Inconsistent H2 push implementations.</a>
@@ -600,7 +608,8 @@
                     </section>
                     <section>
                         <p>
-                            H2 push is not the only performance optimization a bundler can do.
+                            Creating a dependency graph for H2 push is not the only performance
+                            optimization a bundler can do.
                         </p>
                     </section>
                     <section>
@@ -618,6 +627,14 @@
                         <h3>
                             Static analysis.
                         </h3>
+                    </section>
+                    <section>
+                        <p>
+                            It could add resource hints automatically, like
+                            <code>preconnect</code> for all hosts that have been parsed
+                            from the source code.
+                        </p>
+                        <pre data-src="../example/preconnect.html"></pre>
                     </section>
                     <section>
                         <p>
@@ -639,18 +656,7 @@
                     </section>
                     <section>
                         <p>
-                            It could also add resource hints automatically, like
-                            <code>preconnect</code> for all hosts that have been parsed
-                            from the source code.
-                        </p>
-                        <pre data-src="../example/preconnect.html"></pre>
-                    </section>
-                    <section>
-                        <p>
-                            But this requires a lot manual configuration...
-                        </p>
-                        <p class="fragment">
-                            ...which can get outdated over time.
+                            But these manual hints can get outdated over time.
                         </p>
                     </section>
                     <section>
@@ -703,7 +709,7 @@
                     </section>
                     <section>
                         <p>
-                            Running automated critical render path tests plays especially well with the <a href="https://jamstack.org/" target="_blank">JAMstack</a>.
+                            Running automated critical render path tests works especially well with the <a href="https://jamstack.org/" target="_blank">JAMstack</a>.
                         </p>
                     </section>
                     <section>
@@ -733,7 +739,7 @@
                     <section>
                         <p>
                             <strong>Data-driven user experiences:</strong>
-                            <span class="fragment">When real usage data decides how to optimize the app.</span>
+                            <span class="fragment">When real usage data drives the decisions about how to optimize the app.</span>
                         </p>
                         <p class="fragment">
                             And this is already possible today...
@@ -846,7 +852,7 @@
                             <check-mark slot="short-feedback-loop" value="maybe"></check-mark>
                             <check-mark slot="unified-module-systems" value="ok"></check-mark>
                             <check-mark slot="unified-platform" value="maybe"></check-mark>
-                            <check-mark slot="new-language-features" value="maybe"></check-mark>
+                            <check-mark slot="new-language-features" value="problem"></check-mark>
                             <check-mark slot="optimized-resource-loading" value="problem"></check-mark>
                             <check-mark slot="long-term-caching" value="problem"></check-mark>
                             <check-mark slot="smaller-file-sizes" value="problem"></check-mark>
