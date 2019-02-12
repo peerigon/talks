@@ -10,7 +10,7 @@
     <!-- TODO: Add h3 for each feature group -->
     <!-- TODO: Check for full stop at the end of h3 -->
     <!-- TODO: Change check-mark: Bundler not required, bundler maybe required, bundler required -->
-    <!-- TODO: Lato bold -->
+    <!-- TODO: Feature table at the end -->
     <body id="peerigon">
         <div class="reveal">
             <div class="slides">
@@ -977,7 +977,7 @@
                             But these tests are also error prone because we have to select popular routes.
                         </p>
                         <p class="fragment">
-                            Instead of artifical usage data, what if we used...
+                            What if instead of artifical usage data we used...
                         </p>
                     </section>
                     <section
@@ -1030,41 +1030,162 @@
                             <check-mark class="fragment" slot="optimized-resource-loading" value="problem"></check-mark>
                         </feature-table>
                     </section>
+                    <section>
+                        <h3>
+                            Long-term caching.
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>
+                                Calculating content hashes and updating URLs will always require a bundler.
+                            </strong>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>But there's another problem:</strong>
+                            <span class="fragment">Propagating content hashes require an out-of-band configuration.</span>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Example:
+                        </p>
+                        <pre data-src="../example/longTermCaching1.js"></pre>
+                        <pre data-src="../example/longTermCaching2.js"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Possible solution:</strong>
+                        </p>
+                        <ul>
+                            <li class="fragment">Do not use hashes in import paths.</li>
+                            <li class="fragment">Re-map imports via import maps.
+                                <pre data-src="../example/longTermCaching.html"></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>
+                            Smaller file sizes.
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            All these optimizations are still necessary:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Tree-shaking.
+                            </li>
+                            <li class="fragment">
+                                Dead-code elimination.
+                            </li>
+                            <li class="fragment">
+                                Minification.
+                            </li>
+                            <li class="fragment">
+                                Compression.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>
+                                This is the reason why you will always have a build step for high-performance websites.
+                            </strong>
+                        </p>
+                    </section>
                 </section>
-                <!--
-    - Long-term caching
-    - Tree-shaking, minification, compression
-        - The reason why you will always have a build step for high-performance websites
-        - Tree-shaking will get better the more hints we can give the bundler
-
-            {
-              "name": "project",
-              "module": "src/index.js",
-              "sideEffects": false
-            }
-
-- **Conclusion**
-    - Bundlers were invented to use Node.js modules in the web
-    - This has changed
-    - Now bundlers allow us to use DSLs and dialects for DX reasons
-    - And to optimize for better web performance
-    - But sharing cross-platform code on NPM is still hard
-    - And performance optimizations still require a lot of plumbing
-    - My vision:
-    - Bundlers should not be necessary because of compatibility reasons (period!)
-    - Bundlers should not be necessary to write the code the way we want it
-    - In an ideal world, the language and the underlying platform would enable us to write the code the way we want it (without a build tool)
-    - When there is no bundler, the transformation will happen on run time
-    - When there is a bundler, the static part of the code will be executed on build time
-    - Bundlers should only be necessary to make your app fast
-    - Because bundlers can do stuff on build time that would otherwise need to be done on run time
-    - In order to make that happen we should standardize things that are statically analyzable
-    - People can write idiomatic code (Meurer) and the bundler will be able to optimize it
-    - We need to give bundlers more insights into our application
-        - Via manual hints
-        - Via automated critical render path tests
-        - Via real usage data
-                -->
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>Conclusion.</h2>
+                    </section>
+                    <section>
+                        <p>
+                            Bundlers were invented to use Node.js modules in the web, <span class="fragment">but this has changed.</span>
+                        </p>
+                        <p class="fragment">
+                            Today, we use bundlers for a lot of reasons, like dev experience, compatibility and optimizations.
+                        </p>
+                    </section>
+                    <section>
+                        <h3>
+                            Will we still need bundlers in the future?
+                        </h3>
+                        <p class="fragment">
+                            Yes.
+                        </p>
+                    </section>
+                    <section>
+                        <feature-table>
+                            <check-mark slot="js-modules" value="ok"></check-mark>
+                            <check-mark slot="html-css-wasm-modules" value="maybe"></check-mark>
+                            <check-mark slot="custom-languages" value="problem"></check-mark>
+                            <check-mark slot="short-feedback-loop" value="maybe"></check-mark>
+                            <check-mark slot="unified-module-systems" value="ok"></check-mark>
+                            <check-mark slot="unified-platform" value="maybe"></check-mark>
+                            <check-mark slot="new-language-features" value="ok"></check-mark>
+                            <check-mark slot="optimized-resource-loading" value="problem"></check-mark>
+                            <check-mark slot="long-term-caching" value="problem"></check-mark>
+                            <check-mark slot="smaller-file-sizes" value="problem"></check-mark>
+                        </feature-table>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>
+                                Because bundlers can do stuff on build time that would otherwise need to be done on run time.
+                            </strong>
+                        </p>
+                        <p class="fragment">
+                            But the scope of bundlers will probably change.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>My vision:</strong>
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Bundlers shouldn't be necessary because of compatibility reasons.
+                            </li>
+                            <li class="fragment">
+                                Bundlers shouldn't be necessary to allow us to write the code the way we want it.
+                            </li>
+                            <li class="fragment">
+                                <strong>
+                                    They should only be necessary to make our apps fast.
+                                </strong>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            In order to make that happen without configuration overhead, we need
+                            to give bundlers more insights into our application...
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                via static analysis,
+                            </li>
+                            <li class="fragment">
+                                via automated critical render path tests,
+                            </li>
+                            <li class="fragment">
+                                via real usage data.
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section
+                    data-background-image="../asset/amsterdam.jpg"
+                    data-background-color="black"
+                    data-background-opacity="0.5"
+                >
+                    <h2>Thank you!</h2>
+                    <span style="font-size: 6rem;">🙇</span>
+                </section>
             </div>
         </div>
         <template id="feature-table">
@@ -1228,6 +1349,7 @@
         <script src="../asset/peerigon/colorScheme.js"></script>
         <script>
             Reveal.initialize({
+                controls: false,
                 history: true,
                 keyboard: {
                     39: "next", // Right Arrow
