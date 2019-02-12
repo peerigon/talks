@@ -82,63 +82,29 @@
                 <section>
                     <section data-background-color="var(--color-whiskey-bg)">
                         <h2>Do we even need JavaScript bundlers?</h2>
-                        <!-- TODO: Idea: Amsterdam image -->
-                    </section>
-                    <section>
-                        <div class="kicker">
-                            Problems with JavaScript bundlers
-                        </div>
-                        <h3>There is a build step.</h3>
-                        <ul>
-                            <li class="fragment">Might be slow</li>
-                            <li class="fragment">Adds additional complexity</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <div class="kicker">
-                            Problems with JavaScript bundlers
-                        </div>
-                        <h3>You have to configure it.</h3>
-                        <ul>
-                            <li class="fragment">
-                                For special dialects like JSX or CSS modules
-                            </li>
-                            <li class="fragment">#0CJS is a good start...</li>
-                            <li class="fragment">
-                                ...but every reasonable-sized app will
-                                eventually require custom configuration
-                            </li>
-                        </ul>
-                    </section>
-                    <section>
-                        <div class="kicker">
-                            Problems with JavaScript bundlers
-                        </div>
-                        <h3>Additional indirection.</h3>
-                        <ul>
-                            <li class="fragment">
-                                The code you write is not the code that is
-                                executed
-                            </li>
-                            <li class="fragment">
-                                Configuring source maps can be error prone
-                            </li>
-                            <li class="fragment">
-                                Source maps are slow to generate
-                            </li>
-                        </ul>
                     </section>
                     <section>
                         <p>
-                            You suddenly have to deal with problems you didn't
+                            Problems with JavaScript bundlers:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Suddenly the web needs a build step.
+                            </li>
+                            <li class="fragment">
+                                Configuration hell.
+                            </li>
+                            <li class="fragment">
+                                The code you write is not the code that is executed.
+                            </li>
+                        </ul>
+                        <p class="fragment">
+                            You have to deal with problems you didn't
                             have before.
                         </p>
                     </section>
                     <section>
-                        <h3>Native ES modules support in browsers</h3>
-                        <p>
-                            <!-- TODO: Add caniuse -->
-                        </p>
+                        <img src="../asset/caniuse-modules.jpg" style="object-fit: contain; width: 100%; display: block; margin: 50px auto;" />
                     </section>
                     <section>
                         <p>
@@ -155,25 +121,24 @@
                         </div>
                     </section>
                     <section>
-                        <h3>No bare module specifiers.</h3>
+                        <p>
+                            No bare module specifiers:
+                        </p>
                         <pre data-src="../example/bareModuleSpecifier.js"></pre>
                     </section>
                     <section>
-                        <h3>No optional extensions.</h3>
+                        <p>
+                            No optional extensions:
+                        </p>
                         <pre data-src="../example/optionalExtension.js"></pre>
                     </section>
                     <section>
-                        <h3>No <code>package.json</code> resolving.</h3>
+                        <p>
+                            No <code>package.json</code> resolving:
+                        </p>
                         <pre
                             data-src="../example/packageJsonResolving.json"
                         ></pre>
-                    </section>
-                    <section>
-                        <p>
-                            Since URL lookups are expensive, the browser can't
-                            just try out a bunch of possibilities like Node.js
-                            does.
-                        </p>
                     </section>
                     <section>
                         <p>
