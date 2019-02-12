@@ -28,9 +28,6 @@
                     </span>
                 </section>
                 <section>
-                    <section data-background-color="var(--color-whiskey-bg)">
-                        <h2>About me.</h2>
-                    </section>
                     <section>
                         <div style="text-align: center">
                             <img
@@ -117,7 +114,7 @@
                     </section>
                     <section>
                         <p>
-                            No optional extensions:
+                            No optional file extensions:
                         </p>
                         <pre data-src="../example/optionalExtension.js"></pre>
                     </section>
@@ -239,7 +236,7 @@
                                 >
                             </li>
                             <li class="fragment">
-                                Hides the actual file layout of third-party
+                                They hide the actual file layout of third-party
                                 modules.
                             </li>
                         </ul>
@@ -247,6 +244,16 @@
                     <section data-background-image="../asset/import-maps.jpg" data-background-size="contain"></section>
                     <section>
                         <pre data-src="../example/importMapsSimple.html"></pre>
+                    </section>
+                    <section
+                        data-background-video="../asset/excited.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.6"
+                        data-background-color="black"
+                    >
+                        <p>
+                            There is an <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/qYeQFqgFOyA/rXJapjMaEAAJ" target="_blank">intent to implement from the Blink team</a>.
+                        </p>
                     </section>
                     <section>
                         <div class="kicker">Dev experience</div>
@@ -274,7 +281,7 @@
                         data-background-color="black"
                     >
                         <p>
-                            There is an <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/ewfRSdqcOd8/w_Fr6rJ3DQAJ" target="_blank">intent to implement from the MS Edge team</a>.
+                            There is an <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/ewfRSdqcOd8/w_Fr6rJ3DQAJ" target="_blank">intent to implement from the Edge team</a>.
                         </p>
                     </section>
                     <section data-background-image="../asset/css-modules.jpg" data-background-size="contain"></section>
@@ -330,7 +337,7 @@
                     <section data-background-image="../asset/loader-spec.jpg" data-background-size="contain"></section>
                     <section>
                         <p>
-                            <a href="https://github.com/whatwg/loader/issues/147" target="_blank">Has been paused and broken down into smaller pieces like:</a>
+                            <a href="https://github.com/whatwg/loader/issues/147" target="_blank">Has been stopped and broken down into smaller pieces like:</a>
                         </p>
                         <pre data-src="../example/dynamicImport.js"></pre>
                     </section>
@@ -413,10 +420,10 @@
                         <pre data-src="../example/babelMacroRaw.js"></pre>
                     </section>
                     <section>
-                        <p>
-                            A good example of why modules should be able to control their loaders:
+                        <pre data-src="../example/babelMacroImage.js"></pre>
+                        <p class="fragment">
+                            A good example of why modules should be able to configure their own loaders.
                         </p>
-                        <pre class="fragment" data-src="../example/babelMacroImage.js"></pre>
                     </section>
                     <section>
                         <p>
@@ -435,7 +442,6 @@
                         </p>
                         <p class="fragment">
                             They require synchronous I/O on build and on run time.
-                            <span class="fragment">The latter could be solved with top-level await.</span>
                         </p>
                     </section>
                     <section>
@@ -714,7 +720,7 @@
                     </section>
                     <section>
                         <p>
-                            But these tests are also error prone because we have to select popular routes.
+                            But these automated tests are also error prone because we have to select popular routes.
                         </p>
                         <p class="fragment">
                             What if instead of artifical usage data we used...
@@ -922,6 +928,7 @@
                 >
                     <h2>Thank you!</h2>
                     <span style="font-size: 6rem;">🙇</span>
+                    <small>@jhnnns</small>
                 </section>
             </div>
         </div>
@@ -1091,6 +1098,7 @@
         <script src="../asset/vendor/prism-1.15.0/prism.js"></script>
         <script src="../asset/vendor/reveal-alt-arrows/alt-arrows.js"></script>
         <script src="../asset/vendor/reveal.js-3.7.0/js/reveal.js"></script>
+        <script src="../asset/vendor/reveal.js-3.7.0/plugin/notes/notes.js"></script>
         <script src="../asset/peerigon/colorScheme.js"></script>
         <script>
             Reveal.initialize({
