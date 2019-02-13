@@ -1,3 +1,14 @@
+## The future of JavaScript bundlers
+
+With ES modules implemented in all major browsers, do we even need to use JavaScript bundlers?
+This talk is about current web platform proposals that could make JS bundling easier or even obsolete.
+In the end, you will also learn about reasons why you'd probably still want to use a bundler in the future.
+
+- Johannes Ewald
+- [Frontend Developer Love, Amsterdam](https://www.frontenddeveloperlove.com/)
+- February 13th, 2019
+- [Slides](https://peerigon.github.io/talks/2019-02-13-developer-frontend-love/slide/)
+
 ## Arbeit ganzheitlich denken (DE)
 
 Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
@@ -9,7 +20,7 @@ Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
 
 ## Big-IoT-Learning - Die Zukunft beginnt heute! (DE)
 
-Warum sollte ich auf Big-Data, Internet of Things oder Deap Learning setzen? Woher kommen die Daten? Datenschutz und -sicherheit? Was gibt es für Möglichkeiten? Was sind die ersten Schritte?
+Warum sollte ich auf Big-Data, Internet of Things oder Deep Learning setzen? Woher kommen die Daten? Datenschutz und -sicherheit? Was gibt es für Möglichkeiten? Was sind die ersten Schritte?
 
 - Stephan Batteiger
 - [Embedded4You e.V., Würzburg](http://www.embedded4you.com/)
