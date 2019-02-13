@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Nexa";
+    src: local("Nexa Heavy"),
+        /* webpackPreload: true */
+        url("https://assets.peerigon.com/peerigon/fonts/nexa/nexa-heavy-webfont.woff2") format("woff2"),
+        url("https://assets.peerigon.com/peerigon/fonts/nexa/nexa-heavy-webfont.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+}
