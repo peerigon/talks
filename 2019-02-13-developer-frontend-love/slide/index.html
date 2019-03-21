@@ -1,0 +1,1114 @@
+<html>
+    <head>
+        <link
+            rel="stylesheet"
+            href="../asset/vendor/reveal.js-3.7.0/css/reveal.css"
+        />
+        <link rel="stylesheet" href="../asset/vendor/prism-1.15.0/prism.css" />
+        <link rel="stylesheet" href="../asset/peerigon/theme-peerigon.css" />
+    </head>
+    <body id="peerigon">
+        <div class="reveal">
+            <div class="slides">
+                <section
+                    data-background-image="../asset/amsterdam.jpg"
+                    data-background-color="black"
+                    data-background-opacity="0.5"
+                >
+                    <style>
+                        .credit {
+                            font-size: 0.3rem;
+                            opacity: 0.3;
+                        }
+                    </style>
+                    <div class="kicker">Developer Frontend Love</div>
+                    <h1>The future of JavaScript bundlers.</h1>
+                    <span class="credit">
+                        Photo by azhrjl on Unsplash
+                    </span>
+                </section>
+                <section>
+                    <section>
+                        <div style="text-align: center">
+                            <img
+                                src="../asset/me/me.svg"
+                                style="width: 100%;"
+                                alt="Image of Johannes Ewald"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <div style="text-align: center">
+                            <img
+                                src="../asset/peerigon/peerigon-logo-flat-whiskey.svg"
+                                width="600"
+                                alt="Peerigon logo"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <div style="text-align: center">
+                            <img
+                                src="../asset/me/webpack-logo.svg"
+                                width="700"
+                                alt="Webpack logo"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Disclaimer.</strong>
+                        </p>
+                        <p>
+                            The opinions in this presentation are my own.
+                            This is not a statement from the webpack team.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>Do we even need JavaScript bundlers?</h2>
+                    </section>
+                    <section>
+                        <p>
+                            Problems with JavaScript bundlers:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Suddenly the web needs a build step.
+                            </li>
+                            <li class="fragment">
+                                Configuration hell.
+                            </li>
+                            <li class="fragment">
+                                The code you write is not the code that is executed.
+                            </li>
+                        </ul>
+                        <p class="fragment">
+                            You have to deal with problems you didn't
+                            have before.
+                        </p>
+                    </section>
+                    <section>
+                        <img src="../asset/caniuse-modules.jpg" style="object-fit: contain; width: 100%; display: block; margin: 50px auto;" />
+                    </section>
+                    <section>
+                        <p>
+                            Why isn't everyone just using ES modules?
+                        </p>
+                    </section>
+                    <section>
+                        <div style="text-align: center">
+                            <img
+                                src="../asset/bare-specifier-error.jpg"
+                                alt="Image of a resolve module error"
+                                width="900"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <p>
+                            No bare module specifiers:
+                        </p>
+                        <pre data-src="../example/bareModuleSpecifier.js"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            No optional file extensions:
+                        </p>
+                        <pre data-src="../example/optionalExtension.js"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            No <code>package.json</code> resolving:
+                        </p>
+                        <pre
+                            data-src="../example/packageJsonResolving.json"
+                        ></pre>
+                    </section>
+                    <section>
+                        <p>
+                            So, will we still need JavaScript bundlers in the
+                            future?
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>The future of JavaScript bundlers.</h2>
+                    </section>
+                    <section>
+                        <h3>
+                            What's the purpose of JavaScript bundlers today?
+                        </h3>
+                    </section>
+                    <section data-transition="fade-out">
+                        <feature-table class="hide-second hide-third"></feature-table>
+                    </section>
+                    <section data-transition="fade-in fade-out">
+                        <feature-table class="hide-third"></feature-table>
+                    </section>
+                    <section data-transition="fade-in">
+                        <feature-table></feature-table>
+                    </section>
+                    <section>
+                        <h3>Heads up!</h3>
+                        <p>
+                            The following proposals are in very early stages.
+                            Take them with a grain of salt.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Dev experience</div>
+                        <h3>
+                            JS modules.
+                        </h3>
+                        <p class="fragment">
+                            We don't need JS bundlers for that, it's already
+                            possible with ESM.
+                        </p>
+                        <p class="fragment">
+                            <strong>But:</strong> our current problem is
+                            resolving.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Things we can do:
+                            <span class="fragment"
+                                >not rely on
+                                <a
+                                    href="https://www.youtube.com/watch?v=M3BM9TB-8yA"
+                                    target="_blank"
+                                    >"cute" (Ryan Dahl)</a
+                                >
+                                resolving features.</span
+                            >
+                        </p>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                Use file extensions.
+                            </li>
+                            <li class="fragment">
+                                Use the <code>.mjs</code> extension for
+                                JavaScript modules once ESMs land in Node.js.
+                            </li>
+                            <li class="fragment">
+                                Avoid <code>index.js</code>.
+                            </li>
+                            <li class="fragment">
+                                Avoid module aliases just for ergonomic reasons.
+                            </li>
+                        </ul>
+                    </section>
+                    <section
+                        data-background-video="../asset/mind-blown.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.3"
+                        data-background-color="black"
+                    >
+                        <strong>
+                            Just use the real path.
+                        </strong>
+                    </section>
+                    <section>
+                        <h3>
+                            But do we really have to give up bare module
+                            specifiers (BMS)?
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            Advantages of BMS:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Shorter imports for common packages.
+                            </li>
+                            <li class="fragment">
+                                Indirection at package-level which allows the
+                                main/browser switch.
+                                <small
+                                    >This is important for isomorphic modules
+                                    like <code>isomorphic-fetch</code>.</small
+                                >
+                            </li>
+                            <li class="fragment">
+                                They hide the actual file layout of third-party
+                                modules.
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-background-image="../asset/import-maps.jpg" data-background-size="contain"></section>
+                    <section>
+                        <pre data-src="../example/importMapsSimple.html"></pre>
+                    </section>
+                    <section
+                        data-background-video="../asset/excited.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.6"
+                        data-background-color="black"
+                    >
+                        <p>
+                            There is an <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/qYeQFqgFOyA/rXJapjMaEAAJ" target="_blank">intent to implement from the Blink team</a>.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Dev experience</div>
+                            <h3>
+                                HTML, CSS & WASM modules.
+                            </h3>
+                        </section>
+                    </section>
+                    <section data-background-image="../asset/html-modules.jpg" data-background-size="contain"></section>
+                    <section>
+                        <p>
+                            As a replacement for <a href="https://w3c.github.io/webcomponents/spec/imports/" target="_blank">HTML imports</a>:
+                        </p>
+                        <pre data-src="../example/htmlModuleSimple.html"></pre>
+                        <pre data-src="../example/htmlModuleSimple.js"></pre>
+                    </section>
+                    <section>
+                        <pre data-src="../example/htmlModuleAdvanced.html"></pre>
+                        <pre data-src="../example/htmlModuleAdvanced.js"></pre>
+                    </section>
+                    <section
+                        data-background-video="../asset/excited.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.6"
+                        data-background-color="black"
+                    >
+                        <p>
+                            There is an <a href="https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/ewfRSdqcOd8/w_Fr6rJ3DQAJ" target="_blank">intent to implement from the Edge team</a>.
+                        </p>
+                    </section>
+                    <section data-background-image="../asset/css-modules.jpg" data-background-size="contain"></section>
+                    <section>
+                        <p>
+                            CSS modules export a <a href="https://wicg.github.io/construct-stylesheets/index.html" target="_blank">Constructable Stylesheet</a>:
+                        </p>
+                        <pre data-src="../example/cssModule.js"></pre>
+                    </section>
+                    <section data-background-image="../asset/json-modules.jpg" data-background-size="contain"></section>
+                    <section data-background-image="../asset/wasm-modules.jpg" data-background-size="contain"></section>
+                    <section>
+                        <p>
+                            <strong>The goal:</strong> Turn this imperative API...
+                        </p>
+                        <pre data-src="../example/wasmModule1.js"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            ...into a declarative API:
+                        </p>
+                        <pre data-src="../example/wasmModule2.js"></pre>
+                    </section>
+                    <section>
+                        <div style="display: grid; grid-template-columns: 1fr 3fr; grid-gap: 50px;">
+                            <p>
+                                <strong>Challenge:</strong> Allow cyclic dependencies between non-JS modules.
+                            </p>
+                            <img src="../asset/wasm-cyclic-1.png" style="width: 300px; display: block; margin: 0 auto;">
+                            <small style="grid-column: 1 / 3; text-align: center;">
+                                Source: <a href="https://linclark.github.io/wasm-es-modules/slides/2018-03-24/" target="_blank">Lin Clark's presentation about WebAssembly ES module integration.</a>
+                            </small>
+                        </div>
+                    </section>
+                    <section>
+                        <div style="display: grid; grid-template-columns: 1fr 3fr; grid-gap: 50px;">
+                            <p>
+                                Cyclic dependencies between two WASM modules probably won't work at all.
+                            </p>
+                            <img src="../asset/wasm-cyclic-2.png" style="width: 300px; display: block; margin: 0 auto;">
+                            <small style="grid-column: 1 / 3; text-align: center;">
+                                Source: <a href="https://linclark.github.io/wasm-es-modules/slides/2018-03-24/" target="_blank">Lin Clark's presentation about WebAssembly ES module integration.</a>
+                            </small>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="kicker">Dev experience</div>
+                        <h3>
+                            Custom languages.
+                        </h3>
+                    </section>
+                    </section>
+                    <section data-background-image="../asset/loader-spec.jpg" data-background-size="contain"></section>
+                    <section>
+                        <p>
+                            <a href="https://github.com/whatwg/loader/issues/147" target="_blank">Has been stopped and broken down into smaller pieces like:</a>
+                        </p>
+                        <pre data-src="../example/dynamicImport.js"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            Interesting proposal:
+                            <a href="https://github.com/sebmarkbage/ecmascript-asset-references" target="_blank">
+                                Asset references
+                            </a>
+                        </p>
+                        <pre data-src="../example/assetReferences.js"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            Another interesting proposal:
+                            <a href="https://github.com/AshleyScirra/import-as-and-html-modules" target="_blank">
+                                import as-proposal
+                            </a>
+                        </p>
+                        <pre data-src="../example/importAs.js"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            Advantages of these proposals:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                No out-of-band configuration of loaders. Modules determine how they want to import a dependency.
+                            </li>
+                            <li class="fragment">
+                                Custom language support for NPM modules. Sharing frontend components would become easier.
+                            </li>
+                            <li class="fragment">
+                                One step closer to <code>#0CJS</code> (zero config).
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>One thing to note:</strong>
+                        </p>
+                        <p class="fragment">
+                            These are proposals to do the resource transformation on run time.
+                        </p>
+                        <p class="fragment">
+                            In order to get it fast for production, you would probably want to move this transformation to build time.
+                        </p>
+                        <p class="fragment">
+                            <strong>
+                                Hence, the transformation should be statically analyzable.
+                            </strong>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            This is kind of hard to standardize because bundlers, Node.js and browsers have very different requirements.
+                        </p>
+                        <p class="fragment">
+                            But there is an interesting alternative to loaders...
+                        </p>
+                    </section>
+                    <section data-background-image="../asset/babel-macros.jpg" data-background-size="contain"></section>
+                    <section>
+                        <p>
+                            Babel macros is a Babel plugin that allows you to evaluate code on build time.
+                        </p>
+                    </section>
+                    <section>
+                        <pre data-src="../example/babelMacroPreval.js"></pre>
+                    </section>
+                    <section>
+                        <pre data-src="../example/babelMacroMs.js"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            How can this substitute loaders?
+                        </p>
+                    </section>
+                    <section>
+                        <pre data-src="../example/babelMacroRaw.js"></pre>
+                    </section>
+                    <section>
+                        <pre data-src="../example/babelMacroImage.js"></pre>
+                        <p class="fragment">
+                            A good example of why modules should be able to configure their own loaders.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            But how would that work without Babel?
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            With a <strong>package switch</strong>:
+                        </p>
+                        <pre data-src="../example/babelMacroPackage.json"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Current problem of Babel macros</strong>:
+                        </p>
+                        <p class="fragment">
+                            They require synchronous I/O on build and on run time.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Dev experience</div>
+                        <h3>Short feedback loop.</h3>
+                        <ul>
+                            <li class="fragment">
+                                We do not need a build step at all if we can do the transformations on run time.
+                            </li>
+                            <li class="fragment">
+                                <strong>But:</strong> we would need a way to make the transformations cacheable.
+                            </li>
+                            <li class="fragment">
+                                For HMR, we would still need a dev server with WebSockets.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <feature-table></feature-table>
+                    </section>
+                    <section>
+                        <div class="kicker">Compatibility</div>
+                        <h3>
+                            Unified module systems.
+                        </h3>
+                        <p class="fragment">
+                            Authors will slowly adopt the common denominator:
+                        </p>
+                        <ul>
+                            <li class="fragment">ESM.</li>
+                            <li class="fragment">Imports with explicit file extensions.</li>
+                            <li class="fragment">Using the <code>.mjs</code> file extension for ESMs.</li>
+                        </ul>
+                    </section>
+                    <section
+                        data-background-video="../asset/happy-celebration.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.6"
+                        data-background-color="black"
+                    >
+                        <p>
+                            <strong>Bundlers won't be necessary because of compatibility reasons.</strong><br>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Compatibility</div>
+                        <h3>Unified platform.</h3>
+                        <p class="fragment">
+                            <strong>My hope:</strong> Platform independent APIs will converge some day.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Good example: the <code>URL</code> constructor.
+                        </p>
+                        <pre data-src="../example/whatwgUrl.js"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            Bad example: <code>fetch()</code>.
+                        </p>
+                        <pre data-src="../example/fetch.js"></pre>
+                    </section>
+                    <section data-background-image="../asset/std-lib.jpg" data-background-size="contain"></section>
+                    <section>
+                        <div class="kicker">Compatibility</div>
+                        <h3>
+                            New language features.
+                        </h3>
+                        <p class="fragment">
+                            Will be less relevant with evergreen browsers and incremental language updates,
+                            <span class="fragment">but probably still necessary for production builds.</span>
+                        </p>
+                        <p class="fragment">
+                            Also polyfills still require a lot of manual configuration.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Idea:</strong> Automatic polyfills.
+                        </p>
+                        <div class="fragment">
+                            <p>
+                                What if library authors annotated what polyfills they need?
+                            </p>
+                            <pre data-src="../example/polyfill.json"></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <feature-table></feature-table>
+                    </section>
+                    <section>
+                        <div class="kicker">Optimization</div>
+                        <h3>
+                            Optimized resource loading.
+                        </h3>
+                    </section>
+                    <section
+                        data-background-image="../asset/elephant.jpg"
+                        data-background-color="black"
+                        data-background-opacity="0.5"
+                    >
+                        <h3>
+                            Should we even create chunks with ESMs and H2 push?
+                        </h3>
+                        <p class="fragment">
+                            <a href="https://www.smashingmagazine.com/2017/04/guide-http2-server-push/" target="_blank">Push is a new HTTP feature that allows the server to push resources pro-actively to the client.</a>
+                        </p>
+                        <span class="credit">
+                            Photo by Wolfgang Hasselmann on Unsplash
+                        </span>
+                    </section>
+                    <section>
+                        <strong>There is no clear answer (yet)</strong>
+                        <span class="fragment">
+                            and many factors need to be considered.
+                        </span>
+                    </section>
+                    <section>
+                        <p>
+                            Current problems with ESM and H2 push:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Browsers haven't optimized native modules yet.
+                            </li>
+                            <li class="fragment">
+                                <a href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/" target="_blank">Inconsistent H2 push implementations.</a>
+                            </li>
+                            <li class="fragment">
+                                Pushing resources that the client has already cached is worse than no push.
+                            </li>
+                            <li class="fragment">
+                                Text compression algorithms (like gzip) are more effective on bigger files.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>H2 push is still hard.</strong>
+                        </p>
+                        <p class="fragment">
+                            <a href="https://docs.google.com/document/d/1K0NykTXBbbbTlv60t5MyJvXjqKGsCVNYHyLEXIxYMv0/edit" target="_blank">Rules of thumb for H2 push.</a>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            As implementations mature, we need to re-evaluate the question whether we should create chunks or not.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Let's assume that we really, really wanted to use H2 push.
+                        </p>
+                        <p class="fragment">
+                            <strong>How would it work?</strong>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            There are two possible solutions:
+                        </p>
+                        <li class="fragment">
+                            Use an empiric approach like <a href="https://github.com/google/node-h2-auto-push" target="_blank">node-h2-auto-push</a> which tries to learn "what to push" by observing client requests or...
+                        </li>
+                        <li class="fragment">
+                            ...use a bundler which generates a dependency graph on build time
+                            and pass the result to the H2 server.
+                        </li>
+                    </section>
+                    <section>
+                        <p>
+                            Creating a dependency graph for H2 push is not the only performance
+                            optimization a bundler can do.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>But the problem is:</strong> <span class="fragment">Getting the best performance requires a lot of configuration.</span>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>The solution:</strong> <span class="fragment">Give more data to the bundler so that it can perform automated decisions.</span>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Data source #1</div>
+                        <h3>
+                            Static analysis.
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            It could add resource hints automatically, like
+                            <code>preconnect</code> for all hosts that have been parsed
+                            from the source code.
+                        </p>
+                        <pre data-src="../example/preconnect.html"></pre>
+                    </section>
+                    <section>
+                        <p>
+                            Example: <code>webpackPrefetch: true</code>
+                        </p>
+                        <pre data-src="../example/webpackPrefetch.js"></pre>
+                        <small>
+                            Since webpack 4.6.0.
+                        </small>
+                    </section>
+                    <section>
+                        <p>
+                            Another idea: <code>webpackPreload: true</code> for render critical fonts.
+                        </p>
+                        <pre data-src="../example/webpackPreload.css"></pre>
+                        <small>
+                            Does not work in CSS files yet.
+                        </small>
+                    </section>
+                    <section>
+                        <p>
+                            But these manual hints can get outdated over time.
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">Data source #2</div>
+                        <h3>
+                            Automated critical render path tests.
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            The idea:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                There is an automated test that navigates to popular routes.
+                            </li>
+                            <li class="fragment">
+                                The bundler captures relevant performance data.
+                            </li>
+                            <li class="fragment">
+                                The bundler decides which resources to optimize and to prioritize.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Example:</strong> Create optimized subsets of fonts based on the actual usage of glyphs.
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                <a href="https://www.npmjs.com/package/subfont"><code>subfont</code></a>
+                            </li>
+                            <li class="fragment">
+                                <a href="https://www.npmjs.com/package/glyphhanger"><code>glyphhanger</code></a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Another example:</strong> Inline render critical CSS.
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                This is already a popular feature of CSS-in-JS libraries.
+                            </li>
+                            <li class="fragment">
+                                <a href="https://www.npmjs.com/package/critical"><code>critical</code></a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            Running automated critical render path tests works especially well with the <a href="https://jamstack.org/" target="_blank">JAMstack</a>.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            But these automated tests are also error prone because we have to select popular routes.
+                        </p>
+                        <p class="fragment">
+                            What if instead of artifical usage data we used...
+                        </p>
+                    </section>
+                    <section
+                        data-background-video="../asset/mind-blown.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.3"
+                        data-background-color="black"
+                    >
+                        <strong>
+                            ...REAL USAGE DATA.
+                        </strong>
+                    </section>
+                    <section>
+                        <div class="kicker">Data source #3</div>
+                        <h3>
+                            Analytics.
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Data-driven user experiences:</strong>
+                            <span class="fragment">When real usage data drives the decisions about how to optimize the app.</span>
+                        </p>
+                        <p class="fragment">
+                            And this is already possible today...
+                        </p>
+                    </section>
+                    <section data-background-image="../asset/guess-js.jpg" data-background-size="contain"></section>
+                    <section>
+                        <p>Guess.js...</p>
+                        <ul>
+                            <li class="fragment">
+                                ...uses real usage data to decide which chunk to <code>prefetch</code> next.
+                            </li>
+                            <li class="fragment">
+                                ...uses probabilities combined with <code>navigator.connection.effectiveType</code>
+                                to avoid over-fetching and thus wasting expensive data on mobile.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <div class="kicker">Optimization</div>
+                        <h3>
+                            Long-term caching.
+                        </h3>
+                        <p class="fragment">
+                            Calculating content hashes and updating URLs will always require a bundler.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>But there's another problem:</strong>
+                            <span class="fragment">In order to avoid propagating content hashes, we need to use an out-of-band configuration.</span>
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Example:
+                        </p>
+                        <pre data-src="../example/longTermCaching1.js"></pre>
+                        <pre data-src="../example/longTermCaching2.js"></pre>
+                        <p class="fragment">
+                            A single change invalidates all content hashes.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Possible solution:</strong>
+                        </p>
+                        <ul>
+                            <li class="fragment">Do not use hashes in import paths.</li>
+                            <li class="fragment">Re-map imports via import maps.
+                                <pre data-src="../example/longTermCaching.html"></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <div class="kicker">Optimization</div>
+                        <h3>
+                            Smaller file sizes.
+                        </h3>
+                    </section>
+                    <section>
+                        <p>
+                            All these optimizations are still necessary:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Tree-shaking.
+                            </li>
+                            <li class="fragment">
+                                Dead-code elimination.
+                            </li>
+                            <li class="fragment">
+                                Minification.
+                            </li>
+                            <li class="fragment">
+                                Compression.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>
+                                This is the reason why you will always have a build step for high-performance websites.
+                            </strong>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>Conclusion.</h2>
+                    </section>
+                    <section>
+                        <p>
+                            Bundlers were invented to use Node.js modules in the web, <span class="fragment">but this has changed.</span>
+                        </p>
+                        <p class="fragment">
+                            Today, we use bundlers for a lot of reasons, like dev experience, compatibility and optimizations.
+                        </p>
+                    </section>
+                    <section>
+                        <h3>
+                            Will we still need bundlers in the future?
+                        </h3>
+                    </section>
+                    <section>
+                        <feature-table>
+                            <check-mark slot="js-modules" value="ok"></check-mark>
+                            <check-mark slot="html-css-wasm-modules" value="maybe"></check-mark>
+                            <check-mark slot="custom-languages" value="problem"></check-mark>
+                            <check-mark slot="short-feedback-loop" value="maybe"></check-mark>
+                            <check-mark slot="unified-module-systems" value="ok"></check-mark>
+                            <check-mark slot="unified-platform" value="maybe"></check-mark>
+                            <check-mark slot="new-language-features" value="problem"></check-mark>
+                            <check-mark slot="optimized-resource-loading" value="problem"></check-mark>
+                            <check-mark slot="long-term-caching" value="problem"></check-mark>
+                            <check-mark slot="smaller-file-sizes" value="problem"></check-mark>
+                        </feature-table>
+                        <small style="display: flex; justify-content: space-between; margin-top: 50px;">
+                            <div style="display: flex">
+                                <check-mark value="ok"></check-mark> = Bundler not necessary
+                            </div>
+                            <div style="display: flex">
+                                <check-mark value="maybe"></check-mark> = Bundler probably not necessary
+                            </div>
+                            <div style="display: flex">
+                                <check-mark value="problem"></check-mark> = Bundler necessary in production
+                            </div>
+                        </small>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>
+                                Yes, because bundlers can do stuff on build time that would otherwise need to be done on run time.
+                            </strong>
+                        </p>
+                        <p class="fragment">
+                            But the scope of bundlers will probably change.
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>My vision:</strong>
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                Bundlers shouldn't be necessary because of compatibility reasons.
+                            </li>
+                            <li class="fragment">
+                                Bundlers shouldn't be necessary to allow us to write the code the way we want it.
+                            </li>
+                            <li class="fragment">
+                                <strong>
+                                    They should only be necessary to make our apps fast.
+                                </strong>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            In order to make that happen without configuration overhead, we need
+                            to give bundlers more insights into our application...
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                via static analysis,
+                            </li>
+                            <li class="fragment">
+                                via automated critical render path tests,
+                            </li>
+                            <li class="fragment">
+                                via real usage data.
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section
+                    data-background-image="../asset/amsterdam.jpg"
+                    data-background-color="black"
+                    data-background-opacity="0.5"
+                >
+                    <h2>Thank you!</h2>
+                    <h3>@jhnnns</h3>
+                    <span style="font-size: 6rem;">🙇</span>
+                </section>
+            </div>
+        </div>
+        <template id="feature-table">
+            <style>
+                table {
+                    margin: auto;
+                    border-collapse: collapse;
+                    border-spacing: 0;
+                }
+
+                table th {
+                    font-weight: bold;
+                    font-size: 2rem;
+                }
+
+                table th,
+                table td {
+                    text-align: left;
+                    padding: 0.2em 0.5em 0.2em 0.5em;
+                    border-bottom: 1px solid;
+                }
+
+                table tbody tr:last-child th,
+                table tbody tr:last-child td {
+                    border-bottom: none;
+                }
+                td > div {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                :host(.hide-second) tr > *:nth-child(2) {
+                    visibility: hidden;
+                }
+
+                :host(.hide-third) tr > *:nth-child(3) {
+                    visibility: hidden;
+                }
+            </style>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dev experience</th>
+                        <th>Compatibility</th>
+                        <th>Optimization</th>
+                    </tr>
+                </thead>
+                <tbody style="font-size: 2rem">
+                    <tr>
+                        <td>
+                            <div>
+                                <span>JS modules</span>
+                                <span><slot name="js-modules">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Unified module systems</span>
+                                <span><slot name="unified-module-systems">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Optimized resource loading</span>
+                                <span><slot name="optimized-resource-loading">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <span>HTML, CSS & WASM modules</span>
+                                <span><slot name="html-css-wasm-modules">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Unified platform</span>
+                                <span><slot name="unified-platform">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Long-term caching</span>
+                                <span><slot name="long-term-caching">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <span>Custom languages</span>
+                                <span><slot name="custom-languages">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>New language features</span>
+                                <span><slot name="new-language-features">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <span>Smaller file sizes</span>
+                                <span><slot name="smaller-file-sizes">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <span>Short feedback loop</span>
+                                <span><slot name="short-feedback-loop">&nbsp;</slot></span>
+                            </div>
+                        </td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </template>
+        <script>
+            class FeatureTable extends HTMLElement {
+                constructor() {
+                    super();
+                    const template = document.getElementById("feature-table");
+
+                    this.attachShadow({ mode: "open" }).appendChild(
+                        template.content.cloneNode(true)
+                    );
+                }
+            }
+
+            window.customElements.define("feature-table", FeatureTable);
+        </script>
+        <template id="checkmark">
+            <span style="display: block; width: 1em; height: 1em; border-radius: 100%; position: relative; top: 0.1em; margin: 0 0.3em; background-color: #0b8649;"></span>
+            <span style="display: block; width: 1em; height: 1em; border-radius: 100%; position: relative; top: 0.1em; margin: 0 0.3em; background-color: #b98404;"></span>
+            <span style="display: block; width: 1em; height: 1em; border-radius: 100%; position: relative; top: 0.1em; margin: 0 0.3em; background-color: #dc2d01;"></span>
+        </template>
+        <script>
+            class Checkmark extends HTMLElement {
+                constructor() {
+                    const values = {
+                        ok: 0,
+                        maybe: 1,
+                        problem: 2
+                    };
+
+                    super();
+                    const template = document.getElementById("checkmark");
+                    const value = this.getAttribute("value");
+                    const index = values[value];
+
+                    if (index === undefined) {
+                        throw new Error(`Unkown value "${value}"`);
+                    }
+
+                    this.appendChild(template.content.children[index].cloneNode(true));
+                }
+            }
+
+            window.customElements.define("check-mark", Checkmark);
+        </script>
+        <script src="../asset/vendor/prism-1.15.0/prism.js"></script>
+        <script src="../asset/vendor/reveal-alt-arrows/alt-arrows.js"></script>
+        <script src="../asset/vendor/reveal.js-3.7.0/js/reveal.js"></script>
+        <script src="../asset/vendor/reveal.js-3.7.0/plugin/notes/notes.js"></script>
+        <script src="../asset/peerigon/colorScheme.js"></script>
+        <script>
+            Reveal.initialize({
+                controls: false,
+                history: true,
+                keyboard: {
+                    39: "next", // Right Arrow
+                    37: "prev", // Left Arrow
+                },
+            });
+        </script>
+    </body>
+</html>
