@@ -1,0 +1,5 @@
+{
+    "name": "object-url.macro",
+    "main": "./onBuildtime.js",
+    "browser": "./onRuntime.js"
+}

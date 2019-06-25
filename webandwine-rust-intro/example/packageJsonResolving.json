@@ -1,0 +1,6 @@
+{
+    "name": "Some package",
+    "main": "./lib/main.js",
+    "module": "./lib/main.jsm",
+    "browser": "./lib/brower.js"
+}

@@ -1,0 +1,317 @@
+<html>
+    <head>
+        <link
+            rel="stylesheet"
+            href="../asset/vendor/reveal.js-3.7.0/css/reveal.css"
+        />
+        <link rel="stylesheet" href="../asset/vendor/prism-1.15.0/prism.css" />
+        <link rel="stylesheet" href="../asset/peerigon/theme-peerigon.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    </head>
+    <body id="peerigon">
+        <div class="reveal">
+            <div class="slides">
+                <section
+                    data-background-image="../asset/jimmy-ofisia-H4kXwVfl_O0-unsplash.jpg"
+                    data-background-color="black"
+                    data-background-opacity="0.5"
+                >
+                    <style>
+                        .credit {
+                            font-size: 0.3rem;
+                            opacity: 0.4;
+                        }
+                    </style>
+                    <div class="kicker">Rust</div>
+                    <h1 style="width:100%" >Intro to Rust</h1>
+                    <span class="credit">
+                        Photo by Jimmy Ofisia on Unsplash
+                    </span>
+                </section>
+                <section>
+                    <section>
+                        <div style="text-align: center">
+                            <img
+                                src="../asset/moi.jpg"
+                                style="width: 20%; border-radius: 50%;"
+                                alt="Image of Jannik Keye"
+                            />
+                            <div><b>@jannisis</b></div>
+                        </div>
+                    </section>
+                    <section>
+                        <div style="text-align: center">
+                            <img
+                                src="../asset/peerigon/peerigon-logo-flat-whiskey.svg"
+                                width="600"
+                                alt="Peerigon logo"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <p>My qualifications:</p>
+                            <ul>
+                                <li class="fragment">
+                                    I have done some Rust.
+                                </li>
+                                <li class="fragment">
+                                    I like Rust.
+                                </li>
+                                <li class="fragment">
+                                    I want you to like Rust.
+                                </li>
+                                <li class="fragment">
+                                    So I can do more Rust.
+                                </li>
+                            </ul>
+                        </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>What is Rust?</h2>
+                    </section>
+                    <section>
+                        <ul>
+                            <li class="fragment">
+                                Systems Programming Language
+                            </li>
+                            <li class="fragment">
+                                Compiled
+                            </li>
+                            <li class="fragment">
+                                Safe
+                            </li>
+                            <li class="fragment">
+                                Fast
+                            </li>
+                            <li class="fragment">
+                                Zero-Cost Abstractions
+                            </li>
+                            <li class="fragment">
+                                Control and performance of low-level with expressiveness of high-level
+                            </li>
+                            <li class="fragment">
+                                <a href="https://github.com/rust-lang/rust" target="_blank">Open Source - developed/backed by Mozilla</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <iframe style="width: 100%; height: 75%;"src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=63b29a266f4b997bb9db288a4ec172c2"></iframe>
+                        <p style="width: 100%; text-align: center;"><a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=63b29a266f4b997bb9db288a4ec172c2" target="_blank">Edit in Playground</a></p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>Ecosystem</h2>
+                    </section>
+                    <section>
+                        <h3>
+                            rustup - Toolchain Installer
+                        </h3>
+                        <p><a href="https://rustup.rs" target="_blank">Get it here!</a></p>
+                    </section>
+                    <section>
+                        <img style="width: 15%;" src="../asset/Cargo-Logo-Small.png" />
+                        <h3>
+                            Cargo - Package Management & Build System
+                        </h3>
+                        <p><a href="https://doc.rust-lang.org/cargo/" target="_blank">Cargo Book</a></p>
+                        <p><a href="https://crates.io" target="_blank">Crates.io - Registry</a></p>
+                    </section>
+                    <section>
+                        <i style="margin-bottom: 25px; font-size: 72px;"class="fa fa-cubes fa-fw"></i>
+                        <h3>
+                            Docs.rs - All package documentation in one place
+                        </h3>
+                        <p><a href="https://docs.rs" target="_blank">I need this!</a></p>
+                        <p><a href="https://doc.rust-lang.org/rustdoc/index.html" target="_blank">Rustdoc Book</a></p>
+                    </section>
+                    <section>
+                        <h3>
+                            Testing
+                        </h3>
+                        <p><a href="https://doc.rust-lang.org/book/ch11-00-testing.html" target="_blank">Tell me more!</a></p>
+                    </section>
+                    <section>
+                        <h3>
+                            rustc - An enemy you'll learn to love
+                        </h3>
+                        <p><a href="https://doc.rust-lang.org/rustc/index.html" target="_blank">Show me more!</a></p>
+                    </section>
+                    <section>
+                        <iframe style="width: 100%; height: 75%;"src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=pub%20fn%20main()%20%7B%0A%20%20%20%20let%20x%20%3D%203%3B%0A%20%20%20%20%0A%20%20%20%20x%20%3D%206%3B%0A%7D"></iframe>
+                        <p style="width: 100%; text-align: center;"><a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=pub%20fn%20main()%20%7B%0A%20%20%20%20let%20x%20%3D%203%3B%0A%20%20%20%20%0A%20%20%20%20x%20%3D%206%3B%0A%7D" target="_blank">Edit in Playground</a></p>
+                    </section>
+                    <section>
+                        <h3>
+                            rustfmt - An official code formatter
+                        </h3>
+                        <p><a href="https://github.com/rust-lang/rustfmt" target="_blank">Oh boy!</a></p>
+                    </section>
+                    <section>
+                        <h3>
+                            clippy - An official linter
+                        </h3>
+                        <p><a href="https://github.com/rust-lang/rust-clippy" target="_blank">Oh boy! Oh boy!</a></p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>More Learning Resources</h2>
+                    </section>
+                    <section>
+                        <ul>
+                            <li><a href="https://doc.rust-lang.org/std/index.html" target="_blank">Standard Library</a></li>
+                            <li><a href="https://doc.rust-lang.org/edition-guide/index.html" target="_blank">Edition Guide</a></li>
+                            <li><a href="https://doc.rust-lang.org/stable/book/" target="_blank">The Rust Programming Language Book</a></li>
+                            <li><a href="https://doc.rust-lang.org/stable/rust-by-example/" target="_blank">Rust by Example</a></li>
+                            <li><a href="https://this-week-in-rust.org" target="_blank">This Week In Rust</a></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>Why Rust?</h2>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>Wide range of applications.</li>
+                            <li>Amazing ecosystem.</li>
+                            <li>Amazing community.</li>
+                            <li>Hard but rewarding to learn.</li>
+                            <li>Future-looking. Here to stay.</li>
+                        </ul>
+                    </section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>Can I do _____ with Rust?</h2>
+                    </section>
+                    <section>
+                        <ul>
+                            <li><a href="http://arewegameyet.com" target="_blank">Are we game yet? - Game Dev</a></li>
+                            <li><a href="https://areweideyet.com" target="_blank">Are we (I)DE yet? - IDE Integration</a></li>
+                            <li><a href="https://areweguiyet.com" target="_blank">Are we GUI yet?</a></li>
+                            <li><a href="https://www.arewelearningyet.com" target="_blank">Are we learning yet? - Machine Learning</a></li>
+
+                        </ul>
+                    </section>
+                    <section>
+                        <ul>
+                            <li><a href="https://areweaudioyet.com" target="_blank">Are we audio yet?</a></li>
+                            <li><a href="https://areweasyncyet.rs" target="_blank">Are we async yet? - async I/O (async await on its way)</a></li>
+                            <li><a href="http://www.arewewebyet.org" target="_blank">Are we web yet?</a></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <h2>Web Dev in Rust</h2>
+                    </section>
+                    <section>
+                        <h3>Backend</h3>
+                    </section>
+                    <section>
+                        <iframe style="width: 100%; height: 75%;"src="http://www.arewewebyet.org"></iframe>
+                    </section>
+                    <section>
+                        <h3>Frontend</h3>
+                    </section>
+                    <section>
+                        <div style="display: flex; flex-direction: row;">
+                            <div style="margin-right: 20px;">
+                                <img style="width: 15%" src="../asset/1200px-Web_Assembly_Logo.png"/>
+                                <h3><a href="https://webassembly.org">Webassembly</a></h3>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <ul>
+                            <li class="fragment"><a href="https://rustwasm.github.io/docs/book/" target="_blank">Rust and WebAssembly Book</a></li>
+                            <li class="fragment"><a href="https://github.com/rustwasm/wasm-bindgen" target="_blank">wasm-bindgen</a></li>
+                            <li class="fragment"><a href="https://github.com/DenisKolodin/yew" target="_blank">yew - framework for building client web apps</a></li>
+                            <li class="fragment"><a href="https://rustwasm.github.io/wasm-pack/" target="_blank">wasm-pack</a></li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <p>More community links:</p>
+                        <ul>
+                            <li><a href="https://discordapp.com/invite/rust-lang" target="_blank">Official Discord</a></li>
+                            <li><a href="https://discordapp.com/invite/aVESxV8" target="_blank">Unofficial Discord</a></li>
+                            <li><a href="https://www.reddit.com/r/rust/" target="_blank">r/rust</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>Some things to build when starting out:</p>
+                        <ul>
+                            <li>A WASM Game</li>
+                            <li>A CLI Tool</li>
+                            <li>An automaton</li>
+                            <li>A simple api</li>
+                            <li>A WASM Todo App</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-whiskey-bg)">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="display: flex; flex-direction: row;">
+                                <img class="crab-dance-1" style="width: 200px; height: 80px; object-fit: contain;" src="../asset/rustacean-flat-happy.png" />
+                                <img class="crab-dance-2" style="width: 200px; height: 80px; object-fit: contain;" src="../asset/rustacean-flat-noshadow.png" />
+                                <img class="crab-dance-3" style="width: 200px; height: 80px; object-fit: contain;" src="../asset/rustacean-flat-gesture.png" />
+                            </div>
+                            <img  style="margin-bottom: 20px;" src="../asset/crab_people.gif" />
+                            <h2 style="width: 100%; text-align: center;">Become a Rustacean today!</h2>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <template id="checkmark">
+            <span style="display: block; width: 1em; height: 1em; border-radius: 100%; position: relative; top: 0.1em; margin: 0 0.3em; background-color: #0b8649;"></span>
+            <span style="display: block; width: 1em; height: 1em; border-radius: 100%; position: relative; top: 0.1em; margin: 0 0.3em; background-color: #b98404;"></span>
+            <span style="display: block; width: 1em; height: 1em; border-radius: 100%; position: relative; top: 0.1em; margin: 0 0.3em; background-color: #dc2d01;"></span>
+        </template>
+        <script>
+            class Checkmark extends HTMLElement {
+                constructor() {
+                    const values = {
+                        ok: 0,
+                        maybe: 1,
+                        problem: 2
+                    };
+
+                    super();
+                    const template = document.getElementById("checkmark");
+                    const value = this.getAttribute("value");
+                    const index = values[value];
+
+                    if (index === undefined) {
+                        throw new Error(`Unkown value "${value}"`);
+                    }
+
+                    this.appendChild(template.content.children[index].cloneNode(true));
+                }
+            }
+
+            window.customElements.define("check-mark", Checkmark);
+        </script>
+        <script src="../asset/vendor/prism-1.15.0/prism.js"></script>
+        <script src="../asset/vendor/reveal-alt-arrows/alt-arrows.js"></script>
+        <script src="../asset/vendor/reveal.js-3.7.0/js/reveal.js"></script>
+        <script src="../asset/vendor/reveal.js-3.7.0/plugin/notes/notes.js"></script>
+        <script src="../asset/peerigon/colorScheme.js"></script>
+        <script>
+            Reveal.initialize({
+                controls: false,
+                history: true,
+                keyboard: {
+                    39: "next", // Right Arrow
+                    37: "prev", // Left Arrow
+                },
+            });
+        </script>
+    </body>
+</html>
