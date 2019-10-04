@@ -37,6 +37,7 @@
                                 alt="Image of Jannik Keye"
                             />
                         </div>
+                        <p style="text-align: center">Jannik Keye</p>
                         <div style="text-align: center">
                             <img
                                 src="../asset/peerigon/peerigon-logo-flat-whiskey.svg"
@@ -46,7 +47,7 @@
                         </div>
                     </section>
                     <section>
-                        <p>My qualifications:</p>
+                        <p>My motivation for this talk:</p>
                             <ul>
                                 <li class="fragment">
                                     I have done some Rust.
@@ -76,10 +77,10 @@
                                 Compiled
                             </li>
                             <li class="fragment">
-                                Safe
+                                Fast
                             </li>
                             <li class="fragment">
-                                Fast
+                                Safe
                             </li>
                             <li class="fragment">
                                 Control and performance of low-level with expressiveness of high-level
@@ -87,11 +88,14 @@
                             <li class="fragment">
                                 <a href="https://github.com/rust-lang/rust" target="_blank">Open Source - developed/backed by Mozilla</a>
                             </li>
+                            <li class="fragment">
+                                "most loved programming language" on Stack Overflow Developer Survey since 2016
+                            </li>
                         </ul>
                     </section>
                     <section>
-                        <iframe style="width: 100%; height: 75%;"src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=63b29a266f4b997bb9db288a4ec172c2"></iframe>
-                        <p style="width: 100%; text-align: center;"><a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=63b29a266f4b997bb9db288a4ec172c2" target="_blank">Edit in Playground</a></p>
+                        <iframe style="width: 100%; height: 75%;"src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=de980f0d64450570aa7bfe30a77c5a47"></iframe>
+                        <p style="width: 100%; text-align: center;"><a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=de980f0d64450570aa7bfe30a77c5a47" target="_blank">Edit in Playground</a></p>
                     </section>
                 </section>
                 <section>
@@ -102,10 +106,16 @@
                         <ul>
                             <li>Wide range of applications.</li>
                             <li>Amazing ecosystem.</li>
-                            <li>Amazing community.</li>
+                            <li>Helpful and welcoming community.</li>
                             <li>Hard but rewarding to learn.</li>
                             <li>Future-looking. Here to stay.</li>
                         </ul>
+                    </section>
+                    <section>
+                        <img src="https://res.infoq.com/articles/programming-language-trends-2019/en/resources/2Trend-Report-1-1569221322414.jpg" alt="programming-language-trends-2019">
+                        <div style="width: 100%; text-align: center;">
+                            <a href="https://res.infoq.com/articles/programming-language-trends-2019/en/resources/2Trend-Report-1-1569221322414.jpg">Source</a>
+                        </div>
                     </section>
                     <section data-background-color="var(--color-whiskey-bg)">
 
@@ -116,6 +126,7 @@
                             rustup - Toolchain Installer
                         </h3>
                         <p><a href="https://rustup.rs" target="_blank">Get it here!</a></p>
+                        <pre>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</pre>
                     </section>
                     <section>
                         <img style="width: 15%;" src="../asset/Cargo-Logo-Small.png" />
@@ -168,8 +179,6 @@
                     </section>
                     <section>
                         <ul>
-                            <li><a href="https://doc.rust-lang.org/std/index.html" target="_blank">Standard Library</a></li>
-                            <li><a href="https://doc.rust-lang.org/edition-guide/index.html" target="_blank">Edition Guide</a></li>
                             <li><a href="https://doc.rust-lang.org/stable/book/" target="_blank">The Rust Programming Language Book</a></li>
                             <li><a href="https://doc.rust-lang.org/stable/rust-by-example/" target="_blank">Rust by Example</a></li>
                             <li><a href="https://this-week-in-rust.org" target="_blank">This Week In Rust</a></li>
@@ -186,14 +195,9 @@
                             <li><a href="https://areweideyet.com" target="_blank">Are we (I)DE yet? - IDE Integration</a></li>
                             <li><a href="https://areweguiyet.com" target="_blank">Are we GUI yet?</a></li>
                             <li><a href="https://www.arewelearningyet.com" target="_blank">Are we learning yet? - Machine Learning</a></li>
-
-                        </ul>
-                    </section>
-                    <section>
-                        <ul>
                             <li><a href="https://areweaudioyet.com" target="_blank">Are we audio yet?</a></li>
                             <li><a href="https://areweasyncyet.rs" target="_blank">Are we async yet? - async I/O (async await on its way)</a></li>
-                            <li><a href="http://www.arewewebyet.org" target="_blank">Are we web yet?</a></li>
+                            <li><a href="http://www.arewewebyet.org" target="_blank"><b>Are we web yet?</b></a></li>
                         </ul>
                     </section>
                 </section>
@@ -239,12 +243,11 @@
                         </ul>
                     </section>
                     <section>
-                        <p>Some things to build when starting out:</p>
+                        <p>How to get started?</p>
                         <ul>
-                            <li>A WASM Game</li>
-                            <li>A CLI Tool</li>
-                            <li>An automaton</li>
-                            <li>A simple api</li>
+                            <li>probably start by reading the Rust Book</li>
+                            <li><a href="https://exercism.io/tracks/rust">Learn on Exercism</a></li>
+                            <li>rewrite an existing cli tool in rust or create a new one</li>
                             <li>A WASM Todo App</li>
                         </ul>
                     </section>
