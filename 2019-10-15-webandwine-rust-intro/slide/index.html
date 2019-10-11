@@ -67,6 +67,9 @@
                 <section>
                     <section data-background-color="var(--color-whiskey-bg)">
                         <h2>What is Rust?</h2>
+                        <ul>
+                            <li><a href="https://www.rust-lang.org">https://www.rust-lang.org</a></li>
+                        </ul>
                     </section>
                     <section>
                         <ul>
@@ -129,7 +132,11 @@
                             rustup - Toolchain Installer
                         </h3>
                         <p><a href="https://rustup.rs" target="_blank">Get it here!</a></p>
-                        <pre>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</pre>
+                        <pre>
+                            <code class="language-bash">
+                                curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+                            </code>
+                        </pre>
                     </section>
                     <section>
                         <img style="width: 15%;" src="../asset/Cargo-Logo-Small.png" />
@@ -144,14 +151,36 @@
                         <h3>
                             Docs.rs - All package documentation in one place
                         </h3>
-                        <p><a href="https://docs.rs" target="_blank">I need this!</a></p>
+                        <p><a href="https://docs.rs" target="_blank">Take me there!</a></p>
                         <p><a href="https://doc.rust-lang.org/rustdoc/index.html" target="_blank">Rustdoc Book</a></p>
+                    </section>
+                    <section>
+                        <p>Package documentation right in the source code.</p>
+                        <pre style="font-size: 14px;">
+                            <code class="language-rust">
+                                /// Makes a new `Duration` with given number of seconds.
+                                /// Panics when the duration is more than `i64::MAX` milliseconds
+                                /// or less than `i64::MIN` milliseconds.
+                                #[inline]
+                                pub fn seconds(seconds: i64) -> Duration {
+                                    let d = Duration { secs: seconds, nanos: 0 };
+                                    if d < MIN || d > MAX {
+                                        panic!("Duration::seconds out of bounds");
+                                    }
+                                    d
+                                }
+                            </code>
+                        </pre>
+                        <p><a href="https://docs.rs/time/0.1.42/src/time/duration.rs.html#99-109">Source</a></p>
                     </section>
                     <section>
                         <h3>
                             Testing
                         </h3>
                         <p><a href="https://doc.rust-lang.org/book/ch11-00-testing.html" target="_blank">Tell me more!</a></p>
+                        <ul>
+                            <li class="fragment">Also runs tests for documentation examples :)</li>
+                        </ul>
                     </section>
                     <section>
                         <h3>
@@ -160,8 +189,8 @@
                         <p><a href="https://doc.rust-lang.org/rustc/index.html" target="_blank">Show me more!</a></p>
                     </section>
                     <section>
-                        <iframe style="width: 100%; height: 75%;"src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=pub%20fn%20main()%20%7B%0A%20%20%20%20let%20x%20%3D%203%3B%0A%20%20%20%20%0A%20%20%20%20x%20%3D%206%3B%0A%7D"></iframe>
-                        <p style="width: 100%; text-align: center;"><a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=pub%20fn%20main()%20%7B%0A%20%20%20%20let%20x%20%3D%203%3B%0A%20%20%20%20%0A%20%20%20%20x%20%3D%206%3B%0A%7D" target="_blank">https://play.rust-lang.org/</a></p>
+                        <iframe style="width: 100%; height: 75%;"src="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=afb43a2e3f2ad5fda6b3558fb3d6bacb"></iframe>
+                        <p style="width: 100%; text-align: center;"><a href="https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=afb43a2e3f2ad5fda6b3558fb3d6bacb" target="_blank">https://play.rust-lang.org/</a></p>
                     </section>
                     <section>
                         <h3>
