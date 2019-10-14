@@ -15,7 +15,7 @@ pub fn is_at_web_and_wine() -> bool {
 
     // Pattern Matching
     match (
-        local.day(), 
+        local.day(),
         local.month(),
         local.year()
     ) {
