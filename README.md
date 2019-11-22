@@ -1,3 +1,12 @@
+## Digitale Kommunikation bei Peerigon (DE)
+
+Als verteiltes Team sitzen wir bei Peerigon nur selten alle in einem Raum, kommunizieren aber trotzdem den ganzen Tag über Kontinente hinweg miteinander. Dafür nutzen wir verschiedenste digitale Tools, die je nach Art der Information, Zielgruppe & Dringlichkeit ausgewählt werden. Wir möchten einen Einblick geben wie wir digitale Kommunikation nutzen und darüber diskutieren ob Tooling allein unsere Kommunikationsprobleme lösen kann. 
+
+- Lisa Giese, Michael Jaser
+- [IHK, Augsburg](https://www.schwaben.ihk.de/)
+- November 19th, 2019
+- [Slides](https://peerigon.github.io/talks/2019-11-19-ihk-digitale-kommunikation-bei-peerigon/digitale-kommunikation-bei-peerigon.pdf)
+
 ## The future of JavaScript bundlers
 
 With ES modules implemented in all major browsers, do we even need to use JavaScript bundlers?
