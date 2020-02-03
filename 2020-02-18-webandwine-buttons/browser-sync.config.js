@@ -3,8 +3,11 @@
 "use strict";
 
 module.exports = {
-    server: true,
-    directory: true, // currently ignored, needs also to be set in the package.json :(
+    server: {
+        baseDir: ".",
+        index: "index.html",
+    },
+    startPath: "slides/index.html",
     files: ["./example", "./exercise", "./slide", "./solution"],
     ignore: ["**/node_modules"],
 };
