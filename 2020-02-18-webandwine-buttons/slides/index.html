@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../assets/vendor/reveal.js-3.7.0/css/reveal.css">
+		<link rel="stylesheet" href="../assets/vendor/prism-1.15.0/prism.css" />
+		<link rel="stylesheet" href="../assets/peerigon/theme-peerigon.css">
+	</head>
+	<body id="peerigon">
+		<div class="reveal">
+			<div class="slides">
+<section>
+	<div class="kicker">Kicker example</div>
+	<h1>Headline.</h1>
+</section>
+<section>
+	<section data-background-color="var(--color-primary-bg)">
+		<h2>Section headline.</h2>
+	</section>
+	<section>
+		<p>
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+		</p>
+		
+                <div class="gist">
+                    <span class="gist-filename">Button.jsx</span>
+                    <code class="hljs"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">{ label, message }</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> alert(message)}&gt;{label}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>;
+};
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"App"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"click me!"</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"You clicked me!"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );
+}</code>
+                </div>
+                
+	</section>
+	<section>
+		<p>
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+		</p>
+		<p class="fragment">
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+		</p>
+		<p class="fragment">
+			Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+		</p>
+	</section>
+	<section data-color-scheme="minze" data-background-color="var(--color-primary-bg)">
+		<div class="kicker">Exercise <code>exercise-name</code></div>
+		<ol>
+			<li>
+				This is an example instruction.
+			</li>
+			<li>
+				Then you should do something different.
+			</li>
+		</ol>
+	</section>
+</section>
+
+
+			</div>
+		</div>
+		<a id="peerigon-logo" href="https://peerigon.com" target="_blank">
+			<img src="../assets/peerigon/peerigon-symbol-flat-minze.svg" data-minze width="60">
+			<img src="../assets/peerigon/peerigon-symbol-flat-whiskey.svg" data-whiskey width="60">
+			<img src="../assets/peerigon/peerigon-symbol-flat-spinat.svg" data-spinat width="60">
+		</a>
+		<script src="../assets/vendor/prism-1.15.0/prism.js"></script>
+		<script src="../assets/vendor/reveal-alt-arrows/alt-arrows.js"></script>
+		<script src="../assets/vendor/reveal.js-3.7.0/js/reveal.js"></script>
+		<script src="../assets/vendor/reveal.js-3.7.0/plugin/markdown/marked.js"></script>
+		<script src="../assets/vendor/reveal.js-3.7.0/plugin/markdown/markdown.js"></script>
+		<script src="../assets/vendor/reveal.js-3.7.0/plugin/notes/notes.js"></script>
+		<script src="../assets/vendor/fullscreen-0.1/fullscreen.js"></script>
+		<script src="../assets/peerigon/colorScheme.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				fragmentInURL: true,
+				width: 1244,
+				height: 700,
+				margin: 0.15,
+				keyboard: {
+					39: "next", // Right Arrow
+					37: "prev", // Left Arrow
+				},
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+{
+    "extends": [
+        "peerigon"
+    ],
+    "env": {
+        "node": true,
+        "browser": true
+    },
+    "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "import/unambiguous": "off",
+        "func-style": "off"
+    },
+    "root": true
+}

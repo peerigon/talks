@@ -1,0 +1,74 @@
+/*
+Monokai style - ported by Luigi Maselli - http://grigio.org
+*/
+
+.reveal .hljs {
+  white-space: pre;
+	display: block;
+	overflow-x: auto;
+	padding: 0.5em;
+	background: #272822;
+	color: #ddd;
+	font-size: 0.75em;
+  }
+  
+  .reveal .hljs-tag,
+  .reveal .hljs-keyword,
+  .reveal .hljs-selector-tag,
+  .reveal .hljs-literal,
+  .reveal .hljs-strong,
+  .reveal .hljs-name {
+	color: #f92672;
+  }
+  
+  .reveal .hljs-code {
+	color: #66d9ef;
+  }
+  
+  .reveal .hljs-class .reveal .hljs-title {
+	color: white;
+  }
+  
+  .reveal .hljs-attribute,
+  .reveal .hljs-symbol,
+  .reveal .hljs-regexp,
+  .reveal .hljs-link {
+	color: #bf79db;
+  }
+  
+  .reveal .hljs-string,
+  .reveal .hljs-bullet,
+  .reveal .hljs-subst,
+  .reveal .hljs-title,
+  .reveal .hljs-section,
+  .reveal .hljs-emphasis,
+  .reveal .hljs-type,
+  .reveal .hljs-built_in,
+  .reveal .hljs-builtin-name,
+  .reveal .hljs-selector-attr,
+  .reveal .hljs-selector-pseudo,
+  .reveal .hljs-addition,
+  .reveal .hljs-variable,
+  .reveal .hljs-template-tag,
+  .reveal .hljs-template-variable {
+	color: #a6e22e;
+  }
+  
+  .reveal .hljs-comment,
+  .reveal .hljs-quote,
+  .reveal .hljs-deletion,
+  .reveal .hljs-meta {
+	color: #75715e;
+  }
+  
+  .reveal .hljs-keyword,
+  .reveal .hljs-selector-tag,
+  .reveal .hljs-literal,
+  .reveal .hljs-doctag,
+  .reveal .hljs-title,
+  .reveal .hljs-section,
+  .reveal .hljs-type,
+  .reveal .hljs-selector-id {
+	font-weight: bold;
+  }
+  

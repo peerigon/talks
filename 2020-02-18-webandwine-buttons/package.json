@@ -1,0 +1,37 @@
+{
+  "name": "workshop-or-talk",
+  "version": "1.0.0",
+  "description": "A short description",
+  "scriptlint": {
+    "strict": true,
+    "fix": true
+  },
+  "scripts": {
+    "build": "TMPHTML=`mktemp` run-s build:template build:concat",
+    "build:concat": "cat src/header.html $TMPHTML src/footer.html > slides/index.html",
+    "build:template": "cat src/body.html | node .scripts/template.js > $TMPHTML",
+    "dev": "run-p dev:watch start",
+    "dev:watch": "nodemon -w src -e html --exec \"run-s build\"",
+    "setup:updates": "updtr",
+    "start": "browser-sync start --config browser-sync.config.js --directory",
+    "test": "run-s build test:lint test:scripts",
+    "test:lint": "eslint .scripts/",
+    "test:scripts": "scriptlint"
+  },
+  "keywords": [],
+  "author": "developers@peerigon.com",
+  "private": true,
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-peerigon": "^24.0.0",
+    "highlight.js": "^9.18.0",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "r2": "^2.0.1",
+    "scriptlint": "^1.2.0",
+    "updtr": "^3.1.0"
+  }
+}
