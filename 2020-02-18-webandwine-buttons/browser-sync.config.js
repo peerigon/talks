@@ -3,6 +3,7 @@
 "use strict";
 
 module.exports = {
+    watch: true,
     server: {
         baseDir: ".",
         index: "index.html",

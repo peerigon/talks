@@ -1,5 +1,7 @@
 const readline = require("readline");
 const gist = require("./gist");
+const hljs = require("highlight.js");
+const code = require("./codeHighlight");
 
 let fileContent = "";
 
@@ -19,8 +21,8 @@ const makeGist = async html => {
         gistFiles
             .map(
                 gf => `
-                <div class="gist">
-                    <span class="gist-filename">${gf.name}</span>
+                <div class="code">
+                    <span class="code-filename">${gf.name}</span>
                     <code class="hljs">${gf.markup}</code>
                 </div>
                 `
@@ -29,14 +31,56 @@ const makeGist = async html => {
     );
 };
 
+const detab = str => {
+    const lines = str.split("\n").filter(line => line.length > 0);
+    const minIndent = Math.min(
+        ...lines.map(line => line.length - line.trimLeft().length)
+    );
+    return lines.map(line => line.substr(minIndent)).join("\n");
+};
+
+const searchAndReplaceCb = (str, re, cb) => {
+    const allMatches = [...str.matchAll(re)];
+
+    allMatches.forEach(([match, ...groups]) => {
+        str = str.replace(match, cb(match, ...groups));
+    });
+
+    return str;
+};
+
+const makeCode = html => {
+    return searchAndReplaceCb(
+        html,
+        /<code([\s\S]*?)>([\s\S]*?)<\/code>/gm,
+        (match, params, code) => {
+            const result = `
+            <div class="code">
+                <code class="hljs"${params}>${
+                hljs.highlightAuto(detab(code)).value
+            }</code>
+            </div>
+        `;
+
+            return searchAndReplaceCb(
+                result,
+                /{{{([\s\S]*?)}}}/g,
+                (match, line) =>
+                    `<span class="code-highlighted-line">${line}</span>`
+            );
+        }
+    );
+};
+
 const main = async () => {
-    console.log(await makeGist(fileContent));
+    const html = makeCode(fileContent);
+    console.log(await makeGist(html));
 };
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
-    terminal: false,
+    terminal: false
 });
 
 rl.on("line", line => {

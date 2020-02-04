@@ -1,4 +1,4 @@
-var defaultColorScheme = "whiskey";
+const defaultColorScheme = "minze";
 
 function setColorScheme(colorScheme) {
     switch (colorScheme) {

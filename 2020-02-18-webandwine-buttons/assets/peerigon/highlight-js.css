@@ -1,74 +1,80 @@
 /*
-Monokai style - ported by Luigi Maselli - http://grigio.org
+
+Zenburn style from voldmar.ru (c) Vladimir Epifanov <voldmar@voldmar.ru>
+based on dark.css by Ivan Sagalaev
+
 */
 
-.reveal .hljs {
-  white-space: pre;
-	display: block;
-	overflow-x: auto;
-	padding: 0.5em;
-	background: #272822;
-	color: #ddd;
-	font-size: 0.75em;
-  }
-  
-  .reveal .hljs-tag,
-  .reveal .hljs-keyword,
-  .reveal .hljs-selector-tag,
-  .reveal .hljs-literal,
-  .reveal .hljs-strong,
-  .reveal .hljs-name {
-	color: #f92672;
-  }
-  
-  .reveal .hljs-code {
-	color: #66d9ef;
-  }
-  
-  .reveal .hljs-class .reveal .hljs-title {
-	color: white;
-  }
-  
-  .reveal .hljs-attribute,
-  .reveal .hljs-symbol,
-  .reveal .hljs-regexp,
-  .reveal .hljs-link {
-	color: #bf79db;
-  }
-  
-  .reveal .hljs-string,
-  .reveal .hljs-bullet,
-  .reveal .hljs-subst,
-  .reveal .hljs-title,
-  .reveal .hljs-section,
-  .reveal .hljs-emphasis,
-  .reveal .hljs-type,
-  .reveal .hljs-built_in,
-  .reveal .hljs-builtin-name,
-  .reveal .hljs-selector-attr,
-  .reveal .hljs-selector-pseudo,
-  .reveal .hljs-addition,
-  .reveal .hljs-variable,
-  .reveal .hljs-template-tag,
-  .reveal .hljs-template-variable {
-	color: #a6e22e;
-  }
-  
-  .reveal .hljs-comment,
-  .reveal .hljs-quote,
-  .reveal .hljs-deletion,
-  .reveal .hljs-meta {
-	color: #75715e;
-  }
-  
-  .reveal .hljs-keyword,
-  .reveal .hljs-selector-tag,
-  .reveal .hljs-literal,
-  .reveal .hljs-doctag,
-  .reveal .hljs-title,
-  .reveal .hljs-section,
-  .reveal .hljs-type,
-  .reveal .hljs-selector-id {
-	font-weight: bold;
-  }
-  
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #3f3f3f;
+  color: #dcdcdc;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-tag {
+  color: #e3ceab;
+}
+
+.hljs-template-tag {
+  color: #dcdcdc;
+}
+
+.hljs-number {
+  color: #8cd0d3;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute {
+  color: #efdcbc;
+}
+
+.hljs-literal {
+  color: #efefaf;
+}
+
+.hljs-subst {
+  color: #8f8f8f;
+}
+
+.hljs-title,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-section,
+.hljs-type {
+  color: #efef8f;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #dca3a3;
+}
+
+.hljs-deletion,
+.hljs-string,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #cc9393;
+}
+
+.hljs-addition,
+.hljs-comment,
+.hljs-quote,
+.hljs-meta {
+  color: #7f9f7f;
+}
+
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
