@@ -1,0 +1,131 @@
+<section class="centered" data-background-color="var(--color-black)">
+    <section>
+        <h2>Words are everything</h2>
+    </section>
+
+    <section>
+        <blockquote>
+            »if a necessary feature has a high astonishment factor, it may be
+            necessary to redesign this feature.«
+            <footer>Principle of least astonishment</footer>
+        </blockquote>
+    </section>
+
+    <section data-background-color="#ffffff" class="centered">
+        <img src="../assets/fireworks.png" alt="" />
+    </section>
+
+    <section>
+        Label buttons with what they do using action verbs ("publish") and
+        imperatives!
+    </section>
+
+    <style>
+        .reveal .fake-modal {
+            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 0;
+            margin-right: 8rem;
+            margin-bottom: 3rem;
+            margin-left: 8rem;
+            border: 3px solid var(--color-primary-bg);
+        }
+
+        .reveal .fake-modal p {
+            flex: 1 0 auto;
+            margin: 0;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .reveal .fake-modal textarea {
+            flex: 1 0 auto;
+            margin: 0;
+            width: 100%;
+            border: 2px solid var(--color-primary);
+            background-color: transparent;
+        }
+
+        .reveal .fake-modal button {
+            border: 2px solid var(--color-primary);
+            background-color: var(--color-primary-bg);
+            padding: 1rem;
+            margin-right: 1rem;
+            margin-top: 1rem;
+            min-width: 10em;
+            font-size: 0.5em;
+        }
+
+        .reveal .fake-modal button:first-of-type:not(:last-of-type) {
+            background-color: transparent;
+            color: #fff;
+        }
+    </style>
+
+    <section>
+        <div class="fake-modal goodbad --bad">
+            <p>Publish article?</p>
+            <button>No</button>
+            <button>Yes</button>
+        </div>
+
+        <div class="fragment fake-modal goodbad --good">
+            <p>Publish article?</p>
+            <button>Cancel</button>
+            <button>Publish</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fake-modal --bad">
+            <button>Click here to enter</button>
+        </div>
+
+        <div class="fragment fake-modal goodbad --good">
+            <button>Enter</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fake-modal goodbad --bad">
+            <p>Write a review</p>
+            <textarea name="fake" id="fake" cols="30" rows="10"></textarea>
+            <button>Cancel</button>
+            <button>Submit</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fake-modal goodbad --good">
+            <p>Write a review</p>
+            <textarea name="fake" id="fake" cols="30" rows="10"></textarea>
+            <button>Cancel</button>
+            <button>Publish</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fake-modal goodbad --bad">
+            <p>Write a review</p>
+            <textarea name="fake" id="fake" cols="30" rows="10"></textarea>
+            <button>Cancel my submission</button>
+            <button>Publish my thoughts on this issue</button>
+        </div>
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #5
+
+            Use verbs and imperatives!<br>Be concise!
+        </script>
+    </section>
+</section>

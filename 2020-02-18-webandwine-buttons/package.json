@@ -7,9 +7,7 @@
     "fix": true
   },
   "scripts": {
-    "build": "TMPHTML=`mktemp` run-s build:template build:concat",
-    "build:concat": "cat src/header.html $TMPHTML src/footer.html > slides/index.html",
-    "build:template": "cat src/body.html | node .scripts/template.js > $TMPHTML",
+    "build": "cat src/index.html | node .scripts/template.js > ./slides/index.html",
     "dev": "run-p dev:watch start",
     "dev:watch": "nodemon -w src -e html --exec \"run-s build\"",
     "setup:updates": "updtr",

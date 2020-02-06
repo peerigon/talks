@@ -1,3 +1,5 @@
+<div>
+    <!DOCTYPE html>
 <html>
 	<head>
 		<link rel="stylesheet" href="../assets/vendor/reveal.js-3.7.0/css/reveal.css">
@@ -6,21 +8,26 @@
 	</head>
 	<body id="peerigon">
 		<div class="reveal">
-			<div class="slides"><section data-background-color="var(--color-black)">
-    <h1>It&nbsp;started with&nbsp;a&nbsp;button</h1>
-    <div class="kicker">now we're here</div>
-</section>
+			<div class="slides">
 
-<section class="centered" data-background-color="var(--color-black)">
-    <img
-        src="../assets/peerigon/peerigon-logo-flat-minze-dark.svg"
-        width="700"
-    />
-    <aside class="notes" data-markdown>
-        - specialising in javascript development
-    </aside>
-</section>
-<section>
+    <section data-background-color="var(--color-black)">
+        <h1>It&nbsp;started with&nbsp;a&nbsp;button</h1>
+        <div class="kicker">now we're here</div>
+    </section>
+
+    <section class="centered" data-background-color="var(--color-black)">
+        <img
+            src="../assets/peerigon/peerigon-logo-flat-minze-dark.svg"
+            width="700"
+        />
+
+        <aside class="notes" data-markdown>
+            - specialising in javascript development
+            - peerigon.com
+        </aside>
+    </section>
+
+    <section>
     <section data-background-color="var(--color-black)">
         <h2>What is a button?</h2>
     </section>
@@ -28,13 +35,27 @@
     <section
         data-background="../assets/warehouse.jpg"
         data-background-color="var(--color-black)"
-        class="bg-contain"
+        class="bg-cover"
     ></section>
 
     <section
         data-background="../assets/door-bell.jpg"
         data-background-color="var(--color-black)"
     ></section>
+
+    <section
+        data-background="../assets/amazon-dash.jpg"
+		data-background-color="var(--color-black)"
+        class="centered"
+    ></section>
+
+    <section
+        data-background-color="var(--color-black)"
+        data-background="../assets/amazon-dash.jpg"
+        class="centered bg-blurry"
+    >
+        <img src="../assets/mouse.jpg" alt="" />
+    </section>
 
     <section
         data-background-color="var(--color-black)"
@@ -50,7 +71,8 @@
     </section>
 </section>
 
-<section>
+
+    <section>
     <section data-background-color="var(--color-black)">
         <h2>Buttons and browsers</h2>
     </section>
@@ -64,41 +86,19 @@
     <section
         class="code-small"
         data-background-color="var(--color-black)"
-        data-transition="slide-in fade-out"
-    >
-        
-            <div class="code">
-                <code class="hljs" foo="bar">    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"sendmail.php"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>
-            <span class="hljs-attr">name</span>=<span class="hljs-string">"message"</span>
-            <span class="hljs-attr">id</span>=<span class="hljs-string">"message"</span>
-            <span class="hljs-attr">cols</span>=<span class="hljs-string">"30"</span>
-            <span class="hljs-attr">rows</span>=<span class="hljs-string">"10"</span>
-        &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-</code>
-            </div>
-        
-    </section>
-
-    <section
-        class="code-small"
-        data-background-color="var(--color-black)"
         data-transition="fade-in slide-out"
     >
         
             <div class="code">
-                <code class="hljs">    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"sendmail.php"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>
-            <span class="hljs-attr">name</span>=<span class="hljs-string">"message"</span>
-            <span class="hljs-attr">id</span>=<span class="hljs-string">"message"</span>
-            <span class="hljs-attr">cols</span>=<span class="hljs-string">"30"</span>
-            <span class="hljs-attr">rows</span>=<span class="hljs-string">"10"</span>
-        &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-        <span class="code-highlighted-line"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> /&gt;</span></span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
-</code>
+                <code class="hljs"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"sendmail.php"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>
+        <span class="hljs-attr">name</span>=<span class="hljs-string">"message"</span>
+        <span class="hljs-attr">id</span>=<span class="hljs-string">"message"</span>
+        <span class="hljs-attr">cols</span>=<span class="hljs-string">"30"</span>
+        <span class="hljs-attr">rows</span>=<span class="hljs-string">"10"</span>
+    &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+    <span class="code-highlighted-line"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> /&gt;</span></span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></code>
             </div>
         
     </section>
@@ -118,15 +118,15 @@
     <section class="code centered dark" data-transition="fade-in slide-out">
         
             <div class="code">
-                <code class="hljs">    &lt;a href=<span class="hljs-string">"..."</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"btn btn-primary"</span>&gt;Click <span class="hljs-keyword">me</span>!&lt;/a&gt;
-</code>
+                <code class="hljs">&lt;a href=<span class="hljs-string">"..."</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"btn btn-primary"</span>&gt;Click <span class="hljs-keyword">me</span>!&lt;/a&gt;</code>
             </div>
         
-        <img src="../assets/bootstrap-btn.png" alt="" />
+        <img src="../assets/bootstrap-btn.png" width="200" />
     </section>
 </section>
 
-<section>
+
+    <section>
     <section data-background-color="var(--color-black)">
         <h2>Are links buttons?</h2>
         <h2>Are buttons links?</h2>
@@ -136,10 +136,13 @@
     </section>
     <section data-background-color="var(--color-black)">
         <blockquote>
-            Making a link look like a button is materially dishonest. It tells
-            users that links and buttons are the same when they’re not.<br />[…]
-            submit buttons shouldn’t have a hand cursor. In doing so, the hand
-            (pointer) helps those using a pointing device spot a link.
+            <p>
+                »Making a link look like a button is materially dishonest. It
+                tells users that links and buttons are the same when they’re
+                not.<br />[…] submit buttons shouldn’t have a hand cursor. In
+                doing so, the hand (pointer) helps those using a pointing device
+                spot a link.«
+            </p>
             <footer>
                 — Adam Silver, 2007<br />https://link.medium.com/rLtpK1t4n3
             </footer>
@@ -147,20 +150,31 @@
     </section>
     <section data-background-color="var(--color-black)">
         <blockquote>
-            Users don't care about semantics and they mostly don't see cursor
-            appearance.
+            <p>
+                »Users don't care about semantics and they mostly don't see
+                cursor appearance.«
+            </p>
             <footer>
                 — Me, just now
             </footer>
         </blockquote>
     </section>
 
-    <section data-markdown data-background-color="var(--color-black)">
-        Avoid the `cursor` property in css, it's a sign of bad practice.
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #1
+
+            The `cursor` defaults for elements<br>are fine as they are.
+        </script>
     </section>
 </section>
 
-<section data-background-color="var(--color-black)">
+
+    <section data-background-color="var(--color-black)">
     <section>
         <h2>What makes a button look like a button?</h2>
     </section>
@@ -186,11 +200,11 @@
     ></section>
 
     <section data-background-color="#cbc5cb" class="centered">
-        <img src="../assets/win95.png" />
+        <img src="../assets/win95.png" width="300" />
     </section>
 
     <section data-background-color="#f0ebe0" class="centered">
-        <img src="../assets/winxp.png" />
+        <img src="../assets/winxp.png" width="300" />
     </section>
 
     <section data-background-color="#e5e5e5" class="centered">
@@ -219,14 +233,459 @@
 
     <section
         data-background="../assets/reason.jpg"
-        class="bg-contain"
+        class="bg-cover-150"
     ></section>
+
+    <section
+        data-background="../assets/reason2.jpg"
+        class="bg-cover-150"
+    ></section>
+
+    <section data-markdown data-separator="---">
+        <script type="text/template">
+            ### affordance
+            #### /ə-ˈfȯr-dᵊn(t)s/
+
+            the quality or property of an object that defines its possible uses or makes clear how it can or should be used<br><br>
+            _Merriam Webster_
+        </script>
+    </section>
+
+    <section>
+        <blockquote>
+            <p>
+                »For instance, a button can look as if it needs to be turned or
+                pushed. The characteristics of the button which make it look
+                “turnable” or “pushable” together form its affordances.«
+            </p>
+            <footer>
+                interaction-design.org
+            </footer>
+        </blockquote>
+    </section>
+
+    <section
+        data-background="../assets/amazon1.png"
+        class="bg-contain-66"
+    ></section>
+
+    <section
+        data-background="../assets/amazon2.png"
+        class="bg-contain-66"
+    ></section>
+
+    <section>
+        <h3>Flat design might have been a mistake lol 🤷‍♀️</h3>
+    </section>
+
+    <section
+        data-background="../assets/windows-phone.jpg"
+        class="bg-cover"
+    ></section>
+
+    <section
+        data-background="../assets/hertz.jpg"
+        class="bg-contain-75"
+    ></section>
+
+    <section
+        data-background="../assets/hertz.jpg"
+        class="bg-contain-75 bg-blurry"
+    >
+        <blockquote style="text-shadow: 0 0 10px rgba(0,0,0,0.3);">
+            On average participants spent 22% more time (i.e., slower task
+            performance) looking at the pages with weak signifiers.
+
+            <footer>Nielsen Norman Group, 2017</footer>
+        </blockquote>
+    </section>
+
+    <section data-background="../assets/shackles.jpg" class="bg-cover centered">
+        <h2 style="text-shadow: 0 0 10px rgba(0,0,0,0.3);">
+            Material&nbsp;design&nbsp;🥰
+        </h2>
+    </section>
+
+    <section data-background-color="#ffffff">
+        <img src="../assets/thesis-antithesis.png" alt="" />
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #2
+            
+            If you make buttons look like buttons you will be fine.
+        </script>
+    </section>
+</section>
+
+    
+    <section data-background-color="var(--color-black)">
+    <section>
+        <h2>Life is about position and appearance</h2>
+    </section>
+
+    <section data-background="../assets/elevator.jpg" class="bg-cover-150">
+        <h1>👀</h1>
+    </section>
+
+    <section data-background-color="#cbc5cb" class="centered">
+        <img src="../assets/win95.png" width="300" />
+        <img src="../assets/macos9.png" />
+    </section>
+
+    <section>
+        <blockquote>
+            »Listing OK first supports the natural reading order in English and
+            other languages that read left-to-right. […]<br />
+            Listing OK last improves the flow, because the dialog box "ends"
+            with its conclusion.«
+            <footer>
+                <footer>Nielsen Norman Group, 2008</footer>
+            </footer>
+        </blockquote>
+    </section>
+
+    <section data-background-color="#efefee" class="centered">
+        <img src="../assets/hebrew.png" />
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #3
+
+            Don't make users hunt for buttons and be consistent.
+        </script>
+    </section>
+
+    <section>
+        <h3>Button hierarchy,<br />button states</h3>
+    </section>
+
+    <section data-background-color="#ffffff" class="centered">
+        <img src="../assets/daimler.png" />
+        <aside class="notes">
+            From the online style guide of Daimler AG
+        </aside>
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #4
+
+            Smash capitalism.
+        </script>
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #4
+
+            buttons have many states and uses:
+            define them. Be consistent.
+        </script>
+    </section>
+</section>
+
+    
+    <section class="centered" data-background-color="var(--color-black)">
+    <section>
+        <h2>Words are everything</h2>
+    </section>
+
+    <section>
+        <blockquote>
+            »if a necessary feature has a high astonishment factor, it may be
+            necessary to redesign this feature.«
+            <footer>Principle of least astonishment</footer>
+        </blockquote>
+    </section>
+
+    <section data-background-color="#ffffff" class="centered">
+        <img src="../assets/fireworks.png" alt="" />
+    </section>
+
+    <section>
+        Label buttons with what they do using action verbs ("publish") and
+        imperatives!
+    </section>
+
+    <style>
+        .reveal .fake-modal {
+            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 0;
+            margin-right: 8rem;
+            margin-bottom: 3rem;
+            margin-left: 8rem;
+            border: 3px solid var(--color-primary-bg);
+        }
+
+        .reveal .fake-modal p {
+            flex: 1 0 auto;
+            margin: 0;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .reveal .fake-modal textarea {
+            flex: 1 0 auto;
+            margin: 0;
+            width: 100%;
+            border: 2px solid var(--color-primary);
+            background-color: transparent;
+        }
+
+        .reveal .fake-modal button {
+            border: 2px solid var(--color-primary);
+            background-color: var(--color-primary-bg);
+            padding: 1rem;
+            margin-right: 1rem;
+            margin-top: 1rem;
+            min-width: 10em;
+            font-size: 0.5em;
+        }
+
+        .reveal .fake-modal button:first-of-type:not(:last-of-type) {
+            background-color: transparent;
+            color: #fff;
+        }
+    </style>
+
+    <section>
+        <div class="fake-modal goodbad --bad">
+            <p>Publish article?</p>
+            <button>No</button>
+            <button>Yes</button>
+        </div>
+
+        <div class="fragment fake-modal goodbad --good">
+            <p>Publish article?</p>
+            <button>Cancel</button>
+            <button>Publish</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fake-modal --bad">
+            <button>Click here to enter</button>
+        </div>
+
+        <div class="fragment fake-modal goodbad --good">
+            <button>Enter</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fake-modal goodbad --bad">
+            <p>Write a review</p>
+            <textarea name="fake" id="fake" cols="30" rows="10"></textarea>
+            <button>Cancel</button>
+            <button>Submit</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fake-modal goodbad --good">
+            <p>Write a review</p>
+            <textarea name="fake" id="fake" cols="30" rows="10"></textarea>
+            <button>Cancel</button>
+            <button>Publish</button>
+        </div>
+    </section>
+
+    <section>
+        <div class="fake-modal goodbad --bad">
+            <p>Write a review</p>
+            <textarea name="fake" id="fake" cols="30" rows="10"></textarea>
+            <button>Cancel my submission</button>
+            <button>Publish my thoughts on this issue</button>
+        </div>
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #5
+
+            Use verbs and imperatives!<br>Be concise!
+        </script>
+    </section>
+</section>
+
+    
+    <section class="centered" data-background-color="var(--color-black)">
+    <section>
+        <h2>a11y / u7y</h2>
+        <h2 class="fragment">accessibility / usability</h2>
+    </section>
+
+    <section>
+        <h3>Touch target size</h3>
+    </section>
+
+    <section>
+        <blockquote>
+            »Provide ample touch targets for interactive elements. Try to
+            maintain a minimum tappable area of 44pt x 44pt for all controls.«
+            <footer>
+                Apple Human Interface Guidelines
+            </footer>
+        </blockquote>
+    </section>
+
+    <section>
+        <blockquote>
+            »It is obvious on the face of it people don’t change their touch
+            accuracy based on screen resolution.«
+            <footer>
+                Steven Hoober, 44 px: Why Apple is Wrong, medium.com
+            </footer>
+        </blockquote>
+        <div style="text-align: center;">
+            <img src="../assets/homer.gif" />
+        </div>
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #6
+
+            44px is agood rule of thumb.<br>
+            Test your stuff with real devices and real fingers.
+        </script>
+    </section>
 </section>
 
 
+    <section class="centered" data-background-color="var(--color-black)">
+    <section>
+        <h3><code>:hover</code></h3>
+    </section>
+
+    <section data-background-color="#747474" class="centered">
+        <img src="../assets/button-states.png" alt="" />
+    </section>
+
+    <section data-background-color="#808080" class="centered">
+        <video width="244px" src="../assets/ff.mov" autoplay data-autoplay loop></video>
+        <p>Firefox 72, Mac</p>
+    </section>
+
+    <section data-background-color="#808080" class="centered">
+        <video width="244px" src="../assets/chrome.mov" autoplay data-autoplay loop></video>
+        <p>Chrome 79, Mac</p>
+    </section>
+
+    <section data-background-color="#808080" class="centered">
+        <video width="244px" src="../assets/ios.mov" autoplay data-autoplay loop></video>
+        <p>iOS Safari 13</p>
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #7
+
+            <code>:hover</code> has side effects.<br>
+            Test your stuff with real devices (again).
+        </script>
+    </section>
+</section>
+
+    
+    <section class="centered" data-background-color="var(--color-black)">
+    <section>
+        <h3><code>:focus</code></h3>
+    </section>
+
+    <section data-background-color="#808080" class="centered">
+        <video
+            width="244px"
+            src="../assets/chrome.mov"
+            autoplay
+            data-autoplay
+            loop
+        ></video>
+        <p>Chrome 79, Mac</p>
+    </section>
+
+    <section data-background-color="#747474" class="centered">
+        <img src="../assets/button-states-2.png" alt="" />
+        <br /><br /><br />
+        <img
+            class="fragment"
+            width="600"
+            src="../assets/chrome-dev-focus.png"
+            alt=""
+        />
+    </section>
+
+    <section>
+        <div class="goodbad --superbad">
+            
+            <div class="code">
+                <code class="hljs">*<span class="hljs-selector-pseudo">:focus</span> {
+    <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span>;
+}</code>
+            </div>
+        
+        </div>
+    </section>
+
+    <section data-background-color="#494949" class="">
+        <video
+            src="../assets/govuk.mov"
+            autoplay
+            data-autoplay
+            loop
+        ></video>
+    </section>
+
+    <section data-background-color="#ffffff" class="centered">
+        <img src="../assets/daimler-a11y.png" />
+        <aside class="notes">
+            From the online style guide of Daimler AG
+        </aside>
+    </section>
+</section>
+
+
+    
 			</div>
 		</div>
 		<a id="peerigon-logo" href="https://peerigon.com" target="_blank">
+			<img src="../assets/peerigon/peerigon-symbol-flat-important.svg" data-important width="60">
 			<img src="../assets/peerigon/peerigon-symbol-flat-minze.svg" data-minze width="60">
 			<img src="../assets/peerigon/peerigon-symbol-flat-whiskey.svg" data-whiskey width="60">
 			<img src="../assets/peerigon/peerigon-symbol-flat-spinat.svg" data-spinat width="60">
@@ -251,3 +710,7 @@
 		</script>
 	</body>
 </html>
+
+</div>
+;
+

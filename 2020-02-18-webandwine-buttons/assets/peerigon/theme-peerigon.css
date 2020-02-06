@@ -17,6 +17,9 @@
     --color-whiskey: hsl(50, 100%, 45%);
     --color-whiskey-bg: hsl(49, 79%, 83%);
     /* --color-whiskey-bg: hsla(50, 100%, 45%, 0.35); */
+    --color-important: hsl(11, 80%, 35%);
+    --color-important-bg: hsl(11, 80%, 48%);
+
     --color-silver: hsl(22, 14%, 89%);
     --color-lightsilver: hsl(210, 11%, 96%);
     --color-black: hsl(0, 0%, 16%);
@@ -477,6 +480,7 @@ body {
 
 [data-color-scheme="minze"] #peerigon-logo > img[data-minze],
 [data-color-scheme="whiskey"] #peerigon-logo > img[data-whiskey],
+[data-color-scheme="important"] #peerigon-logo > img[data-important],
 [data-color-scheme="spinat"] #peerigon-logo > img[data-spinat] {
     opacity: 1;
 }
@@ -486,6 +490,18 @@ body {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes blurOut {
+    100% {
+        filter: blur(20px);
+        opacity: 0.5;
+    }
+}
+
+#peerigon .reveal .slide-background.bg-blurry {
+    animation: blurOut 1s linear 1;
+    animation-fill-mode: forwards;
 }
 
 #peerigon .reveal .slide-background.bg-contain .slide-background-content {
@@ -519,6 +535,59 @@ body {
     padding-bottom: 0.5rem;
 }
 
+#peerigon .reveal .goodbad {
+    border: 3px solid var(--color-primary-bg);
+    position: relative;
+    padding: 2rem;
+}
+
+#peerigon .reveal .goodbad:before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 5rem;
+    height: 0;
+    width: 0;
+    line-height: 0;
+    transform: translate(50%, -50%);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--color-black);
+    margin-top: -0.15em;
+}
+
+#peerigon .reveal .goodbad.--bad:before {
+    content: "⤬";
+    color: var(--color-danger);
+}
+
+#peerigon .reveal .goodbad.--bad,
+#peerigon .reveal .goodbad.--superbad {
+    border-color: var(--color-danger);
+}
+
+@keyframes pulse {
+    50% {
+        transform: rotate(5deg)
+    }
+}
+
+#peerigon .reveal .goodbad.--superbad:before {
+    content: "🤬";
+    font-size: 4rem;
+    margin-top: -0.2em;
+    transform: rotate(-5deg);
+    color: var(--color-danger);
+    animation: pulse 0.2s ease-in-out infinite;
+}
+
+#peerigon .reveal .goodbad.--good:before {
+    content: "✓";
+    color: var(--color-success);
+}
+
 [data-color-scheme="minze"] {
     --color-primary: var(--color-minze);
     --color-primary-bg: var(--color-minze-bg);
@@ -532,6 +601,11 @@ body {
 [data-color-scheme="whiskey"] {
     --color-primary: var(--color-whiskey);
     --color-primary-bg: var(--color-whiskey-bg);
+}
+
+[data-color-scheme="important"] {
+    --color-primary: var(--color-important);
+    --color-primary-bg: var(--color-important-bg);
 }
 
 /* Remove strange white background of operators in code examples */

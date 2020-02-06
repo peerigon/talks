@@ -4,6 +4,7 @@ function setColorScheme(colorScheme) {
     switch (colorScheme) {
         case "minze":
         case "whiskey":
+        case "important":
         case "spinat": {
             document.body.setAttribute("data-color-scheme", colorScheme);
             break;
