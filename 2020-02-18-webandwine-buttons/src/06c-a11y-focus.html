@@ -1,0 +1,133 @@
+<section data-background-color="var(--color-black)">
+    <section>
+        <h3><code>:focus</code></h3>
+    </section>
+
+    <section data-background-color="#808080" class="centered">
+        <video
+            width="244px"
+            src="../assets/chrome.mov"
+            autoplay
+            data-autoplay
+            loop
+        ></video>
+        <p>Chrome 79, Mac</p>
+    </section>
+
+    <section data-background-color="#747474" class="centered">
+        <img src="../assets/button-states-2.png" alt="" />
+        <br /><br /><br />
+        <img
+            class="fragment"
+            width="600"
+            src="../assets/chrome-dev-focus.png"
+            alt=""
+        />
+    </section>
+
+    <section>
+        <div class="goodbad --superbad">
+            <script type="hljs">
+                *:focus {
+                    outline: 0;
+                }
+            </script>
+        </div>
+    </section>
+
+    <section data-background-color="#494949" class="">
+        <video src="../assets/govuk.mov" autoplay data-autoplay loop></video>
+    </section>
+
+    <section data-background-color="#ffffff" class="centered">
+        <img src="../assets/daimler-a11y.png" />
+        <aside class="notes">
+            From the online style guide of Daimler AG
+        </aside>
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #8
+
+            <code>:focus</code> matters!<br>
+            Design all the states!
+        </script>
+    </section>
+
+    <section
+        class="code-smaller"
+        data-transition="fade-in fade-out"
+    >
+    <script type="hljs">
+        const Button = ({ label, message }) => (
+          <div onClick={() => alert(message)}>{label}</div>
+        );
+        
+        export default () => (
+          <div className="App">
+            <Button label="click me!" message="You clicked me!" />
+          </div>
+        );
+    </script>
+    </section>
+
+    <section
+        class="code-smaller"
+        data-background-color="var(--color-black)"
+        data-transition="fade-in fade-out"
+    >
+       
+    <script type="hljs">
+        const Button = ({ label, message }) => (
+          {{{<div onClick={() => alert(message)}>{label}</div>}}}
+        );
+        
+        export default () => (
+          <div className="App">
+            <Button label="click me!" message="You clicked me!" />
+          </div>
+        );
+    </script>
+    </section>
+
+    <section
+        class="code-smaller"
+        data-background-color="var(--color-black)"
+        data-transition="fade-in fade-out"
+    >
+        <script type="hljs">
+            const Button = ({ label, message }) => (
+                <button type="button" onClick={() => alert(message)}>
+                  {label}
+                </button>
+              );
+              
+              export default () => (
+                <div className="App">
+                  <Button label="click me!" message="You clicked me!" />
+                </div>
+              );
+        </script>
+    </section>
+
+    <section>
+        <img src="../assets/meme.png" alt="">
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #9
+
+            Use `<button>`s, test your stuff with keyboards.
+        </script>
+    </section>
+</section>

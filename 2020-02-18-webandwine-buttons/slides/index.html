@@ -22,8 +22,7 @@
         />
 
         <aside class="notes" data-markdown>
-            - specialising in javascript development
-            - peerigon.com
+            - specialising in javascript development - peerigon.com
         </aside>
     </section>
 
@@ -97,7 +96,7 @@
         <span class="hljs-attr">cols</span>=<span class="hljs-string">"30"</span>
         <span class="hljs-attr">rows</span>=<span class="hljs-string">"10"</span>
     &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
-    <span class="code-highlighted-line"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> /&gt;</span></span>
+    👉<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> /&gt;</span>👈
 <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span></code>
             </div>
         
@@ -145,17 +144,6 @@
             </p>
             <footer>
                 — Adam Silver, 2007<br />https://link.medium.com/rLtpK1t4n3
-            </footer>
-        </blockquote>
-    </section>
-    <section data-background-color="var(--color-black)">
-        <blockquote>
-            <p>
-                »Users don't care about semantics and they mostly don't see
-                cursor appearance.«
-            </p>
-            <footer>
-                — Me, just now
             </footer>
         </blockquote>
     </section>
@@ -265,6 +253,11 @@
     </section>
 
     <section
+        data-background="../assets/reason.jpg"
+        class="bg-cover-150"
+    ></section>
+
+    <section
         data-background="../assets/amazon1.png"
         class="bg-contain-66"
     ></section>
@@ -323,14 +316,14 @@
     </section>
 </section>
 
-    
+
     <section data-background-color="var(--color-black)">
     <section>
         <h2>Life is about position and appearance</h2>
     </section>
 
     <section data-background="../assets/elevator.jpg" class="bg-cover-150">
-        <h1>👀</h1>
+        <h1 style="text-align: right; width: 100%">👀</h1>
     </section>
 
     <section data-background-color="#cbc5cb" class="centered">
@@ -372,21 +365,10 @@
 
     <section data-background-color="#ffffff" class="centered">
         <img src="../assets/daimler.png" />
+        <p><small style="color: var(--color-black)">Daimler AG, 2020</small></p>
         <aside class="notes">
             From the online style guide of Daimler AG
         </aside>
-    </section>
-
-    <section
-        data-markdown
-        data-color-scheme="important"
-        data-background-color="var(--color-important-bg)"
-    >
-        <script type="text/template">
-            ### 👍 #4
-
-            Smash capitalism.
-        </script>
     </section>
 
     <section
@@ -403,7 +385,7 @@
     </section>
 </section>
 
-    
+
     <section class="centered" data-background-color="var(--color-black)">
     <section>
         <h2>Words are everything</h2>
@@ -422,8 +404,7 @@
     </section>
 
     <section>
-        Label buttons with what they do using action verbs ("publish") and
-        imperatives!
+        Label buttons with what they do using action verbs and imperatives!
     </section>
 
     <style>
@@ -536,7 +517,7 @@
     </section>
 </section>
 
-    
+
     <section class="centered" data-background-color="var(--color-black)">
     <section>
         <h2>a11y / u7y</h2>
@@ -623,8 +604,8 @@
     </section>
 </section>
 
-    
-    <section class="centered" data-background-color="var(--color-black)">
+
+    <section data-background-color="var(--color-black)">
     <section>
         <h3><code>:focus</code></h3>
     </section>
@@ -664,12 +645,7 @@
     </section>
 
     <section data-background-color="#494949" class="">
-        <video
-            src="../assets/govuk.mov"
-            autoplay
-            data-autoplay
-            loop
-        ></video>
+        <video src="../assets/govuk.mov" autoplay data-autoplay loop></video>
     </section>
 
     <section data-background-color="#ffffff" class="centered">
@@ -677,6 +653,144 @@
         <aside class="notes">
             From the online style guide of Daimler AG
         </aside>
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #8
+
+            <code>:focus</code> matters!<br>
+            Design all the states!
+        </script>
+    </section>
+
+    <section
+        class="code-smaller"
+        data-transition="fade-in fade-out"
+    >
+    
+            <div class="code">
+                <code class="hljs"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">{ label, message }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> alert(message)}&gt;{label}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"App"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"click me!"</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"You clicked me!"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+);</code>
+            </div>
+        
+    </section>
+
+    <section
+        class="code-smaller"
+        data-background-color="var(--color-black)"
+        data-transition="fade-in fade-out"
+    >
+       
+    
+            <div class="code">
+                <code class="hljs">const Button = ({ label, message }) =&gt; (
+  <span class="code-highlighted-line">&lt;div onClick={() =&gt; alert(<span class="hljs-name">message</span>)}&gt;{label}&lt;/div&gt;</span>
+)<span class="hljs-comment">;</span>
+
+export default () =&gt; (
+  <span class="hljs-name">&lt;div</span> className=<span class="hljs-string">"App"</span>&gt;
+    &lt;Button label=<span class="hljs-string">"click me!"</span> message=<span class="hljs-string">"You clicked me!"</span> /&gt;
+  &lt;/div&gt;
+)<span class="hljs-comment">;</span></code>
+            </div>
+        
+    </section>
+
+    <section
+        class="code-smaller"
+        data-background-color="var(--color-black)"
+        data-transition="fade-in fade-out"
+    >
+        
+            <div class="code">
+                <code class="hljs"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">{ label, message }</span>) =&gt;</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> alert(message)}&gt;
+      {label}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+  );
+
+  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"App"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"click me!"</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"You clicked me!"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+  );</code>
+            </div>
+        
+    </section>
+
+    <section>
+        <img src="../assets/meme.png" alt="">
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #9
+
+            Use `<button>`s, test your stuff with keyboards.
+        </script>
+    </section>
+</section>
+
+
+    <section data-background-color="var(--color-black)">
+    <section>
+        <h2>Color blindness</h2>
+    </section>
+
+    <section class="centered" data-transition="slide-in fade-out">
+        <img src="../assets/ishihara.png" width="600" />
+    </section>
+
+    <section
+        data-background-color="#eee"
+        class="centered"
+        data-transition="fade-in fade-out"
+    >
+        <img src="../assets/protanopia-1.png" alt="" />
+    </section>
+
+    <section
+        data-background-color="#eee"
+        class="centered"
+        data-transition="fade-in fade-out"
+    >
+        <img src="../assets/protanopia-2.png" alt="" />
+    </section>
+
+    <section
+        data-background-color="#eee"
+        class="centered"
+        data-transition="fade-in fade-out"
+    >
+        <img src="../assets/protanopia-3.png" alt="" />
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### 👍 #9
+
+            Don't rely on color to convey meaning!
+        </script>
     </section>
 </section>
 
@@ -698,6 +812,7 @@
 		<script src="../assets/vendor/reveal.js-3.7.0/plugin/notes/notes.js"></script>
 		<script src="../assets/vendor/fullscreen-0.1/fullscreen.js"></script>
 		<script src="../assets/peerigon/colorScheme.js"></script>
+		<script src="../assets/peerigon/laserPointer.js"></script>
 		<script>
 			Reveal.initialize({
 				history: true,

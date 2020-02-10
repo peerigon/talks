@@ -1,6 +1,10 @@
 {
   "name": "workshop-or-talk",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=12"
+  },
+  "engineStrict": true,
   "description": "A short description",
   "scriptlint": {
     "strict": true,
@@ -23,6 +27,7 @@
     "browser-sync": "^2.26.7"
   },
   "devDependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "eslint": "^5.16.0",
     "eslint-config-peerigon": "^24.0.0",
     "highlight.js": "^9.18.0",

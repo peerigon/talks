@@ -1,5 +1,5 @@
 const hljs = require("highlight.js");
-const { reReplace, detab } = require("./utils");
+const { reReplace, unindent } = require("./utils");
 
 module.exports = html => {
     return reReplace(
@@ -9,7 +9,7 @@ module.exports = html => {
             const result = `
             <div class="code">
                 <code class="hljs">${
-                    hljs.highlightAuto(detab(code)).value
+                    hljs.highlightAuto(unindent(code)).value
                 }</code>
             </div>
         `;

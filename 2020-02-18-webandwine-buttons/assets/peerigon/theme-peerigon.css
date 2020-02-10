@@ -361,6 +361,11 @@ body {
     font-size: 0.66em;
 }
 
+
+.reveal section.code-smaller .code {
+    font-size: 0.5em;
+}
+
 .reveal .code .code-filename {
     position: absolute;
     bottom: 0.3em;
@@ -463,6 +468,13 @@ body {
 /*********************************************
  * PEERIGON SPECIFIC
  *********************************************/
+
+body#peerigon {
+    cursor: none;
+}
+body#peerigon[data-mouse-move="true"] {
+    cursor: url("../laserdot.png"), auto;
+}
 
 #peerigon-logo {
     position: absolute;
@@ -570,7 +582,7 @@ body {
 
 @keyframes pulse {
     50% {
-        transform: rotate(5deg)
+        transform: rotate(5deg);
     }
 }
 
