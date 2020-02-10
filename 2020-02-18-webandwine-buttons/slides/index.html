@@ -292,7 +292,7 @@
                 <h4>2007—2011</h4>
                 <img src="../assets/jobs-iphone.jpg" alt="" width="400" />
             </div>
-           
+
             <div>
                 <h4>2013</h4>
                 <img src="../assets/ive.png" alt="" width="400" />
@@ -301,14 +301,23 @@
     </section>
 
     <section
+        data-background="../assets/ios-calculator.jpg"
+        class="bg-contain-75"
+    ></section>
+
+    <section
         data-background="../assets/ableton.jpg"
         class="bg-contain"
     ></section>
 
     <section>
         <h3>Flat design</h3>
-        <p>(… might have been a mistake lol 🤷‍♀️)</p>
     </section>
+
+    <section data-background-color="#e9e9e9" class="centered">
+        <img src="../assets/flatui.jpg" width="600" />
+    </section>
+
     <section
         data-background="../assets/windows-phone.jpg"
         class="bg-cover"
@@ -329,6 +338,10 @@
 
             <footer>Nielsen Norman Group, 2017</footer>
         </blockquote>
+    </section>
+
+    <section>
+        <p style="text-align: center;">flat UIs might have been a mistake lol 🤷‍♀️</p>
     </section>
 
     <section data-background="../assets/shackles.jpg" class="bg-cover centered">
@@ -408,6 +421,11 @@
 
     <section>
         <h3>Button hierarchy,<br />button states</h3>
+    </section>
+
+    <section data-background-color="#ffffff" class="centered">
+        <img src="../assets/buttons.png" />
+        <p><small style="color: var(--color-black)">Michael Szczepanski, dribbble.com, 2017</small></p>
     </section>
 
     <section data-background-color="#ffffff" class="centered">
@@ -515,7 +533,7 @@
     </section>
 
     <section>
-        <div class="fake-modal --bad">
+        <div class="fake-modal goodbad --bad">
             <button>Click here to enter</button>
         </div>
 
@@ -573,6 +591,10 @@
 
     <section>
         <h3>Touch target size</h3>
+    </section>
+
+    <section data-background-color="#fff" class="centered">
+        <img src="../assets/44px.png"alt="">
     </section>
 
     <section>
@@ -716,7 +738,8 @@
     </section>
 
     <section class="code-small" data-transition="fade-in fade-out">
-        
+        <div class="goodbad --superbad">
+            
             <div class="code">
                 <code class="hljs"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">{ label, message }</span>) =&gt;</span> (
   <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> alert(message)}&gt;{label}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
@@ -729,14 +752,12 @@
 );</code>
             </div>
         
+        </div>
     </section>
 
-    <section
-        class="code-small"
-        data-background-color="var(--color-black)"
-        data-transition="fade-in fade-out"
-    >
-        
+    <section class="code-small" data-transition="fade-in fade-out">
+        <div class="goodbad --superbad">
+            
             <div class="code">
                 <code class="hljs">const Button = ({ label, message }) =&gt; (
   <span class="code-highlighted-line">&lt;div onClick={() =&gt; alert(<span class="hljs-name">message</span>)}&gt;{label}&lt;/div&gt;</span>
@@ -749,29 +770,47 @@ export default () =&gt; (
 )<span class="hljs-comment">;</span></code>
             </div>
         
+        </div>
     </section>
 
-    <section
-        class="code-small"
-        data-background-color="var(--color-black)"
-        data-transition="fade-in fade-out"
-    >
-        
+    <section class="code-small" data-transition="fade-in fade-out">
+        <div class="goodbad --bad">
+            
             <div class="code">
                 <code class="hljs"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">{ label, message }</span>) =&gt;</span> (
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> alert(message)}&gt;
-      {label}
-    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
-  );
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> alert(message)}&gt;{label}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+);
 
-  <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; (
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"App"</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"click me!"</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"You clicked me!"</span> /&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-  );</code>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"App"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"click me!"</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"You clicked me!"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+);</code>
             </div>
         
+        </div>
     </section>
+
+    <section class="code-small" data-transition="fade-in fade-out">
+        <div class="goodbad --good">
+            
+            <div class="code">
+                <code class="hljs"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">{ label, message }</span>) =&gt;</span> (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> alert(message)}&gt;
+   {label}
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> () =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"App"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"click me!"</span> <span class="hljs-attr">message</span>=<span class="hljs-string">"You clicked me!"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+);</code>
+            </div>
+        
+        </div>
+    </section>
+
 
     <section>
         <img src="../assets/meme.png" alt="" />
@@ -797,15 +836,18 @@ export default () =&gt; (
             data-autoplay
             loop
         ></video>
-        <p>
-            in Chrome: <code>onClick => :focus</code>
-        </p>
+        <p>in Chrome: <code>onClick => :focus</code></p>
     </section>
 
     <section>
         <code>:focus-visible</code>
         <p>
-           <small><a href="https://css-tricks.com/almanac/selectors/f/focus-visible/">https://css-tricks.com/almanac/selectors/f/focus-visible/</a></small>
+            <small
+                ><a
+                    href="https://css-tricks.com/almanac/selectors/f/focus-visible/"
+                    >https://css-tricks.com/almanac/selectors/f/focus-visible/</a
+                ></small
+            >
         </p>
     </section>
 </section>

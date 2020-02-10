@@ -60,56 +60,71 @@
     </section>
 
     <section class="code-small" data-transition="fade-in fade-out">
-        <script type="hljs">
-            const Button = ({ label, message }) => (
-              <div onClick={() => alert(message)}>{label}</div>
-            );
+        <div class="goodbad --superbad">
+            <script type="hljs">
+                const Button = ({ label, message }) => (
+                  <div onClick={() => alert(message)}>{label}</div>
+                );
 
-            export default () => (
-              <div className="App">
-                <Button label="click me!" message="You clicked me!" />
-              </div>
-            );
-        </script>
+                export default () => (
+                  <div className="App">
+                    <Button label="click me!" message="You clicked me!" />
+                  </div>
+                );
+            </script>
+        </div>
     </section>
 
-    <section
-        class="code-small"
-        data-background-color="var(--color-black)"
-        data-transition="fade-in fade-out"
-    >
-        <script type="hljs">
-            const Button = ({ label, message }) => (
-              {{{<div onClick={() => alert(message)}>{label}</div>}}}
-            );
+    <section class="code-small" data-transition="fade-in fade-out">
+        <div class="goodbad --superbad">
+            <script type="hljs">
+                const Button = ({ label, message }) => (
+                  {{{<div onClick={() => alert(message)}>{label}</div>}}}
+                );
 
-            export default () => (
-              <div className="App">
-                <Button label="click me!" message="You clicked me!" />
-              </div>
-            );
-        </script>
+                export default () => (
+                  <div className="App">
+                    <Button label="click me!" message="You clicked me!" />
+                  </div>
+                );
+            </script>
+        </div>
     </section>
 
-    <section
-        class="code-small"
-        data-background-color="var(--color-black)"
-        data-transition="fade-in fade-out"
-    >
-        <script type="hljs">
-            const Button = ({ label, message }) => (
-                <button type="button" onClick={() => alert(message)}>
-                  {label}
-                </button>
-              );
+    <section class="code-small" data-transition="fade-in fade-out">
+        <div class="goodbad --bad">
+            <script type="hljs">
+                const Button = ({ label, message }) => (
+                  <div tabindex="0" onClick={() => alert(message)}>{label}</div>
+                );
 
-              export default () => (
-                <div className="App">
-                  <Button label="click me!" message="You clicked me!" />
-                </div>
-              );
-        </script>
+                export default () => (
+                  <div className="App">
+                    <Button label="click me!" message="You clicked me!" />
+                  </div>
+                );
+            </script>
+        </div>
     </section>
+
+    <section class="code-small" data-transition="fade-in fade-out">
+        <div class="goodbad --good">
+            <script type="hljs">
+                const Button = ({ label, message }) => (
+                  <button type="button" onClick={() => alert(message)}>
+                   {label}
+                  </button>
+                );
+
+                export default () => (
+                  <div className="App">
+                    <Button label="click me!" message="You clicked me!" />
+                  </div>
+                );
+            </script>
+        </div>
+    </section>
+
 
     <section>
         <img src="../assets/meme.png" alt="" />
@@ -135,15 +150,18 @@
             data-autoplay
             loop
         ></video>
-        <p>
-            in Chrome: <code>onClick => :focus</code>
-        </p>
+        <p>in Chrome: <code>onClick => :focus</code></p>
     </section>
 
     <section>
         <code>:focus-visible</code>
         <p>
-           <small><a href="https://css-tricks.com/almanac/selectors/f/focus-visible/">https://css-tricks.com/almanac/selectors/f/focus-visible/</a></small>
+            <small
+                ><a
+                    href="https://css-tricks.com/almanac/selectors/f/focus-visible/"
+                    >https://css-tricks.com/almanac/selectors/f/focus-visible/</a
+                ></small
+            >
         </p>
     </section>
 </section>
