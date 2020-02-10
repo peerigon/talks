@@ -344,7 +344,7 @@ body {
 
 .reveal .code {
     position: relative;
-    font-size: 0.85em;
+    font-size: 0.66em;
     margin: 1em 0;
 }
 
@@ -358,11 +358,6 @@ body {
 }
 
 .reveal section.code-small .code {
-    font-size: 0.66em;
-}
-
-
-.reveal section.code-smaller .code {
     font-size: 0.5em;
 }
 

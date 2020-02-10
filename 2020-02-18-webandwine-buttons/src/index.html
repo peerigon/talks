@@ -1,42 +1,113 @@
-<div>
+<!DOCTYPE html>
+<html>
     <r:include src="/src/header.html" />
 
-    <section data-background-color="var(--color-black)">
-        <h1>It&nbsp;started with&nbsp;a&nbsp;button</h1>
-        <div class="kicker">now we're here</div>
-    </section>
+    <section>
+        <section
+            style="text-align: center;"
+            data-background-image="../assets/bg.png"
+            data-background-color="var(--color-black)"
+        >
+            <h1 style="text-shadow: 2px 2px #000; margin: auto;">
+                It&nbsp;started with&nbsp;a&nbsp;button
+            </h1>
+            <div style="text-shadow: 2px 2px #000;" class="kicker">
+                now we're here
+            </div>
+        </section>
 
-    <section class="centered" data-background-color="var(--color-black)">
-        <img
-            src="../assets/peerigon/peerigon-logo-flat-minze-dark.svg"
-            width="700"
-        />
+        <section class="centered" data-background-color="var(--color-black)">
+            <style>
+                .mj-nick {
+                    position: relative;
+                    transform: rotate(-10deg) translateX(40%) translateY(-66%);
+                }
+            </style>
 
-        <aside class="notes" data-markdown>
-            - specialising in javascript development - peerigon.com
-        </aside>
+            <img src="../assets/mo.jpg" width="400" alt="" />
+            <code class="mj-nick">@moritzjacobs</code>
+        </section>
+
+        <section class="centered" data-background-color="var(--color-black)">
+            <img
+                src="../assets/peerigon/peerigon-logo-flat-minze-dark.svg"
+                width="500"
+            />
+
+            <aside class="notes" data-markdown>
+                - specialising in javascript development - peerigon.com
+            </aside>
+        </section>
     </section>
 
     <r:include src="/src/00-real-buttons.html" />
 
-    <r:include src="/src/01-buttons-and-browsers.html" />
+    <r:include src="/src/01-ui-history.html" />
 
-    <r:include src="/src/02-are-links-buttons.html" />
+    <r:include src="/src/02-buttons-and-browsers.html" />
 
-    <r:include src="/src/03-ui-history.html" />
+    <r:include src="/src/04-skeuo.html" />
 
-    <r:include src="/src/04-looks.html" />
+    <r:include src="/src/05-affordance.html" />
 
-    <r:include src="/src/05-labels.html" />
+    <r:include src="/src/06-looks.html" />
 
-    <r:include src="/src/06a-a11y-44px.html" />
+    <r:include src="/src/07-labels.html" />
 
-    <r:include src="/src/06b-a11y-hover.html" />
+    <r:include src="/src/08a-a11y-44px.html" />
 
-    <r:include src="/src/06c-a11y-focus.html" />
+    <r:include src="/src/08b-a11y-hover.html" />
 
-    <r:include src="/src/06d-a11y-proto.html" />
+    <r:include src="/src/08c-a11y-focus.html" />
+
+    <r:include src="/src/08d-a11y-proto.html" />
+
+    <r:include src="/src/09a-implementation.html" />
+
+    <r:include src="/src/09b-are-links-buttons.html" />
+
+    <r:include src="/src/09c-aria-labels.html" />
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+        style="font-size: 0.66em;"
+    >
+        <script type="text/template">
+            ### Pro Tips ™️
+
+            1. If you make buttons look like buttons you will be fine.
+            2. Don't make users hunt for buttons and be consistent.
+            3. buttons have many states and uses: define them. Be consistent.
+            4. Use verbs and imperatives! Be concise!
+            5. 44px is agood rule of thumb. Test your stuff with real devices and real fingers.
+            6. <code>:hover</code> has side effects. Test your stuff with real devices (again).
+            7. <code>:focus</code> matters! Design all the states!
+            8. Use `<button>`s, test your stuff with keyboards.
+            9. Don't rely solely on color to convey meaning!
+            10. Smash capitalism.
+            11. For hyperlink navigation use `<a>`, for everything else use `<button>`
+            12. The `cursor` defaults for elements are fine as they are.
+            13. Every button needs a textual label
+        </script>
+    </section>
+
+    <section data-background-color="var(--color-black)">
+        <h1>
+            Thank you.
+        </h1>
+        <p>
+            <small>
+                <code>@moritzjacobs</code><br />
+                <code>@peerigon</code><br /><br />
+                &nbsp;&nbsp;&nbsp;↳ github<br />
+                &nbsp;&nbsp;&nbsp;↳ twitter<br />
+                &nbsp;&nbsp;&nbsp;↳ instagram<br />
+            </small>
+        </p>
+        <p style="text-align: center;"><br /><br /><br />www.peerigon.com</p>
+    </section>
 
     <r:include src="/src/footer.html" />
-</div>
-;
+</html>

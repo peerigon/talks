@@ -52,51 +52,47 @@
         data-background-color="var(--color-important-bg)"
     >
         <script type="text/template">
-            ### 👍 #8
+            ### Pro Tip ™️ #7
 
             <code>:focus</code> matters!<br>
             Design all the states!
         </script>
     </section>
 
-    <section
-        class="code-smaller"
-        data-transition="fade-in fade-out"
-    >
-    <script type="hljs">
-        const Button = ({ label, message }) => (
-          <div onClick={() => alert(message)}>{label}</div>
-        );
-        
-        export default () => (
-          <div className="App">
-            <Button label="click me!" message="You clicked me!" />
-          </div>
-        );
-    </script>
+    <section class="code-small" data-transition="fade-in fade-out">
+        <script type="hljs">
+            const Button = ({ label, message }) => (
+              <div onClick={() => alert(message)}>{label}</div>
+            );
+
+            export default () => (
+              <div className="App">
+                <Button label="click me!" message="You clicked me!" />
+              </div>
+            );
+        </script>
     </section>
 
     <section
-        class="code-smaller"
+        class="code-small"
         data-background-color="var(--color-black)"
         data-transition="fade-in fade-out"
     >
-       
-    <script type="hljs">
-        const Button = ({ label, message }) => (
-          {{{<div onClick={() => alert(message)}>{label}</div>}}}
-        );
-        
-        export default () => (
-          <div className="App">
-            <Button label="click me!" message="You clicked me!" />
-          </div>
-        );
-    </script>
+        <script type="hljs">
+            const Button = ({ label, message }) => (
+              {{{<div onClick={() => alert(message)}>{label}</div>}}}
+            );
+
+            export default () => (
+              <div className="App">
+                <Button label="click me!" message="You clicked me!" />
+              </div>
+            );
+        </script>
     </section>
 
     <section
-        class="code-smaller"
+        class="code-small"
         data-background-color="var(--color-black)"
         data-transition="fade-in fade-out"
     >
@@ -106,7 +102,7 @@
                   {label}
                 </button>
               );
-              
+
               export default () => (
                 <div className="App">
                   <Button label="click me!" message="You clicked me!" />
@@ -116,7 +112,7 @@
     </section>
 
     <section>
-        <img src="../assets/meme.png" alt="">
+        <img src="../assets/meme.png" alt="" />
     </section>
 
     <section
@@ -125,9 +121,29 @@
         data-background-color="var(--color-important-bg)"
     >
         <script type="text/template">
-            ### 👍 #9
+            ### Pro Tip ™️ #8
 
             Use `<button>`s, test your stuff with keyboards.
         </script>
+    </section>
+
+    <section data-background-color="#808080" class="centered">
+        <video
+            width="244px"
+            src="../assets/chrome.mov"
+            autoplay
+            data-autoplay
+            loop
+        ></video>
+        <p>
+            in Chrome: <code>onClick => :focus</code>
+        </p>
+    </section>
+
+    <section>
+        <code>:focus-visible</code>
+        <p>
+           <small><a href="https://css-tricks.com/almanac/selectors/f/focus-visible/">https://css-tricks.com/almanac/selectors/f/focus-visible/</a></small>
+        </p>
     </section>
 </section>
