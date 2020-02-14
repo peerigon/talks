@@ -16,7 +16,7 @@ In the end, you will also learn about reasons why you'd probably still want to u
 - Johannes Ewald
 - [Frontend Developer Love, Amsterdam](https://www.frontenddeveloperlove.com/) / [React Munich](https://www.meetup.com/de-DE/ReactJS-Meetup-Munich/events/259167087/)
 - February 13th, 2019 / March 14th, 2019
-- [Slides](https://peerigon.github.io/talks/2019-02-13-developer-frontend-love/slide/)
+- [Slides](https://peerigon.github.io/talks/2019-02-13-frontend-developer-love/slide/)
 - [Video (Frontend Developer Love)](https://www.youtube.com/watch?v=bDhtYaTVHR0) / [Video (React Munich)](https://www.youtube.com/watch?v=RYBlkUlFH7M)
 
 ## Arbeit ganzheitlich denken (DE)
