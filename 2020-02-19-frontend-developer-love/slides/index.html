@@ -1,0 +1,1494 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../assets/vendor/reveal.js-3.8.0/css/reset.css">
+        <link rel="stylesheet" href="../assets/vendor/reveal.js-3.8.0/css/reveal.css">
+        <link rel="stylesheet" href="../assets/vendor/prism-1.19.0/prism.css" />
+        <link rel="stylesheet" href="../assets/peerigon/theme-peerigon.css">
+    </head>
+    <body id="peerigon">
+        <div class="reveal">
+            <div class="slides">
+                <section
+                    data-background-image="../assets/title-background.jpg"
+                    data-background-opacity="0.5"
+                >
+                    <style>
+                        .credit {
+                            font-size: 0.3rem;
+                            opacity: 0.3;
+                        }
+                    </style>
+                    <div class="kicker">Frontend Developer Love</div>
+                    <h1>How to pack your webpack.</h1>
+                    <span class="credit">
+                        Photo by Lina Verovaya on Unsplash
+                    </span>
+                </section>
+                <section>
+                    <section>
+                        <div style="text-align: center">
+                            <img
+                                src="../assets/me.svg"
+                                style="width: 100%;"
+                                alt="Image of Johannes Ewald"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <div style="text-align: center">
+                            <img
+                                src="../assets/peerigon/peerigon-logo-flat-whiskey.svg"
+                                width="600"
+                                alt="Peerigon logo"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <div style="text-align: center">
+                            <img
+                                src="../assets/webpack-logo.svg"
+                                width="700"
+                                alt="webpack logo"
+                            />
+                        </div>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Disclaimer:</strong>
+                        </p>
+                        <p>
+                            This is not an official guideline from the webpack team.<br>
+                            <span class="fragment fade-down">
+                                <strong>It's just a demonstration of how I would configure my webpack setup.</strong>
+                            </span>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step XXXX:<br />
+                            <span class="fragment fade-down">
+                                Install webpack
+                            </span>
+                        </h2>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-bash command-line" data-prompt="$">
+                            <code>npm install webpack</code>
+                        </pre>
+                        <div style="visibility: hidden;">
+                            Should <code>webpack</code> and all its dependencies be <code>devDependencies</code>? 🤔
+                        </div>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-bash command-line" data-prompt="$">
+                            <code>npm install webpack webpack-cli</code>
+                        </pre>
+                        <div style="visibility: hidden;">
+                            Should <code>webpack</code> and all its dependencies be <code>devDependencies</code>? 🤔
+                        </div>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-bash command-line" data-prompt="$">
+                            <code>npm install webpack webpack-cli --save-dev</code>
+                        </pre>
+                        <div>
+                            Should <code>webpack</code> and all its dependencies be <code>devDependencies</code>? 🤔
+                        </div>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            My recommendation
+                        </div>
+                        <p class="fragment fade-down">
+                            <strong>Yes 👍</strong>
+                        </p>
+                        <p class="fragment fade-down">
+                            Build dependencies should be <code>devDependencies</code> <span class="fragment fade-down">(when you're using Docker)</span>
+                        </p>
+                        <p class="fragment fade-down">
+                            This way it's possible to create smaller Docker images by using <a href="https://docs.docker.com/develop/develop-images/multistage-build/" target="_blank">Docker multi-stage builds</a>.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step XXXX:<br />
+                            <span class="fragment fade-down">
+                                Create the config
+                            </span>
+                        </h2>
+                    </section>
+                    <section>
+                        <p>
+                            Create <code>webpack.config.ts</code>...
+                        </p>
+                        <p class="fragment fade-down">
+                            ...wait... what? 🧐
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Tip ☝️
+                        </div>
+                        <p>
+                            That's right: <strong>you can use TypeScript in your webpack config.</strong>
+                        </p>
+                    </section>
+                    <section>
+                        <ul>
+                            <li class="fragment fade-down">
+                                Use the <code>.ts</code> file extension.
+                            </li>
+                            <li class="fragment fade-down">
+                                Install <code>typescript</code> <code>@types/webpack</code> and
+                                <code>ts-node</code>.
+                            </li>
+                            <li class="fragment fade-down">
+                                <p>
+                                    Add this to your <code>tsconfig.json</code>:
+                                </p>
+                                <pre class="language-json">
+                                    <code>
+{
+    "compilerOptions": {
+        "esModuleInterop": true
+    }
+}
+                                    </code>
+                                </pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                Create a variable using the
+                                <code>webpack.Configuration</code> type.
+                                <pre class="language-ts"><code>
+import webpack from "webpack";
+
+const config: webpack.Configuration = {
+    // ...
+};
+
+export default config;
+</code></pre>
+                            </li>
+                            <li class="fragment fade-down">
+                                Profit 😎
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-background-color="rgb(40, 42, 59)" data-transition="fade-out">
+                        <img src="../assets/ts-config-1.jpg" style="display: block; height: 600px; margin: 0 auto" />
+                    </section>
+                    <section data-background-color="rgb(40, 42, 59)" data-transition="fade-in">
+                        <img src="../assets/ts-config-2.jpg" />
+                    </section>
+                    <section>
+                        <p>
+                            How does it work?
+                        </p>
+                        <ul>
+                            <li class="fragment fade-down">
+                                This is a
+                                <a
+                                    href="https://webpack.js.org/api/cli"
+                                    target="_blank"
+                                    >webpack-cli</a
+                                >
+                                feature.
+                            </li>
+                            <li class="fragment fade-down">
+                                webpack-cli uses
+                                <a
+                                    href="https://github.com/gulpjs/interpret"
+                                    target="_blank"
+                                    >interpret</a
+                                >
+                                which maintains a dictionary of file extensions
+                                and associated module loaders.
+                            </li>
+                            <li class="fragment fade-down">
+                                <a
+                                    href="https://github.com/TypeStrong/ts-node"
+                                    target="_blank"
+                                    ><code>ts-node</code></a
+                                >
+                                needs to be available in your
+                                <code>node_modules</code>.
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step 2:<br />
+                            <span class="fragment fade-down">
+                                Turn that config into a function
+                            </span>
+                        </h2>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                            const config: webpack.Configuration = {
+                                // ...
+                            };
+
+
+
+
+
+                            export default config;
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            const createConfig = () => {
+                                const config: webpack.Configuration = {
+                                    // ...
+                                };
+
+                                return config;
+                            };
+
+                            export default createConfig;
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step 3:<br />
+                            <span class="fragment fade-down">
+                                Make the mode configurable.
+                            </span>
+                        </h2>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                            const createConfig = () => {
+                                const config: webpack.Configuration = {
+                                    // ...
+                                };
+
+                                return config;
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            const createConfig = (env) => {
+                                const config: webpack.Configuration = {
+                                    // ...
+                                };
+
+                                return config;
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            const createConfig = ({mode}) => {
+                                const config: webpack.Configuration = {
+                                    mode,
+                                };
+
+                                return config;
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-ts"><code>
+                            const createConfig = ({mode = "production"} = {}) => {
+                                const config: webpack.Configuration = {
+                                    mode,
+                                };
+
+                                return config;
+                            };
+                        </code></pre>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Modes 🎓
+                        </div>
+                        <p>
+                            Webpack has three different modes to enable the
+                            following default configurations:
+                        </p>
+                        <table style="font-size: 2rem;">
+                            <tbody>
+                                <tr class="fragment fade-down">
+                                    <td style="padding: 0;">
+                                        <strong>development</strong>
+                                    </td>
+                                    <td>
+                                        No bundle optimizations, such as
+                                        minification and tree shaking, but with
+                                        developer tool support.
+                                        <code>process.env.NODE_ENV</code> is set
+                                        to <code>"development"</code> which
+                                        switches some modules (such as React)
+                                        into development mode.
+                                    </td>
+                                </tr>
+                                <tr class="fragment fade-down">
+                                    <td style="padding: 0;">
+                                        <strong>production</strong>
+                                    </td>
+                                    <td>
+                                        All bundle optimizations enabled, but no
+                                        developer tool support by default.
+                                        <code>process.env.NODE_ENV</code> is set
+                                        to <code>"production"</code>.
+                                    </td>
+                                </tr>
+                                <tr class="fragment fade-down">
+                                    <td style="padding: 0;">
+                                        <strong>none</strong>
+                                    </td>
+                                    <td>Disable any default configuration.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <p>
+                            The <code>mode</code> applies defaults. You can
+                            always override them...
+                        </p>
+                        <p class="fragment fade-down">
+                            ...but the default configuration is often good
+                            enough for a lot of applications. Only override them
+                            if you know what you're doing.
+                        </p>
+                    </section>
+                    <section>
+                        <div>
+                            <pre class="language-bash command-line" data-prompt="$">
+                                <code>webpack # create production build</code>
+                            </pre>
+                        </div>
+                        <div class="fragment fade-down">
+                            <pre class="language-bash command-line" data-prompt="$">
+                                <code>webpack --env.mode=development # create development build</code>
+                            </pre>
+                        </div>
+                    </section>
+                    <section>
+                        <pre class="language-json"><code>
+                            "scripts": {
+                                "build": "webpack",
+                                "dev": "webpack --env.mode=development"
+                            }
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step XXXX:<br />
+                            <span class="fragment fade-down">
+                                Set your entry
+                            </span>
+                        </h2>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Entry 🎓
+                        </div>
+                        <ul>
+                            <li class="fragment fade-down">
+                                Points to the module where webpack should begin with
+                                to build its internal module graph
+                            </li>
+                            <li class="fragment fade-down">
+                                webpack will figure out all dependencies that this entry point depends on
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                            const config: webpack.Configuration = {
+                                mode,
+
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-ts"><code>
+                            const config: webpack.Configuration = {
+                                mode,
+                                entry: require.resolve("./src/main.ts"),
+                            };
+                        </code></pre>
+                    </section>
+                    <section>
+                        Why <code>require.resolve()</code>? 🧐
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                <strong>
+                                    No ambiguity:
+                                </strong><br>
+                                <code>require.resolve()</code> resolves the relative path to an absolute path.
+                            </li>
+                            <li class="fragment fade-down">
+                                <strong>
+                                    Loud errors:
+                                </strong><br>
+                                <code>require.resolve()</code> will throw an error if the file does not exist.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Tip ☝️
+                        </div>
+                        <p class="fragment fade-down">
+                            <strong>
+                                Use <code>require.resolve()</code> to reference files in your webpack config.
+                            </strong>
+                        </p>
+                        <p class="fragment fade-down">
+                            In case of <code>entry</code> webpack would have thrown an error anyway.
+                            <span class="fragment fade-down">But there are other situations where webpack cannot detect an error.</span>
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step XXXX:<br />
+                            <span class="fragment fade-down">
+                                Set your output
+                            </span>
+                        </h2>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Output 🎓
+                        </div>
+                        <ul>
+                            <li class="fragment fade-down">
+                                Controls where webpack will write the assets to
+                            </li>
+                            <li class="fragment fade-down">
+                                Allows to configure filenames and such
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                            // ...
+
+
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                output: {
+
+
+
+                                }
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // ...
+
+
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                output: {
+                                    path: path.resolve(__dirname, "dist"),
+
+
+                                }
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // ...
+
+
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                output: {
+
+
+
+                                }
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // ...
+                            const isDev = mode === "development";
+
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                output: {
+
+
+
+                                }
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // ...
+                            const isDev = mode === "development";
+                            const outputFilenamePattern = isDev ? "[name].js" : "[name].[contenthash].js";
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                output: {
+
+
+
+                                }
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-ts"><code>
+                            // ...
+                            const isDev = mode === "development";
+                            const outputFilenamePattern = isDev ? "[name].js" : "[name].[contenthash].js";
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                output: {
+                                    filename: outputFilenamePattern,
+                                    chunkFilename: outputFilenamePattern,
+
+                                }
+                            };
+                        </code></pre>
+                    </section>
+                    <section>
+                        <div style="
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-gap: 50px;
+                        ">
+                            <div class="fragment fade-down">
+                                <p>
+                                    🛠 In development
+                                </p>
+
+                                <code>main.js</code><br>
+                                <code>posts.js</code><br>
+                                <code>about.js</code><br>
+                            </div>
+                            <div class="fragment fade-down">
+                                <p>
+                                    🎬 In production
+                                </p>
+
+                                <code>main.7f78047c8cc5f42081dd.js</code><br>
+                                <code>posts.6d780j728dc5f42l87gd.js</code><br>
+                                <code>about.8lss01xc87f3ga28ks6d.js</code><br>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Tip ☝️
+                        </div>
+                        <ul>
+                            <li class="fragment fade-down">
+                                <code>[contenthash]</code> is often what you want: it's based on the content of the output file.
+                            </li>
+                            <li class="fragment fade-down">
+                                <code>[chunkhash]</code> is also ok for <code>.js</code> output files.
+                            </li>
+                            <li class="fragment fade-down">
+                                <code>[hash]</code> is the compilation hash and will change every compilation. This is probably <em>not</em> what you want.
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                            // ...
+                            const isDev = mode === "development";
+                            const outputFilenamePattern = isDev ? "[name].js" : "[name].[contenthash].js";
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                output: {
+                                    filename: outputFilenamePattern,
+                                    chunkFilename: outputFilenamePattern,
+
+                                }
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-ts"><code>
+                            // ...
+                            const isDev = mode === "development";
+                            const outputFilenamePattern = isDev ? "[name].js" : "[name].[contenthash].js";
+                            const publicPath = "/";
+                            const config: webpack.Configuration = {
+                                // ...
+                                output: {
+                                    filename: outputFilenamePattern,
+                                    chunkFilename: outputFilenamePattern,
+                                    publicPath,
+                                }
+                            };
+                        </code></pre>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            <code>publicPath</code> 🎓
+                        </div>
+                        <ul>
+                            <li class="fragment fade-down">
+                                The <code>publicPath</code> controls the base URL for assets
+                            </li>
+                            <li class="fragment fade-down">
+                                Should be <code>"/"</code> in most cases
+                            </li>
+                            <li class="fragment fade-down">
+                                Should have a <code>/</code> at the end
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step XXXX:<br />
+                            <span class="fragment fade-down">
+                                Set up loaders
+                            </span>
+                        </h2>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Loaders 🎓
+                        </div>
+                        <ul>
+                            <li class="fragment fade-down">
+                                Run transformations on a single file
+                            </li>
+                            <li class="fragment fade-down">
+                                Can be chained together
+                            </li>
+                            <li class="fragment fade-down">
+                                The result of a loader chain should either be
+                                JavaScript, JSON or WebAssembly
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Loader chains 🎓
+                        </div>
+                        <p>
+                            Loader chains are executed from right to left:
+                        </p>
+                        <pre class="language-ts">
+                            <code>
+                                use: ["style-loader", "css-loader", "less-loader"]
+                                // think as
+                                // styleLoader(cssLoader(lessLoader()))
+                            </code>
+                        </pre>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                                module: {
+                                    rules: [
+
+
+
+
+
+
+
+
+                                    ],
+                                },
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                                module: {
+                                    rules: [
+                                        {
+                                            oneOf: [
+
+
+
+
+                                            ],
+                                        },
+                                    ],
+                                },
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                                module: {
+                                    rules: [
+                                        {
+                                            oneOf: [
+                                                {
+
+                                                    use: ["file-loader"],
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-ts"><code>
+                                module: {
+                                    rules: [
+                                        {
+                                            oneOf: [
+                                                {
+                                                    test: [/\.png$/, /\.jpe?g$/, /\.gif$/, /\.svg$/],
+                                                    use: ["file-loader"],
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                        </code></pre>
+                    </section>
+                    <section>
+                        <strong>What does the <code>module.rules[].oneOf</code> option do? 🤔</strong>
+                    </section>
+                    <section>
+                        <p>
+                            Three important things to remember about loaders:
+                        </p>
+                        <ul>
+                            <li class="fragment fade-down">
+                                The order of rules is important
+                            </li>
+                            <li class="fragment fade-down">
+                                <strong>
+                                    Every rule that matches gets applied
+                                </strong>
+                            </li>
+                            <li class="fragment fade-down">
+                                Loaders are executed from bottom to top and from right to left
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition="fade-out">
+                        <p>
+                            Given this <code>rules</code> config, what loaders will be executed on a <code>.js</code> module and in which order?
+                        </p>
+                        <pre class="language-js"><code>
+                            rules: [{
+                                use: ["a-loader", "b-loader"],
+                            }, {
+                                use: ["c-loader"],
+                            }],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <p>
+                            <strong>Answer:</strong><br>
+                            <code>c-loader</code>&ensp;→&ensp;
+                            <code>b-loader</code>&ensp;→&ensp;
+                            <code>a-loader</code>
+                        </p>
+                        <pre class="language-js"><code>
+                            rules: [{
+                                use: ["a-loader", "b-loader"],
+                            }, {
+                                use: ["c-loader"],
+                            }],
+                        </code></pre>
+                    </section>
+                    <section>
+                        <pre class="language-js"><code>
+                            rules: [{
+                                oneOf: [{
+                                    use: ["a-loader", "b-loader"],
+                                }, {
+                                    use: ["c-loader"],
+                                }],
+                            }],
+                        </code></pre>
+                        <p>
+                            Now the answer is:<br>
+                            <code>b-loader</code>&ensp;→&ensp;
+                            <code>a-loader</code>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            <code>module.rules[].oneOf</code> 🎓
+                        </div>
+                        <ul>
+                            <li class="fragment fade-down">
+                                Only apply the first rule that matches
+                            </li>
+                            <li class="fragment fade-down">
+                                Usually what we want when configuring loaders
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step XXXX:<br />
+                            <span class="fragment fade-down">
+                                Set up <code>babel-loader</code>
+                            </span>
+                        </h2>
+                    </section>
+                    <section>
+                        <p>
+                            Wait...
+                            <span class="fragment fade-down">
+                                isn't this TypeScript project? 🧐
+                            </span>
+                        </p>
+                        <p class="fragment fade-down">
+                            Aren't we supposed to use the <code>ts-loader</code> then?
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            You can ...<br>
+                            <span class="fragment fade-down">
+                                ...but <a href="https://babeljs.io/docs/en/babel-preset-typescript" target="_blank"><code>@babel/preset-typescript</code></a> works quite as well.
+                            </span>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Note ⚠️
+                        </div>
+                        <code>@babel/preset-typescript</code>...
+                        <ul>
+                            <li class="fragment fade-down">
+                                ...doesn't work with <code>const enum</code>s and there are other minor differences (see <a href="https://babeljs.io/docs/en/babel-plugin-transform-typescript#caveats" target="_blank">caveats</a>)
+                            </li>
+                            <li class="fragment fade-down">
+                                ...doesn't do any type checks
+                            </li>
+                            <li class="fragment fade-down">
+                                ...just removes the type information
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p style="font-size: 9rem">
+                            🙀
+                        </p>
+                        <strong>NO TYPE CHECKS???</strong>
+                        <p class="fragment fade-down">
+                            Isn't that the point of using TypeScript?
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            It is, but...
+                        </p>
+                        <p class="fragment fade-down">
+                            ...do we <em>need</em> to check the types during a webpack build?
+                        </p>
+                        <p class="fragment fade-down">
+                            ...do we <em>need</em> to lint our code during a webpack build?
+                        </p>
+                    </section>
+                    <section data-transition="fade-out">
+                        <div class="kicker">
+                            Excursus
+                        </div>
+                        <h3>
+                            How to speed up your webpack build
+                        </h3>
+                    </section>
+                    <section data-transition="fade" data-background-video="../assets/surprised-owl.mp4">
+                        <style>
+                            @keyframes color-blink {
+                                to {
+                                    color: hotpink;
+                                    text-shadow: hotpink 0 0 50px;
+                                }
+                            }
+
+                            #do-less {
+                                animation: color-blink 1s 3s ease-in-out infinite;
+                            }
+                        </style>
+                        <p id="do-less" style="font-size: 7rem; text-align: center; font-weight: bold;">
+                            Do less.
+                        </p>
+                        <p style="text-align: center; color: white">
+                            Thanks for coming to my TED talk.
+                        </p>
+                    </section>
+                    <section style="text-align: center;">
+                        <p style="font-size: 10rem; font-weight: bold;">
+                            ~40s
+                        </p>
+                        <p class="fragment fade-down">
+                            ~12s<br>
+                            Just by dropping <code>eslint-loader</code>
+                        </p>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            My personal opinion
+                        </div>
+                        <ul>
+                            <li class="fragment fade-down">
+                                IDEs should show type and linting errors
+                            </li>
+                            <li class="fragment fade-down">
+                                It should always be possible to create a development build, despite of type and linting errors
+                            </li>
+                            <li class="fragment fade-down">
+                                Types and linting should be checked and enforced during <a href="https://docs.npmjs.com/misc/scripts" target="_blank"><code>posttest</code></a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-bash command-line" data-prompt="$">
+                            <code>npm install --save-dev babel-loader @babel/core</code>
+                        </pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-bash command-line" data-prompt="$">
+                            <code>npm install --save-dev babel-loader @babel/core @babel/preset-typescript</code>
+                        </pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-bash command-line" data-prompt="$">
+                            <code>npm install --save-dev babel-loader @babel/core @babel/preset-typescript @babel/preset-react</code>
+                        </pre>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                                oneOf: [
+                                    {
+
+                                        loader: "babel-loader",
+
+
+
+
+
+
+                                    },
+                                ],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                                oneOf: [
+                                    {
+                                        test: /\.tsx?$/,
+                                        loader: "babel-loader",
+
+
+
+
+
+                                        },
+                                    },
+                                ],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                                oneOf: [
+                                    {
+                                        test: /\.tsx?$/,
+                                        loader: "babel-loader",
+                                        options: {
+
+
+
+
+                                        },
+                                    },
+                                ],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-ts"><code>
+                                oneOf: [
+                                    {
+                                        test: /\.tsx?$/,
+                                        loader: "babel-loader",
+                                        options: {
+                                            presets: [
+                                                "@babel/typescript",
+                                                "@babel/react",
+                                            ],
+                                        },
+                                    },
+                                ],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-out">
+                        <div class="kicker">
+                            Excursus
+                        </div>
+                        <h3>
+                            How to speed up your webpack build
+                        </h3>
+                        <span class="fragment fade-down">
+                            (now for real)
+                        </span>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                                oneOf: [
+                                    {
+
+                                        test: /\.tsx?$/,
+                                        loader: "babel-loader",
+                                        options: {
+                                            // ...
+
+                                        },
+                                    },
+                                ],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                                oneOf: [
+                                    {
+
+                                        test: /\.tsx?$/,
+                                        loader: "babel-loader",
+                                        options: {
+                                            // ...
+                                            cacheDirectory: true,
+                                        },
+                                    },
+                                ],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-ts"><code>
+                                oneOf: [
+                                    {
+                                        include: [path.resolve(__dirname, "src")],
+                                        test: /\.tsx?$/,
+                                        loader: "babel-loader",
+                                        options: {
+                                            // ...
+                                            cacheDirectory: true,
+                                        },
+                                    },
+                                ],
+                        </code></pre>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Tip ☝️
+                        </div>
+                        <ul>
+                            <li>Use <code>test</code> for file extensions</li>
+                            <li>Use <code>include</code> for directories and absolute paths</li>
+                        </ul>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+    include: [
+        path.resolve(__dirname, "node_modules", "modern-module-a"),
+
+    ],
+    test: /\.js$/,
+    use: ["babel-loader"],
+}],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+    include: [
+        path.resolve(__dirname, "node_modules", "modern-module-a"),
+        path.resolve(__dirname, "node_modules", "modern-module-b"),
+    ],
+    test: /\.js$/,
+    use: ["babel-loader"],
+}],
+                        </code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step XXXX:<br />
+                            <span class="fragment fade-down">
+                                Set up <code>@babel/preset-env</code> and use a <code>.browserslistrc</code>
+                            </span>
+                        </h2>
+                    </section>
+                    <section>
+                        <h3>🎯 Goal</h3>
+                        <ul>
+                            <li class="fragment fade-down">
+                                We want a single place for configuring our target browsers
+                            </li>
+                            <li class="fragment fade-down">
+                                All other tools should use that configuration
+                            </li>
+                            <li class="fragment fade-down">
+                                We only want to include the necessary polyfills
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-bash command-line" data-prompt="$">
+                            <code>npm install --save-dev @babel/preset-env</code>
+                        </pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-bash command-line" data-prompt="$">
+                            <code>npm install --save-dev @babel/preset-env corejs</code>
+                        </pre>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                            // babel-loader options
+                            presets: [
+                                "@babel/typescript",
+                                "@babel/react",
+                                [
+                                    "@babel/env",
+
+
+
+
+
+                                ],
+                            ],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // babel-loader options
+                            presets: [
+                                "@babel/typescript",
+                                "@babel/react",
+                                [
+                                    "@babel/env",
+                                    {
+                                        modules: false,
+
+
+                                    },
+                                ],
+                            ],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // babel-loader options
+                            presets: [
+                                "@babel/typescript",
+                                "@babel/react",
+                                [
+                                    "@babel/env",
+                                    {
+                                        modules: false,
+                                        useBuiltIns: "usage",
+
+                                    },
+                                ],
+                            ],
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-ts"><code>
+                            // babel-loader options
+                            presets: [
+                                "@babel/typescript",
+                                "@babel/react",
+                                [
+                                    "@babel/env",
+                                    {
+                                        modules: false,
+                                        useBuiltIns: "usage",
+                                        corejs: 3,
+                                    },
+                                ],
+                            ],
+                        </code></pre>
+                    </section>
+                    <section>
+                        <p>
+                            Now let's create a <code>.browserslistrc</code> file in our project root.
+                        </p>
+                    </section>
+                    <section>
+                        A <code>.browserslistrc</code>
+                        <ul>
+                            <li class="fragment fade-down">
+                                specifies all browser versions that need to be supported
+                            </li>
+                            <li class="fragment fade-down">
+                                are recognized by a lot of tools, such as Babel and PostCSS
+                            </li>
+                            <li class="fragment fade-down">
+                                is a text file that contains a browserslist query:
+                                <pre><code class="language-txt">
+                                    last 2 versions, not dead, IE > 8
+                                </code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            That's nice for production builds...<br>
+                            <span class="fragment fade-down">
+                                ...but do we want to do that in development builds as well? 🤔
+                            </span>
+                        </p>
+                        <p class="fragment fade-down">
+                            <strong>No.</strong>
+                        </p>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre><code class="language-txt no-whitespace-normalization">
+last 2 versions, not dead, IE > 8
+
+
+
+</code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre><code class="language-txt no-whitespace-normalization">[production]
+last 2 versions, not dead, IE > 8
+
+
+
+</code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre><code class="language-txt no-whitespace-normalization">[production]
+last 2 versions, not dead, IE > 8
+
+[development]
+last 1 Chrome version, last 1 Firefox version</code></pre>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                            const config: webpack.Configuration = {
+                                // ...
+                            };
+
+
+
+
+                            return config;
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-ts"><code>
+                            const config: webpack.Configuration = {
+                                // ...
+                            };
+
+                            process.env.BROWSERSLIST_ENV =
+                                process.env.BABEL_ENV = isDev ? "development" : "production";
+
+                            return config;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <p>
+                            This may speed up the build a little bit...<br>
+                            <strong class="fragment fade-down">
+                                ...but more importantly it improves the debuggability!
+                            </strong>
+                        </p>
+                        <p class="fragment fade-down">
+                            Features like <code>async/await</code> can be annoying to debug with polyfills.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>
+                            Step XXXX:<br />
+                            <span class="fragment fade-down">
+                                Choose a <code>devtool</code>
+                            </span>
+                        </h2>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-ts"><code>
+                            // ...
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                devtool:
+
+
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // ...
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                devtool: mode === "development" ?
+
+
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // ...
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                devtool: mode === "development" ?
+                                    "eval-source-map" :
+
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // ...
+
+                            const config: webpack.Configuration = {
+                                // ...
+                                devtool: mode === "development" ?
+                                    "eval-source-map" :
+                                    "nosources-source-map",
+                            };
+                        </code></pre>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-ts"><code>
+                            // ...
+                            const isDev = mode === "development";
+                            const config: webpack.Configuration = {
+                                // ...
+                                devtool: isDev ?
+                                    "eval-source-map" :
+                                    "nosources-source-map",
+                            };
+                        </code></pre>
+                    </section>
+                    <section>
+                        <div class="kicker">
+                            Devtool 🎓
+                        </div>
+                        <ul>
+                            <li class="fragment fade-down">
+                                Affects how the developer tools in your favorite browser will map
+                                the generated code back to your original source code.
+                            </li>
+                            <li class="fragment fade-down">
+                                Has a great impact on build times.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            <code>eval-source-map</code>
+                        </p>
+                        <ul>
+                            <li class="fragment fade-down">
+                                Slow build times...
+                            </li>
+                            <li class="fragment fade-down">
+                                ...but still the best mapping quality...
+                            </li>
+                            <li class="fragment fade-down">
+                                ...and faster rebuilds than <code>source-map</code>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>
+                            <code>nosources-source-map</code>
+                        </p>
+                        <ul>
+                            <li class="fragment fade-down">
+                                Slow build times...
+                            </li>
+                            <li class="fragment fade-down">
+                                ...but still the best mapping quality...
+                            </li>
+                            <li class="fragment fade-down">
+                                ...doesn't leak source code to the public...
+                            </li>
+                            <li class="fragment fade-down">
+                                ...requires no special server configuration...
+                            </li>
+                            <li class="fragment fade-down">
+                                ...but leaks internal folder structure and file names. 🤷‍♀️
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+            </div>
+        </div>
+        <a id="peerigon-logo" href="https://peerigon.com" target="_blank">
+            <img src="../assets/peerigon/peerigon-symbol-flat-minze.svg" data-minze width="60">
+            <img src="../assets/peerigon/peerigon-symbol-flat-whiskey.svg" data-whiskey width="60">
+            <img src="../assets/peerigon/peerigon-symbol-flat-spinat.svg" data-spinat width="60">
+        </a>
+        <script src="../assets/vendor/prism-1.19.0/prism.js"></script>
+        <script src="../assets/vendor/reveal-alt-arrows/alt-arrows.js"></script>
+        <script src="../assets/vendor/reveal.js-3.8.0/js/reveal.js"></script>
+        <script src="../assets/vendor/reveal.js-3.8.0/plugin/markdown/marked.js"></script>
+        <script src="../assets/vendor/reveal.js-3.8.0/plugin/markdown/markdown.js"></script>
+        <script src="../assets/vendor/reveal.js-3.8.0/plugin/notes/notes.js"></script>
+        <script src="../assets/vendor/fullscreen-0.1/fullscreen.js"></script>
+        <script src="../assets/peerigon/colorScheme.js"></script>
+        <script>
+            Reveal.initialize({
+                history: true,
+                fragmentInURL: true,
+                width: 1244,
+                height: 700,
+                margin: 0.15,
+                keyboard: {
+                    39: "next", // Right Arrow
+                    37: "prev", // Left Arrow
+                },
+            });
+
+            // Printing and PDF exports
+            const link = document.createElement("link");
+
+            link.rel = "stylesheet";
+            link.type = "text/css";
+            link.href = window.location.search.match(/print-pdf/gi) ? "../assets/vendor/reveal.js-3.8.0/css/print/pdf.css" : "../assets/vendor/reveal.js-3.8.0/css/print/paper.css";
+            document.head.appendChild(link);
+        </script>
+    </body>
+</html>

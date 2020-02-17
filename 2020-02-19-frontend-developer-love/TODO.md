@@ -1,0 +1,12 @@
+- Describe example app (typescript, react)
+- Update steps numbers
+- Entry (single vs. multi)
+- Note on long-term caching
+- Links?
+- Bundlephobia
+- bail
+- Add link to presentation
+- How to debug no-sources
+- Hint: configure terser!
+- webpack-dev-server
+- corejs?

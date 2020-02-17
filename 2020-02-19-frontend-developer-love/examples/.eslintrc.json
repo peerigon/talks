@@ -1,0 +1,8 @@
+{
+    "extends": [
+        "peerigon/typescript"
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    }
+}
