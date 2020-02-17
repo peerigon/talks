@@ -3,13 +3,29 @@
         <h2>Implementation details</h2>
     </section>
 
+    <section class="code-small">
+        <div class="goodbad --bad">
+            <script type="hljs">
+                <a href="#" onClick={() => alert("ok boomer")}>…</a>
+            </script>
+        </div>
+        <p>&nbsp;</p>
+        <div class="fragment goodbad --bad">
+            <script type="hljs">
+                <button onClick={() => {
+                    window.location.href = "https://example.com"
+                }}>…</button>
+            </script>
+        </div>
+    </section>
+
     <section
         data-markdown
         data-color-scheme="important"
         data-background-color="var(--color-important-bg)"
     >
         <script type="text/template">
-            ### Pro Tip ™️ #10
+            ### PROTIP ™️ #10
 
             For hyperlink navigation use `<a>`,<br>for everything else use `<button>`
         </script>

@@ -506,10 +506,25 @@ body#peerigon[data-mouse-move="true"] {
     }
 }
 
+#peerigon[data-inline-notes="true"] .reveal aside.notes {
+    display: block;
+    position: fixed !important;
+    font-size: 15px;
+    line-height: 1.4;
+    bottom: 2rem;
+    left: 2rem;
+    border: 2px solid var(--color-black);
+    background-color: #fff;
+    padding: 1em;
+    color: var(--color-black);
+}
+
 #peerigon .reveal .slide-background.bg-blurry {
     animation: blurOut 1s linear 1;
     animation-fill-mode: forwards;
 }
+
+
 
 #peerigon .reveal .slide-background.bg-contain .slide-background-content {
     background-size: contain;
@@ -529,6 +544,16 @@ body#peerigon[data-mouse-move="true"] {
 
 #peerigon .reveal .slide-background.bg-cover-150 .slide-background-content {
     background-size: auto 150%;
+}
+
+#peerigon .reveal .slide-background.bg-cover-top .slide-background-content {
+    background-size: cover;
+    background-position: top center;
+}
+
+#peerigon .reveal .slide-background.bg-zoom-br .slide-background-content {
+    background-size: auto 150vw;
+    background-position: bottom right;
 }
 
 #peerigon .reveal .slides {

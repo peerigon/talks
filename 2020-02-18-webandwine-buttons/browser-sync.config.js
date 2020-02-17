@@ -11,5 +11,5 @@ module.exports = {
     startPath: "slides/index.html",
     files: ["./example", "./exercise", "./slide", "./solution"],
     ignore: ["**/node_modules"],
-    reloadDelay: 1000,
+    reloadDelay: 3000,
 };
