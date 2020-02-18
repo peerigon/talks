@@ -1,0 +1,5 @@
+[production]
+last 2 versions, not dead, IE > 8
+
+[development]
+last 1 Chrome version, last 1 Firefox version

@@ -1,0 +1,13 @@
+{
+    "extends": [
+        "peerigon"
+    ],
+    "env": {
+        "node": true,
+        "browser": true
+    },
+    "root": true,
+    "rules": {
+        "func-style": "off"
+    }
+}
