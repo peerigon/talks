@@ -15,6 +15,7 @@
     "dev": "run-p dev:watch start",
     "dev:watch": "nodemon -w src -e html --exec \"run-s build\"",
     "setup:updates": "updtr",
+    "prestart": "run-s build",
     "start": "browser-sync start --config browser-sync.config.js --directory",
     "test": "run-s build test:lint test:scripts",
     "test:lint": "eslint .scripts/",
