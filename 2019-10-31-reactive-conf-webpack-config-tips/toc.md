@@ -1,0 +1,18 @@
+- Johannes: Ahoj + Intro Johannes
+- Sean: Intro Sean + Title slide: Sean
+- 1. Sean: You don't need a webpack config
+- 2. Johannes: TypeScript support
+- 3. Sean: Function as config
+- 4. Johannes: Multi-compiler mode
+- 5. Sean: Async webpack configs
+- 6. Johannes: Use nodemon
+- 7. Sean: Use require.resolve
+- 8. Johannes. Use filter(Boolean)
+- 9. Sean: Avoid config logic
+- 10. Johannes: Use module.rules[].oneOf
+- 11. Sean: test for file extensions, include for absolute paths
+- 12. Johannes: How to apply different loaders on the same module Pt1
+- 13. Sean: How to apply different loaders on the same module Pt2
+- Johannes: Recap
+- Sean: Secret Bonus
+- Sean: Link to repo, thank you

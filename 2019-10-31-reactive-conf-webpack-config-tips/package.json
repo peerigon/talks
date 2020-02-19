@@ -1,0 +1,15 @@
+{
+  "name": "webpack-config-tips",
+  "version": "1.0.0",
+  "description": "Tips and examples on how to write webpack configs",
+  "scripts": {
+    "serve": "browser-sync start --config browser-sync.config.js"
+  },
+  "keywords": [],
+  "author": "developers@peerigon.com",
+  "private": true,
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "http-server": "^0.11.1"
+  }
+}

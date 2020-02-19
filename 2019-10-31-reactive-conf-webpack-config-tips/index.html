@@ -1,0 +1,1370 @@
+<html>
+    <head>
+        <link
+            rel="stylesheet"
+            href="./assets/vendor/reveal.js-3.7.0/css/reveal.css"
+        />
+        <link rel="stylesheet" href="./assets/vendor/prism-1.15.0/prism.css" />
+        <link rel="stylesheet" href="./assets/peerigon/theme-peerigon.css" />
+    </head>
+    <body id="peerigon">
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <section data-transition="fade"></section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <div style="
+                            text-align: center;
+                        ">
+                            <img src="./assets/krtecek.png">
+                            <h1 style="width: auto; margin-top: 1rem;">👋 Ahoj 🇨🇿</h1>
+                            <aside class="notes" data-markdown>
+                                - Krteček
+                            </aside>
+                        </div>
+                    </section>
+                    <section
+                        data-background-color="white"
+                        data-transition="fade"
+                    >
+                        <div style="text-align: center">
+                            <img
+                                src="../assets/intro-1.png"
+                                style="width: 100%;"
+                            />
+                        </div>
+                    </section>
+                    <section
+                        data-background-color="white"
+                        data-transition="fade"
+                    >
+                        <div style="text-align: center">
+                            <img
+                                src="../assets/intro-2.png"
+                                style="width: 100%;"
+                            />
+                        </div>
+                    </section>
+                    <section data-background-color="white">
+                        <div style="text-align: center">
+                            <img
+                                src="../assets/webpack/webpack-logo.svg"
+                                width="700"
+                                alt="Webpack logo"
+                            />
+                        </div>
+                    </section>
+                </section>
+                <section
+                    data-background-image="../assets/prague.jpg"
+                    data-background-color="var(--color-primary-bg)"
+                    data-background-opacity="0.5"
+                >
+                    <div class="kicker" style="color: rgba(255, 255, 255, 0.3)">
+                        ReactiveConf 2019
+                    </div>
+                    <h1>Secret Tips to Improve Your Webpack Config.</h1>
+                    <span
+                        class="credit"
+                        style="font-size: 2rem; color: rgba(255, 255, 255, 0.3);"
+                    >
+                        Photo by Ryan Lum on Unsplash
+                    </span>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#1<br />You don't need a webpack config.</h2>
+                    </section>
+                    <section>
+                        <pre class="language-js">
+                            <code>
+                            const {resolve} = require("path");
+
+                            module.exports = {
+                                entry: resolve(process.cwd(), "src", "index.js"),
+                                output: {
+                                    path: resolve(process.cwd(), "dist"),
+                                    filename: "main.js",
+                                },
+                            };
+                            </code>
+                        </pre>
+                        <aside class="notes" data-markdown>
+                            - The webpack CLI works without any configuration
+                            - All you need to do is to run `webpack`
+                            - In that case, webpack assumes the following default config:
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="./assets/stdout-error-mode.jpg" />
+                        <aside class="notes" data-markdown>
+                            - You will still see a warning like like this in your console
+                            - "Warning in configuation: the mode option has not been set, webpack will fallback to 'production' mode."
+                            - This means that webpack used production defaults because you haven't specified a <code>mode</code>.
+                            - The <code>mode</code> has been introduced with webpack 4. It allows webpack to choose the best default configuration for the given environment.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Possible modes are:</p>
+                        <ul>
+                            <li class="fragment">development</li>
+                            <li class="fragment">production</li>
+                            <li class="fragment">none</li>
+                        </ul>
+                        <aside class="notes" data-markdown>
+                            - The mode can be set to <code>development</code>, <code>production</code> and <code>none</code>
+                            - development for a good development defaults
+                            - production for a good production defaults
+                            - and none for no defaults (pre webpack 4)
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-sh command-line">
+                            <code>
+                            webpack --mode development
+                            </code>
+                        </pre>
+                        <aside class="notes" data-markdown>
+                            You can set the `mode` via the command line...
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-js">
+                            <code>
+                            // webpack.config.js
+                            module.exports = {
+                                mode: "development",
+                            };
+                            </code>
+                        </pre>
+                        <aside class="notes" data-markdown>
+                            ...or inside your webpack config
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#2<br />TypeScript support.</h2>
+                        <aside class="notes" data-markdown>
+                            You can use TypeScript in your webpack config.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>How to use TypeScript in your webpack config:</p>
+                        <ol>
+                            <li class="fragment">
+                                Rename your <code>webpack.config.js</code> to
+                                <code>webpack.config.ts</code>.
+                            </li>
+                            <li class="fragment">
+                                Install <code>@types/webpack</code> and
+                                <code>ts-node</code>.
+                            </li>
+                            <li class="fragment">
+                                Create a variable using the
+                                <code>webpack.Configuration</code> type.
+                            </li>
+                        </ol>
+                        <aside class="notes" data-markdown>
+                            - Step 1: Rename your `webpack.config.js` to `webpack.config.ts`.
+                            - Step 2: Install `@types/webpack` and `ts-node`.
+                            - ts-node is necessary to execute TypeScript code with Node.js
+                            - Step 3: Create a variable using the `webpack.Configuration` type
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-ts">
+                            <code>
+                            import webpack from "webpack";
+
+                            const config: webpack.Configuration = {
+                                // ...
+                            };
+
+                            export default config;
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <pre class="language-json">
+                            <code>
+                            {
+                                "compilerOptions": {
+                                    "esModuleInterop": true
+                                }
+                            }
+                            </code>
+                        </pre>
+                        <aside class="notes" data-markdown>
+                            Since we're using ECMAScript modules in our example
+                            we also need to set the `esModuleInterop` flag in
+                            our `tsconfig.json`.
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="./assets/ts-config-1.jpg" />
+                        <aside class="notes" data-markdown>
+                            This gives you nice intellisense in your config.
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="./assets/ts-config-2.jpg" />
+                        <aside class="notes" data-markdown>
+                            It also highlights potential errors.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            How does it work?
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                This is a
+                                <a
+                                    href="https://webpack.js.org/api/cli"
+                                    target="_blank"
+                                    >webpack-cli</a
+                                >
+                                feature.
+                            </li>
+                            <li class="fragment">
+                                webpack-cli uses
+                                <a
+                                    href="https://github.com/gulpjs/interpret"
+                                    target="_blank"
+                                    >interpret</a
+                                >
+                                which maintains a dictionary of file extensions
+                                and associated module loaders.
+                            </li>
+                            <li class="fragment">
+                                <a
+                                    href="https://github.com/TypeStrong/ts-node"
+                                    target="_blank"
+                                    ><code>ts-node</code></a
+                                >
+                                needs to be available in your
+                                <code>node_modules</code>.
+                            </li>
+                        </ul>
+                        <aside class="notes" data-markdown>
+                            - How does it work?
+                            - First of all: This is a [webpack-cli](https://webpack.js.org/api/cli/) feature. It won't work if you're using webpack's node API.
+                            - webpack-cli uses [interpret](https://github.com/gulpjs/interpret) which maintains a dictionary of file extensions and associated module loaders.
+                            - interpret will search for [`ts-node`](https://github.com/TypeStrong/ts-node) in your `node_modules`
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>
+                                This means that you can also use
+                                <a href="https://babeljs.io/" target="_blank"
+                                    >Babel</a
+                                >
+                                to precompile your
+                                <code>webpack.config.js</code>.
+                            </strong>
+                        </p>
+                        <p class="fragment">
+                            Rename it to
+                            <code>webpack.config.babel.js</code> and make sure
+                            that there is also a Babel config in your project
+                            directory.
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - This means that you can also use [Babel](https://babeljs.io/) to precompile your `webpack.config.js`.
+                            - Rename it to `webpack.config.babel.js` and make sure that there is a Babel config in your project directory.
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#3<br />Function as config.</h2>
+                        <aside class="notes" data-markdown>
+                            - Speaking of little known webpack config features:
+                            - Did you know that your webpack config can also export a function?
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-js">
+                            <code>
+                                module.exports = () => {
+                                    return {
+                                        mode: "development",
+                                    };
+                                };
+                            </code>
+                        </pre>
+                        <aside class="notes" data-markdown>
+                            - The function should return the webpack config like this.
+                            - You might ask yourself:
+                        </aside>
+                    </section>
+                    <section>
+                        <strong>Where is that useful? 🤔</strong>
+                        <aside class="notes" data-markdown>
+                            Where is that useful?
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-sh command-line">
+                            <code>
+                                webpack --env.mode=production --env.debug
+                            </code>
+                        </pre>
+                        <aside class="notes" data-markdown>
+                            - Now you can pass arguments to your config via webpack's CLI.
+                            - Use the --env argument prefix
+                            - Here we're passing mode=production and debug=true to
+                            the config
+                            - How can we access these arguments in the config now?
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre
+                            class="language-js no-whitespace-normalization"
+                        ><code>module.exports = (env) => {
+
+
+
+
+
+
+
+
+
+
+};</code></pre>
+                        <aside class="notes" data-markdown>
+                            - Inside your webpack config, all command line arguments that have been prefixed with env are now passed as first function argument.
+                            - env is an object here
+                        </aside>
+                    </section>
+                    <section data-transition="fade">
+                        <pre
+                            class="language-js no-whitespace-normalization"
+                        ><code>module.exports = (env = {}) => {
+
+
+
+
+
+
+
+
+
+
+};</code></pre>
+                        <aside class="notes" data-markdown>
+                            By using an empty object as default argument, we can
+                            ensure that our config also works in case the
+                            developer hasn't provided any env arguments.
+                        </aside>
+                    </section>
+                    <section data-transition="fade">
+                        <pre
+                            class="language-js no-whitespace-normalization"
+                        ><code>module.exports = (env = {}) => {
+    const {
+        mode,
+        debug,
+    } = env;
+
+
+
+
+
+
+};</code></pre>
+                        <aside class="notes" data-markdown>
+                            We can now use destructuring to get all the env
+                            arguments.
+                        </aside>
+                    </section>
+                    <section data-transition="fade">
+                        <pre
+                            class="language-js no-whitespace-normalization"
+                        ><code>module.exports = (env = {}) => {
+    const {
+        mode = "development",
+        debug = false,
+    } = env;
+
+
+
+
+
+
+};</code></pre>
+                        <aside class="notes" data-markdown>
+                            We recommend to use default values if that specific
+                            env argument is not present.
+                        </aside>
+                    </section>
+                    <section data-transition="fade">
+                        <pre
+                            class="language-js no-whitespace-normalization"
+                        ><code>module.exports = (env = {}) => {
+    const {
+        mode = "development",
+        debug = false,
+    } = env;
+
+
+    return {
+        mode,
+        output: { pathinfo: debug === true },
+    };
+};</code></pre>
+                        <aside class="notes" data-markdown>
+                            Now you can adjust your webpack config based on the
+                            given env arguments.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            This feature is called
+                            <a
+                                href="https://webpack.js.org/api/cli/#environment-options"
+                                target="_blank"
+                                >Environment Options</a
+                            >.
+                        </p>
+                        <aside class="notes" data-markdown>
+                            This feature is called [Environment
+                            Options](https://webpack.js.org/api/cli/#environment-options)
+                            and is mentioned in the docs.
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#4<br />Multi-compiler mode.</h2>
+                        <aside class="notes" data-markdown>
+                            - Instead of exporting a function, it's also possible to export an array of configurations.
+                            - This switches webpack into **multi-compiler mode**
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-js"><code>
+                            module.exports = [
+                                {
+                                    name: "web",
+                                    target: "web",
+                                    output: { path: resolve(__dirname, "dist", "web") },
+                                },
+                                {
+                                    name: "node",
+                                    target: "node",
+                                    output: { path: resolve(__dirname, "dist", "node") },
+                                },
+                            ];
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - Take this configuration as an example
+                            - Here we export two configurations, one for the browser
+                            environment and one for a Node.js environment
+                            - As you can see, this is useful for isomorphic apps that
+                            need to create two bundles, one for the browser and
+                            one for Node.
+                            - Remember to use different output paths 😉
+                            - Also notice that you can give each configuration a name which will show up in the output accordingly
+                        </aside>
+                    </section>
+                    <section>
+                        <img src="./assets/stdout-multi-compiler.jpg">
+                        <aside class="notes" data-markdown>
+                            - The console output for this configuration would look like this
+                            - You can see the names for each bundle (we call them child compilations)
+                        </aside>
+                    </section>
+                    <section>
+                        <strong>What exactly is this multi-compiler mode? 🤔</strong>
+                        <aside class="notes" data-markdown>
+                            What exactly is this multi-compiler mode?
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            In multi-compiler mode webpack builds each config <strong>concurrently in the same process</strong> while re-using the file system cache.
+                        </p>
+                        <p class="fragment">
+                            <strong>
+                                Multi-compiler mode does not execute each build in parallel.
+                            </strong>
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - In multi-compiler mode webpack builds each config concurrently in the same process while re-using the file system cache.
+                            - I want to highlight concurrently and in the same process because it means that multi-compiler mode does not execute each build in parallel
+                            - Webpack uses a single-thread architecture by default which means that if the CPU is busy with one task (creating a bundle in our case), it will not be able to do anything else.
+                            - The only thing that is reused between builds is the file system cache.
+                            - Often you will see significant longer build times for each new configuration.
+                        </aside>
+                    </section>
+                    <section>
+                        <p style="text-align: center;">
+                            <img src="./assets/trivago-logo.svg" style="width: 400px; background: white; padding: 100px;"><br>
+                            <a href="https://www.npmjs.com/package/parallel-webpack" target="_blank">parallel-webpack</a>
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - You can use [parallel-webpack](https://www.npmjs.com/package/parallel-webpack) from [Trivago](https://tech.trivago.com/), one of our Platinum sponsors, if you want to execute each config in parallel.
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#5<br />Async webpack configs.</h2>
+                        <aside class="notes" data-markdown>
+                            - It's also possible to have asynchronous webpack configs.
+                            - How does it work?
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre
+                            class="language-js"
+                        ><code>
+                            module.exports = async () => {
+                                // load some config values from database
+                                return {
+                                    // ...
+                                };
+                            };
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - Well, if you have a function that returns a webpack config...
+                            - ...you can put an async keyword before that function and the config will become asynchronous
+                            - This allows you to load data from the database or external services
+                        </aside>
+                    </section>
+                    <section
+                        data-background-video="./assets/scared-dog.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.6"
+                        data-background-color="black"
+                        data-background-size="contain"
+                    >
+                        <div style="text-align: center;">
+                            <strong>Time for a little quiz!</strong>
+                        </div>
+                        <aside class="notes" data-markdown>
+                            - This is an excellent opportunity to talk a little break and do a little quiz
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <p>
+                            <strong>Question:</strong> Is the following config valid?
+                        </p>
+                        <pre
+                            class="language-js"
+                        ><code>
+                            module.exports = {
+                                entry: async () => loadEntriesFromDb(),
+                            };
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - Is the following config valid?
+                            - As you can see, entry is an asynchronous function here
+                            - A quick show of hands: who says yes? Who says no?
+                            - (Announce the audience result for the video recording)
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in">
+                        <p>
+                            <strong>Answer:</strong> Yes, it's valid! 🎉🎉🎉
+                        </p>
+                        <pre
+                            class="language-js"
+                        ><code>
+                            module.exports = {
+                                entry: async () => loadEntriesFromDb(),
+                            };
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - The `entry` option can also be an async function.
+                            - This could be useful if you're building a static site generator that pulls all entries from a database.
+                            - It's not the most important feature but still good to know 😉.
+                            - Let's do another round...
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <p>
+                            <strong>Question:</strong> Is the following config valid?
+                        </p>
+                        <pre
+                            class="language-js"
+                        ><code>
+                            module.exports = {
+                                output: {
+                                    path: fs.createWriteStream("/some/path"),
+                                },
+                            };
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - Is the following config valid?
+                            - Here we create a write stream where the output should be written to
+                            - A quick show of hands: who says yes? Who says no?
+                            - (Announce the audience result for the video recording)
+                        </aside>
+                    </section>
+                    <section
+                        data-background-image="./assets/sad-zoidberg.gif"
+                        data-background-opacity="0.6"
+                        data-background-color="black"
+                        data-background-size="contain"
+                    >
+                        <div style="text-align: center;">
+                            <strong>Answer:</strong> No 😛
+                        </div>
+                        <aside class="notes" data-markdown>
+                            - No
+                            - Let's get to our next tip
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <aside class="notes" data-markdown>
+                            - The next tip is not an actual webpack feature, but it can make development a little easier and more fun
+                            - Have you ever changed your webpack config and forgot to restart it?
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-sh command-line">
+                            <code>
+                            webpack --watch
+                            </code>
+                        </pre>
+                        <p style="text-align: center; visibility: hidden;">
+                            <a href="https://github.com/remy/nodemon">nodemon</a>
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - This is necessary necause webpack --watch is only watching the source files that contribute to the bundle
+                            - If you change anything in your config or in your loaders, you need to restart the whole process
+                        </aside>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-sh command-line">
+                            <code>
+                                nodemon --exec "webpack --watch"
+                            </code>
+                        </pre>
+                        <p style="text-align: center;">
+                            <a href="https://github.com/remy/nodemon">nodemon</a>
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - Well, you could use nodemon to restart the webpack process once the config has changed
+                            - Nodemon is a general development tool for Node.js which restarts the Node process once a file in the current directory has changed
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-sh command-line">
+                            <code>
+                                nodemon --watch webpack.config.js --exec "webpack --watch"
+                            </code>
+                        </pre>
+                        <p style="text-align: center;">
+                            <strong>Only watch config files!</strong>
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - Important: Make sure to only watch the webpack.config.js
+                            - Otherwise you'll loose webpack's incremental build feature.
+                            - Of course you can also add more config files like the package.json or the babelrc
+                            - So this tip is:
+                        </aside>
+                    </section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <div>
+                            <h2>#6<br />Use nodemon.</h2>
+                        </div>
+                        <aside class="notes" data-markdown>
+                            - "Use nodemon"
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                            <h2>#7<br />Use <code>require.resolve()</code></h2>
+                            <aside class="notes" data-markdown>
+                                - Use require.resolve()
+                                - Speaking of developer ergonomics, good error messages are also important
+                                - We know that webpack might not be the best example in that regard and we're constantly working on improving the error messages
+                                - But sometimes it's not so obvious what the expected behavior would be
+                                - Take a wrong alias for an example
+                            </aside>
+                        </section>
+                    <section>
+                        <pre class="language-js"><code>
+                            module.exports = {
+                                resolve: {
+                                    alias: {
+                                        "/does/not/exist.js": "./src/replaced.js",
+                                    },
+                                },
+                            };
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - Should webpack complain about if an alias did not match? Should it error or should it just warn?
+                            - What if the alias is only used in certain configurations?
+                            - There's an easy way to fail early in that case:
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-js"><code>
+                            module.exports = {
+                                resolve: {
+                                    alias: {
+                                        [require.resolve("./src/index.js")]:
+                                            require.resolve("./src/replaced.js"),
+                                    },
+                                },
+                            };
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - Each require.resolve() will throw an error if the module cannot be found
+                            - By the way: this is also the easiest and safest way to replace one module with another using `resolve.alias`
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#8<br />Use <code>.filter(Boolean)</code></h2>
+                        <aside class="notes" data-markdown>
+                            - Use `.filter(Boolean)`
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-js  no-whitespace-normalization"><code>module.exports = {
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                loader: "style-loader",
+            },
+        ],
+    },
+};</code></pre>
+                        <aside class="notes" data-markdown>
+                            - Suppose you have loader, but you want to execute that loader only in a specific environment
+                            - For instance: the style-loader. It's nice in development with hot module replacement and all, but certainly not the best option in production
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-js  no-whitespace-normalization"><code>module.exports = {
+    module: {
+        rules: [
+            isDev && {
+                test: /\.css$/,
+                loader: "style-loader",
+            },
+        ].filter(Boolean),
+    },
+};</code></pre>
+                        <p class="fragment">
+                            <code>[ ... ].filter(Boolean)</code> removes all falsy values from an array.
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - Using .filter(Boolean) you can remove it from the loader array when we're not in a development environment.
+                            - filter(Boolean) removes all falsy values from an array
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-js"><code>
+                            module.exports = {
+                                plugins: [
+                                    analyze && new BundleAnalyzerPlugin(),
+                                ].filter(Boolean),
+                            };
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - Of course this works also well with plugins
+                            - But there's also a caveat to this tip:
+                            - Just because a webpack config can contain arbitrary code doesn't mean you should put a lot of code in your config
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#9<br />Avoid config logic.</h2>
+                        <aside class="notes" data-markdown>
+                            - In general: Avoid config logic
+                            - A good rule of thumb is:
+                            - The regular webpack config object should still be "visible" on first glance
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-js"><code>
+                            const rules = [];
+                            const plugins = [];
+
+                            if (isDev) {
+                                rules.unshift({
+                                    test: /\.css$/,
+                                    loader: "style-loader",
+                                });
+                            }
+                            if (analyze) {
+                                plugins.push(new BundleAnalyzerPlugin());
+                            }
+
+                            module.exports = {
+                                module: {
+                                    rules,
+                                },
+                                plugins
+                            };
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - This is really hard to parse
+                            - We can't see where exactly the loader or the plugin will be added to the config.
+                            - While there are legitimate use-cases for this—such as sharing configs across projects—you should try to avoid logic in your config
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-js"><code>
+                            module.exports = {
+                                module: {
+                                    rules: [
+                                        isDev && {
+                                            test: /\.css$/,
+                                            loader: "style-loader",
+                                        },
+                                    ].filter(Boolean),
+                                },
+                                plugins: [
+                                    analyze && new BundleAnalyzerPlugin(),
+                                ].filter(Boolean),
+                            };
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - This is more readable since you can easily spot each part of the webpack config.
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-js"><code>
+                            const webpackMerge = require("webpack-merge");
+                            const devConfig = {
+                                module: {
+                                    rules: [{
+                                        test: /\.css$/,
+                                        loader: "style-loader",
+                                    }]
+                                }
+                            };
+                            module.exports = webpackMerge(
+                                { /* base config */ },
+                                mode === "development" ? devConfig : prodConfig
+                            );
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - This is even better
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#10<br />Use <code>module.rules[].oneOf</code>.</h2>
+                        <aside class="notes" data-markdown>
+                            - You might ask yourself...
+                        </aside>
+                    </section>
+                    <section>
+                        <strong>What does the <code>module.rules[].oneOf</code> option do? 🤔</strong>
+                        <aside class="notes" data-markdown>
+                            - What does the <code>module.rules[].oneOf</code> option do?
+                            - In order to explain that, you need to know how webpack interprets rules.
+                            - This is **really really important** and a lot of people don't get this right.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            Three important things to remember about loaders:
+                        </p>
+                        <ul>
+                            <li class="fragment">
+                                The order of rules is important
+                            </li>
+                            <li class="fragment">
+                                Loaders are executed from bottom to top and from right to left
+                            </li>
+                            <li class="fragment">
+                                <strong>
+                                    Every rule that matches gets applied
+                                </strong>
+                            </li>
+                        </ul>
+                        <aside class="notes" data-markdown>
+                            - When it comes to configuring loaders there are three important things to remember
+                            - The order of rules is important
+                            - Loaders are executed from bottom to top and from right to left
+                            - Every rule that matches gets applied
+                            - Since this is so important, let's test our knowledge with a small...
+                        </aside>
+                    </section>
+                    <section
+                        data-background-video="./assets/scared-dog-2.mp4"
+                        data-background-video-loop
+                        data-background-opacity="0.6"
+                        data-background-color="black"
+                        data-background-size="contain"
+                    >
+                        <div style="text-align: center;">
+                            <strong>Time for a little quiz!</strong>
+                        </div>
+                        <aside class="notes" data-markdown>
+                            Quiz!
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <p>
+                            Given this <code>rules</code> config, what loaders will be executed on a <code>.js</code> module and in which order?
+                        </p>
+                        <pre class="language-js"><code>
+                            rules: [{
+                                use: ["a-loader", "b-loader"],
+                            }, {
+                                use: ["c-loader"],
+                            }],
+                        </code></pre>
+                        <ol style="display: grid; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 1fr;">
+                            <li class="fragment">b a</li>
+                            <li class="fragment">a b c</li>
+                            <li class="fragment">c b a</li>
+                            <li class="fragment">none</li>
+                        </ol>
+                        <aside class="notes" data-markdown>
+                            - Given this <code>rules</code> config, what loaders will be executed on a <code>.js</code> module and in which order?
+                            - Take a close look: there are two rules here with two loader chains
+                            - Which one will be applied? Both? And in which order?
+                        </aside>
+                    </section>
+                    <section data-transition="fade">
+                        <p>
+                            <strong>Answer: 3.</strong><br>
+                            Remember: From bottom to top and from right to left.
+                        </p>
+                        <pre class="language-js"><code>
+                            rules: [{
+                                use: ["a-loader", "b-loader"],
+                            }, {
+                                use: ["c-loader"],
+                            }],
+                        </code></pre>
+                        <p>
+                            <code>c-loader</code>&ensp;→&ensp;
+                            <code>b-loader</code>&ensp;→&ensp;
+                            <code>a-loader</code>
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - **Answer:** 3. All matching rules will be applied from bottom to top and from right to left.
+                            - So, it will be c-loader, b-loader and a-loader.
+                            - As a side note, in case you wondered: The `test` property is not required.
+                            - However, since this behavior is confusing for a lot of people, we recommend to use the `oneOf` condition.
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-js"><code>
+                            rules: [{
+                                oneOf: [{
+                                    use: ["a-loader", "b-loader"],
+                                }, {
+                                    use: ["c-loader"],
+                                }],
+                            }],
+                        </code></pre>
+                        <p>
+                            Now the answer is:<br>
+                            <code>b-loader</code>&ensp;→&ensp;
+                            <code>a-loader</code>
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - Now only the b-loader and the a-loader will be executed
+                            - Yes, we have to admit: configuring loaders can be confusing.
+                            - There are a lot of ways to configure loaders, and there are probably too many.
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#11<br /><code>test</code> for file extensions, <code>include</code> for absolute paths.</h2>
+                        <aside class="notes" data-markdown>
+                            - test for file extensions, include for absolute paths
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+    include: [path.resolve(__dirname, "src")],
+
+
+
+    use: ["ts-loader"],
+}],
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - There is include
+                        </aside>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+    include: [path.resolve(__dirname, "src")],
+    exclude: [/node_modules/],
+
+
+    use: ["ts-loader"],
+}],
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - There is exclude
+                        </aside>
+                    </section>
+                    <section data-transition="fade">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+    include: [path.resolve(__dirname, "src")],
+    exclude: [/node_modules/],
+    test: [/\.ts$/, /\.tsx$/],
+
+    use: ["ts-loader"],
+}],
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - test
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+    include: [path.resolve(__dirname, "src")],
+    exclude: [/node_modules/],
+    test: [/\.ts$/, /\.tsx$/],
+    resource: [path.resolve(__dirname, "src")],
+    use: ["ts-loader"],
+}],
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - resource
+                            - The funny thing is: Technically, `test`, `include` and `resource` work all the same way.
+                            - We recommend the following approach:
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+
+    test: [/\.ts$/, /\.tsx$/],
+    use: ["ts-loader"],
+}],
+                        </code></pre>
+                        <ul>
+                            <li>Use <code>test</code> for file extensions</li>
+                            <li style="visibility: hidden;">Use <code>include</code> for directories and absolute paths</li>
+                        </ul>
+                        <aside class="notes" data-markdown>
+                            - Use `test` for file extensions
+                            - By the way: `test` can also be an array of regular expressions. This makes it easier to read.
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+    include: [path.resolve(__dirname, "src")],
+    test: [/\.ts$/, /\.tsx$/],
+    use: ["ts-loader"],
+}],
+                        </code></pre>
+                        <ul>
+                            <li>Use <code>test</code> for file extensions</li>
+                            <li>Use <code>include</code> for directories and absolute paths</li>
+                        </ul>
+                        <aside class="notes" data-markdown>
+                            - Use `include` for directories and absolute paths
+                            - In general: `include` is better than `exclude` because its more explicit
+                            - Never mix `include` and `exclude`
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Pro tip 😎: always use <code>include</code></strong>
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - Pro tip: always use include
+                        </aside>
+                    </section>
+                    <section data-transition="fade-out">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+    include: [
+        path.resolve(__dirname, "src"),
+
+    ],
+    test: /\.js$/,
+    use: ["babel-loader"],
+}],
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - In most cases, you can set the include to your src directory
+                            - This prevents loaders from being executed on modules inside `node_modules`
+                            - This can make a big performance improvement when using the babel-loader
+                        </aside>
+                    </section>
+                    <section data-transition="fade-in">
+                        <pre class="language-js no-whitespace-normalization"><code>rules: [{
+    include: [
+        path.resolve(__dirname, "src"),
+        path.resolve(__dirname, "node_modules", "modern-module"),
+    ],
+    test: /\.js$/,
+    use: ["babel-loader"],
+}],
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - If a module inside `node_modules` requires transpilation, you can add it to the array explicitly.
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#12<br />"How to apply different loaders on the same module" Pt 1.</h2>
+                        <aside class="notes" data-markdown>
+                            - The next two tips are one of the most useful and yet least known features of webpack.
+                            - "How to apply different loaders on the same module" Pt 1
+                            - Part 1 because there are two solutions for the same problem and we want to show both to you
+                            - You can decide which one you like better
+                        </aside>
+                    </section>
+                    <section>
+                        <p style="text-align: center;">
+                            <a href="https://www.npmjs.com/package/react-svg-loader" target="_blank">react-svg-loader</a>
+                        </p>
+                        <div class="fragment">
+                            <pre class="language-html"><code>
+                                &lt;svg height="100" width="100">
+                                    &lt;circle cx="50" cy="50" r="40" fill="red" />
+                                &lt;/svg>
+                            </code></pre>
+                        </div>
+                        <div class="fragment">
+                            <pre class="language-jsx"><code>
+                                export default () => (
+                                    &lt;svg height="100" width="100">
+                                        &lt;circle cx="50" cy="50" r="40" fill="red" />
+                                    &lt;/svg>
+                                );
+                            </code></pre>
+                        </div>
+                        <aside class="notes" data-markdown>
+                            - Imagine you want to use the [react-svg-loader](https://www.npmjs.com/package/react-svg-loader) to include an SVG into your React app
+                            - The loader turns an SVG file that looks like this...
+                            - ...into a React component that looks like this
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-jsx"><code>
+                            import CircleComponent from "./circle.svg";
+
+                            const component = &lt;CircleComponent />;
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - This allows you to import the SVG right into your React app without creating a custom wrapper
+                            - But there is a problem...
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-css"><code>
+                            body {
+                                background: url("./circle.svg");
+                            }
+                        </code></pre>
+                        <p class="fragment">
+                            Should webpack transform the module with the <strong>react-svg-loader</strong> or with the <strong>file-loader</strong> 🤔?
+                        </p>
+                        <aside class="notes" data-markdown>
+                            - What happens when you're also using the same SVG in a CSS file like this?
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Solution #1</strong>
+                        </p>
+                        <pre class="language-jsx"><code>
+                            import CircleComponent from "./circle.svg?component";
+
+                            const component = &lt;CircleComponent />;
+                        </code></pre>
+                        <div class="fragment">
+                            <pre class="language-js"><code>
+                                rules: [{
+                                    oneOf: [{
+                                        test: /\.svg$/,
+                                        resourceQuery: "?component",
+                                        use: ["react-svg-loader"],
+                                    }, {
+                                        test: /\.svg$/,
+                                        use: ["file-loader"],
+                                    }]
+                                }],
+                            </code></pre>
+                        </div>
+                        <aside class="notes" data-markdown>
+                            - Use the react-svg-loader chain only if there is an `?component` query.
+                            - You can achieve this using the `resourceQuery` condition
+                            - This will apply the react-svg-loader only in case there is the given query present
+                            - Notice also the `oneOf` condition
+                            - Pretty cool, right? But solution #2 is even better...
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#12<br />"How to apply different loaders on the same module" Pt 2.</h2>
+                        <aside class="notes" data-markdown>
+                            - "How to apply different loaders on the same module" Part 2
+                        </aside>
+                    </section>
+                    <section>
+                        <p>
+                            <strong>Solution #2</strong>
+                        </p>
+                        <div class="fragment">
+                            <pre class="language-js"><code>
+                                rules: [{
+                                    test: /\.svg$/,
+                                    issuer: /\.jsx$/,
+                                    use: ["react-svg-loader"],
+                                },
+                                {
+                                    test: /\.svg$/,
+                                    issuer: /\.css$/,
+                                    use: ["file-loader"],
+                                }],
+                            </code></pre>
+                        </div>
+                        <aside class="notes" data-markdown>
+                            - We don't need to use the explicit `resourceQuery`
+                            - What if we could apply different loaders based on the **importing module**?
+                            - That's what the `issuer` condition is for
+                            - Again: notice the `oneOf` condition
+                        </aside>
+                    </section>
+                    <section>
+                        <pre class="language-js"><code>
+                            import CircleComponent from "./circle.svg";
+
+                            const component = &lt;CircleComponent />;
+                        </code></pre>
+                        <pre class="language-css"><code>
+                            body {
+                                background: url("./circle.svg");
+                            }
+                        </code></pre>
+                        <aside class="notes" data-markdown>
+                            - Now you can just import the module and webpack will choose the appropiate loader by matching on the **importing module**
+                        </aside>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>Recap.</h2>
+                        <aside class="notes" data-markdown>
+                            - Let's recap all the tips and trick we've talked about
+                        </aside>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                #1: You don't need a webpack config
+                            </li>
+                            <li class="fragment">
+                                #2: TypeScript support
+                            </li>
+                            <li class="fragment">
+                                #3: Function as config
+                            </li>
+                            <li class="fragment">
+                                #4: Multi-compiler mode
+                            </li>
+                            <li class="fragment">
+                                #5: Async webpack configs
+                            </li>
+                            <li class="fragment">
+                                #6: Use nodemon
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <ul>
+                            <li>
+                                #7: Use <code>require.resolve()</code>
+                            </li>
+                            <li class="fragment">
+                                #8: Use <code>.filter(Boolean)</code>
+                            </li>
+                            <li class="fragment">
+                                #9: Avoid config logic
+                            </li>
+                            <li class="fragment">
+                                #10: Use <code>module.rules[].oneOf</code>
+                            </li>
+                            <li class="fragment">
+                                #11: <code>test</code> for file extensions, <code>include</code> for absolute paths
+                            </li>
+                            <li class="fragment">
+                                #12: How to apply different loaders on the same module
+                                <ul>
+                                    <li class="fragment">
+                                        Use the <code>resourceQuery</code> condition
+                                    </li>
+                                    <li class="fragment">
+                                        Use the <code>issuer</code> condition
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-background-color="var(--color-primary-bg)">
+                        <h2>#13<br />Secret bonus.</h2>
+                        <div class="fragment">
+                            All of these secrets are published on
+                            <a href="https://webpack.js.org/" target="_blank"
+                                >webpack.js.org</a
+                            >.
+                        </div>
+                    </section>
+                </section>
+                <section>
+                    <div style="text-align: center;">
+                        <img src="./assets/repo-qrcode.jpg" style="width: 300px;"><br>
+                        <a href="https://github.com/jhnns/webpack-config-tips" target="_blank">github.com/jhnns/webpack-config-tips</a>
+                        <div class="fragment">
+                            <div style="font-size: 6rem; margin-top: 1rem;">🙇</div>
+                            <div style="margin-top: 1rem;">
+                                <span>@jhnnns</span>
+                                <span>@TheLarkInn</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <a id="peerigon-logo" href="https://peerigon.com" target="_blank">
+            <img
+                src="./assets/webpack/webpack-logo-small.svg"
+                data-minze
+                width="60"
+            />
+        </a>
+        <script src="./assets/vendor/prism-1.15.0/prism.js"></script>
+        <script src="./assets/vendor/reveal-alt-arrows/alt-arrows.js"></script>
+        <script src="./assets/vendor/reveal.js-3.7.0/js/reveal.js"></script>
+        <script src="./assets/vendor/reveal.js-3.7.0/plugin/markdown/marked.js"></script>
+        <script src="./assets/vendor/reveal.js-3.7.0/plugin/markdown/markdown.js"></script>
+        <script src="./assets/vendor/reveal.js-3.7.0/plugin/notes/notes.js"></script>
+        <script src="./assets/vendor/fullscreen-0.1/fullscreen.js"></script>
+        <script src="./assets/peerigon/colorScheme.js"></script>
+        <script>
+            Reveal.initialize({
+                history: true,
+                keyboard: {
+                    39: "next", // Right Arrow
+                    37: "prev", // Left Arrow
+                },
+            });
+        </script>
+    </body>
+</html>
