@@ -8,6 +8,15 @@ A strategy on how to properly configure webpack for your project
 - [Slides](https://peerigon.github.io/talks/2020-02-19-frontend-developer-love-how-to-pack-your-webpack/slides/)
 - Video (not yet released)
 
+## It started with a button (now we’re here) (EN)
+
+A story of the ’90s, clickability, accessibility and buttons on the web: what do they look like, why does it matter, and what can go wrong? Including 13 valuable PROTIPS™️ to improve your button game!
+
+- Moritz Jacobs
+- [Web & Wine](https://webandwine.org/)
+- February 19th, 2020
+- [Slides](https://peerigon.github.io/talks/2020-02-18-webandwine-buttons/)
+
 ## Digitale Kommunikation bei Peerigon (DE)
 
 Als verteiltes Team sitzen wir bei Peerigon nur selten alle in einem Raum, kommunizieren aber trotzdem den ganzen Tag über Kontinente hinweg miteinander. Dafür nutzen wir verschiedenste digitale Tools, die je nach Art der Information, Zielgruppe & Dringlichkeit ausgewählt werden. Wir möchten einen Einblick geben wie wir digitale Kommunikation nutzen und darüber diskutieren ob Tooling allein unsere Kommunikationsprobleme lösen kann. 
