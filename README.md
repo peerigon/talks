@@ -24,7 +24,7 @@ A talk with hands-on tips for improving your webpack configuration.
 - Johannes Ewald, Sean Larkin
 - [Reactive Conf, Prague](https://reactiveconf.com/)
 - October 31st, 2019
-- [Slides](https://peerigon.github.io/talks/2019-10-31-reactive-conf-webpack-config-tips/slides/)
+- [Slides](https://peerigon.github.io/talks/2019-10-31-reactive-conf-webpack-config-tips/)
 - [Video](https://www.youtube.com/watch?v=J3GqBkw6ebk)
 
 ## The future of JavaScript bundlers
