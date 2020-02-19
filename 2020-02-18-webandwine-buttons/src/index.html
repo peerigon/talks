@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <r:include src="/src/header.html" />
+
+    <section>
+        <section data-background-color="#000">
+            
+        </section>
+
+        <section data-background-color="#fff">
+            <img src="./assets/abramov.png" width="500" alt="" /><br />
+            <img class="fragment" src="./assets/abramov2.png" width="500" alt="" />
+        </section>
+
+        <section
+            style="text-align: center;"
+            data-background-image="./assets/bg.png"
+            data-background-color="var(--color-black)"
+        >
+            <h1 style="width: 100%; text-shadow: 2px 2px #000; margin: auto;">
+                Fat button gifs
+            </h1>
+            <div style="text-shadow: 2px 2px #000;" class="kicker">
+                you make the rockin' world go 'round
+            </div>
+        </section>
+
+        <section class="centered" data-background-color="var(--color-black)">
+            <style>
+                .mj-nick {
+                    position: relative;
+                    transform: rotate(-10deg) translateX(40%) translateY(-66%);
+                }
+            </style>
+            <aside class="notes" data-markdown>
+                <script type="text/template">
+                    - I've been doing web development for the better part of my life
+                    - professionally working with web technologies for 10 years
+                </script>
+            </aside>
+
+            <img src="./assets/mo.jpg" width="400" alt="" />
+            <code class="mj-nick">@moritzjacobs</code>
+        </section>
+
+        <section class="centered" data-background-color="var(--color-black)">
+            <img
+                src="./assets/peerigon/peerigon-logo-flat-minze-dark.svg"
+                width="500"
+            />
+            <aside class="notes" data-markdown>
+                <script type="text/template">
+                    - I am employed at peerigon in Augsburg
+                    - wonderful company where we develop web based applications
+                    - for a diverse group of clients
+                    - we specialise in all things javacript and open source
+
+                    - today I want to talk buttons
+                </script>
+            </aside>
+        </section>
+    </section>
+
+    <r:include src="/src/00-real-buttons.html" />
+
+    <r:include src="/src/01-ui-history.html" />
+
+    <r:include src="/src/02-buttons-and-browsers.html" />
+
+    <r:include src="/src/04-skeuo.html" />
+
+    <r:include src="/src/05-affordance.html" />
+
+    <r:include src="/src/06-looks.html" />
+
+    <r:include src="/src/07-labels.html" />
+
+    <r:include src="/src/08a-a11y-44px.html" />
+
+    <r:include src="/src/08b-a11y-hover.html" />
+
+    <r:include src="/src/08c-a11y-focus.html" />
+
+    <r:include src="/src/08d-a11y-proto.html" />
+
+    <r:include src="/src/09a-implementation.html" />
+
+    <r:include src="/src/09b-are-links-buttons.html" />
+
+    <r:include src="/src/09c-aria-labels.html" />
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+    >
+        <script type="text/template">
+            ### PROTIP ™️ #13
+
+            Never underestimate the time you can spend on a single button!
+        </script>
+    </section>
+
+    <section
+        data-markdown
+        data-color-scheme="important"
+        data-background-color="var(--color-important-bg)"
+        style="font-size: 0.66em;"
+    >
+        <script type="text/template">
+            ### PROTIPS ™️
+
+            1. If you make buttons look like buttons you will be fine.
+            2. Don't make users hunt for buttons and be consistent.
+            3. buttons have many states and uses: define them. Be consistent.
+            4. Use verbs and imperatives! Be concise!
+            5. 44px is a good rule of thumb. Test your stuff with real devices and real fingers.
+            6. <code>:hover</code> has side effects. Test your stuff with real devices (again).
+            7. <code>:focus</code> matters! Design all the states!
+            8. Use `<button>`s, test your stuff with keyboards.
+            9. Don't rely solely on color to convey meaning!
+            10. Smash capitalism.
+            11. For hyperlink navigation use `<a>`, for everything else use `<button>`
+            12. The `cursor` defaults for elements are fine as they are.
+            13. Every button needs a textual label
+            14. Never underestimate the time you can spend on a single button!
+        </script>
+    </section>
+
+    <section data-background-color="var(--color-black)">
+        <h1>
+            Thank you.
+        </h1>
+        <p>
+            <small>
+                <code>@moritzjacobs</code><br />
+                <code>@peerigon</code><br /><br />
+                &nbsp;&nbsp;&nbsp;↳ github<br />
+                &nbsp;&nbsp;&nbsp;↳ twitter<br />
+                &nbsp;&nbsp;&nbsp;↳ instagram<br />
+            </small>
+        </p>
+        <p style="text-align: center;"><br /><br /><br />www.peerigon.com</p>
+    </section>
+
+    <r:include src="/src/footer.html" />
+</html>
