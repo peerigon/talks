@@ -1,3 +1,13 @@
+## How to pack your webpack
+
+A strategy on how to properly configure webpack for your project
+
+- Johannes Ewald
+- [Frontend Developer Love, Amsterdam](https://www.frontenddeveloperlove.com/)
+- February 19th, 2020
+- [Slides](https://peerigon.github.io/talks/2020-02-19-frontend-developer-love-how-to-pack-your-webpack/slides/)
+- Video (not yet released)
+
 ## Digitale Kommunikation bei Peerigon (DE)
 
 Als verteiltes Team sitzen wir bei Peerigon nur selten alle in einem Raum, kommunizieren aber trotzdem den ganzen Tag über Kontinente hinweg miteinander. Dafür nutzen wir verschiedenste digitale Tools, die je nach Art der Information, Zielgruppe & Dringlichkeit ausgewählt werden. Wir möchten einen Einblick geben wie wir digitale Kommunikation nutzen und darüber diskutieren ob Tooling allein unsere Kommunikationsprobleme lösen kann. 
@@ -6,6 +16,16 @@ Als verteiltes Team sitzen wir bei Peerigon nur selten alle in einem Raum, kommu
 - [IHK, Augsburg](https://www.schwaben.ihk.de/)
 - November 19th, 2019
 - [Slides](https://peerigon.github.io/talks/2019-11-19-ihk-digitale-kommunikation-bei-peerigon/digitale-kommunikation-bei-peerigon.pdf)
+
+## Webpack config tips
+
+A talk with hands-on tips for improving your webpack configuration.
+
+- Johannes Ewald, Sean Larkin
+- [Reactive Conf, Prague](https://reactiveconf.com/)
+- October 31st, 2019
+- [Slides](https://peerigon.github.io/talks/2019-10-31-reactive-conf-webpack-config-tips/slides/)
+- [Video](https://www.youtube.com/watch?v=J3GqBkw6ebk)
 
 ## The future of JavaScript bundlers
 
