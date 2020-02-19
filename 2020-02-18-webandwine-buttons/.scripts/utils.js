@@ -9,9 +9,9 @@ module.exports.reReplace = (str, re, cb) => {
 };
 
 const removeEmptyLinesFromStart = (nextLines, line) => {
-    return line.length === 0 && nextLines.length === 0
-        ? nextLines
-        : [...nextLines, line];
+    return line.length === 0 && nextLines.length === 0 ?
+        nextLines :
+        [...nextLines, line];
 };
 
 module.exports.unindent = str => {
@@ -22,9 +22,9 @@ module.exports.unindent = str => {
         .map(line => (line.replace(/\s/g, "").length > 0 ? line : ""))
         // remove empty lines from start and end
         .reduce(removeEmptyLinesFromStart, [])
-        .reverse()
-        .reduce(removeEmptyLinesFromStart, [])
+        .reduceRight(removeEmptyLinesFromStart, [])
         .reverse();
+
     // find the lowest amount of whitespace on the left of every line
     const minIndent = Math.min(
         ...lines
@@ -34,5 +34,6 @@ module.exports.unindent = str => {
 
     // remove minIndent from the left
     const unindented = lines.map(line => line.substr(minIndent)).join("\n");
+
     return unindented;
 };

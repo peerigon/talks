@@ -8,7 +8,7 @@ module.exports = {
         baseDir: ".",
         index: "index.html",
     },
-    startPath: "slides/index.html",
+    startPath: "index.html",
     files: ["./example", "./exercise", "./slide", "./solution"],
     ignore: ["**/node_modules"],
     reloadDelay: 3000,

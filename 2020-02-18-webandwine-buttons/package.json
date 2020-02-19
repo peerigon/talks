@@ -11,11 +11,16 @@
     "fix": true
   },
   "scripts": {
-    "build": "cat src/index.html | node .scripts/template.js > ./slides/index.html",
+    "build": "cat src/index.html | node .scripts/template.js > ./index.html",
     "dev": "run-p dev:watch start",
     "dev:watch": "nodemon -w src -e html --exec \"run-s build\"",
-    "setup:updates": "updtr",
+    "format": "eslint .scripts --fix",
+    "build:dist": "run-s build:dist:mkdir build:dist:zip",
+    "build:dist:mkdir": "mkdir -p dist",
+    "build:dist:zip": "bestzip dist/slides.zip assets/ index.html",
     "prestart": "run-s build",
+    "publish": "run-s build build:dist",
+    "setup:updates": "updtr",
     "start": "browser-sync start --config browser-sync.config.js --directory",
     "test": "run-s build test:lint test:scripts",
     "test:lint": "eslint .scripts/",
@@ -28,6 +33,7 @@
     "browser-sync": "^2.26.7"
   },
   "devDependencies": {
+    "bestzip": "^2.1.5",
     "cheerio": "^1.0.0-rc.3",
     "eslint": "^5.16.0",
     "eslint-config-peerigon": "^24.0.0",

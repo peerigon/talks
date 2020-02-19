@@ -1,9 +1,7 @@
+const readline = require("readline");
 const transformIncludes = require("./includes");
 const transformCode = require("./codeHighlight");
-const { detab } = require("./utils");
-const readline = require("readline");
 const gist = require("./gist");
-const code = require("./codeHighlight");
 
 let html = "";
 
@@ -35,6 +33,7 @@ const transformGists = async html => {
 
 const main = async () => {
     let piped = html;
+
     piped = transformIncludes(piped);
     piped = transformCode(piped);
     piped = await transformGists(piped);
@@ -44,7 +43,7 @@ const main = async () => {
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
-    terminal: false
+    terminal: false,
 });
 
 rl.on("line", line => {
