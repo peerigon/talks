@@ -8,7 +8,7 @@ A strategy on how to properly configure webpack for your project
 - [Slides](https://peerigon.github.io/talks/2020-02-19-frontend-developer-love-how-to-pack-your-webpack/slides/)
 - [Video](https://www.youtube.com/watch?v=z8YP5ZEUIxA)
 
-## It started with a button (now we’re here) (EN)
+## It started with a button (now we’re here)
 
 A story of the ’90s, clickability, accessibility and buttons on the web: what do they look like, why does it matter, and what can go wrong? Including 13 valuable PROTIPS™️ to improve your button game!
 
