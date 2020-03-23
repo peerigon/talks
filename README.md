@@ -6,7 +6,7 @@ A strategy on how to properly configure webpack for your project
 - [Frontend Developer Love, Amsterdam](https://www.frontenddeveloperlove.com/)
 - February 19th, 2020
 - [Slides](https://peerigon.github.io/talks/2020-02-19-frontend-developer-love-how-to-pack-your-webpack/slides/)
-- Video (not yet released)
+- [Video](https://www.youtube.com/watch?v=z8YP5ZEUIxA)
 
 ## It started with a button (now we’re here) (EN)
 
