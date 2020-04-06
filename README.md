@@ -1,6 +1,6 @@
 ## How to pack your webpack
 
-A strategy on how to properly configure webpack for your project
+You are scared of webpack configs and you have no clue how they work? Perfect! This talk is for you. I will teach you hands-on tips on how to properly configure webpack for your project.
 
 - Johannes Ewald
 - [Frontend Developer Love, Amsterdam](https://www.frontenddeveloperlove.com/)
