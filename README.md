@@ -43,10 +43,31 @@ This talk is about current web platform proposals that could make JS bundling ea
 In the end, you will also learn about reasons why you'd probably still want to use a bundler in the future.
 
 - Johannes Ewald
-- [Frontend Developer Love, Amsterdam](https://www.frontenddeveloperlove.com/) / [React Munich](https://www.meetup.com/de-DE/ReactJS-Meetup-Munich/events/259167087/)
-- February 13th, 2019 / March 14th, 2019
+- [React Munich](https://www.meetup.com/de-DE/ReactJS-Meetup-Munich/events/259167087/)
+- March 14th, 2019
 - [Slides](https://peerigon.github.io/talks/2019-02-13-frontend-developer-love/slide/)
-- [Video (Frontend Developer Love)](https://www.youtube.com/watch?v=bDhtYaTVHR0) / [Video (React Munich)](https://www.youtube.com/watch?v=RYBlkUlFH7M)
+- [Video](https://www.youtube.com/watch?v=RYBlkUlFH7M)
+
+## The future of JavaScript bundlers
+
+With ES modules implemented in all major browsers, do we even need to use JavaScript bundlers?
+This talk is about current web platform proposals that could make JS bundling easier or even obsolete.
+In the end, you will also learn about reasons why you'd probably still want to use a bundler in the future.
+
+- Johannes Ewald
+- [Frontend Developer Love, Amsterdam](https://www.frontenddeveloperlove.com/)
+- February 13th, 2019
+- [Slides](https://peerigon.github.io/talks/2019-02-13-frontend-developer-love/slide/)
+- [Video](https://www.youtube.com/watch?v=bDhtYaTVHR0)
+
+## Webpack deep dive
+
+You are scared of your webpack config and you have no clue what's going on under the hood? Perfect! This talk is for you. You will learn what webpack is, how it works and how to get the most out of it.
+
+- Johannes Ewald
+- [DEV XCHANGE, Augsburg](https://xitaso.com/das-war-der-dev-xchange-2018/)
+- November 3rd, 2018
+- [Slides](https://peerigon.github.io/talks/2018-11-03-dev-xchange-webpack-deep-dive)
 
 ## Arbeit ganzheitlich denken (DE)
 
@@ -71,9 +92,9 @@ Warum sollte ich auf Big-Data, Internet of Things oder Deep Learning setzen? Woh
 You are scared of your webpack config and you have no clue what's going on under the hood? Perfect! This talk is for you. You will learn what webpack is, how it works and how to get the most out of it.
 
 - Johannes Ewald
-- [Hackerkiste, Augsburg](https://2018.hackerkiste.de/) / [DEV XCHANGE, Augsburg](https://xitaso.com/das-war-der-dev-xchange-2018/)
-- September 28th, 2018 / November 3rd, 2018
-- [Slides (Hackerkiste)](https://peerigon.github.io/talks/2018-09-28-hackerkiste-webpack-deep-dive) / [Slides (DEV XCHANGE)](https://peerigon.github.io/talks/2018-11-03-dev-xchange-webpack-deep-dive)
+- [Hackerkiste, Augsburg](https://2018.hackerkiste.de/)
+- September 28th, 2018
+- [Slides](https://peerigon.github.io/talks/2018-09-28-hackerkiste-webpack-deep-dive)
 
 ## The bumpy road to Universal JavaScript
 
@@ -82,10 +103,22 @@ Since the mid 90s, developers have struggled to build web applications that can 
 In this talk, we'll look at common obstacles and problems that developers face when building this type of web application, including typical performance and security issues. You'll leave the presentation knowing how to build a fast and secure web application that can be rendered on the client and the server.
 
 - Johannes Ewald
-- [You Gotta Love Frontend Conference, Kyiv](http://yglf.com.ua/) / [JSCamp, Barcelona](https://jscamp.tech/)
-- May 25th, 2018 / July 20th, 2018
-- [Slides (YGLF)](https://peerigon.github.io/talks/2018-05-25-you-gotta-love-frontend-bumpy-road-universal-javascript/) / [Slides (JSCamp)](https://peerigon.github.io/talks/2018-07-20-js-camp-barcelona-bumpy-road-universal-javascript/)
-- [Video (YGLF)](https://www.youtube.com/watch?v=mUdbfkOcKIA&t=0s&list=PLII-CO3Ff0qaXCf7RgN7bulEmwZB_ngZG&index=15) / [Video (JSCamp)](https://www.youtube.com/watch?v=r69Z3r4z-Hw)
+- [JSCamp, Barcelona](https://jscamp.tech/)
+- July 20th, 2018
+- [Slides](https://peerigon.github.io/talks/2018-07-20-js-camp-barcelona-bumpy-road-universal-javascript/)
+- [Video](https://www.youtube.com/watch?v=r69Z3r4z-Hw)
+
+## The bumpy road to Universal JavaScript
+
+Since the mid 90s, developers have struggled to build web applications that can be executed both on the client and the server. And still today, even with Node.js and virtual DOM libraries like React, this can be quite challenging.
+
+In this talk, we'll look at common obstacles and problems that developers face when building this type of web application, including typical performance and security issues. You'll leave the presentation knowing how to build a fast and secure web application that can be rendered on the client and the server.
+
+- Johannes Ewald
+- [You Gotta Love Frontend Conference, Kyiv](http://yglf.com.ua/)
+- May 25th, 2018
+- [Slides](https://peerigon.github.io/talks/2018-05-25-you-gotta-love-frontend-bumpy-road-universal-javascript/)
+- [Video](https://www.youtube.com/watch?v=mUdbfkOcKIA&t=0s&list=PLII-CO3Ff0qaXCf7RgN7bulEmwZB_ngZG&index=15)
 
 ## HTTP/2
 
