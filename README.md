@@ -1,3 +1,11 @@
+## Short version of: Wenn das Team anfängt, zu denken: Eine Liebeserklärung an die Partizipation? (DE)
+
+Die Welt ist im Wandel und wir mit ihr. Auch die Arbeitswelt wird neu gedacht. Es gibt viele neue Ideen der Zusammenarbeit. Die Partizipation scheint ein vielversprechender und zeitgemäßer Weg. Doch wo fängt Parizipation an und wo hört diese auf?
+
+- Stephan Batteiger
+- [Nachhaltigkeitstag, Augsburg](https://www.nachhaltigkeitsatlas-a3.de/nachhaltigkeitstag_2020/)
+- November 24nd, 2020
+
 ## How to pack your webpack
 
 You are scared of webpack configs and you have no clue how they work? Perfect! This talk is for you. I will teach you hands-on tips on how to properly configure webpack for your project.
@@ -17,9 +25,17 @@ A story of the ’90s, clickability, accessibility and buttons on the web: what 
 - February 19th, 2020
 - [Slides](https://peerigon.github.io/talks/2020-02-18-webandwine-buttons/)
 
+## Gründen morgen: Der Wille zum Sinn! (DE)
+
+"Stephan Batteiger, Co-Founder der Peerigon GmbH erinnert uns mit seinem Talk daran, wie unwichtig Geld sein kann wenn man selbst nicht glücklich ist!" – Digitales Zentrum Schwaben
+
+- Stephan Batteiger
+- [Augsburg Gründet, Augsburg](https://2019.augsburg-gruendet.de/)
+- November 20nd, 2019
+
 ## Digitale Kommunikation bei Peerigon (DE)
 
-Als verteiltes Team sitzen wir bei Peerigon nur selten alle in einem Raum, kommunizieren aber trotzdem den ganzen Tag über Kontinente hinweg miteinander. Dafür nutzen wir verschiedenste digitale Tools, die je nach Art der Information, Zielgruppe & Dringlichkeit ausgewählt werden. Wir möchten einen Einblick geben wie wir digitale Kommunikation nutzen und darüber diskutieren ob Tooling allein unsere Kommunikationsprobleme lösen kann. 
+Als verteiltes Team sitzen wir bei Peerigon nur selten alle in einem Raum, kommunizieren aber trotzdem den ganzen Tag über Kontinente hinweg miteinander. Dafür nutzen wir verschiedenste digitale Tools, die je nach Art der Information, Zielgruppe & Dringlichkeit ausgewählt werden. Wir möchten einen Einblick geben wie wir digitale Kommunikation nutzen und darüber diskutieren ob Tooling allein unsere Kommunikationsprobleme lösen kann.
 
 - Lisa Giese, Michael Jaser
 - [IHK, Augsburg](https://www.schwaben.ihk.de/)
@@ -35,6 +51,22 @@ A talk with hands-on tips for improving your webpack configuration.
 - October 31st, 2019
 - [Slides](https://peerigon.github.io/talks/2019-10-31-reactive-conf-webpack-config-tips/)
 - [Video](https://www.youtube.com/watch?v=J3GqBkw6ebk)
+
+## Wenn das Team anfängt, zu denken: Eine Liebeserklärung an die Partizipation? (DE)
+
+Die Welt ist im Wandel und wir mit ihr. Auch die Arbeitswelt wird neu gedacht. Es gibt viele neue Ideen der Zusammenarbeit. Die Partizipation scheint ein vielversprechender und zeitgemäßer Weg. Doch wo fängt Parizipation an und wo hört diese auf?
+
+- Stephan Batteiger
+- [AUXELERATOR, Augsburg](https://www.aitiraum.de/events/auxelerator-vortrag-wenn-das-team-anfaengt-zu-denken-eine-liebeserklaerung-an-die-partizipation)
+- October 16nd, 2019
+
+## Führungskultur im Wandel: Wohin geht die Reise? (DE)
+
+Führungskultur im Wandel: Wohin geht die Reise?
+
+- Stephan Batteiger
+- [Hochschule Augsburg, Augsburg](https://www.hs-augsburg.de/)
+- June 27nd, 2019
 
 ## The future of JavaScript bundlers
 
