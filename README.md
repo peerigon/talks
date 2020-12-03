@@ -59,7 +59,7 @@ This talk is all about exploring Vue.js and the first steps in the Vue CLI (comi
 - Irena Reitz
 - [PyLadies Munich meets VueVixens](https://www.meetup.com/de-DE/PyLadiesMunich/)
 - October 29th, 2019
-- [Slides](https://peerigon.github.io/talks/2019-10-29-vuevixens-and-pyladies-munich-approaching-vue/)
+- [Slides](https://peerigon.github.io/talks/2019-10-29-vuevixens-and-pyladies-munich-approaching-vue/ApproachingVue.pdf)
 
 ## Wenn das Team anfängt, zu denken: Eine Liebeserklärung an die Partizipation? (DE)
 
