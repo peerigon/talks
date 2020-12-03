@@ -52,6 +52,15 @@ A talk with hands-on tips for improving your webpack configuration.
 - [Slides](https://peerigon.github.io/talks/2019-10-31-reactive-conf-webpack-config-tips/)
 - [Video](https://www.youtube.com/watch?v=J3GqBkw6ebk)
 
+## Approaching Vue.js
+
+This talk is all about exploring Vue.js and the first steps in the Vue CLI (coming from the React.js Universe).
+
+- Irena Reitz
+- [PyLadies Munich meets VueVixens](https://www.meetup.com/de-DE/PyLadiesMunich/)
+- October 29th, 2019
+- [Slides](https://peerigon.github.io/talks/2019-10-29-vuevixens-and-pyladies-munich-approaching-vue/)
+
 ## Wenn das Team anfängt, zu denken: Eine Liebeserklärung an die Partizipation? (DE)
 
 Die Welt ist im Wandel und wir mit ihr. Auch die Arbeitswelt wird neu gedacht. Es gibt viele neue Ideen der Zusammenarbeit. Die Partizipation scheint ein vielversprechender und zeitgemäßer Weg. Doch wo fängt Parizipation an und wo hört diese auf?
