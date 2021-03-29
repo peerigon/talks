@@ -1,3 +1,13 @@
+## Building Resilient Tech Stacks
+
+This discussion is all about resilient tech stacks: how can they be defined, what do they entail? And: why is it important to keep the balance between adapting cutting edge technology and evaluating its persistency for the future.
+
+- Irena Reitz
+- [GraphCMS Talks](https://graphcms.com/blog)
+- March 26th, 2021
+- [Blog Post](https://graphcms.com/blog/graphcms-talks-peerigon)
+- [Video](https://www.youtube.com/watch?v=cGN_eEMW7Mc)
+
 ## Short version of: Wenn das Team anfängt, zu denken: Eine Liebeserklärung an die Partizipation? (DE)
 
 Die Welt ist im Wandel und wir mit ihr. Auch die Arbeitswelt wird neu gedacht. Es gibt viele neue Ideen der Zusammenarbeit. Die Partizipation scheint ein vielversprechender und zeitgemäßer Weg. Doch wo fängt Parizipation an und wo hört diese auf?
