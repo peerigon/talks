@@ -125,7 +125,7 @@ You are scared of your webpack config and you have no clue what's going on under
 Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
 
 - Stephan Batteiger
-- [Paul und Paula, Dachau](https://paulundpaula.co/austausch/)
+- Paul und Paula, Dachau
 - October 22nd, 2018
 - [Slides](https://peerigon.github.io/talks/2016-10-03-Unternehmenskultur-Peerigon/)
 
@@ -257,7 +257,7 @@ What is Docker and why we need it - VM vs. Docker - Docker tools - Creating a co
 Arbeit ganzheitlich denken: Praxiserfahrungen aus dem Unternehmen Peerigon.
 
 - Stephan Batteiger
-- [Tag der Regionen, Petersberg](https://www.der-petersberg.de/Tag-der-Regionen-2016)
+- Tag der Regionen, Petersberg
 - October 3th, 2016
 - [Slides](https://peerigon.github.io/talks/2016-10-03-Unternehmenskultur-Peerigon/)
 
@@ -294,7 +294,7 @@ Wie erreiche ich alle Smartphone-Nutzer? Was zeichnet eine gute App aus? Wie err
 ES2015 (ES6) landed the browsers near you and you should start using it right now. This talk is about why and how to use ES2015 and what the future of JavaScript will look like.
 
 - Michael Jaser
-- [Web&Speck Innsbruck, Austria](https://www.meetup.com/de-DE/webundspeck/events/227668357)
+- Web&Speck Innsbruck, Austria
 - January 28th, 2016
 - [Slides](https://peerigon.github.io/talks/2016-01-28-webundspeck-future-of-javascript/)
 
@@ -312,7 +312,7 @@ Detailed overview of the state of frontend management tools and recent updates t
 State of Mobile Web, Hybrid Apps and what the future will (hopefully) look like.
 
 - Michael Jaser
-- [Xitaso Mobile Day](http://xitaso.com/mobileday)
+- Xitaso Mobile Day
 - November 7th, 2015
 - [Slides](https://peerigon.github.io/talks/2015-11-07-mobile-day/)
 
