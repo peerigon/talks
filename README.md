@@ -1,11 +1,11 @@
-## Building Resilient Tech Stacks
+## Why we should all care about data bias
 
 This talk is about a topic that should concern all software developers & product designers: Many applications that we develop every day are designed - without us realizing it - for a 'norm person' that doesn't exist. We discuss where these biases hide in the data & design, what problems they cause when, for example, washing hands, and what we can do about them.
 
 - Irena Reitz
 - [Hackerkiste](https://2021.hackerkiste.de/)
 - October 8th, 2021
-- [Slides](https://peerigon.github.io/talks/2021-10-08-hackerkiste-data-bias/)
+- [Slides](https://peerigon.github.io/talks/2021-10-08-hackerkiste-data-bias/why-we-should-all-care-about-data-bias.pdf)
 
 ## Building Resilient Tech Stacks
 
