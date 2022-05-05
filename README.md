@@ -1,3 +1,12 @@
+## Data Bias: designing for defaults.
+
+We encounter bias in our everyday lives, from washing our hands in the morning to our after-work playlist. It continues to have an effect on our products and systems and, if unquestioned, can sometimes entail serious risks. This talk illustrates the broad spectrum of our human and machine biases and gives a perspective on how we can all help to counteract them.
+
+- Irena Reitz
+- [Technologietransfer Kongress](https://www.region-a3.com/innovation/technologietransfer-kongress/)
+- May 4th, 2022
+- [Slides](https://peerigon.github.io/talks/2022-05-04-ttk-data-bias/Data-bias-designing-for-defaults.pdf)
+
 ## Why we should all care about data bias
 
 This talk is about a topic that should concern all software developers & product designers: Many applications that we develop every day are designed - without us realizing it - for a 'norm person' that doesn't exist. We discuss where these biases hide in the data & design, what problems they cause when, for example, washing hands, and what we can do about them.
